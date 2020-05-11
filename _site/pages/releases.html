@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Let's Coordinate</title>
+<link rel="shortcut icon" href=/assets/img/favicon.ico>
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+<body>
+<div>
+    <!-- Adapted from https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de -->
+
+    <!-- TODO Handle active page -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img alt="logo img" class="avatar" src="/assets/img/letsco-logo.png" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/getting_started/">Getting Started</a></li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=Documentation role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby=Documentation>
+                        
+                        <a class="dropdown-item" href="/documentation/current/architecture/">Architecture</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/reference_doc/">Reference documentation</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/deployment/">Deployment</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/CICD/">CICD</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/dev_env/">Development Environment</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=APIs role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">APIs</a>
+                    <div class="dropdown-menu" aria-labelledby=APIs>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/actions/">Actions</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/cards/">Cards</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/thirds/">Thirds</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/users/">Users</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/community/">Community</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/pages/roadmap.html">Roadmap</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/pages/releases.html">Releases</a></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container-lg px-3 my-5 markdown-body">
+    <!-- Filtering and sorting pages ("where" liquid filters can't be used directly in for loops)-->
+
+<!-- A version will only appear in the table if there is are release_notes.html file associated to it-->
+
+
+
+<table class="table">
+    <tbody>
+
+    
+    
+    
+    
+    
+
+
+    <tr>
+        <th scope="row">1.3.0.SNAPSHOT
+            
+            
+            <span class="badge badge-secondary badge-pill">Snapshot</span>
+        </th>
+        <td><a href="/documentation/archives/1.3.0.SNAPSHOT/docs/release_notes.html">Release Notes</a></li></td>
+        <td><a href="/documentation/archives/1.3.0.SNAPSHOT/docs/single_page_doc.html">Documentation</a></li></td>
+        <td><a href="/documentation/archives/1.3.0.SNAPSHOT/api/actions/index.html">Actions API</a></li></td>
+        <td><a href="/documentation/archives/1.3.0.SNAPSHOT/api/cards/index.html">Cards API</a></li></td>
+        <td><a href="/documentation/archives/1.3.0.SNAPSHOT/api/thirds/index.html">Thirds API</a></li></td>
+        <td><a href="/documentation/archives/1.3.0.SNAPSHOT/api/users/index.html">Users API</a></li></td>
+    </tr>
+
+    
+    
+    
+    
+    
+
+
+    <tr>
+        <th scope="row">1.2.0.RELEASE
+            
+            <span class="badge badge-primary badge-pill">Current</span>
+            
+        </th>
+        <td><a href="/documentation/archives/1.2.0.RELEASE/docs/release_notes.html">Release Notes</a></li></td>
+        <td><a href="/documentation/archives/1.2.0.RELEASE/docs/single_page_doc.html">Documentation</a></li></td>
+        <td><a href="/documentation/archives/1.2.0.RELEASE/api/actions/index.html">Actions API</a></li></td>
+        <td><a href="/documentation/archives/1.2.0.RELEASE/api/cards/index.html">Cards API</a></li></td>
+        <td><a href="/documentation/archives/1.2.0.RELEASE/api/thirds/index.html">Thirds API</a></li></td>
+        <td><a href="/documentation/archives/1.2.0.RELEASE/api/users/index.html">Users API</a></li></td>
+    </tr>
+
+    
+    
+    
+    
+    
+
+
+    <tr>
+        <th scope="row">1.1.0.RELEASE
+            
+            
+            
+        </th>
+        <td><a href="/documentation/archives/1.1.0.RELEASE/docs/release_notes.html">Release Notes</a></li></td>
+        <td><a href="/documentation/archives/1.1.0.RELEASE/docs/single_page_doc.html">Documentation</a></li></td>
+        <td><a href="/documentation/archives/1.1.0.RELEASE/api/actions/index.html">Actions API</a></li></td>
+        <td><a href="/documentation/archives/1.1.0.RELEASE/api/cards/index.html">Cards API</a></li></td>
+        <td><a href="/documentation/archives/1.1.0.RELEASE/api/thirds/index.html">Thirds API</a></li></td>
+        <td><a href="/documentation/archives/1.1.0.RELEASE/api/users/index.html">Users API</a></li></td>
+    </tr>
+
+    
+    
+    
+    
+    
+
+
+    <tr>
+        <th scope="row">1.0.0.RELEASE
+            
+            
+            
+        </th>
+        <td><a href="/documentation/archives/1.0.0.RELEASE/docs/release_notes.html">Release Notes</a></li></td>
+        <td><a href="/documentation/archives/1.0.0.RELEASE/docs/single_page_doc.html">Documentation</a></li></td>
+        <td><a href="/documentation/archives/1.0.0.RELEASE/api/actions/index.html">Actions API</a></li></td>
+        <td><a href="/documentation/archives/1.0.0.RELEASE/api/cards/index.html">Cards API</a></li></td>
+        <td><a href="/documentation/archives/1.0.0.RELEASE/api/thirds/index.html">Thirds API</a></li></td>
+        <td><a href="/documentation/archives/1.0.0.RELEASE/api/users/index.html">Users API</a></li></td>
+    </tr>
+
+    
+    </tbody>
+</table>
+
+</div>
+
+
+<footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2020 <a href="http://www.rte-france.com/en">RTE</a>
+</p>
+</footer>
+
+
+
+<!-- Needed by bootstrap javascript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="/assets/js/bootstrap/bootstrap.js"></script>
+
+</body>
+</html>

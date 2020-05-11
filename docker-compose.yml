@@ -1,0 +1,12 @@
+# docker run --name letsco-doc --rm --volume="$PWD:/srv/jekyll" -p 3000:4000 -it jekyll/jekyll:4.0 jekyll serve
+
+version: '3'
+services:
+  jekyll-serve:
+    container_name: letsco-doc
+    image: jekyll/jekyll:4.0
+    volumes:
+      - '.:/srv/jekyll'
+    ports:
+      - 4000:4000
+    command: 'jekyll serve'
