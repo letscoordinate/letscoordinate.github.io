@@ -1,424 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
-    <script defer=true src="/assets/js/main.min.js"></script>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css">
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Favicon-->
-    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+<title>Let's Coordinate</title>
+<link rel="shortcut icon" href=/assets/img/favicon.ico>
 
-    <!-- Canonical -->
-    <link rel="canonical" href="http://localhost:4000/">
+<link rel="stylesheet" href="/assets/css/main.css">
 
-    <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" title="Let's Coordinate" href="http://localhost:4000/feed.xml"/>
-
-    <!-- Font Awesome -->
-    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/font-awesome.min.css">
-    
-    
-
-    <!-- Google Fonts -->
-    
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css"> 
-    
-
-    <!-- KaTeX 0.8.3 -->
-    
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/katex.min.css">
-    <script src="/assets/js/vendor/katex.min.js">
-    </script>
-    
-
-    <!-- Google Analytics -->
-    
-    
-    <!-- seo tags -->
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Let’s Coordinate | A platform to enable TSOs and RSCs to coordinate</title>
-<meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Let’s Coordinate" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="A platform to enable TSOs and RSCs to coordinate" />
-<meta property="og:description" content="A platform to enable TSOs and RSCs to coordinate" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="Let’s Coordinate" />
-<link rel="next" href="http://localhost:4000/blog/page2" />
-<script type="application/ld+json">
-{"name":"Let’s Coordinate","description":"A platform to enable TSOs and RSCs to coordinate","@type":"WebSite","url":"http://localhost:4000/","headline":"Let’s Coordinate","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <!-- Manual seo tags -->
-    <!--
-    <title> Let's Coordinate</title>
-    <meta name="description" content="">
-    -->
 </head>
+<body>
+<div>
+    <!-- Adapted from https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de -->
 
-  <body>
-    <header class="site-header">
-    
-    <!-- Logo and title -->
-	<div class="branding">
-		<a href="/">
-			<img alt="logo img" class="avatar" src="/assets/img/triangle.svg" alt="" />
-		</a>
+    <!-- TODO Handle active page -->
 
-		<h1 class="site-title">
-			<a alt="Let's Coordinate" href="/"> 
-        Let's Coordinate
-      </a>
-		</h1>
-	</div>
-    
-    <!-- Toggle menu -->
-    <nav class="clear">
-    <a name="pull" id="pull" class="toggle" href="#">
-    <i class="fa fa-bars fa-lg"></i>
-    </a>
-    
-    <!-- Menu -->
-    <ul class="hide">
-        <!-- Auto Generation of NORMAL pages in the navbar -->
-        
-        
-        
-        
-        
-        
-        
-        <li class="separator"> | </li>
-        <li>
-            <a class="clear" name="About" 
-               href="/about/">
-                About
-            </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-        <li class="separator"> | </li>
-        <li>
-            <a class="clear" name="Functional Design" 
-               href="/functional-design/">
-                Functional Design
-            </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <li class="separator"> | </li>
-        <li>
-            <a class="clear" name="Projects" 
-               href="/portfolio/">
-                Projects
-            </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <li class="separator"> | </li>
-        <li>
-            <a class="clear" name="Technical Design" 
-               href="/technical-design/">
-                Technical Design
-            </a>
-        </li>
-        
-        
-        
-        
-        
-         
-        
-        <!-- Auto Generation of SPECIAL pages in the navbar -->
-        
-          
-            <li class="separator"> | </li>
-            <li>
-              <a class="clear" href="/search" name="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </a>
-            </li>
-          
-        
-          
-            <li class="separator"> | </li>
-            <li>
-              <a class="clear" href="/tags" name="tags">
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              </a>
-            </li>
-          
-        
-    </ul>
-        
-	</nav>
-</header>
-
-    <div class="content">
-      <div class="home">
-  
-  <div id="main" class="call-out"
-  style="background-image: url('/assets/img/pexels/triangular.jpeg')">
-    <h1> A platform made to enable<br/>TSOs and RSCs to coordinate </h1>
-  </div>
-  
-
-  <div class="posts">
-    
-    <div class="post-teaser">
-        
-        <span>
-          <header>
-            <h1>
-              <a alt="Sample post" class="post-link" href="/2014/11/30/sample-post.html">
-                Sample post
-              </a>
-            </h1>
-            <p class="meta">
-              November 30, 2014
-            </p>
-          </header>
-          <div class="excerpt">
-              Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. 
-Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.
-
-
-          </div>
-      </span>
-    </div>
-    
-    <div class="post-teaser">
-        
-        <div class="post-img">
-            <img alt="Feature images" src="/assets/img/thumbnails/desk-messy.jpeg">
-        </div>
-        
-        <span>
-          <header>
-            <h1>
-              <a alt="Feature images" class="post-link" href="/2014/11/29/feature-images.html">
-                Feature images
-              </a>
-            </h1>
-            <p class="meta">
-              November 29, 2014
-            </p>
-          </header>
-          <div class="excerpt">
-              This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.
-
-          </div>
-      </span>
-    </div>
-    
-    <div class="post-teaser">
-        
-        <span>
-          <header>
-            <h1>
-              <a alt="Markdown and HTML" class="post-link" href="/2014/11/28/markdown-and-html.html">
-                Markdown and HTML
-              </a>
-            </h1>
-            <p class="meta">
-              November 28, 2014
-            </p>
-          </header>
-          <div class="excerpt">
-              Jekyll supports the use of Markdown with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.
-
-
-          </div>
-      </span>
-    </div>
-    
-    <div class="post-teaser">
-        
-        <span>
-          <header>
-            <h1>
-              <a alt="What's your title" class="post-link" href="/2014/11/27/whats-your-title.html">
-                What's your title
-              </a>
-            </h1>
-            <p class="meta">
-              November 27, 2014
-            </p>
-          </header>
-          <div class="excerpt">
-              This is an example of a post which includes a feature image that has a
-text, where you don’t want to redisplay the title.
-We cannot simply set the title to the empty string, as that would
-break pages that list this post, such as home and tags.
-
-
-          </div>
-      </span>
-    </div>
-    
-    <div class="post-teaser">
-        
-        <span>
-          <header>
-            <h1>
-              <a alt="Markup: Syntax Highlighting" class="post-link" href="/2014/08/08/Markup-Syntax-Highlighting.html">
-                Markup: Syntax Highlighting
-              </a>
-            </h1>
-            <p class="meta">
-              August 8, 2014
-            </p>
-          </header>
-          <div class="excerpt">
-              From Michael’s Rose Minimal Mistakes.
-Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.
-
-
-          </div>
-      </span>
-    </div>
-    
-</div>
-
-
-<div class="pagination" style="display: inline-block;">
-    <div style="position: absolute; left: 35%;">
-    
-    </div>            
-    
-    <!-- Centering not working well on all format
-    <div style="position: absolute; left: 50%;">
-        <div style="position: relative; left: -50%;">
-        1 / 2
-        </div>    
-    </div> -->     
-
-    <div style="position: absolute; right: 35%;">
-    
-        <!-- next > -->
-        <a alt="Next" 
-           href="/blog/page2"  class="button">
-          Next
-          <i class="fa fa-chevron-right"></i>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img alt="logo img" class="avatar" src="/assets/img/letsco-logo.png" alt=""/>
         </a>
-        <!-- >> -->
-        
-    
-    </div>     
-</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-    
-</div>
-
-    </div>
-    
-<footer class="site-footer">
-    <p class="text">Developed by RTE for the Linux Fundation</p>
-            <div class="footer-icons">
-                <ul>
-                <!-- Social icons from Font Awesome, if enabled -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
                 
-<li>
-	<a href="http://localhost:4000/feed.xml" title="Follow RSS feed">
-		<span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/getting_started/">Getting Started</a></li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=Documentation role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby=Documentation>
+                        
+                        <a class="dropdown-item" href="/documentation/current/architecture/">Architecture</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/reference_doc/">Reference documentation</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/deployment/">Deployment</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/CICD/">CICD</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/dev_env/">Development Environment</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=APIs role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">APIs</a>
+                    <div class="dropdown-menu" aria-labelledby=APIs>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/actions/">Actions</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/cards/">Cards</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/thirds/">Thirds</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/api/users/">Users</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/community/">Community</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/pages/roadmap.html">Roadmap</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/pages/releases.html">Releases</a></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container-lg px-3 my-5 markdown-body">
+    <h1 id="a-smart-assistant-for-system-operators">A Smart Assistant For System Operators</h1>
+
+<p>Let’s Coordinate is a modular, extensible, industrial-strength and field-tested
+platform for use in electricity, water, and other utility operations.</p>
+
+<ul>
+  <li>System visualization and console integration</li>
+  <li>Precise alerting</li>
+  <li>Workflow scheduling (*)</li>
+  <li>Historian</li>
+  <li>Scripting (ex: Python, JavaScript)</li>
+</ul>
+
+<p><em>* This feature could be addressed either as an internal module or through simplified and standardized (BPMN) 
+integration with external workflow engines, we’re still weighing the pros and cons of the two options.</em></p>
+
+<p>It is an open source project initiated by <a href="http://www.rte-france.com/">RTE</a>
+with <a href="https://www.lfenergy.org/">LF Energy</a>.</p>
+
+<h1 id="what-does-it-do">What does it do?</h1>
+
+<p>To perform their duties, an operator has to interact with multiple applications
+(perform actions, watch for alerts, etc.), which can prove difficult if
+there are too many of them.</p>
+
+<p>The idea is to aggregate all the notifications from all these applications
+into a single screen, and to allow the operator to act on them if needed.</p>
+
+<p><img src="/assets/img/of_screenshots/feed_screenshot.png" alt="Feed screen layout" class="img-fluid" /></p>
+
+<p>These notifications are materialized by <em>cards</em> sorted in a <em>feed</em> according
+to their period of relevance and their severity.
+When a card is selected in the feed, the right-hand pane displays the <em>details</em>
+of the card: information about the state of the parent process instance in
+the third-party application that published it, available actions, etc.</p>
+
+<p>In addition, the cards will also translate as events displayed on a <em>timeline</em>
+(its design is still under discussion) at the top of the screen.
+This view will be complimentary to the card feed in that it will allow the
+operator to see at a glance the status of processes for a given period,
+when the feed is more like a “To Do” list.</p>
+
+<p>Part of the value of Let’s Coordinate is that it makes the integration very
+simple on the part of the third-party applications.
+To start publishing cards to users in an Let’s Coordinate instance, all they
+have to do is:</p>
+
+<ul>
+  <li>Register as a publisher through the “Thirds” service and provide a “bundle”
+containing handlebars templates defining how cards should be rendered,
+i18n info etc.</li>
+  <li>Publish cards as json containing card data through the card publication API</li>
+</ul>
+
+<p>Let’s Coordinate will then:</p>
+
+<ul>
+  <li>Dispatch the cards to the appropriate users (by computing the actual users
+who should receive the card from the recipients rules defined in the card)</li>
+  <li>Take care of the rendering of the cards, displaying details, actions,
+inputs etc.</li>
+  <li>Display relevant information from the cards in the timeline</li>
+</ul>
+
+<p>Another aim of Let’s Coordinate is to make cooperation easier by letting
+operators forward or send cards to other operators, for example:</p>
+
+<ul>
+  <li>If they need an input from another operator</li>
+  <li>If they can’t handle a given card for lack of time or because the necessary
+action is out of their scope</li>
+</ul>
+
+<p>This will replace phone calls or emails, making cooperation more efficient
+and traceable.</p>
+
+<p>For instance, operators might be interested in knowing why a given decision
+was made in the past:
+the cards detailing the decision process steps will be accessible through
+the Archives screen, showing how the
+operators reached this agreement.</p>
+
+<h1 id="open-source">Open source</h1>
+
+<p>Let’s Coordinate is part of the <a href="https://www.lfenergy.org/">LF Energy</a> coalition, a project of The Linux Foundation that supports open source innovation projects within the energy and electricity sectors.</p>
+
+<p>Let’s Coordinate is an open source platform licensed under <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License V2</a>. 
+The source code is hosted on GitHub in this repository : <a href="https://github.com/letscoordinate/letscoordinate-core">letscoordinate-core</a>.</p>
+
+<h1 id="technology-stack">Technology stack</h1>
+
+<h2 id="development">Development</h2>
+<p>Let’s Coordinate is mostly written in Java and based on the Spring framework. This makes writing and integrating software for a simplified and better coordination very easy.</p>
+
+<p><a href=""><img src="https://img.shields.io/badge/Using-Java-%237473C0.svg?style=for-the-badge" alt="Using Java" /></a> 
+<a href="https://spring.io/"><img src="https://img.shields.io/badge/Using-Spring-%236db33f.svg?style=for-the-badge" alt="Using Spring" /></a> 
+<a href="https://angular.io/"><img src="https://img.shields.io/badge/Using-Angular-%237473C0.svg?style=for-the-badge" alt="Using Angular" /></a>
+<a href="https://swagger.io/"><img src="https://img.shields.io/badge/Using-Swagger-%237473C0.svg?style=for-the-badge" alt="Using Swagger" /></a></p>
+
+<h2 id="continuous-integration--continuous-delivery">Continuous Integration / Continuous Delivery</h2>
+<p>Let’s Coordinate is built and integrated using battle-tested tools and (open) platforms.</p>
+
+<p><a href="https://gradle.org/"><img src="https://img.shields.io/badge/Built%20with-Gradle-%23410099.svg?style=for-the-badge" alt="Built with Gradle" /></a>
+<a href="https://travis-ci.org/letscoordinate/letscoordinate-core"><img src="https://img.shields.io/badge/Using-Travis%20CI-%23FF647D.svg?style=for-the-badge" alt="Using Travis CI" /></a>
+<a href="https://sonarcloud.io/dashboard?id=org.lfenergy.letscoordinate%3Aletscoordinate-core"><img src="https://img.shields.io/badge/Using-SonarCloud-%23FF647D.svg?style=for-the-badge" alt="Using SonarCloud" /></a></p>
+
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li>
-	<a href="https://github.com/samichehade" title="Follow on GitHub">
-		<span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </ul>
-            </div>
+<footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2020 <a href="http://www.rte-france.com/en">RTE</a>
+</p>
 </footer>
 
 
 
+<!-- Needed by bootstrap javascript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-  </body>
+<script src="/assets/js/bootstrap/bootstrap.js"></script>
+
+</body>
 </html>
