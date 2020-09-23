@@ -1,0 +1,1338 @@
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      "verb": "created",
+      "noun": "ServiceA_CalculationResults",
+      "timestamp": "2020-03-17T12:32:19Z",
+      "source": "SERVICE_A",
+      "messageId": "b071aa50097f49f1bd69e82a070084b6",
+      "properties": {
+        "format": "JSON",
+        "businessDataIdentifier": {
+          "messageType": "101",
+          "messageTypeName": "ServiceA_NotificationB",
+          "businessDayFrom": "2020-01-10T23:00:00Z",
+          "businessDayTo": "2020-01-17T23:00:00Z",
+          "sendingUser": "10XCH-SWISSGRIDC",
+          "processStep": "INITIAL_RUN",
+          "timeframe": "W",
+          "timeframeNumber": 24,
+          "recipients": [
+            "10XBA-JPCCZEKC-K",
+            "10XAL-KESH-----J"
+          ],
+          "coordinationStatus": "CON"
+        }
+      }
+    },
+    "payload": {
+      "timeserie": [
+        {
+          "name": "ResultsC",
+          "data": [
+            {
+              "timestamp": "2020-03-01T00:00:00Z",
+              "detail": [
+                {
+                  "id": "1",
+                  "label": "Contingency-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line A"
+                },
+                {
+                  "id": "1",
+                  "label": "Constraint-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Line B"
+                },
+                {
+                  "id": "1",
+                  "label": "Loading-1",
+                  "value": "103"
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV",
+                  "accept": 1,
+                  "reject": 0,
+                  "comment": "ok for us"
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "1",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Zwen",
+                  "accept": 0,
+                  "reject": 1,
+                  "explanation": "Not available "
+                },
+                {
+                  "id": "1",
+                  "label": "PRALoading",
+                  "value": "101"
+                },
+                {
+                  "id": "1",
+                  "label": "CRALoading",
+                  "value": "93"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T08:00:00Z",
+              "detail": [
+                {
+                  "id": "1",
+                  "label": "Contingency-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line A"
+                },
+                {
+                  "id": "1",
+                  "label": "Constraint-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Line B"
+                },
+                {
+                  "id": "1",
+                  "label": "Loading-1",
+                  "value": "110"
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "1",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Zwen",
+                  "accept": 0,
+                  "reject": 1,
+                  "explanation": "Not available "
+                },
+                {
+                  "id": "1",
+                  "label": "PRALoading",
+                  "value": "105"
+                },
+                {
+                  "id": "1",
+                  "label": "CRALoading",
+                  "value": "99"
+                },
+                {
+                  "id": "3",
+                  "label": "Constraint-2",
+                  "value": "Transformer R"
+                },
+                {
+                  "id": "3",
+                  "label": "Loading-1",
+                  "value": "109"
+                },
+                {
+                  "id": "3",
+                  "label": "Loading-2",
+                  "value": "107"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T04:00:00Z",
+              "detail": [
+                {
+                  "id": "2",
+                  "label": "Contingency-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line F"
+                },
+                {
+                  "id": "2",
+                  "label": "Constraint-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line G"
+                },
+                {
+                  "id": "2",
+                  "label": "Loading-1",
+                  "value": "108"
+                },
+                {
+                  "id": "2",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Line C",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "2",
+                  "label": "PRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Zwen",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "2",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2 nodes in Nis 380kV",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "2",
+                  "label": "CRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "2 nodes in Ensdorf 380kV",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "2",
+                  "label": "PRALoading",
+                  "value": "106"
+                },
+                {
+                  "id": "2",
+                  "label": "CRALoading",
+                  "value": "92"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T07:00:00Z",
+              "detail": [
+                {
+                  "id": "3",
+                  "label": "Contingency-1",
+                  "value": "Line J"
+                },
+                {
+                  "id": "3",
+                  "label": "Constraint-1",
+                  "value": "Line K"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T09:00:00Z",
+              "detail": [
+                {
+                  "id": "3",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Line Z",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "3",
+                  "label": "PRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Romsac",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "id": "3",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2 nodes in Nis 380kV",
+                  "accept": 0,
+                  "reject": 1,
+                  "explanation": "Impossible to implement",
+                  "comment": "Maybe 3 nodes ?"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T10:00:00Z",
+              "detail": [
+                {
+                  "id": "3",
+                  "label": "CRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "2 nodes in Ensdorf 380kV",
+                  "accept": 0,
+                  "reject": 1,
+                  "explanation": "Not available "
+                },
+                {
+                  "id": "3",
+                  "label": "PRALoading",
+                  "value": "108"
+                },
+                {
+                  "id": "3",
+                  "label": "CRALoading",
+                  "value": "106"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ResultD",
+          "data": [
+            {
+              "timestamp": "2020-03-01T00:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2500",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2500",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3138",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3138",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T01:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3356",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3356",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1807",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1807",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T02:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1944",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1944",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2691",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2691",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T03:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4948",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4948",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2612",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2612",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T04:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2141",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2141",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1492",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1492",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T05:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3809",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3809",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2134",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2134",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T06:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3392",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3392",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4317",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4317",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T07:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4617",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4617",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5639",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5639",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T08:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5942",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5942",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5584",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5584",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T09:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1800",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1800",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5822",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5822",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T10:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4671",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4671",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1073",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1073",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T11:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1802",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1802",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3514",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3514",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T12:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2568",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2568",
+                  "accept": 0,
+                  "reject": 1,
+                  "explanation": "500",
+                  "comment": "Too high value"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5707",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5707",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T13:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3226",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3226",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3340",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3340",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T14:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4189",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4189",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3656",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3656",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T15:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4097",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4097",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3815",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3815",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T16:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2809",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2809",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5100",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5100",
+                  "accept": 0,
+                  "reject": 1,
+                  "explanation": "1500",
+                  "comment": "Have to decrease border exchange"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T17:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3471",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3471",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5749",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5749",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T18:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5668",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5668",
+                  "accept": 0,
+                  "reject": 1,
+                  "explanation": "2000",
+                  "comment": "NTC reduction required by BA"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5242",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5242",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T19:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5745",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5745",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5210",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5210",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T20:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4843",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4843",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2118",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2118",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T21:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2181",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2181",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5961",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5961",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T22:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5929",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5929",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2757",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2757",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T23:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5204",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5204",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3019",
+                  "accept": 1,
+                  "reject": 0
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3019",
+                  "accept": 1,
+                  "reject": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
