@@ -6,7 +6,7 @@
 * Java 8
 * Docker
 * Linux (*Tested on Ubuntu v18.04 and Fedora 29*)
-* Having Operator Fabric running (*https://opfab.github.io/documentation/current/getting_started/*)
+* Having Operator Fabric running ([https://opfab.github.io/documentation/current/getting_started/](https://opfab.github.io/documentation/current/getting_started/))
 
 ## Run Let's Co
 
@@ -28,7 +28,7 @@ This will create a new group, a new entity, and a new user associated to this gr
 
 *2. Add the user to keycloak*
 
-- On your browser, go to the keycloak admin url: http://localhost:89/auth/
+- On your browser, go to the keycloak admin url: [http://localhost:89/auth/](http://localhost:89/auth/)
 - Click on *Administration console*
 - Connect using the following credentials: **user** *admin*, **password** *admin*
 - In the left menu, go to *Users*
@@ -39,14 +39,14 @@ This will create a new group, a new entity, and a new user associated to this gr
 
 #### Send a new notification
 
-- Go to the following url: http://localhost:8082/swagger-ui.html
+- Go to the following url: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
 - Click on *kafka-producer-controller*
 - Click on *POST /letsco/data-provider/v1/kafka/json/raw-msg*
 - Click on *Try it out*
 - Put in the data body value the content of the file *messages_models/jsons/Anonymised_JSONs/MessageValidated_NEGATIVE_ACK_v0.2_oneline.json*
 - Click on *Execute*
 
-If you connect to OpFab (http://localhost:2002/ui/) with the user previously created in Keycloak, you should see the new card in the Feed.
+If you connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/)) with the user previously created in Keycloak, you should see the new card in the Feed.
 
 
 ## Stop the application
