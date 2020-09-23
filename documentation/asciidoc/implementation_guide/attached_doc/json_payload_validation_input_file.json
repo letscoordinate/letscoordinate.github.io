@@ -1,0 +1,88 @@
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      "verb": "created",
+      "noun": "ServiceA_CalculationResults",
+      "timestamp": "2020-03-17T12:32:19Z",
+      "source": "SERVICE_A",
+      "messageId": "b071aa50097f49f1bd69e82a070084b6",
+      "properties": {
+        "format": "JSON",
+        "businessDataIdentifier": {
+          "messageType": "101",
+          "messageTypeName": "ServiceA_NotificationA",
+          "businessDayFrom": "2020-01-10T23:00:00Z",
+          "businessDayTo": "2020-01-17T23:00:00Z",
+          "sendingUser": "10XCH-SWISSGRIDC",
+          "processStep": "INITIAL_RUN",
+          "timeframe": "W",
+          "timeframeNumber": 24,
+		  "fileName": "20200317_1230_SERVICEA_CH.xlsx",
+          "tso": "10XCH-SWISSGRIDC",
+          "biddingZone": "10YCH-SWISSGRIDZ"
+          "recipients": [
+            "10XBA-JPCCZEKC-K",
+            "10XAL-KESH-----J"
+          ]
+        }
+      }
+    },
+    "payload": {
+      "messageId": "5e567fa677982301215900a6",
+      "validation": {                                     // validation details sample
+        "validationType": "BUSINESS",
+        "status": "ACCEPTED",
+        "result": "ERROR",
+        "validationMessages": [
+          {
+            "code": "ServiceA_Error_01",
+            "severity": "ERROR",
+            "title": "Rule_A_Violated",
+            "message": "Application check: Error 01 detected in input file",
+            "timestamp": "2020-02-26T14:24:38.825Z",
+            "sourceDataRef": {
+              "relatedPeriodStartId": 3247,
+              "relatedElement": "timeseries",
+              "relatedPeriodEndId": 3856,
+              "relatedTimeseriesId": "Timeseries_12345"
+            }
+          },
+          {
+            "code": "ServiceA_Error_02",
+            "severity": "ERROR",
+            "title": "Rule_B_Violated",
+            "message": "Application check: Error 02 detected in input file",
+            "timestamp": "2020-02-26T14:24:46.885Z",
+            "sourceDataRef": {
+              "relatedElement": "header"
+            }
+          },
+          {
+            "code": "ServiceA_Warning_01",
+            "severity": "WARNING",
+            "title": "Rule_C_Violated",
+            "message": "Application check: Warning 01 detected in input file",
+            "timestamp": "2020-02-26T14:24:47.792Z",
+            "sourceDataRef": {
+              "relatedElement": "header"
+            }
+          },
+          {
+            "code": "ServiceA_Warning_02",
+            "severity": "WARNING",
+            "title": "Rule_D_Violated",
+            "message": "Application check: Warning 02 detected in input file",
+            "timestamp": "2020-02-26T14:25:23.591Z",
+            "sourceDataRef": {
+              "relatedPeriodStartId": 897,
+              "relatedElement": "timeseries",
+              "relatedPeriodEndId": 928,
+              "relatedTimeseriesId": "Timeseries_45678"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
