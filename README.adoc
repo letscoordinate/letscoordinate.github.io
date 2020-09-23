@@ -18,7 +18,7 @@ The first time, this can take a while as all the necessary gems are downloaded. 
 process using the docker logs command:
 
 ----
-docker logs letscoordinate_website
+docker logs -f letsco_website
 ----
 
 NOTE: You can either run this command every time you want latest logs or use the --follow options for the logs to
@@ -28,15 +28,15 @@ After a while, you should see the following content in the logs
 
 ----
 Configuration file: /srv/jekyll/_config.yml
-Source: /srv/jekyll
-Destination: /srv/jekyll/_site
-Incremental build: disabled. Enable with --incremental
-Generating...
-Jekyll Feed: Generating feed for posts
-done in 5.191 seconds.
-Auto-regeneration: enabled for '/srv/jekyll'
-Server address: http://0.0.0.0:4000/
-Server running... press ctrl-c to stop.
+            Source: /srv/jekyll
+       Destination: /srv/jekyll/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+       Jekyll Feed: Generating feed for posts
+                    done in 3.357 seconds.
+ Auto-regeneration: enabled for '/srv/jekyll'
+    Server address: http://0.0.0.0:4000/
+  Server running... press ctrl-c to stop.
 ----
 
 You should then be able to see the website at the following URL : http://localhost:4000.
@@ -58,6 +58,3 @@ IMPORTANT: The behaviour regarding changes is just the same as with a regular `j
 website source files will be taken into account on the fly but changes to the config.yml file for example will require
 a restart.
 
-
-//TODO Test it from behind a proxy
-//TODO Test gem caching ?

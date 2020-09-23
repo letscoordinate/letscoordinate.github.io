@@ -3,7 +3,7 @@
 version: '3'
 services:
   jekyll-serve:
-    container_name: letsco-doc
+    container_name: letsco_website
     image: jekyll/jekyll:4.0
     volumes:
       - '.:/srv/jekyll'

@@ -72,8 +72,8 @@
   <li>Maven</li>
   <li>Java 8</li>
   <li>Docker</li>
-  <li>Linux (<em>we personally use Ubuntu v18.04</em>)</li>
-  <li>Having Operator Fabric running (<em>https://opfab.github.io/documentation/current/dev_env/</em>)</li>
+  <li>Linux (<em>Tested on Ubuntu v18.04 and Fedora 29</em>)</li>
+  <li>Having Operator Fabric running (<a href="https://opfab.github.io/documentation/current/getting_started/">https://opfab.github.io/documentation/current/getting_started/</a>)</li>
 </ul>
 
 <h2 id="run-lets-co">Run Let’s Co</h2>
@@ -97,7 +97,7 @@
 <p><em>2. Add the user to keycloak</em></p>
 
 <ul>
-  <li>On your browser, go to the keycloak admin url: http://localhost:89/auth/</li>
+  <li>On your browser, go to the keycloak admin url: <a href="http://localhost:89/auth/">http://localhost:89/auth/</a></li>
   <li>Click on <em>Administration console</em></li>
   <li>Connect using the following credentials: <strong>user</strong> <em>admin</em>, <strong>password</strong> <em>admin</em></li>
   <li>In the left menu, go to <em>Users</em></li>
@@ -110,7 +110,7 @@
 <h4 id="send-a-new-notification">Send a new notification</h4>
 
 <ul>
-  <li>Go to the following url: http://localhost:8082/swagger-ui.html</li>
+  <li>Go to the following url: <a href="http://localhost:8082/swagger-ui.html">http://localhost:8082/swagger-ui.html</a></li>
   <li>Click on <em>kafka-producer-controller</em></li>
   <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
   <li>Click on <em>Try it out</em></li>
@@ -118,7 +118,7 @@
   <li>Click on <em>Execute</em></li>
 </ul>
 
-<p>If you connect to OpFab (http://localhost:2002/ui/) with the user previously created in Keycloak, you should see the new card in the Feed.</p>
+<p>If you connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak, you should see the new card in the Feed.</p>
 
 <h2 id="stop-the-application">Stop the application</h2>
 
