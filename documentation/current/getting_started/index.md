@@ -5,8 +5,8 @@
 * Maven
 * Java 8
 * Docker
-* Linux (*we personally use Ubuntu v18.04*)
-* Having Operator Fabric running (*https://opfab.github.io/documentation/current/dev_env/*)
+* Linux (*Tested on Ubuntu v18.04 and Fedora 29*)
+* Having Operator Fabric running (*https://opfab.github.io/documentation/current/getting_started/*)
 
 ## Run Let's Co
 
