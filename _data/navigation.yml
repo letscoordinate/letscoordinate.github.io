@@ -1,0 +1,12 @@
+- title: Home
+  url: /
+
+- title: Getting Started
+  url: /documentation/current/getting_started/
+
+- title: Documentation
+  sublinks:
+    - title: User manual
+      url: /documentation/current/user_manual/
+    - title: Implementation guide
+      url: /documentation/current/implementation_guide/

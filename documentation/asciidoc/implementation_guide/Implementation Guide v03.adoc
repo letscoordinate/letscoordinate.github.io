@@ -1,0 +1,1208 @@
+// Copyright (c) 2018-2020 RTE (http://www.rte-france.com)
+// Copyright (c) 2019-2020 RTE international (http://www.rte-international.com)
+// See AUTHORS.txt
+// This document is subject to the terms of the Creative Commons Attribution 4.0 International license.
+// If a copy of the license was not distributed with this
+// file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.
+// SPDX-License-Identifier: CC-BY-4.0
+
+:toc: left
+:sectnums:
+:imagesdir: ../../asciidoc/images
+:attached_docdir: ../../asciidoc/implementation_guide/attached_doc
+:!last-update-label:
+
+= Let's Coordinate - Implementation guide for Input and Output data
+
+
+== Introduction
+=== Purpose of the document
+
+The objective of this Implementation Guide (IG) is to describe the format of input and output files to be used when dealing with Let’s Coordinate application. This can help developers to prepare input and output files adapted to a business tool that Let’s Coordinate will support for any RSC services. The implementation guide is one of the building blocks for using UML (Unified Modelling Language) based techniques in defining processes and messages for exchange between actors in the electrical industry in Europe. The implementation guide is developed for the harmonization of the underlying data exchange
+
+=== Normative reference documentation
+
+The following documents, in whole or in part, are normatively referenced in this document and are indispensable for its application. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies:
+
+* **IEC 61968-100 IEC** : 2018 Application integration at electric utilities – System interfaces for distribution management
+
+* **ISO 8601:2014** : Data elements and interchange formats – Information interchange – Representation of dates and times
+
+* **RFC4122** : A Universally Unique IDentifier (UUID) URN Namespace Available from http://www.rfc-base.org/rfc-4122.html.
+
+
+== Let's Coordinate business process
+=== Process overview
+
+image::Process_Overview.png[Process Overview]
+
+NOTE: **DCC** = **D**istributed **C**ommunication **C**omponent as Kakfa, FTP server etc…
+
+
+=== Use cases
+
+image::Uses_Cases.png[Uses Cases]
+
+
+This table gives a list of actors involved in Let’s Coordinate data exchange:
+
+|====
+|**Actor Label** 	|**Actor Description**
+|Let’s Coordinate application	|Software to display some notifications and RSC KPIs
+|Business tool	|Tool which will be supported by Let’s Coordinate for its operational communication and business cases validation/coordination
+|Distributed Communication
+Component (DCC)	|Shared component between Let’s Coordinate and other business tool
+|User	|User of Let’s Coordinate (RSC or TSO)
+|RSC KPIs storage	|Database of RSC KPIs
+|Notification Storage	|Database of notification
+|Notification actions Storage	|Database of actions done within the notification
+|Feed screen	|Screen where notifications arrive
+|Archive screen	|Screen where all notifications can be retrieved from notification database
+|RSC KPIs screens	|All screens referring to RSC KPIs
+|Monitoring and Logging screens	|All screens referring to notifications actions
+|====
+
+
+
+This table gives a list of use cases for Let's Coordinate data exchange:
+
+
+[cols=3]
+|===
+|**Use case Label**
+|**Actor Involved**
+|**Actions description and assertions**
+|Provides input data information to DCC	Business tool
+|DCC / Business tool
+|provides input file to DCC
+|Retrieves input data information from DCC
+|DCC / Let’s Coordinate
+|Let’s Coordinate retrieves input files from DCC
+|Emits a notification
+|Let’s Coordinate / Notification Recipient
+|Based on the format described in this IG, Let’s Coordinate will map the input file with correlated templates to display information from the input file as a notification (informative or SMART)
+|Consults a notification
+|User / Feed screen / Archives screen
+|User is able to consult notification from different screens: Feed and/or Archives
+|Records notifications
+|Let’s Coordinate / Notification Storage
+|Notifications are stored in a database
+|Updates RSC KPIs information
+|Let’s Coordinate
+|Based on the format described in this IG, Let’s Coordinate will update the RSC KPIs database with information received from input file
+|Consults RSC KPIs
+|User / RSC KPIs screens / RSC KPIs storage
+|User is able to consult RSC KPIs from KPIs DB in the dedicated RSC KPIs screens
+|Exports RSC KPIs
+|User / RSC KPIs screens / RSC KPIs storage
+|User is able to export the RSC KPIs in xlsx or pdf format from RSC KPIs screens
+|Acknowledges notifications
+|User
+|User is able to acknowledge informative notification
+|Acts on the notifications
+|User
+|User is able to act (accept/reject/add comments) in SMART notification
+|Records notification actions
+|Let’s Coordinate / Notification actions Storage
+|Actions done by user in the notification are stored in a database
+|Consults Monitoring and/or Logging screens
+| Monitoring / Logging screens / User / Notification actions storage
+|User is able to consults Monitoring and logging information in the dedicated screens
+|Send output data information to DCC
+|Let’s Coordinate / DCC
+|T-COO is able to export output data to DCC after validation/coordination
+|Retrieves output data information from DCC
+|Business tool / Let’s Coordinate
+|Business tool is able to retrieve output date file from DCC
+|===
+
+
+== Input data format
+
+Input data format is the same format for Informative and SMART notifications.
+The only difference are linked to the data user wants to provide (text, RSC KPI, timseries...).
+
+Two formats are proposed for input data:
+
+* XLSX, Office Open XML worksheet sheet (OOXML), ECMA-376 standard file format, Microsoft Excel XML (2007+) file format
+* JSON, JavaScript Object Notation, ISO/IEC 21778:2017 open standard file format (only encoded in UTF-8 and Unix Line Feed)
+
+NOTE:
+
+* M => Mandatory & this field is mandatory for XLSX and JSON files.
+* O => Optional & this field is optional for XLSX and JSON files
+* M(JSON) or O(JSON) => to be used only for JSON files
+* M(XLSX) or O(XLSX) => to be used only for XLSX files
+
+=== Document header part
+
+
+[cols=5]
+[options="header",width="100%",align="center",cols="^,^,^,^,^"]
+|===
+|**Attributes**
+|**Mandatory / Optional**
+|**Values**
+|**Type**
+|**Description**
+|**eventMessage	**
+|M (JSON)
+|-
+|Map
+|Message description
+|**xmlns**
+|M (JSON)
+|http://iec.ch/TC57/2011/schema/message
+|String
+|Name space
+|**header**
+|M (JSON)
+|-
+|Map
+|Header part of the file
+.7+^.^|**verb**
+.7+^.^|M
+|-
+|-
+|The <verb> shall specify the semantics of the message and the interpretation of the data supplied in the <payload> element.
+|created
+|Enumeration
+|Used to publish a notification of the instantiation of one or more objects.
+|canceled
+|Enumeration
+|Used to publish a notification that one or more actions have been aborted.
+|changed
+|Enumeration
+|Used to publish a notification that one or more objects have been replaced.
+|deleted
+|Enumeration
+|Used to publish a notification that an object has been deleted.
+|executed
+|Enumeration
+|Used to publish a notification that the execution of a complex transaction that uses the <payload> element has taken place.
+|updated
+|Enumeration
+|Used to publish a notification that one or more objects have been modified.
+|**noun	**
+|M
+|NotificationCategory
+|String
+|Category of notification. The <noun> shall specify the semantics of the message and the interpretation of the data supplied in the <payload> element.
+|**timestamp**
+|M
+|2020-03-18T09:34:08Z
+|DateTime
+|Creation date and hour of the input file : This element shall indicate when the message was produced. (It is not the time the message was transmitted because the actual send may occur later due to transactions or other client side queueing of messages).
+The timestamp shall conform to ISO 8601. It shall include either the letter “Z” to denote UTC or an explicit timezone offset.
+|**source**
+|M
+|ProcessName
+|string
+|Name of the service or process : This element shall be used to identify the origin of the informational content.
+The values assigned to this element are non-normative and have meaning only within the local organisation.
+|**messageId**
+|M
+|d18d3733d7884d798cadc2ecf30bef0b
+|UUID
+|Unique ID of the message : This element shall be a 128-bit universally unique identifier (UUID) generated according to RFC 4122. It has no normative meaning other than to provide a unique identifier for the message. This element together with the <timestamp> element is useful for tracing or logging messages as they are processed by the requesting, responding or other systems.
+|**properties**
+|M (JSON)
+|-
+|Map
+|Message properties : This element consists of a set of name/value pairs that may be used to customize the system behaviour in ways going beyond those defined by this International Standard. This may be used to provide some implementation-specific functionality.
+The values assigned to these elements are non-normative and have meaning only within the local implementation.
+|**format**
+|M (JSON)
+|JSON
+|String
+|Format of the message
+|**businessDataIdentifier**
+|M (JSON)
+|-
+|Map
+|-
+|**messageType**
+|O
+|102
+|String
+|ID of the message
+|**messageTypeName**
+|M
+|ProcessNotificationTypeA
+|String
+|Name of the message
+|**businessDayFrom**
+|M
+|2020-03-18T09:34:08Z
+|DateTime
+|Business period start date and time
+|**businessDayTo**
+|O
+|2020-03-19T09:34:08Z
+|DateTime
+|Business period end date and time / If this value is not provided, it will take the <businessDayFrom> value plus 24 hours.
+|**sendingUser**
+|O
+|10X-CHSWISSGRIDC
+|Alphanumeric
+|EIC code of sender of the message or input file (if different from tso)
+|**processStep**
+|O
+|1st Run
+|String
+|Name of the process step to distinguish different steps of the same process
+|**timeframe**
+|O
+|D-2, D-1, ID, W, M, Y
+|Alphanumeric
+|Timeframe of the message
+|**timeframeNumber**
+|O
+|3
+|String
+|If Timeframe is W, number of the week.
+
+If Timeframe is M, number of the month.
+
+If Timeframe is Y, number of the year.
+
+Empty for other ones.
+|**recipients**
+|O
+|10YCZ-CEPS-----N;10X-CHSWISSGRIDC
+|List<String>
+|EIC codes of specific recipient(s) for this notification. This field is optional if this information can be deducted from provided timeseries.
+5+|_Following lines are only used for Input data validation by ENTSO-E Acknowledgement_
+|**fileName**
+|M
+|Input_file_TSO.xml
+|String
+|Name of the file provided by TSO (or its RSC)
+|**tso**
+|M
+|10X-CHSWISSGRIDC
+|Alphanumeric
+|EIC code of owner of validated input file
+|**biddingZone**
+|O
+|10YCZ-CEPS-----N
+|Alphanumeric
+|EIC code of Bidding zone of validated input file
+|===
+
+Ex: Input file Header JSON (without input data validation)
+
+----
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      "verb": "created",
+      "noun": "ServiceA_CalculationResults",
+      "timestamp": "2020-03-17T12:32:19Z",
+      "source": "SERVICE_A",
+      "messageId": "b071aa50097f49f1bd69e82a070084b6",
+      "properties": {
+        "format": "JSON",
+        "businessDataIdentifier": {
+          "messageType": "101",
+          "messageTypeName": "ServiceA_NotificationA",
+          "businessDayFrom": "2020-01-10T23:00:00Z",
+          "businessDayTo": "2020-01-17T23:00:00Z",
+          "sendingUser": "10XCH-SWISSGRIDC",
+          "processStep": "INITIAL_RUN",
+          "timeframe": "W",
+          "timeframeNumber": 24,
+          "recipients": [
+            "10XBA-JPCCZEKC-K",
+            "10XAL-KESH-----J"
+          ]
+        }
+      }
+    },
+    "payload": {
+      …
+    }
+  }
+}
+----
+
+**Input file header JSON sample file (without input data validation):**
+
+link:attached_doc/json_header_input_file.json/[JSON header for input file sample]
+
+**Input file header XLSX sample file (without input data validation):**
+
+For more details, see the excel sample file: line 1 and 2 in
+link:attached_doc/excel_header_input_file.xlsx/[XLSX header for input file sample]
+
+
+Ex: Input file Header JSON (with input data validation)
+
+----
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      "verb": "created",
+      "noun": "ServiceA_CalculationResults",
+      "timestamp": "2020-03-17T12:32:19Z",
+      "source": "SERVICE_A",
+      "messageId": "b071aa50097f49f1bd69e82a070084b6",
+      "properties": {
+        "format": "JSON",
+        "businessDataIdentifier": {
+          "messageType": "101",
+          "messageTypeName": "ServiceA_NotificationA",
+          "businessDayFrom": "2020-01-10T23:00:00Z",
+          "businessDayTo": "2020-01-17T23:00:00Z",
+          "sendingUser": "10XCH-SWISSGRIDC",
+          "processStep": "INITIAL_RUN",
+          "timeframe": "W",
+          "timeframeNumber": 24,
+	        "fileName": "20200317_1230_SERVICEA_CH.xlsx",
+          "tso": "10XCH-SWISSGRIDC",
+          "biddingZone": "10YCH-SWISSGRIDZ"
+          "recipients": [
+            "10XBA-JPCCZEKC-K",
+            "10XAL-KESH-----J"
+          ]
+        }
+      }
+    },
+    "payload": {
+      ...
+    }
+  }
+}
+----
+
+**Input file header JSON sample file (with input data validation):**
+
+link:attached_doc/json_header_validation_input_file.json/[JSON header input file sample with input data validation]
+
+
+
+=== Payload part
+
+Payload can be customized by each message producer to fit with their need.
+In case user wants to provide one type of information (text, links, data…), this table presents the needed fields to support this with information if this field is mandatory or optional depending of the format of input file.
+
+
+
+[cols=5]
+[options="header",width="100%",align="center",cols="^,^,^,^,^"]
+|===
+|**Attributes**
+|**Mandatory / Optional**
+|**Values**
+|**Type**
+|**Description**
+|**payload**
+|M (JSON)
+|-
+|Map
+|The application-specific data are located within the <payload> elements, depending on the purpose of the message.
+
+The <payload> element contains application-specific data conforming to other IEC 61968 standards.
+IEC 61968-100 makes no attempt to define these application-specific data. They are left to be defined by the relevant IEC working groups or the local organization.
+|**datatype	**
+|M(XLSX)
+|text
+
+OR links
+
+OR timeseries
+
+OR rscKpi
+|-
+|Indicate the type of data that will be provided
+
+-	text : to provide text information
+
+-	links : to provide url link to download some files
+
+-	timeseries : to provide data as timeseries
+
+-	rscKpi : to provide RSC KPIs
+5+|_Following lines described the needed fields for provision of text information_
+|**text**
+|M (JSON)
+|-
+|List<Map>
+|Provide some text informations
+|**name**
+|M
+|Conclusion
+|String
+|Name of related information
+|**value**
+|M
+|OK for tomorrow
+|String
+|Value of related information
+5+|_Following lines described the needed fields for provision of url links to download file with url address or access to web pages_
+|**links**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide links to download some files
+|**name**
+|M
+|ProcessReport
+|String
+|Name of the url
+|**value**
+|M
+|http://123.45.67.8/Report.pdf
+|String
+|Url address of the file or the webpage
+|**eicCode**
+|M
+|["eicCode1",     "eicCode2", ...]
+|list<String>
+|EIC code of concerned TSO
+5+|_Following lines described the needed fields for provision of RSC KPI information_
+|**rscKpi**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide KPIs
+|**name**
+|M
+|GP1, GP2…. BP1, BP2….
+|String
+|KPI name: there are 2 categories : Global Performance (GP) or Business process (BP) : GP or BP followed by the number of KPIs
+
+**Note:** The labels of GPx and BPx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the <kpi_name – kpi_label> format. (e.g: GPx – Global Performance x)
+|**data**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide kpi data
+|**timestamp**
+|M
+|2020-03-18T23:00:00Z
+|DateTime
+|Date of related KPI
+|**label**
+|M
+|CalculationFailed, ProcessDelayed…
+|String
+|Name of sub item of KPI if exists
+|**detail**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide kpi data details
+|**eicCode**
+|O
+|38X-BALTIC-RSC-H
+|alphanumeric
+|EIC code of concerned TSO if exists
+|**value**
+|M
+|e.g : 1, 2, 2691 …
+|Integer
+|Value of KPI’s item or sub item
+5+|_Following lines described the needed fields for provision of timeseries information_
+|**timeserie**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide timeseries
+|**name**
+|M
+|probabilisticResults
+|String
+|Name of related data
+|**data**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide timeserie data
+|**timestamp**
+|M
+|2020-03-18T23:00:00Z
+|DateTime
+|Date of related timeserie
+|**detail**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide timeserie data details
+|**id**
+|O
+|"1", "2", "3" …
+|String
+|Id of related timeserie if exists
+|**label**
+|O
+|ResultsA
+|String
+|Label of related timeserie if exists
+|**eicCode**
+|O
+|38X-BALTIC-RSC-H
+|Alpha-numeric
+|EIC code of related timeserie if exists
+|**value**
+|M
+|"89", "5585", "Open Line Z", …
+|String
+|Value of related timeserie
+5+|_Following lines described the needed fields for provision of input data validation by ENTSO-E Acknowledgement (only JSON) information_
+|**validation**
+|M (JSON)
+|-
+|Map
+|Only used for Input data validation by ENTSO-E Acknowledgement
+|**validationType**
+|M
+|TECHNICAL or BUSINESS
+|String
+|Type of validation by ACK which start by technical validation and then business validation
+|**status**
+|M (JSON)
+|ACCEPTED or REJECTED
+|String
+|Status of ACK validation: accepted or rejected for validation type done of related source
+|**result**
+|M	(JSON)
+|OK or WARNING or ERROR
+|String
+|This field presents the worst case detected:
+
+If no warning and no error => OK
+
+If some warnings and no error => warning
+
+If some errors with/out warnings => error
+|**validationMessages**
+|M (JSON)
+|-
+|List<Map>
+|Validation details
+|**code**
+|M	(JSON)
+|VAL_OUT1
+|Alphanumeric
+|Business code for the validation information
+|**severity**
+|M	(JSON)
+|ERROR or WARNING
+|String
+|Severity of validation information (Error or warning)
+|**title**
+|M	(JSON)
+|“Error in input format”
+|String
+|Category of issue for this validation information
+|**message**
+|M	(JSON)
+|“Issue located in business period”
+|String
+|Details about this validation information
+|**timestamp**
+|M	(JSON)
+|2020-03-18T23:00:00Z
+|DateTime
+|Date and time of this validation information
+|**sourceDataRef**
+|M (JSON)
+|-
+|Map
+|Information about the data
+.3+^.^|**relatedElement**
+.3+^.^|M (JSON)
+|header
+|String
+|This means that the dedicated information is concerning whole file and is not specific to any timeseries or any period in the file. In the timeline, the bubble about this information will be displayed at arrival time (‘timestamp’ field in the header) of the notification.
+|timeseries
+|String
+|This means that the dedicated information is related to a specific timeseries in the file but not to a specific period within that timeseries, in this case also a field 'relatedTimeseriesId' will be field and will contain usually MRID. Each timeserie can have a different start time. In the timeline, the bubble about this information will be displayed at the timestamp (‘dataName’/’hour’ field in the payload) of this information
+|period
+|String
+|This means that the dedicated information is concerning specific period within specific timeseries, in this case there will be also 3 other fields 'relatedTimeseriesId', 'relatedPeriodStartId' and ‘relatedPeriodEndId’. In the timeline, the bubble about this information will be displayed at the timestamp (“relatedPeriodStartId” field in the payload) of this information
+|**relatedTimeseriesId**
+|M	(JSON)
+|CZ_P_3047
+|Alphanumeric
+|This field describes the name of the timeserie. It is mandatory only in case the relatedElement is ‘timeseries’ or ‘period’
+|**relatedPeriodStartId**
+|M (JSON)
+|54
+|Number
+|This field describes the start time of the timeserie and this is the shift of hours from ‘businessDayFrom’. It is mandatory only in case the relatedElement is ‘period’
+|**relatedPeriodEndId**
+|M
+|121
+|Number
+|This field describes the end time of the timeserie and this is the shift of hours from ‘businessDayFrom’. It is mandatory only in case the relatedElement is ‘period’
+|===
+
+
+Ex: Input file payload JSON (without input data validation)
+
+----
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      …
+    },
+    "payload": {
+      "text": [                                             // text details sample
+        {
+          "name": "comment",
+          "value": "No specific remarks for today"
+        }
+      ],
+      "links": [                                            // links details sample
+        {
+          "name": "ServiceA_Report1",
+          "value": "https://www.site.com/file1.pdf",
+          "eicCode": [
+            "22XCORESO------S",
+            "10X1001C--00008J",
+            "10X1001C--00003T",
+            "38X-BALTIC-RSC-H",
+            "34X-0000000068-Q"
+          ]
+        }
+      ],
+      "rscKpi": [                                          // rscKpi details sample
+        {
+          "name": "GP1",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00",
+              "label": "ProcessSuccess",
+              "detail": [
+                {
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BP1",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00",
+              "label": "BusinessKpiAServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 0
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 1
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 0
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 1
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "timeserie": [                                     // timeserie details sample
+        {
+          "name": "ResultsA",
+          "data": [
+            {
+              "timestamp": "2020-03-01T00:00:00",
+              "detail": [
+                {
+                  "value": "79"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T01:00:00",
+              "detail": [
+                {
+                  "value": "42"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T02:00:00",
+              "detail": [
+                {
+                  "value": "4"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T03:00:00",
+              "detail": [
+                {
+                  "value": "58"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+
+----
+
+**Input file payload JSON sample file (without input data validation):**
+
+link:attached_doc/json_payload_input_file.json/[JSON payload for input file sample]
+
+**Input file payload XLSX sample file (without input data validation):**
+
+For more details, see the excel file: from line 4 to end of the document
+link:attached_doc/excel_payload_input_file.xlsx/[XLSX payload for input file sample]
+
+
+Ex: Input file payload JSON (with input data validation)
+
+----
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      …
+    },
+    "payload": {
+      "validation": {                                     // validation details sample
+        "validationType": "BUSINESS",
+        "status": "ACCEPTED",
+        "result": "ERROR",
+        "validationMessages": [
+          {
+            "code": "ServiceA_Error_01",
+            "severity": "ERROR",
+            "title": "Rule_A_Violated",
+            "message": "Application check: Error 01 detected in input file",
+            "timestamp": "2020-02-26T14:24:38.825Z",
+            "sourceDataRef": {
+              "relatedPeriodStartId": 3247,
+              "relatedElement": "timeseries",
+              "relatedPeriodEndId": 3856,
+              "relatedTimeseriesId": "Timeseries_12345"
+            }
+          },
+          {
+            "code": "ServiceA_Error_02",
+            "severity": "ERROR",
+            "title": "Rule_B_Violated",
+            "message": "Application check: Error 02 detected in input file",
+            "timestamp": "2020-02-26T14:24:46.885Z",
+            "sourceDataRef": {
+              "relatedElement": "header"
+            }
+          },
+          {
+            "code": "ServiceA_Warning_01",
+            "severity": "WARNING",
+            "title": "Rule_C_Violated",
+            "message": "Application check: Warning 01 detected in input file",
+            "timestamp": "2020-02-26T14:24:47.792Z",
+            "sourceDataRef": {
+              "relatedElement": "header"
+            }
+          },
+          {
+            "code": "ServiceA_Warning_02",
+            "severity": "WARNING",
+            "title": "Rule_D_Violated",
+            "message": "Application check: Warning 02 detected in input file",
+            "timestamp": "2020-02-26T14:25:23.591Z",
+            "sourceDataRef": {
+              "relatedPeriodStartId": 897,
+              "relatedElement": "timeseries",
+              "relatedPeriodEndId": 928,
+              "relatedTimeseriesId": "Timeseries_45678"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+----
+
+**Input file payload JSON sample file (with input data validation):**
+
+link:attached_doc/json_payload_validation_input_file.json/[JSON payload input file sample with input data validation]
+
+
+== Output data format
+
+Output data format is only used for SMART notifications as a result of a validation or coordination of some proposals received in the input file.
+In case the input file is used for informative notification, no output file will be generated.
+
+Two formats are proposed for output data:
+
+* XLSX, Office Open XML worksheet sheet (OOXML), ECMA-376 standard file format, Microsoft Excel XML (2007+) file format
+* JSON, JavaScript Object Notation, ISO/IEC 21778:2017 open standard file format (only encoded in UTF-8 and Unix Line Feed)
+
+But this output format will be always the **same format** as the one received for input file.
+(Ex: if Let’s Coordinate receives 1 input file in XLSX, then the output file will be also in XLSX)
+
+NOTE:
+
+* M => Mandatory & this field is mandatory for XLSX and JSON files.
+* O => Optional & this field is optional for XLSX and JSON files
+* M(JSON) or O(JSON) => to be used only for JSON files
+* M(XLSX) or O(XLSX) => to be used only for XLSX files
+
+=== Document header part
+
+Header is the really similar as the one described for the input file with addition of:
+
+* **Global field about the validation or coordination status** of the overall notification to be validated. This change is in the header of the output file.
+** **CON(firmed):** the status of this notification is confirmed (based on the different answers done for each timeserie to be validated inside this notification)
+** **REJ(ected):** the status of this notification is rejected (based on the different answers done for each timeserie to be validated inside this notification)
+** **MIX(ed):** the status of this notification is mixed (based on the different answers done for each timeserie to be validated inside this notification)
+
+
+[cols=5]
+[options="header",width="100%",align="center",cols="^,^,^,^,^"]
+|===
+|**Attributes**
+|**Mandatory / Optional**
+|**Values**
+|**Type**
+|**Description**
+|**eventMessage	**
+|M (JSON)
+|-
+|Map
+|Message description
+|**xmlns**
+|M (JSON)
+|http://iec.ch/TC57/2011/schema/message
+|String
+|Name space
+|**header**
+|M (JSON)
+|-
+|Map
+|Header part of the file
+.7+^.^|**verb**
+.7+^.^|M
+|-
+|-
+|The <Verb> shall specify the semantics of the message and the interpretation of the data supplied in the <Payload> element.
+|created
+|Enumeration
+|Used to publish a notification of the instantiation of one or more objects.
+|canceled
+|Enumeration
+|Used to publish a notification that one or more actions have been aborted.
+|changed
+|Enumeration
+|Used to publish a notification that one or more objects have been replaced.
+|deleted
+|Enumeration
+|Used to publish a notification that an object has been deleted.
+|executed
+|Enumeration
+|Used to publish a notification that the execution of a complex transaction that uses the <Payload><OperationSet> element has taken place.
+|updated
+|Enumeration
+|Used to publish a notification that one or more objects have been modified.
+|**noun	**
+|M
+|NotificationCategory
+|String
+|Category of notification. The <Noun> shall specify the semantics of the message and the interpretation of the data supplied in the <Payload> element.
+|**timestamp**
+|M
+|2020-03-18T09:34:08Z
+|DateTime
+|Creation date and hour of the input file : This element shall indicate when the message was produced. (It is not the time the message was transmitted because the actual send may occur later due to transactions or other client side queueing of messages).
+The timestamp shall conform to ISO 8601. It shall include either the letter “Z” to denote UTC or an explicit timezone offset.
+|**source**
+|M
+|ProcessName
+|string
+|Name of the service or process : This element shall be used to identify the origin of the informational content.
+The values assigned to this element are non-normative and have meaning only within the local organisation.
+|**messageId**
+|M
+|d18d3733d7884d798cadc2ecf30bef0b
+|UUID
+|Unique ID of the message : This element shall be a 128-bit universally unique identifier (UUID) generated according to RFC 4122. It has no normative meaning other than to provide a unique identifier for the message. This element together with the <Timestamp> element is useful for tracing or logging messages as they are processed by the requesting, responding or other systems.
+|**properties**
+|M (JSON)
+|-
+|Map
+|Message properties : This element consists of a set of name/value pairs that may be used to customize the system behaviour in ways going beyond those defined by this International Standard. This may be used to provide some implementation-specific functionality.
+The values assigned to these elements are non-normative and have meaning only within the local implementation.
+|**format**
+|M (JSON)
+|JSON
+|String
+|Format of the message
+|**businessDataIdentifier**
+|M (JSON)
+|-
+|Map
+|-
+|**messageType**
+|O
+|102
+|String
+|ID of the message
+|**messageTypeName**
+|M
+|ProcessNotificationTypeA
+|String
+|Name of the message
+|**businessDayFrom**
+|M
+|2020-03-18T09:34:08Z
+|DateTime
+|Business period start date and time
+|**businessDayTo**
+|O
+|2020-03-19T09:34:08Z
+|DateTime
+|Business period end date and time / If this value is not provided, it will take the <businessDayFrom> value plus 24 hours.
+|**sendingUser**
+|O
+|10X-CHSWISSGRIDC
+|Alphanumeric
+|EIC code of sender of the message or input file (if different from tso)
+|**processStep**
+|O
+|1st Run
+|String
+|Name of the process step to distinguish different steps of the same process
+|**timeframe**
+|O
+|D-2, D-1, ID, W, M, Y
+|Alphanumeric
+|Timeframe of the message
+|**timeframeNumber**
+|O
+|3
+|String
+|If Timeframe is W, number of the week.
+
+If Timeframe is M, number of the month.
+
+If Timeframe is Y, number of the year.
+
+Empty for other ones.
+|**recipients**
+|O
+|10YCZ-CEPS-----N;10X-CHSWISSGRIDC
+|List<String>
+|EIC codes of specific recipient(s) for this output file. This field is optional if this information can be deducted from provided timeseries.
+|**coordinationStatus**
+|**M**
+|**CON
+
+or REJ
+
+or MIX**
+|**String**
+|**Global status of coordination : CON(firmed), REJ(ected) or MIX(ed).
+
+This status is global for the all notification**
+|===
+
+
+Ex: Output file header JSON sample
+
+----
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      "verb": "created",
+      "noun": "ServiceA_CalculationResults",
+      "timestamp": "2020-03-17T12:32:19Z",
+      "source": "SERVICE_A",
+      "messageId": "b071aa50097f49f1bd69e82a070084b6",
+      "properties": {
+        "format": "JSON",
+        "businessDataIdentifier": {
+          "messageType": "101",
+          "messageTypeName": "ServiceA_NotificationB",
+          "businessDayFrom": "2020-01-10T23:00:00Z",
+          "businessDayTo": "2020-01-17T23:00:00Z",
+          "sendingUser": "10XCH-SWISSGRIDC",
+          "processStep": "INITIAL_RUN",
+          "timeframe": "W",
+          "timeframeNumber": 24,
+          "recipients": [
+            "10XBA-JPCCZEKC-K",
+            "10XAL-KESH-----J"
+          ],
+          "coordinationStatus": "CON"
+        }
+      }
+    },
+    "payload": {
+      ...
+    }
+  }
+}
+----
+
+**Output file header JSON sample:**
+
+link:attached_doc/json_header_output_file.json/[JSON header for output file]
+
+**Output file header XLSX sample:**
+
+For more details, see the excel sample file: line 1 and 2 in
+link:attached_doc/excel_header_output_file.xlsx/[XLSX header for output file sample]
+
+=== Payload part
+
+Payload is the really similar as the one described for the input file with addition of:
+
+* **4 new fields** to validate differently each proposal/timeseries inside the notification:
+** **accept:** if proposal is accepted
+** **reject:** if proposal is rejected
+** **explanation:** in case of rejection/refusal of the proposition to justify this choice from a list of values
+** **comment:** about the validation or coordination of the proposal
+
+Following table will describe **only** the part to be affected by these new fields for timeserie information (even if there are text information, RSC KPI information...).
+
+[cols=5]
+[options="header",width="100%",align="center",cols="^,^,^,^,^"]
+|===
+|**Attributes**
+|**Mandatory / Optional**
+|**Values**
+|**Type**
+|**Description**
+|**payload**
+|M (JSON)
+|-
+|Map
+|The application-specific data are located within the <payload> elements, depending on the purpose of the message.
+
+The <Payload> element contains application-specific data conforming to other IEC 61968 standards.
+
+IEC 61968-100 makes no attempt to define these application-specific data. They are left to be defined by the relevant IEC working groups or the local organization.
+|**datatype**
+|M(XLSX)
+|text
+
+OR links
+
+OR timeseries
+
+OR rscKpi
+|String
+|Indicate the type of data that will be provided:
+
+-	text : to provide text information
+
+-	links : to provide url link to download some files
+
+-	timeseries : to provide data as timeseries
+
+-	rscKpi : to provide RSC KPIs
+
+**Only changes affecting timeseries validation/coordination will be described.**
+5+|_Following lines are only describing the new fields which will be added in the timeserie(s) details to describe the results of the validation & coordination for proposed timeserie(s) information_
+|**timeserie**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide timeseries
+|**name**
+|M
+|probabilisticResults
+|String
+|Name of related data
+|**data	**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide timeserie data
+|**timestamp**
+|M
+|2020-03-18T23:00:00Z
+|DateTime
+|Date of related timeserie
+|**detail**
+|M (JSON)
+|-
+|List<Map>
+|Structure to provide timeserie data details
+|**id**
+|O
+|"1", "2", "3" …
+|String
+|Id of related timeserie if exists
+|**label**
+|O
+|ProbabilistResultsA
+|String
+|Label of related timeserie if existd
+|**eicCode**
+|O
+|38X-BALTIC-RSC-H
+|Alpha-numeric
+|EIC code of related timeserie if exists
+|**value**
+|M
+|"89", "5585", "Open Line Z", …
+|String
+|Value of related timeserie
+|**accept**
+|**M**
+|**1 or 0**
+|**Boolean**
+|**1 : the proposal has been accepted by the concerned EIC code
+
+0 : the proposal has been rejected by the concerned EIC code**
+|**reject**
+|**M**
+|**1 or 0**
+|**Boolean**
+|**1 : the proposal has been rejected by the concerned EIC code
+
+0 : the proposal has been accepted by the concerned EIC code**
+|**explanation**
+|**M**
+|**“Not available”**
+|**String**
+|**List of choice in a predefined list of values as text.**
+|**comment**
+|**M**
+|**“3 nodes should work”**
+|**String**
+|**Comment about the proposal by the concerned EIC code**
+|===
+
+**JSON sample:**
+
+link:attached_doc/json_payload_output_file.json/[JSON payload for output file sample]
+
+**XLSX sample**
+
+See the excel file: from line 4 to end of the document, columns H, I, J and K in
+link:attached_doc/excel_payload_output_file.xlsx/[XLSX payload for output file sample]
+
+
+
+

@@ -1,114 +1,61 @@
-# SITE CONFIGURATION
-baseurl: ""
-url: "https://letscoordinate.github.io"
-title: Let's Coordinate # site's title
-description: "A platform to enable TSOs and RSCs to coordinate" # used by search engines
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Let's Coordinate
+description: >- # this means to ignore newlines until "baseurl:"
+  A Smart Assistant for System Operators
+baseurl: '' # the subpath of your site, e.g. /blog
+url: "https://letscoordinate.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  letscoordinate
 
-# THEME-SPECIFIC CONFIGURATION
-theme_settings:
-  # Meta
-  title: Let's Coordinate # blog's title
-  avatar: assets/img/triangle.svg
-  favicon: assets/favicon.ico
-  gravatar: # Email MD5 hash
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a>
+  </br>Copyright 2018-2020 Authors of <a href="https://github.com/letscoordinate/letscoordinate.github.io">Let’s Coordinate documentation</a>.
+  Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.
+  <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation,
+  please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page.
+  Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and
+  <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
 
-  # Header and footer text
-  header_text: A platform made to enable<br/>TSOs and RSCs to coordinate
-  header_feature_image: assets/img/pexels/triangular.jpeg
-  footer_text: Developed by RTE for the Linux Fundation
+avatar: "/assets/img/letsco-logo.png"
+favicon: "/assets/img/favicon.ico"
 
-  # Icons
-  rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: # Full email address, e.g. "sam@example.com"
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  gitlab:
-  github: "samichehade"
-  google_plus:
-  instagram:
-  keybase:
-  linkedin:  # Full URL
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
-  steam:
-  tumblr:
-  twitter: # "twitter username"
-  vimeo:
-  wordpress:
-  youtube:
-  
-  # Sharing options
-  share_buttons:
-    facebook: true
-    twitter: true
-    google_plus: true
-    tumblr:
-    pinterest:
-    pocket:
-    reddit: true
-    linkedin:
-    wordpress:
-    email: true
-
-  # Scripts / Features 
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
-  katex: true # Enable if using math markup
-  
-  special_page:
-    search: 
-      icon: "search"
-      enabled: true
-    tags:
-      icon: "tags"
-      enabled: true
-  
-  # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_share_on: "Share on"
-  str_add_to: "Add to"
-  str_email: "Email"
-  str_tweet: "Tweet"
-  str_pin_it: "Pin it"
-  str_next_post: "Next post"
-  str_previous_post: "Previous post"
-  str_next_page: "Next"
-  str_previous_page: "Prev"
-  str_javascript_required_disqus: "Please enable JavaScript to view comments."
-
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
-
-  # Post navigation
-  post_navigation: true
-  
-  
-# PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
-
-
-# PORTFOLIO
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:name
-
-
-# BUILD SETTINGS
-markdown: kramdown
-highlighter: rouge
 sass:
-  sass_dir: _sass
-  style: :compressed
-plugins: [jekyll-paginate, jekyll-seo-tag]
-#theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
-exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png", "package.json", "node_modules", "gulpfile.js", ".idea/*"]
+  sass_dir: assets/css
+# Needed to prevent the following error
+# Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/main.css':
+# File to import not found or unreadable: bootstrap/bootstrap.
+# Load path: <repo_path>/vendor/bundle/ruby/2.5.0/gems/jekyll-theme-primer-0.5.4/_sass on line 1
+
+# Site structure
+archives_path: "/archives/"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - docker/

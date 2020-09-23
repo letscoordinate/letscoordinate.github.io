@@ -1,0 +1,2065 @@
+{
+  "eventMessage": {
+    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "header": {
+      "verb": "created",
+      "noun": "ServiceA_CalculationResults",
+      "timestamp": "2020-03-17T12:32:19Z",
+      "source": "SERVICE_A",
+      "messageId": "b071aa50097f49f1bd69e82a070084b6",
+      "properties": {
+        "format": "JSON",
+        "businessDataIdentifier": {
+          "messageType": "101",
+          "messageTypeName": "ServiceA_NotificationA",
+          "businessDayFrom": "2020-01-10T23:00:00Z",
+          "businessDayTo": "2020-01-17T23:00:00Z",
+          "sendingUser": "10XCH-SWISSGRIDC",
+          "processStep": "INITIAL_RUN",
+          "timeframe": "W",
+          "timeframeNumber": 24,
+          "recipients": [
+            "10XBA-JPCCZEKC-K",
+            "10XAL-KESH-----J"
+          ]
+        }
+      }
+    },
+    "payload": {
+      "text": [
+        {
+          "name": "comment",
+          "value": "No specific remarks for today"
+        },
+        {
+          "name": "conclusion",
+          "value": "OK for today"
+        },
+        {
+          "name": "delayReason",
+          "value": "Delay due to report generation"
+        }
+      ],
+      "links": [
+        {
+          "name": "ServiceA_Report1",
+          "value": "https://www.site.com/file1.pdf",
+          "eicCode": [
+            "10XDE-VE-TRANSMK"
+          ]
+        },
+        {
+          "name": "ServiceA_Report2",
+          "value": "https://www.site.com/file2.pdf",
+          "eicCode": [
+            "22XCORESO------S",
+            "10X1001C--00008J",
+            "10X1001C--00003T",
+            "38X-BALTIC-RSC-H",
+            "34X-0000000068-Q"
+          ]
+        },
+        {
+          "name": "ServiceB_Report1",
+          "value": "https://www.site.com/file3.pdf",
+          "eicCode": [
+            "10X1001A1001A094"
+          ]
+        },
+        {
+          "name": "ServiceB_Report1",
+          "value": "https://www.site.com/file5.pdf",
+          "eicCode": [
+            "10XDE-VE-TRANSMK"
+          ]
+        },
+        {
+          "name": "ServiceB_Report1",
+          "value": "https://www.site.com/file7.pdf",
+          "eicCode": [
+            "10XCS-SERBIATSO8"
+          ]
+        },
+        {
+          "name": "ServiceB_Report2",
+          "value": "https://www.site.com/file4.pdf",
+          "eicCode": [
+            "10X1001A1001A094"
+          ]
+        },
+        {
+          "name": "ServiceB_Report2",
+          "value": "https://www.site.com/file6.pdf",
+          "eicCode": [
+            "10XDE-VE-TRANSMK"
+          ]
+        },
+        {
+          "name": "ServiceB_Report2",
+          "value": "https://www.site.com/file8.pdf",
+          "eicCode": [
+            "10XCS-SERBIATSO8"
+          ]
+        }
+      ],
+      "rscKpi": [
+        {
+          "name": "GP1",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "ProcessSuccess",
+              "detail": [
+                {
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "GP2",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "CalculationFailed",
+              "detail": [
+                {
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "ReportFailed",
+              "detail": [
+                {
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "GP3",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "ProcessDelayed",
+              "detail": [
+                {
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "DelayTime",
+              "detail": [
+                {
+                  "value": 23
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BP1",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "BusinessKpiAServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 0
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 1
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 0
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 1
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BP2",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "BusinessKpiBServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 1
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 1
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 1
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 0
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BP3",
+          "data": [
+            {
+              "timestamp": "2020-03-18T01:00:00Z",
+              "label": "BusinessKpiCServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 55
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 57
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 87
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 91
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 21
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-19T01:00:00Z",
+              "label": "BusinessKpiCServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 71
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 79
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 42
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 4
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 58
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-20T01:00:00Z",
+              "label": "BusinessKpiCServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 2
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 63
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 48
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 30
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-21T01:00:00Z",
+              "label": "BusinessKpiCServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 11
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 88
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 65
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 4
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 39
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-22T01:00:00Z",
+              "label": "BusinessKpiCServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 45
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 54
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 6
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 2
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 49
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-23T01:00:00Z",
+              "label": "BusinessKpiCServiceA",
+              "detail": [
+                {
+                  "eicCode": "22XCORESO------S",
+                  "value": 54
+                },
+                {
+                  "eicCode": "10X1001C--00008J",
+                  "value": 10
+                },
+                {
+                  "eicCode": "10X1001C--00003T",
+                  "value": 90
+                },
+                {
+                  "eicCode": "38X-BALTIC-RSC-H",
+                  "value": 98
+                },
+                {
+                  "eicCode": "34X-0000000068-Q",
+                  "value": 92
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "timeserie": [
+        {
+          "name": "ResultsA",
+          "data": [
+            {
+              "timestamp": "2020-03-01T00:00:00Z",
+              "detail": [
+                {
+                  "value": "79"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T01:00:00Z",
+              "detail": [
+                {
+                  "value": "42"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T02:00:00Z",
+              "detail": [
+                {
+                  "value": "4"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T03:00:00Z",
+              "detail": [
+                {
+                  "value": "58"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T04:00:00Z",
+              "detail": [
+                {
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T05:00:00Z",
+              "detail": [
+                {
+                  "value": "63"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T06:00:00Z",
+              "detail": [
+                {
+                  "value": "48"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T07:00:00Z",
+              "detail": [
+                {
+                  "value": "30"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T08:00:00Z",
+              "detail": [
+                {
+                  "value": "32"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T09:00:00Z",
+              "detail": [
+                {
+                  "value": "11"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T10:00:00Z",
+              "detail": [
+                {
+                  "value": "88"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T11:00:00Z",
+              "detail": [
+                {
+                  "value": "65"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T12:00:00Z",
+              "detail": [
+                {
+                  "value": "4"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T13:00:00Z",
+              "detail": [
+                {
+                  "value": "39"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T14:00:00Z",
+              "detail": [
+                {
+                  "value": "45"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T15:00:00Z",
+              "detail": [
+                {
+                  "value": "54"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T16:00:00Z",
+              "detail": [
+                {
+                  "value": "6"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T17:00:00Z",
+              "detail": [
+                {
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T18:00:00Z",
+              "detail": [
+                {
+                  "value": "49"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T19:00:00Z",
+              "detail": [
+                {
+                  "value": "54"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T20:00:00Z",
+              "detail": [
+                {
+                  "value": "10"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T21:00:00Z",
+              "detail": [
+                {
+                  "value": "90"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T22:00:00Z",
+              "detail": [
+                {
+                  "value": "98"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T23:00:00Z",
+              "detail": [
+                {
+                  "value": "92"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ResultsB",
+          "data": [
+            {
+              "timestamp": "2020-03-01T00:00:00Z",
+              "detail": [
+                {
+                  "label": "State",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T01:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T02:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T03:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T04:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T05:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T06:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T07:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "DE "
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T08:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T09:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T10:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T11:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T12:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T13:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "IT1, IT2, IT3, IT4, IT5, IT6, IT7"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T14:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T15:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T16:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T17:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T18:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BG, RS"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T19:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "PL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T20:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BG, RS"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T21:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "NOK"
+                },
+                {
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
+                },
+                {
+                  "label": "measurement",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T22:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T23:00:00Z",
+              "detail": [
+                {
+                  "label": "state",
+                  "value": "OK"
+                },
+                {
+                  "label": "bdz"
+                },
+                {
+                  "label": "measurement",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ResultsC",
+          "data": [
+            {
+              "timestamp": "2020-03-01T00:00:00Z",
+              "detail": [
+                {
+                  "id": "1",
+                  "label": "Contingency-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line A"
+                },
+                {
+                  "id": "1",
+                  "label": "Constraint-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Line B"
+                },
+                {
+                  "id": "1",
+                  "label": "Loading-1",
+                  "value": "103"
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV"
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV"
+                },
+                {
+                  "id": "1",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Zwen"
+                },
+                {
+                  "id": "1",
+                  "label": "PRALoading",
+                  "value": "101"
+                },
+                {
+                  "id": "1",
+                  "label": "CRALoading",
+                  "value": "93"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T08:00:00Z",
+              "detail": [
+                {
+                  "id": "1",
+                  "label": "Contingency-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line A"
+                },
+                {
+                  "id": "1",
+                  "label": "Constraint-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Line B"
+                },
+                {
+                  "id": "1",
+                  "label": "Loading-1",
+                  "value": "110"
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV"
+                },
+                {
+                  "id": "1",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Open Tie line Vigy-Ensdorf 380kV"
+                },
+                {
+                  "id": "1",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Zwen"
+                },
+                {
+                  "id": "1",
+                  "label": "PRALoading",
+                  "value": "105"
+                },
+                {
+                  "id": "1",
+                  "label": "CRALoading",
+                  "value": "99"
+                },
+                {
+                  "id": "3",
+                  "label": "Constraint-2",
+                  "value": "Transformer R"
+                },
+                {
+                  "id": "3",
+                  "label": "Loading-1",
+                  "value": "109"
+                },
+                {
+                  "id": "3",
+                  "label": "Loading-2",
+                  "value": "107"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T04:00:00Z",
+              "detail": [
+                {
+                  "id": "2",
+                  "label": "Contingency-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line F"
+                },
+                {
+                  "id": "2",
+                  "label": "Constraint-1",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Line G"
+                },
+                {
+                  "id": "2",
+                  "label": "Loading-1",
+                  "value": "108"
+                },
+                {
+                  "id": "2",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Line C"
+                },
+                {
+                  "id": "2",
+                  "label": "PRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Zwen"
+                },
+                {
+                  "id": "2",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2 nodes in Nis 380kV"
+                },
+                {
+                  "id": "2",
+                  "label": "CRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "2 nodes in Ensdorf 380kV"
+                },
+                {
+                  "id": "2",
+                  "label": "PRALoading",
+                  "value": "106"
+                },
+                {
+                  "id": "2",
+                  "label": "CRALoading",
+                  "value": "92"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T07:00:00Z",
+              "detail": [
+                {
+                  "id": "3",
+                  "label": "Contingency-1",
+                  "value": "Line J"
+                },
+                {
+                  "id": "3",
+                  "label": "Constraint-1",
+                  "value": "Line K"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T09:00:00Z",
+              "detail": [
+                {
+                  "id": "3",
+                  "label": "PRA-1",
+                  "eicCode": [
+                    "10X1001A1001A094"
+                  ],
+                  "value": "Open Line Z"
+                },
+                {
+                  "id": "3",
+                  "label": "PRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "Disconnection HPP Romsac"
+                },
+                {
+                  "id": "3",
+                  "label": "CRA-1",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2 nodes in Nis 380kV"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T10:00:00Z",
+              "detail": [
+                {
+                  "id": "3",
+                  "label": "CRA-2",
+                  "eicCode": [
+                    "10XDE-VE-TRANSMK"
+                  ],
+                  "value": "2 nodes in Ensdorf 380kV"
+                },
+                {
+                  "id": "3",
+                  "label": "PRALoading",
+                  "value": "108"
+                },
+                {
+                  "id": "3",
+                  "label": "CRALoading",
+                  "value": "106"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ResultD",
+          "data": [
+            {
+              "timestamp": "2020-03-01T00:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2341"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2341"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2402"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2402"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T01:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3373"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3373"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2162"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2162"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T02:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2451"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2451"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2053"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2053"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T03:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1365"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1365"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1150"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1150"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T04:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2308"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2308"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2904"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2904"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T05:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5993"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5993"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5428"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5428"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T06:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4608"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4608"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2777"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2777"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T07:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4708"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4708"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4578"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4578"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T08:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4832"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4832"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2306"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2306"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T09:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3700"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3700"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2862"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2862"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T10:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4232"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4232"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1296"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1296"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T11:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1902"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1902"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5842"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5842"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T12:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3614"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3614"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "1052"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "1052"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T13:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5147"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5147"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3370"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3370"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T14:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4690"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4690"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5566"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5566"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T15:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5029"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5029"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3343"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3343"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T16:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4792"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4792"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3390"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3390"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T17:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2235"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2235"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4788"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4788"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T18:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5597"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5597"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4573"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4573"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T19:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5853"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5853"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2318"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2318"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T20:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2040"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2040"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5295"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5295"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T21:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3839"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3839"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "2054"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "2054"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T22:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5133"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5133"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "3930"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "3930"
+                }
+              ]
+            },
+            {
+              "timestamp": "2020-03-01T23:00:00Z",
+              "detail": [
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "4914"
+                },
+                {
+                  "label": "BA-RS",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "4914"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10XCS-SERBIATSO8"
+                  ],
+                  "value": "5531"
+                },
+                {
+                  "label": "RS-BA",
+                  "eicCode": [
+                    "10YBA-JPCC-----D"
+                  ],
+                  "value": "5531"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
