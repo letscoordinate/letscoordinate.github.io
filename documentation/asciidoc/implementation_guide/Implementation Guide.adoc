@@ -329,12 +329,12 @@ Ex: Input file Header JSON (without input data validation)
 
 **Input file header JSON sample file (without input data validation):**
 
-link:attached_doc/json_header_input_file.json/[JSON header for input file sample]
+link:attached_doc/json_header_input_file.json[JSON header for input file sample]
 
 **Input file header XLSX sample file (without input data validation):**
 
 For more details, see the excel sample file: line 1 and 2 in
-link:attached_doc/excel_header_input_file.xlsx/[XLSX header for input file sample]
+link:attached_doc/excel_header_input_file.xlsx[XLSX header for input file sample]
 
 
 Ex: Input file Header JSON (with input data validation)
@@ -379,7 +379,7 @@ Ex: Input file Header JSON (with input data validation)
 
 **Input file header JSON sample file (with input data validation):**
 
-link:attached_doc/json_header_validation_input_file.json/[JSON header input file sample with input data validation]
+link:attached_doc/json_header_validation_input_file.json[JSON header input file sample with input data validation]
 
 
 
@@ -765,12 +765,12 @@ Ex: Input file payload JSON (without input data validation)
 
 **Input file payload JSON sample file (without input data validation):**
 
-link:attached_doc/json_payload_input_file.json/[JSON payload for input file sample]
+link:attached_doc/json_payload_input_file.json[JSON payload for input file sample]
 
 **Input file payload XLSX sample file (without input data validation):**
 
 For more details, see the excel file: from line 4 to end of the document
-link:attached_doc/excel_payload_input_file.xlsx/[XLSX payload for input file sample]
+link:attached_doc/excel_payload_input_file.xlsx[XLSX payload for input file sample]
 
 
 Ex: Input file payload JSON (with input data validation)
@@ -843,7 +843,7 @@ Ex: Input file payload JSON (with input data validation)
 
 **Input file payload JSON sample file (with input data validation):**
 
-link:attached_doc/json_payload_validation_input_file.json/[JSON payload input file sample with input data validation]
+link:attached_doc/json_payload_validation_input_file.json[JSON payload input file sample with input data validation]
 
 
 == Output data format
@@ -1065,12 +1065,12 @@ Ex: Output file header JSON sample
 
 **Output file header JSON sample:**
 
-link:attached_doc/json_header_output_file.json/[JSON header for output file]
+link:attached_doc/json_header_output_file.json[JSON header for output file]
 
 **Output file header XLSX sample:**
 
 For more details, see the excel sample file: line 1 and 2 in
-link:attached_doc/excel_header_output_file.xlsx/[XLSX header for output file sample]
+link:attached_doc/excel_header_output_file.xlsx[XLSX header for output file sample]
 
 === Payload part
 
@@ -1196,12 +1196,12 @@ OR rscKpi
 
 **JSON sample:**
 
-link:attached_doc/json_payload_output_file.json/[JSON payload for output file sample]
+link:attached_doc/json_payload_output_file.json[JSON payload for output file sample]
 
 **XLSX sample**
 
 See the excel file: from line 4 to end of the document, columns H, I, J and K in
-link:attached_doc/excel_payload_output_file.xlsx/[XLSX payload for output file sample]
+link:attached_doc/excel_payload_output_file.xlsx[XLSX payload for output file sample]
 
 
 
