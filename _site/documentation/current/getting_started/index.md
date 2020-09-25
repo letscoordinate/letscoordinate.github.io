@@ -5,6 +5,7 @@
 * Maven
 * Java 8
 * Docker
+* NPM (6 or grater) and Angular CLI (8 or grater)
 * Linux (*Tested on Ubuntu v18.04 and Fedora 29*)
 * Having Operator Fabric running ([https://opfab.github.io/documentation/current/getting_started/](https://opfab.github.io/documentation/current/getting_started/))
 
@@ -43,11 +44,23 @@ This will create a new group, a new entity, and a new user associated to this gr
 - Click on *kafka-producer-controller*
 - Click on *POST /letsco/data-provider/v1/kafka/json/raw-msg*
 - Click on *Try it out*
-- Put in the data body value the content of the file *messages_models/jsons/Anonymised_JSONs/MessageValidated_NEGATIVE_ACK_v0.2_oneline.json*
+- In the data body value, put the content of one of the files from the directory `messages_models/json/card_feed/` (e.g: `MessageValidated_NEGATIVE_ACK.json`, `ProcessSuccess.json`)
 - Click on *Execute*
 
 If you connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/)) with the user previously created in Keycloak, you should see the new card in the Feed.
 
+#### generate an RSC KPI report
+
+> **_NOTE:_** To be able to see the RSC KPI Report page, you should have the *letsco-front* module running! to do so, change directory to the *letsco-front* module and execute the command: `ng serve`
+
+- Go to the following url: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
+- Click on *kafka-producer-controller*
+- Click on *POST /letsco/data-provider/v1/kafka/json/raw-msg*
+- Click on *Try it out*
+- In the data body value, put the content of the file `messages_models/json/rsc_kpi_report/kpi_use_cases.json`
+- Click on *Execute*
+- connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/)) with the user previously created in Keycloak and then select the *"RSC KPI Report"* menu.
+- select the *period*, *RSC*, *RSC Service* and *Data type* and then click the *submit* button, you should see the generated RSC KPI Report.
 
 ## Stop the application
 
