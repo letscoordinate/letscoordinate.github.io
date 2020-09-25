@@ -6,15 +6,16 @@
 <!-- file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.                            -->
 <!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
 
-# Let's Coordinate
+# Let's Coordinate - Getting started
 
 ## Requirements
+
+To use Let's Coordinate, you need a linux OS with the following:
 
 * Maven
 * Java 8
 * Docker
 * NPM (6 or grater) and Angular CLI (8 or grater)
-* Linux (*Tested on Ubuntu v18.04 and Fedora 29*)
 * Having Operator Fabric running ([https://opfab.github.io/documentation/current/getting_started/](https://opfab.github.io/documentation/current/getting_started/))
 
 ## Run Let's Co
@@ -46,7 +47,7 @@ This will create a new group, a new entity, and a new user associated to this gr
 - Go to *Credentials*
 - Fill the password with whatever you want, put *Temporary* to *OFF* and click on *Reset Password*
 
-#### Send a new notification
+## Send a new notification
 
 - Go to the following url: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
 - Click on *kafka-producer-controller*
@@ -57,7 +58,7 @@ This will create a new group, a new entity, and a new user associated to this gr
 
 If you connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/)) with the user previously created in Keycloak, you should see the new card in the Feed.
 
-#### Generate an RSC KPI report
+## Generate a RSC KPI report
 
 > **_NOTE:_** To be able to see the RSC KPI Report page, you should have the *letsco-front* module running! to do so, change directory to the *letsco-front* module and execute the command: `ng serve`
 
