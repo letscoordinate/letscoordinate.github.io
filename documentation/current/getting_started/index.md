@@ -10,11 +10,12 @@
 
 ## Requirements
 
+To use Let's Coordinate, you need a linux OS with the following:
+
 * Maven
 * Java 8
 * Docker
 * NPM (6 or grater) and Angular CLI (8 or grater)
-* Linux (*Tested on Ubuntu v18.04 and Fedora 29*)
 * Having Operator Fabric running ([https://opfab.github.io/documentation/current/getting_started/](https://opfab.github.io/documentation/current/getting_started/))
 
 ## Run Let's Co
