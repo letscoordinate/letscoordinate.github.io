@@ -6,7 +6,7 @@ layout: default
 
 Let’s Coordinate is a modular, extensible, industrial-strength and field-tested platform to be used to support RSC services between Transmission System Operators (TSOs) and their Regional Coordination Centers (RCCs).
 
-This application is based on the OperatorFabric framework (https://github.com/opfab/operatorfabric-core).
+This application is based on the [OperatorFabric framework](https://github.com/opfab/operatorfabric-core).
 
 It offers these features :
 •	Receiving and handling of operational notifications (informative and SMART)
