@@ -1,4 +1,4 @@
-# Let's Coordinate
+# Let's Coordinate - Getting started
 
 ## Requirements
 
@@ -38,7 +38,7 @@ This will create a new group, a new entity, and a new user associated to this gr
 - Go to *Credentials*
 - Fill the password with whatever you want, put *Temporary* to *OFF* and click on *Reset Password*
 
-#### Send a new notification
+## Send a new notification
 
 - Go to the following url: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
 - Click on *kafka-producer-controller*
@@ -49,7 +49,7 @@ This will create a new group, a new entity, and a new user associated to this gr
 
 If you connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/)) with the user previously created in Keycloak, you should see the new card in the Feed.
 
-#### generate an RSC KPI report
+## Generate a RSC KPI report
 
 > **_NOTE:_** To be able to see the RSC KPI Report page, you should have the *letsco-front* module running! to do so, change directory to the *letsco-front* module and execute the command: `ng serve`
 
