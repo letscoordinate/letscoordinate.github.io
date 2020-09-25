@@ -2,7 +2,7 @@
 
 = README
 
-This repository holds the source for the website of the Let's Coordinate project, https://letscoordinate.github.io.
+This repository holds the source code for the website of the Let's Coordinate project, https://letscoordinate.github.io.
 
 To serve this website locally using the link:https://github.com/envygeeks/jekyll-docker/[Jekyll Docker image],
 run the following commands:

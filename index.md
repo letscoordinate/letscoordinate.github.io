@@ -2,26 +2,20 @@
 layout: default
 ---
 
-# A Smart Assistant For System Operators
+# A Smart Assistant For Transmission System Operators (TSOs) and Regional Coordination Centers (RCC)
 
-Let's Coordinate is a modular, extensible, industrial-strength and field-tested
-platform for use in electricity, water, and other utility operations.
+Let’s Coordinate is a modular, extensible, industrial-strength and field-tested platform to be used to support RSC services between Transmission System Operators (TSOs) and their Regional Coordination Centers (RCCs).
 
-* System visualization and console integration
-* Precise alerting
-* Workflow scheduling (*)
-* Historian
-* Scripting (ex: Python, JavaScript)
+This application is based on the [OperatorFabric framework](https://github.com/opfab/operatorfabric-core).
 
-_* This feature could be addressed either as an internal module or through simplified and standardized (BPMN) 
-integration with external workflow engines, we're still weighing the pros and cons of the two options._
-
-It is an open source project initiated by [RTE](http://www.rte-france.com/)
-with [LF Energy](https://www.lfenergy.org/).
+It offers these features :
+* Receiving and handling of operational notifications (informative and SMART)
+* Archiving of notification
+* RSC KPI presentation
 
 # What does it do?
 
-To perform their duties, an operator has to interact with multiple applications
+To perform their duties, a RSC/TSO operator has to interact with multiple RSC/TSO applications
 (perform actions, watch for alerts, etc.), which can prove difficult if
 there are too many of them.
 
@@ -76,18 +70,19 @@ the cards detailing the decision process steps will be accessible through
 the Archives screen, showing how the
 operators reached this agreement.
 
-
 # Open source
 
-Let's Coordinate is part of the [LF Energy](https://www.lfenergy.org/) coalition, a project of The Linux Foundation that supports open source innovation projects within the energy and electricity sectors.
+Let’s Coordinate is part of the [LF Energy](https://www.lfenergy.org/) coalition, as an use case of OperatorFabric. 
+LF energy is a project of The Linux Foundation that supports open source innovation projects within the energy and electricity sectors.
 
 Let's Coordinate is an open source platform licensed under [Mozilla Public License V2](https://www.mozilla.org/en-US/MPL/2.0/). 
-The source code is hosted on GitHub in this repository : [letscoordinate-core](https://github.com/letscoordinate/letscoordinate-core).
+The source code is hosted on GitHub in this repository: [letscoordinate](https://github.com/opfab/letscoordinate).
 
 # Technology stack
 
 ## Development
-Let's Coordinate is mostly written in Java and based on the Spring framework. This makes writing and integrating software for a simplified and better coordination very easy.
+Let's Coordinate is mostly written in Java and based on the Spring framework. 
+This makes writing and integrating software for a simplified and better coordination very easy.
 
 [![Using Java](https://img.shields.io/badge/Using-Java-%237473C0.svg?style=for-the-badge)]() 
 [![Using Spring](https://img.shields.io/badge/Using-Spring-%236db33f.svg?style=for-the-badge)](https://spring.io/) 
