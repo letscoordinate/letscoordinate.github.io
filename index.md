@@ -9,9 +9,9 @@ Let’s Coordinate is a modular, extensible, industrial-strength and field-teste
 This application is based on the [OperatorFabric framework](https://github.com/opfab/operatorfabric-core).
 
 It offers these features :
-•	Receiving and handling of operational notifications (informative and SMART)
-•	Archiving of notification
-•	RSC KPI presentation
+* Receiving and handling of operational notifications (informative and SMART)
+* Archiving of notification
+* RSC KPI presentation
 
 # What does it do?
 
