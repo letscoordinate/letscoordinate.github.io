@@ -8,7 +8,7 @@
 
 # Let's Coordinate - Getting started
 
-## Requirements
+## Prerequisites
 
 To use Let's Coordinate, you need a linux OS with the following:
 
