@@ -59,8 +59,8 @@ If you connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/))
 - Click on *Try it out*
 - In the data body value, put the content of the file `messages_models/json/rsc_kpi_report/kpi_use_cases.json`
 - Click on *Execute*
-- connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/)) with the user previously created in Keycloak and then select the *"RSC KPI Report"* menu.
-- select the *period*, *RSC*, *RSC Service* and *Data type* and then click the *submit* button, you should see the generated RSC KPI Report.
+- Connect to OpFab ([http://localhost:2002/ui/](http://localhost:2002/ui/)) with the user previously created in Keycloak and then select the *"RSC KPI Report"* menu.
+- Select the *period*, *RSC*, *RSC Service* and *Data type* and then click the *submit* button, you should see the generated RSC KPI Report.
 
 ## Stop the application
 

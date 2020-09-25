@@ -33,4 +33,5 @@ build/
 **/*.tar.gz
 
 ### Jekyll ###
+.jekyll-cache
 _site/feed.xml
