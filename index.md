@@ -11,64 +11,40 @@ This application is based on the [OperatorFabric framework](https://github.com/o
 It offers these features :
 * Receiving and handling of operational notifications (informative and SMART)
 * Archiving of notification
-* RSC KPI presentation
+* RSC KPI figures and report
 
 # What does it do?
 
-To perform their duties, a RSC/TSO operator has to interact with multiple RSC/TSO applications
-(perform actions, watch for alerts, etc.), which can prove difficult if
+To perform their duties, a RSC/TSO operator has to interact with multiple RSC/TSO processes (perform actions, watch for alerts, etc.) which can prove difficult if
 there are too many of them.
 
-The idea is to aggregate all the notifications from all these applications
-into a single screen, and to allow the operator to act on them if needed.
+The idea is to aggregate all the notifications from all these processes into a single screen, and to allow the operator to act on them if needed.
 
 ![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png){:class="img-fluid"}
 
-These notifications are materialized by *cards* sorted in a *feed* according
-to their period of relevance and their severity.
-When a card is selected in the feed, the right-hand pane displays the *details*
-of the card: information about the state of the parent process instance in
-the third-party application that published it, available actions, etc.
+These notifications are materialized by *cards* sorted in a *feed* according to their period of relevance (business period) and their severity (color).
+When a notification is selected in the feed, the right-hand pane displays the *details* of the card: information about the process (quality of input file, status of the process...), coordination requested, etc.
 
-In addition, the cards will also translate as events displayed on a *timeline*
-(its design is still under discussion) at the top of the screen.
-This view will be complimentary to the card feed in that it will allow the
-operator to see at a glance the status of processes for a given period,
-when the feed is more like a "To Do" list.
+In addition, the notifications will be displayed as events on a *timeline* at the top of the screen to spatialize them.
+This view will be complimentary to the notification feed in that it will allow the operator to see when the event will happen/be relevant.
 
-Part of the value of Let's Coordinate is that it makes the integration very
-simple on the part of the third-party applications.
-To start publishing cards to users in an Let's Coordinate instance, all they
-have to do is:
+Part of the value of Let's Coordinate is that it makes the integration of new services or processes very simple.
+To start publishing notifications to users in an Let's Coordinate instance, all they have to do is:
 
-* Register as a publisher through the "Thirds" service and provide a "bundle"
-containing handlebars templates defining how cards should be rendered,
-i18n info etc.
-* Publish cards as json containing card data through the card publication API
+* Register as a publisher through the "Thirds" service and provide a "bundle" containing handlebars templates defining how cards should be rendered, i18n info etc,
+* Publish notifications as JSON containing notification data through the notification publication API.
 
 Let's Coordinate will then:
 
-* Dispatch the cards to the appropriate users (by computing the actual users
-who should receive the card from the recipients rules defined in the card)
-* Take care of the rendering of the cards, displaying details, actions,
-inputs etc.
+* Dispatch the notifications to the appropriate users (by computing the actual users who should receive the card from the recipients rules defined in the card),
+* Take care of the rendering of the cards, displaying details, information, action buttons etc.,
 * Display relevant information from the cards in the timeline
 
-Another aim of Let's Coordinate is to make cooperation easier by letting
-operators forward or send cards to other operators, for example:
+Another aim of Let's Coordinate is to make coordination process easier with a simple framework to capture answers of different operators via SMART notifications.
+This will replace phone calls or emails, making coordination more efficient and traceable.
+Soon, dedicated screens to monitor on going coordination and reflect monitoring of answers from operators will be added.
 
-* If they need an input from another operator
-* If they can't handle a given card for lack of time or because the necessary
-action is out of their scope
-
-This will replace phone calls or emails, making cooperation more efficient
-and traceable.
-
-For instance, operators might be interested in knowing why a given decision
-was made in the past:
-the cards detailing the decision process steps will be accessible through
-the Archives screen, showing how the
-operators reached this agreement.
+For some ex-post analysis, operators might be interested in knowing why a given decision was made in the past or if the information was received on time : the previous notifications (informative and SMART) will be accessible through the Archives screen.
 
 # Open source
 
