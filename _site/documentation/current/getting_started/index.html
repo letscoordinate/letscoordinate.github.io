@@ -72,6 +72,7 @@
   <li>Maven</li>
   <li>Java 8</li>
   <li>Docker</li>
+  <li>NPM (6 or grater) and Angular CLI (8 or grater)</li>
   <li>Linux (<em>Tested on Ubuntu v18.04 and Fedora 29</em>)</li>
   <li>Having Operator Fabric running (<a href="https://opfab.github.io/documentation/current/getting_started/">https://opfab.github.io/documentation/current/getting_started/</a>)</li>
 </ul>
@@ -114,11 +115,28 @@
   <li>Click on <em>kafka-producer-controller</em></li>
   <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
   <li>Click on <em>Try it out</em></li>
-  <li>Put in the data body value the content of the file <em>messages_models/jsons/Anonymised_JSONs/MessageValidated_NEGATIVE_ACK_v0.2_oneline.json</em></li>
+  <li>In the data body value, put the content of one of the files from the directory <code class="language-plaintext highlighter-rouge">messages_models/json/card_feed/</code> (e.g: <code class="language-plaintext highlighter-rouge">MessageValidated_NEGATIVE_ACK.json</code>, <code class="language-plaintext highlighter-rouge">ProcessSuccess.json</code>)</li>
   <li>Click on <em>Execute</em></li>
 </ul>
 
 <p>If you connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak, you should see the new card in the Feed.</p>
+
+<h4 id="generate-an-rsc-kpi-report">generate an RSC KPI report</h4>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong> To be able to see the RSC KPI Report page, you should have the <em>letsco-front</em> module running! to do so, change directory to the <em>letsco-front</em> module and execute the command: <code class="language-plaintext highlighter-rouge">ng serve</code></p>
+</blockquote>
+
+<ul>
+  <li>Go to the following url: <a href="http://localhost:8082/swagger-ui.html">http://localhost:8082/swagger-ui.html</a></li>
+  <li>Click on <em>kafka-producer-controller</em></li>
+  <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
+  <li>Click on <em>Try it out</em></li>
+  <li>In the data body value, put the content of the file <code class="language-plaintext highlighter-rouge">messages_models/json/rsc_kpi_report/kpi_use_cases.json</code></li>
+  <li>Click on <em>Execute</em></li>
+  <li>connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak and then select the <em>“RSC KPI Report”</em> menu.</li>
+  <li>select the <em>period</em>, <em>RSC</em>, <em>RSC Service</em> and <em>Data type</em> and then click the <em>submit</em> button, you should see the generated RSC KPI Report.</li>
+</ul>
 
 <h2 id="stop-the-application">Stop the application</h2>
 
