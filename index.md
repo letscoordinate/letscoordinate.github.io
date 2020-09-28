@@ -61,7 +61,7 @@ LF energy is a project of The Linux Foundation that supports open source innovat
 Let's Coordinate is an open source platform licensed under [Mozilla Public License V2](https://www.mozilla.org/en-US/MPL/2.0/). 
 The source code is hosted on GitHub in this repository: [letscoordinate](https://github.com/opfab/letscoordinate).
 
-Presentation of the projet [Video](https://https://www.youtube.com/watch?v=NRMrG9IJx2c).
+Presentation of the projet [Video](https://www.youtube.com/watch?v=NRMrG9IJx2c).
 
 # Technology stack
 
