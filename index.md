@@ -16,7 +16,7 @@ It offers these features :
 
 # What does it do?
 
-To perform their duties, a RSC/TSO operator has to interact with multiple TSO/RSC processes (perform actions, watch for alerts, coordinate decisions etc.) 
+To perform their duties, a TSO/RSC operator has to interact with multiple TSO/RSC processes (perform actions, watch for alerts, coordinate decisions etc.) 
 at the same time which can prove difficult if there are too many of them.
 
 The idea is to send relevant notifications to operator only when their attention are needed or if they should take care about the process.
