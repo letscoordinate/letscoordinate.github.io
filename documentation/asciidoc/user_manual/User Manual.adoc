@@ -398,19 +398,20 @@ This selection allows to select kind of KPIs to display:
 * Global performances KPIs: RSC KPI related to the process itselft 
 * Business KPIs: RSC KPI related to the business results of the process – Different from one RSC to another one as TSOs under responsibility of each RSC differ.
 
-
 **RSC KPI graphs in GUI**
 
 User can see dedicated RSC KPIs graphs in GUI. He can add some comments below each graph. 
 
+image::RSC_KPI_graphs.png[RSC KPI graphs]
 
 **Export KPI report**
 
 The user can export KPI in pdf format by clicking on the dedicated button.
 It can also download report in xlsx to export only the values. 
 
+image::RSC_KPI_export.png[RSC KPI export]
 
-=== Reception notifications configuration
+=== (SOON) Reception notifications configuration
 
 Reception of the notifications is configurable for each RSC service.
 
@@ -426,12 +427,13 @@ These settings will be applied for the next connection (after log out and log in
 
 User has the possibility to consult previous past notifications in Archiving screen:
 
+image::archive_screen_empty.png[Archive screen empty]
+
 The screen is composed of 3 different components:
 
 * Research parameters
 * Found notifications list
 * Detailed view of notification
-
 
 **Research parameters**
 
@@ -462,15 +464,22 @@ User can open a notification in detailed view to consult them more in details by
 
 Depending on the business process, notifications will be different and adapted to each business process.
 
-Generic notifications are identified:
+5 generic notifications are identified:
 
-* Process success : 
+* **Process success** : 
 
-This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded.
+This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.
+
+* **Process failed** : 
+
+This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.
 
 
-* Process failed : 
+* **Validation of input file** : 
 
-This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded.
-
+This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated.
+There are 3 possibles results :
+** **Positive validation** : in case the input file is correct. Color = GREEN
+** **Positive validation with warnings** : in case the input file is correct but has some warnings. Color = ORANGE
+** **Negative validation** : in case the input file failed the validation as detected errors. Color = RED
 
