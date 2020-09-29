@@ -23,7 +23,7 @@ The idea is to send relevant notifications to operator only when their attention
 Additionnaly, aggregate all the notifications from these different processes into a single screen 
 and to allow operators to act on them if needed.
 
-![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png){:class="img-fluid"}
+![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png)
 
 These notifications are materialized by *cards* sorted in a *feed* according to their period of relevance (business period) and their severity (color).
 When a notification is selected in the feed, the right-hand pane displays the *details* of the card: information about the process 
