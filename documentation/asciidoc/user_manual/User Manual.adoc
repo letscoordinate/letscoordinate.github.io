@@ -111,6 +111,8 @@ After log out, user will come back to login page.
 
 The proposed GUI for the application is common for all screens in the application. 
 
+image::validation_notification_positive_with_warnings.png[Home Screen]
+
 * On the top of the page, you have a header with
 ** Menu to access to the different screens of the tool.
 *** Card Feed screen: to receive and display the different cards or notifications. User will have the possibilities to manage the cards in this screen.
@@ -128,7 +130,7 @@ The proposed GUI for the application is common for all screens in the applicatio
 
 The card feed screen is the place to receive and manage cards/notifications. 
 
-image::home_screen.png[Home Screen]
+image::home_screen.png[Card Feed Screen]
 
 On this screen,
 
@@ -141,6 +143,8 @@ On this screen,
 **Global concept**
 
 On the left part of feed screen, a deck presents received all notifications.
+
+image::deck.png[Deck of notifications]
 
 **Notification (or card) concepts**
 
@@ -156,7 +160,7 @@ The colour of the notification depends on the status of the card:
 * **INFO** – blue : Information is received like results of calculation are available
 * **COMPLIANT** – green : Validation has been performed successfully like ACK is positive
 * **ACTION** required - orange – Warning : Please consider this notification and act to manage the raised issue
-* **ALARM** – red – Critical issues like Process failed
+* **ALARM** – red – Critical issues like Process failed, validation failed
 
 
 They are 2 kinds of information inside a notification:
