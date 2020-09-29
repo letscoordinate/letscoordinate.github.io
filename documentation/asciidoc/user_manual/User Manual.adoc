@@ -170,8 +170,7 @@ They are 2 kinds of information inside a notification:
 ** Ex : Process success, process failed, positive ACK
 
 * **Specific timestamped information** : notification with information for specific timestamps inside the business period
-** In such notification, different information for dedicated timestamp are identified.
-** Ex : 
+** In such notification, different information for dedicated timestamp are identified. Ex : 
 *** Negative ACK => all severe errors, errors and/or warnings are detailed per timestamp
 *** Positive ACK with warnings => All warnings are detailed per timestamp
 
@@ -187,19 +186,21 @@ Each notification has an arrival date and a business period:
 
 **Deck display**
 
-Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is in-cluded in the period presented in timeline view.
+Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is included in the period presented in timeline view.
 
 **Deck ordering**
 
 Notifications in the deck are sorted by default by severity/color.
-Using this button  , user can decide to order the notifications in the feed by arrival date or by gravi-ty/color.
+User can decide to order the notifications in the feed by arrival date or by gravity/color : image::ordering.png[Deck ordering]
 
 **Deck business period filtering**
 
 Some filters are proposed to filter the deck of card:
 
-* Between 2 dates for a business period with this button  
-* Based on the colour of the notifications with this button  
+* Between 2 arrival dates
+image::arrival_dates_filtering.png[Filtering by arrival dates]
+* Based on the color of the notifications with this button  
+image::color_filtering.png[Filtering by color]
 ** User can ticked or un-ticked notification color he wants to see 
  
 **Notification color filtering**
