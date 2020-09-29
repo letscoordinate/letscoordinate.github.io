@@ -101,7 +101,7 @@ The name (last and first names) and the entity (name of TSO or RCC) will be disp
 To log out, user can disconnect with a specific button on the top right part of the header of the screen. 
 With the little triangle button on the right of user name, user can click on it to display the content and then select log out.
 
-image::log_out.png[Log out]
+image::menu_user.png[Log out]
 
 After log out, user will come back to login page.
 
@@ -111,12 +111,14 @@ After log out, user will come back to login page.
 
 The proposed GUI for the application is common for all screens in the application. 
 
+image::validation_notification_positive_with_warnings.png[Home Screen]
+
 * On the top of the page, you have a header with
 ** Menu to access to the different screens of the tool.
 *** Card Feed screen: to receive and display the different cards or notifications. User will have the possibilities to manage the cards in this screen.
-*** RSC KPI report screen: to configure and present the relevant Key Performances Indicators (KPIs) of the STA and OPC service (graphs and report)
-*** Notification reception configuration screen: to configure which notification user want to see or not. 
 *** Archiving screen : to access to old notifications which are archived
+*** RSC KPI report screen: to configure and present the relevant Key Performances Indicators (KPIs) of the STA and OPC service (graphs and report)
+*** (SOON) Notification reception configuration screen: to configure which notification user want to see or not. 
 
 ** Login information
 *** In the top right of the page, you have the name & company of logged user
@@ -127,6 +129,8 @@ The proposed GUI for the application is common for all screens in the applicatio
 === Card Feed screen
 
 The card feed screen is the place to receive and manage cards/notifications. 
+
+image::home_screen.png[Card Feed Screen]
 
 On this screen,
 
@@ -139,6 +143,8 @@ On this screen,
 **Global concept**
 
 On the left part of feed screen, a deck presents received all notifications.
+
+image::deck.png[Deck of notifications]
 
 **Notification (or card) concepts**
 
@@ -154,52 +160,53 @@ The colour of the notification depends on the status of the card:
 * **INFO** – blue : Information is received like results of calculation are available
 * **COMPLIANT** – green : Validation has been performed successfully like ACK is positive
 * **ACTION** required - orange – Warning : Please consider this notification and act to manage the raised issue
-* **ALARM** – red – Critical issues like Process failed
+* **ALARM** – red – Critical issues like Process failed, validation failed
 
 
 They are 2 kinds of information inside a notification:
 
-* General information : notification with a general information along the business period
+* **General information** : notification with a general information along the business period
 ** In such notification, a global information is applied for all business period without any specific timestamp identified
 ** Ex : Process success, process failed, positive ACK
 
-* Specific timestamped information : notification with information for specific timestamps inside the business period
-** In such notification, different information for dedicated timestamp are identified.
-** Ex : 
+* **Specific timestamped information** : notification with information for specific timestamps inside the business period
+** In such notification, different information for dedicated timestamp are identified. Ex : 
 *** Negative ACK => all severe errors, errors and/or warnings are detailed per timestamp
 *** Positive ACK with warnings => All warnings are detailed per timestamp
-*** Tie Line inconsistencies checks => All inconsistencies detailed per timestamp
 
 **Arrival date and business period**
 
 Each notification has an arrival date and a business period:
 
-- Arrival date to know when this notification arrived in the system
-- Business period or validity period: from when to when this information are relevant from business point of view. 
-Ex: If a process result notification arrives the 19/09 at 13h23 and concerns the Month ahead process (so for October), 
--	Arrival date : 19/09 13h23
--	Business period : 1/10 0h -> 01/11 0h
+* **Arrival date** to know when this notification arrived in the system
+** Example of arrival date : 19/09 13h23
+* **Business period or validity period**: from when to when this information are relevant from business point of view. 
+** Ex: If a process result notification arrives the 19/09 at 13h23 and concerns the Month ahead process (so for October), 
+** Example of business period : 01/10 0h30 -> 01/11 0h30
 
 **Deck display**
 
-Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is in-cluded in the period presented in timeline view.
+Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is included in the period presented in timeline view.
 
 **Deck ordering**
 
 Notifications in the deck are sorted by default by severity/color.
-Using this button  , user can decide to order the notifications in the feed by arrival date or by gravi-ty/color.
+User can decide to order the notifications in the feed by arrival date or by gravity/color: 
 
-**Deck business period filtering**
+image::ordering.png[Deck ordering]
+
+**Deck filtering**
 
 Some filters are proposed to filter the deck of card:
 
-* Between 2 dates for a business period with this button  
-* Based on the colour of the notifications with this button  
-** User can ticked or un-ticked notification color he wants to see 
- 
-**Notification color filtering**
+* Between 2 arrival dates
 
-These filters will not affect bubble tips in the timeline which will stay present even if the deck is filtered.
+image::arrival_dates_filtering.png[Filtering by arrival dates]
+
+* Based on the color of the notifications
+** User can ticked or un-ticked notification color he wants to see 
+
+image::color_filtering.png[Filtering by color]
 
 ==== Timeline consideration
 
@@ -207,6 +214,8 @@ These filters will not affect bubble tips in the timeline which will stay presen
 
 Below the header, a timeline is proposed.
 This timeline represents a spatial view of information inside the notification depending on the category/color of it and the event arrival or occurrence.
+
+image::timeline.png[Timeline]
 
 **Different views**
 
@@ -253,8 +262,8 @@ The number in bubble is displayed in 2 digits. In case they are more than 99 not
 
 **Visualisation of content of bubble**
 
-User can pass its mouse over a bubble to see the details of events inside the bubble. A window will appear and present all summary of notifications considered in this bubble.
-
+User can click on a bubble to see the details of events inside the bubble. A window will appear and present all summary of notifications considered in this bubble.
+If user select one of the item presented, then the dedicated notification will be opened in detailed view.
 
 **Link between timeline view and card in the deck**
 
@@ -263,12 +272,14 @@ The timeline view affects the notifications in the deck by kind of filter:
 * Each notification in the deck has a business period (businessDayFrom – businessDayTo). 
 * If the business period of notification is included in the timeline period (timeline from – timeline to), then the notification will appear in the deck. 
 ** It can happen that a notification is not represented in the timeline as its arrival date/hour is not included in timeline view but as its business period is still included in the timeline period/view, the notification stays in the deck of notifications.
-* If the business period of notification isn’t anymore included in the timeline period/view, then the card will be moved to archiving system.
+* If the business period of notification isn’t anymore included in the timeline period/view, then the notification will be moved to archiving system.
 
 **Logged Username, current time and user settings**
 
 In the right part of the header the following is presented: the name (first and last name) of logged user, its company and the current timing for selected timezone:
 With the little triangle button, user can click on it to display the content and open the user settings panel or log out.
+
+image::menu_user_only.png[User menu]
  
 * Log information
 
@@ -278,10 +289,13 @@ When selecting “Settings”, personal settings of user are displayed:
 
 In this screen, user can decide to change its timezone based on a proposed list of European cities: all hours in the tool will be updated referring to this timezone.
 
+image::user_settings.png[User settings]
+
 * About screen
 
 When selecting “About”, version of deployed tools are displayed.
 
+image::about_section.png[About section]
 
 === RSC KPI report screen 
 
@@ -297,7 +311,11 @@ It’s composed of two parts:
 **  Which kind of KPIs ? 
 *** Global performance and/or Business ?
 
+image::RSC_KPI_config.png[RSC KPI config]
+
 * **RSC KPI display screen** : In this screen all graphs about KPI based on user configuration will be displayed. For every graph, user can add a comment below the graph itself.User has the possibility to export the graphs with comments in a pdf report by clicking on the PDF icon or export data (data only without graphs) in an excel report by clicking on the excel icon at the bottom. In case of pdf export, comments will be displayed.
+
+image::RSC_KPI_graphs.png[RSC KPI graphs]
 
 === Archiving screen 
 
@@ -310,7 +328,9 @@ User is able to search among all notifications available by using filters based 
 * Published date & hour of the notification : publish from and publish to
 * Business period date & hour inside the notification content : active from and active to
 
-=== Notification configuration screen 
+image::archive_screen_empty.png[Archive screen empty]
+
+=== (SOON) Notification configuration screen 
 
 This screen displays a panel to select which notification user want to see and receive.
 
@@ -320,22 +340,32 @@ This screen displays a panel to select which notification user want to see and r
 
 A card appears in the card deck and displays a bubble in the timeline (depend on information type of card)
 
+image::notification_never_open.png[Notification never open]
+
 **Open a notification**
 
-User can click on a card/notification in the deck to open the detailed content
+User can click on a notification in the deck to open the detailed content
+
+image::validation_notification_positive.png[Notification open]
 
 **Acknowledge a notification**
 
 With action buttons in detailed view at the bottom right, user can act on the card (acknowledge it if card type is information or accept/refuse it if card type is action).
 
 Ex : For informative notification, user is able to acknowledge the notification to keep track of its reading.
-After acknowledgement, acknowledgement button will be grey.
- 
+After a performed acknowledgement, “Acknowledge and close” button will be replaced by “Cancel acknowledgement” button :
 
+image::cancel_ack.png[Cancel acknowledgement]
+
+By clicking on this button, user can cancel the acknowledgement of this notification.
+
+ 
 === RSC KPI graphs and report
 **Set RSC KPI graphs**
 
 The user chooses the period (starting and ending dates), which RSCs, business process, Process KPIs or/and Business KPIs:
+
+image::RSC_KPI_config_details.png[Set RSC KPIs]
  
 **Period selection**
 
@@ -368,19 +398,20 @@ This selection allows to select kind of KPIs to display:
 * Global performances KPIs: RSC KPI related to the process itselft 
 * Business KPIs: RSC KPI related to the business results of the process – Different from one RSC to another one as TSOs under responsibility of each RSC differ.
 
-
 **RSC KPI graphs in GUI**
 
 User can see dedicated RSC KPIs graphs in GUI. He can add some comments below each graph. 
 
+image::RSC_KPI_graphs.png[RSC KPI graphs]
 
 **Export KPI report**
 
 The user can export KPI in pdf format by clicking on the dedicated button.
 It can also download report in xlsx to export only the values. 
 
+image::RSC_KPI_export.png[RSC KPI export]
 
-=== Reception notifications configuration
+=== (SOON) Reception notifications configuration
 
 Reception of the notifications is configurable for each RSC service.
 
@@ -396,12 +427,13 @@ These settings will be applied for the next connection (after log out and log in
 
 User has the possibility to consult previous past notifications in Archiving screen:
 
+image::archive_screen_empty.png[Archive screen empty]
+
 The screen is composed of 3 different components:
 
 * Research parameters
 * Found notifications list
 * Detailed view of notification
-
 
 **Research parameters**
 
@@ -432,15 +464,15 @@ User can open a notification in detailed view to consult them more in details by
 
 Depending on the business process, notifications will be different and adapted to each business process.
 
-Generic notifications are identified:
+5 generic notifications are identified:
 
-* Process success : 
+* **Process success** : This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.
 
-This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded.
+* **Process failed** : This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.
 
 
-* Process failed : 
-
-This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded.
-
+* **Validation of input file** : This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possibles results :
+** **Positive validation** : in case the input file is correct. Color = GREEN
+** **Positive validation with warnings** : in case the input file is correct but has some warnings. Color = ORANGE
+** **Negative validation** : in case the input file failed the validation as detected errors. Color = RED
 
