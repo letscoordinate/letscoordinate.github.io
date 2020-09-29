@@ -101,7 +101,7 @@ The name (last and first names) and the entity (name of TSO or RCC) will be disp
 To log out, user can disconnect with a specific button on the top right part of the header of the screen. 
 With the little triangle button on the right of user name, user can click on it to display the content and then select log out.
 
-image::log_out.png[Log out]
+image::menu_user.png[Log out]
 
 After log out, user will come back to login page.
 
@@ -127,6 +127,8 @@ The proposed GUI for the application is common for all screens in the applicatio
 === Card Feed screen
 
 The card feed screen is the place to receive and manage cards/notifications. 
+
+image::home_screen.png[Home Screen]
 
 On this screen,
 
@@ -159,26 +161,25 @@ The colour of the notification depends on the status of the card:
 
 They are 2 kinds of information inside a notification:
 
-* General information : notification with a general information along the business period
+* **General information** : notification with a general information along the business period
 ** In such notification, a global information is applied for all business period without any specific timestamp identified
 ** Ex : Process success, process failed, positive ACK
 
-* Specific timestamped information : notification with information for specific timestamps inside the business period
+* **Specific timestamped information** : notification with information for specific timestamps inside the business period
 ** In such notification, different information for dedicated timestamp are identified.
 ** Ex : 
 *** Negative ACK => all severe errors, errors and/or warnings are detailed per timestamp
 *** Positive ACK with warnings => All warnings are detailed per timestamp
-*** Tie Line inconsistencies checks => All inconsistencies detailed per timestamp
 
 **Arrival date and business period**
 
 Each notification has an arrival date and a business period:
 
-- Arrival date to know when this notification arrived in the system
-- Business period or validity period: from when to when this information are relevant from business point of view. 
-Ex: If a process result notification arrives the 19/09 at 13h23 and concerns the Month ahead process (so for October), 
--	Arrival date : 19/09 13h23
--	Business period : 1/10 0h -> 01/11 0h
+* **Arrival date** to know when this notification arrived in the system
+** Example of arrival date : 19/09 13h23
+* **Business period or validity period**: from when to when this information are relevant from business point of view. 
+** Ex: If a process result notification arrives the 19/09 at 13h23 and concerns the Month ahead process (so for October), 
+** Example of business period : 01/10 0h30 -> 01/11 0h30
 
 **Deck display**
 
