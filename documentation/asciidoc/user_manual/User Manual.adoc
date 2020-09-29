@@ -116,9 +116,9 @@ image::validation_notification_positive_with_warnings.png[Home Screen]
 * On the top of the page, you have a header with
 ** Menu to access to the different screens of the tool.
 *** Card Feed screen: to receive and display the different cards or notifications. User will have the possibilities to manage the cards in this screen.
-*** RSC KPI report screen: to configure and present the relevant Key Performances Indicators (KPIs) of the STA and OPC service (graphs and report)
-*** Notification reception configuration screen: to configure which notification user want to see or not. 
 *** Archiving screen : to access to old notifications which are archived
+*** RSC KPI report screen: to configure and present the relevant Key Performances Indicators (KPIs) of the STA and OPC service (graphs and report)
+*** (SOON) Notification reception configuration screen: to configure which notification user want to see or not. 
 
 ** Login information
 *** In the top right of the page, you have the name & company of logged user
@@ -191,16 +191,22 @@ Displayed notifications in the deck are the ones who are valid referring to the 
 **Deck ordering**
 
 Notifications in the deck are sorted by default by severity/color.
-User can decide to order the notifications in the feed by arrival date or by gravity/color : image::ordering.png[Deck ordering]
+User can decide to order the notifications in the feed by arrival date or by gravity/color: 
+
+image::ordering.png[Deck ordering]
 
 **Deck business period filtering**
 
 Some filters are proposed to filter the deck of card:
 
 * Between 2 arrival dates
+
 image::arrival_dates_filtering.png[Filtering by arrival dates]
+
 * Based on the color of the notifications with this button  
+
 image::color_filtering.png[Filtering by color]
+
 ** User can ticked or un-ticked notification color he wants to see 
  
 **Notification color filtering**
