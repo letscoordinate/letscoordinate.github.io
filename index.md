@@ -78,6 +78,5 @@ This makes writing and integrating software for a simplified and better coordina
 ## Continuous Integration / Continuous Delivery
 Let's Coordinate is built and integrated using battle-tested tools and (open) platforms. 
 
-[![Built with Gradle](https://img.shields.io/badge/Built%20with-Gradle-%23410099.svg?style=for-the-badge)](https://gradle.org/)
-[![Using Travis CI](https://img.shields.io/badge/Using-Travis%20CI-%23FF647D.svg?style=for-the-badge)](https://travis-ci.org/letscoordinate/letscoordinate-core)
-[![Using SonarCloud](https://img.shields.io/badge/Using-SonarCloud-%23FF647D.svg?style=for-the-badge)](https://sonarcloud.io/dashboard?id=org.lfenergy.letscoordinate%3Aletscoordinate-core)
+[![Built with Maven](https://img.shields.io/badge/Built%20with-Maven-%23410099.svg?style=for-the-badge)](https://maven.apache.org/)
+[![Using Travis CI](https://img.shields.io/badge/Using-Travis%20CI-%23FF647D.svg?style=for-the-badge)](https://travis-ci.org/)
