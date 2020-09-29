@@ -24,7 +24,7 @@ The idea is to send relevant notifications to operators when their attention is 
 Additionnaly, aggregate all the notifications from these different processes into a single screen 
 and to allow operators to act on them if needed.
 
-![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png)
+![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png){:class="img-fluid"}
 
 These workflows are materialized by *notifications* sorted in a *feed* according to their period of relevance (business period) and their severity (color).
 When a notification is selected in the feed, the right-hand pane displays the *details* of the card: information about the process 
