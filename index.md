@@ -20,7 +20,7 @@ This application is based on the [OperatorFabric](https://opfab.github.io/) fram
 To perform their duties, a TSO/RSC operator has to interact with multiple TSO/RSC processes (perform actions, watch for alerts, coordinate decisions etc.) 
 at the same time which can prove difficult if there are too many of them.
 
-The idea is to send relevant notifications to operator only when their attention are needed or if they should take care about the process.
+The idea is to send relevant notifications to operators when their attention is needed and this to help them to focus on the most critical points to make the best decisions.
 Additionnaly, aggregate all the notifications from these different processes into a single screen 
 and to allow operators to act on them if needed.
 
@@ -34,6 +34,7 @@ In addition, the notifications will be displayed as events on a *timeline* at th
 This view will be complimentary to the notification feed in that it will allow the operator to see when the event will happen/be relevant.
 
 Part of the value of Let's Coordinate is that it makes the integration of new TSO/RSC services or processes very simple.
+It offers a comprehensive and consistent view on all the different but linked processes.
 
 To start publishing notifications to users in an Let's Coordinate instance, all they have to do is:
 
