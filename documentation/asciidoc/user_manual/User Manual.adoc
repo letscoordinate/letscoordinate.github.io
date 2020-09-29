@@ -265,7 +265,6 @@ The number in bubble is displayed in 2 digits. In case they are more than 99 not
 User can click on a bubble to see the details of events inside the bubble. A window will appear and present all summary of notifications considered in this bubble.
 If user select one of the item presented, then the dedicated notification will be opened in detailed view.
 
-
 **Link between timeline view and card in the deck**
 
 The timeline view affects the notifications in the deck by kind of filter:
@@ -347,20 +346,26 @@ image::notification_never_open.png[Notification never open]
 
 User can click on a notification in the deck to open the detailed content
 
-image::notification_open.png[Notification open]
+image::validation_notification_positive.png[Notification open]
 
 **Acknowledge a notification**
 
 With action buttons in detailed view at the bottom right, user can act on the card (acknowledge it if card type is information or accept/refuse it if card type is action).
 
 Ex : For informative notification, user is able to acknowledge the notification to keep track of its reading.
-After acknowledgement, acknowledgement button will be grey.
- 
+After a performed acknowledgement, “Acknowledge and close” button will be replaced by “Cancel acknowledgement” button :
 
+image::cancel_ack.png[Cancel acknowledgement]
+
+By clicking on this button, user can cancel the acknowledgement of this notification.
+
+ 
 === RSC KPI graphs and report
 **Set RSC KPI graphs**
 
 The user chooses the period (starting and ending dates), which RSCs, business process, Process KPIs or/and Business KPIs:
+
+image::RSC_KPI_config_details.png[Set RSC KPIs]
  
 **Period selection**
 
