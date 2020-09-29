@@ -195,7 +195,7 @@ User can decide to order the notifications in the feed by arrival date or by gra
 
 image::ordering.png[Deck ordering]
 
-**Deck business period filtering**
+**Deck filtering**
 
 Some filters are proposed to filter the deck of card:
 
@@ -203,15 +203,10 @@ Some filters are proposed to filter the deck of card:
 
 image::arrival_dates_filtering.png[Filtering by arrival dates]
 
-* Based on the color of the notifications with this button  
+* Based on the color of the notifications
+** User can ticked or un-ticked notification color he wants to see 
 
 image::color_filtering.png[Filtering by color]
-
-** User can ticked or un-ticked notification color he wants to see 
- 
-**Notification color filtering**
-
-These filters will not affect bubble tips in the timeline which will stay present even if the deck is filtered.
 
 ==== Timeline consideration
 
