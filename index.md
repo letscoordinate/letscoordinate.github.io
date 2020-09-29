@@ -23,7 +23,7 @@ The idea is to send relevant notifications to operator only when their attention
 Additionnaly, aggregate all the notifications from these different processes into a single screen 
 and to allow operators to act on them if needed.
 
-![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png)
+![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png){:class="img-fluid"}
 
 These notifications are materialized by *cards* sorted in a *feed* according to their period of relevance (business period) and their severity (color).
 When a notification is selected in the feed, the right-hand pane displays the *details* of the card: information about the process 
@@ -74,6 +74,5 @@ This makes writing and integrating software for a simplified and better coordina
 ## Continuous Integration / Continuous Delivery
 Let's Coordinate is built and integrated using battle-tested tools and (open) platforms. 
 
-[![Built with Gradle](https://img.shields.io/badge/Built%20with-Gradle-%23410099.svg?style=for-the-badge)](https://gradle.org/)
-[![Using Travis CI](https://img.shields.io/badge/Using-Travis%20CI-%23FF647D.svg?style=for-the-badge)](https://travis-ci.org/letscoordinate/letscoordinate-core)
-[![Using SonarCloud](https://img.shields.io/badge/Using-SonarCloud-%23FF647D.svg?style=for-the-badge)](https://sonarcloud.io/dashboard?id=org.lfenergy.letscoordinate%3Aletscoordinate-core)
+[![Built with Maven](https://img.shields.io/badge/Built%20with-Maven-%23410099.svg?style=for-the-badge)](https://maven.apache.org/)
+[![Using Travis CI](https://img.shields.io/badge/Using-Travis%20CI-%23FF647D.svg?style=for-the-badge)](https://travis-ci.org/)

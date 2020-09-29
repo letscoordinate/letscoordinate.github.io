@@ -74,37 +74,66 @@
 
 <h1 id="lets-coordinate---getting-started">Let’s Coordinate - Getting started</h1>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h2 class="orange-title" id="1-prerequisites">1. Prerequisites</h2>
 
 <p>To use Let’s Coordinate, you need a linux OS with the following:</p>
 
 <ul>
   <li>Maven</li>
-  <li>Java 8</li>
+  <li>Java (8 or grater)</li>
   <li>Docker</li>
-  <li>NPM (6 or grater) and Angular CLI (8 or grater)</li>
-  <li>Having Operator Fabric running (<a href="https://opfab.github.io/documentation/current/getting_started/">https://opfab.github.io/documentation/current/getting_started/</a>)</li>
+  <li>Docker-compose</li>
+  <li>NPM (6 or grater)</li>
+  <li>Angular CLI (8 or grater)</li>
 </ul>
 
-<h2 id="run-lets-co">Run Let’s Co</h2>
+<h2 class="orange-title" id="2-setup-and-run-lets-coordinate">2. Setup and run Let’s Coordinate</h2>
 
-<p>Position yourself in the root directory of this project and run the following command:</p>
+<h4 class="orange-title-2" id="21-clone-lets-coordinate-project">2.1. Clone Let’s Coordinate project</h4>
 
-<p><code class="language-plaintext highlighter-rouge">./bin/run_letscoos.sh</code></p>
+<p>To start Let’s Coordinate, you first need to clone the <em>letscoordinate</em> git project:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/letscoordinate.git
+</code></pre></div></div>
+
+<h4 class="orange-title-2" id="22-run-operator-fabric">2.2. Run Operator Fabric</h4>
+
+<p>Clone the <em>operatorfabric-getting-started</em> git project:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/operatorfabric-getting-started.git
+</code></pre></div></div>
+
+<p>Override the content of the file <em>web-ui.json</em> in the server directory by the content of <em>web-ui.json</em> from the Let’s Coordinate project: <em>letscoordinate/test/prepare-opfab-env/web-ui.json</em></p>
+
+<p>Launch the <em>startserver.sh</em> in the server directory. You need to wait for all the services to start (it usually takes one minute to start), it is done when no more logs are written on the output (It could continue to log but slowly).</p>
+
+<h4 class="orange-title-2" id="23-run-lets-coordinate-backend">2.3. Run Let’s Coordinate backend</h4>
+
+<p>Position yourself in the root directory of the Let’s Coordinate project and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/run_letscoos.sh
+</code></pre></div></div>
 
 <p>This will start running the docker containers Kafka (<em>port 9092</em>), Zookeeper (<em>port 2181</em>), MariaDB (<em>port 3306</em>), the Let’s Co data provider app. (<em>letsco-data-provider</em>) and the Let’s Co main application (<em>letsco-api</em>).</p>
 
-<h4 id="prepare-the-operatorfabric-environment">Prepare the OperatorFabric environment</h4>
+<h4 class="orange-title-2" id="24-run-lets-coordinate-frontend">2.4. Run Let’s Coordinate frontend</h4>
 
-<p><em>1. Update the OpFab database</em></p>
+<p>Change directory to the <em>letsco-front</em> module and execute the following commands:</p>
 
-<p>Position yourself in the root directory of this project and run the following command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+ng serve
+</code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">./test/prepare-opfab-env/prepare-opfab-env.sh</code></p>
+<h4 class="orange-title-2" id="25-prepare-the-environment">2.5. Prepare the environment</h4>
+
+<h5 id="a-update-the-opfab-database">a. Update the OpFab database</h5>
+
+<p>Position yourself in the root directory of the Let’s Coordinate project and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./test/prepare-opfab-env/prepare-opfab-env.sh
+</code></pre></div></div>
 
 <p>This will create a new group, a new entity, and a new user associated to this group and this entity in the operator-fabric database, and send the bundles to display the cards in OperatorFabric.</p>
 
-<p><em>2. Add the user to keycloak</em></p>
+<h5 id="b-add-the-user-to-keycloak">b. Add the user to keycloak</h5>
 
 <ul>
   <li>On your browser, go to the keycloak admin url: <a href="http://localhost:89/auth/">http://localhost:89/auth/</a></li>
@@ -112,46 +141,48 @@
   <li>Connect using the following credentials: <strong>user</strong> <em>admin</em>, <strong>password</strong> <em>admin</em></li>
   <li>In the left menu, go to <em>Users</em></li>
   <li>Click on <em>Add user</em></li>
-  <li>Fill the <strong>Username</strong> field with <em>user.terna</em> and click on <em>Save</em></li>
+  <li>Fill the <strong>Username</strong> field with “<em>user.test</em>”, <strong>First Name</strong> field with “<em>User</em>”, <strong>Last Name</strong> field with “<em>Test</em>” and then click on <em>Save</em></li>
   <li>Go to <em>Credentials</em></li>
   <li>Fill the password with whatever you want, put <em>Temporary</em> to <em>OFF</em> and click on <em>Reset Password</em></li>
 </ul>
 
-<h2 id="send-a-new-notification">Send a new notification</h2>
+<h2 class="orange-title" id="3-use-lets-coordinate">3. Use Let’s Coordinate</h2>
+
+<h4 class="orange-title-2" id="31-send-a-new-notification">3.1. Send a new notification</h4>
 
 <ul>
   <li>Go to the following url: <a href="http://localhost:8082/swagger-ui.html">http://localhost:8082/swagger-ui.html</a></li>
   <li>Click on <em>kafka-producer-controller</em></li>
   <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
   <li>Click on <em>Try it out</em></li>
-  <li>In the data body value, put the content of one of the files from the directory <code class="language-plaintext highlighter-rouge">messages_models/json/card_feed/</code> (e.g: <code class="language-plaintext highlighter-rouge">MessageValidated_NEGATIVE_ACK.json</code>, <code class="language-plaintext highlighter-rouge">ProcessSuccess.json</code>)</li>
+  <li>In the data body value, put the content of one of the files from the directory <em>message_models/json/card_feed/</em> (e.g: <em>ProcessSuccess.json</em>, <em>MessageValidated_NEGATIVE_ACK.json</em>, …)</li>
   <li>Click on <em>Execute</em></li>
 </ul>
 
 <p>If you connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak, you should see the new card in the Feed.</p>
 
-<h2 id="generate-a-rsc-kpi-report">Generate a RSC KPI report</h2>
+<p>Feel free to test the other json samples from the directory <em>message_models/json/card_feed/</em></p>
 
-<blockquote>
-  <p><strong><em>NOTE:</em></strong> To be able to see the RSC KPI Report page, you should have the <em>letsco-front</em> module running! to do so, change directory to the <em>letsco-front</em> module and execute the command: <code class="language-plaintext highlighter-rouge">ng serve</code></p>
-</blockquote>
+<h4 class="orange-title-2" id="32-generate-a-rsc-kpi-report">3.2. Generate a RSC KPI report</h4>
 
 <ul>
   <li>Go to the following url: <a href="http://localhost:8082/swagger-ui.html">http://localhost:8082/swagger-ui.html</a></li>
   <li>Click on <em>kafka-producer-controller</em></li>
   <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
   <li>Click on <em>Try it out</em></li>
-  <li>In the data body value, put the content of the file <code class="language-plaintext highlighter-rouge">messages_models/json/rsc_kpi_report/kpi_use_cases.json</code></li>
+  <li>In the data body value, put the content of the file <em>message_models/json/rsc_kpi_report/kpi_use_cases.json</em></li>
   <li>Click on <em>Execute</em></li>
-  <li>Connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak and then select the <em>“RSC KPI Report”</em> menu.</li>
+  <li>Connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak.</li>
+  <li>Select the <em>“RSC KPI Report”</em> menu.</li>
   <li>Select the <em>period</em>, <em>RSC</em>, <em>RSC Service</em> and <em>Data type</em> and then click the <em>submit</em> button, you should see the generated RSC KPI Report.</li>
 </ul>
 
-<h2 id="stop-the-application">Stop the application</h2>
+<h2 class="orange-title" id="4-stop-the-application">4. Stop the application</h2>
 
-<p>Position yourself in the root directory of this project and run the following command:</p>
+<p>Position yourself in the root directory of Let’s Coordinate project and run the following command:</p>
 
-<p><code class="language-plaintext highlighter-rouge">./bin/run_letscoos.sh stop</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/run_letscoos.sh stop
+</code></pre></div></div>
 
 <p>This will stop the <em>letsco-api</em> &amp; <em>letsco-data-provider</em> processes, and stop the docker services (<em>Kafka</em>, <em>Zookeeper</em>, <em>MariaDB</em>).</p>
 

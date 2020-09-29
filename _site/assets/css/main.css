@@ -2708,3 +2708,7 @@ a.text-dark:hover, a.text-dark:focus { color: #121416 !important; }
   .table-dark th, .table-dark td, .table-dark thead th, .table-dark tbody + tbody { border-color: #dee2e6; }
   .table .thead-dark th { color: inherit; border-color: #dee2e6; } }
 img.avatar { height: 60px; }
+
+.orange-title { color: #ba3925; }
+
+.orange-title-2 { color: #ba3900; }
