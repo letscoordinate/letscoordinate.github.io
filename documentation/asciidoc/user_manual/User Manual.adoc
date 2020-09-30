@@ -328,7 +328,7 @@ User is able to search among all notifications available by using filters based 
 * Published date & hour of the notification : publish from and publish to
 * Business period date & hour inside the notification content : active from and active to
 
-image::archive_screen_empty.png[Archive screen empty]
+image::archive_screen_full.png[Archive screen]
 
 === (SOON) Notification configuration screen 
 
@@ -447,10 +447,12 @@ Different available filters are:
 ** active from = all notifications where business period is active at least in one hour from this date/hour
 ** active to = all notifications where business period is active at least in one hour from this date/hour 
 
+image::archive_screen_full.png[Archive screen]
+
 **Found list of notification**
 
-List of notification found in the database will appears on the notification list (left part)
-In case of multiple pages, user can change from one page to another one with dedicated buttons  .
+List of notification found in the database will appears on the notification list (left part).
+In case of multiple pages, user can change from one page to another one with dedicated buttons.
 
 **Detailed view of notification**
 
