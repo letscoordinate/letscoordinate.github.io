@@ -473,11 +473,21 @@ Depending on the business process, notifications will be different and adapted t
 
 * **Process success** : This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.
 
+image::process_successful_opened_short.png[Process successful]
+
 * **Process failed** : This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.
 
+image::process_failed_opened_short.png[Process failed]
 
 * **Validation of input file** : This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possibles results :
 ** **Positive validation** : in case the input file is correct. Color = GREEN
+
+image::positive_validation_opened_short.png[Positive validation]
+
 ** **Positive validation with warnings** : in case the input file is correct but has some warnings. Color = ORANGE
+
+image::positive_validation_with_warning_opened_short.png[Positive validation with warnings]
+
 ** **Negative validation** : in case the input file failed the validation as detected errors. Color = RED
 
+image::negative_validation_opened_short.png[Negative validation]
