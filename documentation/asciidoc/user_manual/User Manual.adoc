@@ -353,12 +353,8 @@ image::validation_notification_positive.png[Notification open]
 With action buttons in detailed view at the bottom right, user can act on the card (acknowledge it if card type is information or accept/refuse it if card type is action).
 
 Ex : For informative notification, user is able to acknowledge the notification to keep track of its reading.
-After a performed acknowledgement, “Acknowledge and close” button will be replaced by “Cancel acknowledgement” button :
-
-image::cancel_ack.png[Cancel acknowledgement]
-
-By clicking on this button, user can cancel the acknowledgement of this notification.
-
+After a performed acknowledgement,  notification will disappear from the deck.
+The only way to see it again is to consult the Archiving screen.
  
 === RSC KPI graphs and report
 **Set RSC KPI graphs**
