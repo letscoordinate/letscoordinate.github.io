@@ -407,6 +407,13 @@ It can also download report in xlsx to export only the values.
 
 image::RSC_KPI_export.png[RSC KPI export]
 
+RSC KPI report - pdf sample :
+
+
+RSC KPI report - xlsx sample :
+
+
+
 === (SOON) Reception notifications configuration
 
 Reception of the notifications is configurable for each RSC service.
