@@ -1,6 +1,6 @@
 {
   "eventMessage": {
-    "xmlns": "http://iec.ch/TC57/2011/schema/message",
+    "xmlns": "https://www.iec.ch/tc57/supportdocuments",
     "header": {
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
