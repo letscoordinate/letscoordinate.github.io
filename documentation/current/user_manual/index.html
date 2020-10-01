@@ -1043,6 +1043,11 @@ In case user was in the first-time period view selection, if user clicks on   or
 <p>User can click on a bubble to see the details of events inside the bubble. A window will appear and present all summary of notifications considered in this bubble.
 If user select one of the item presented, then the dedicated notification will be opened in detailed view.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/bubble_selection.png" alt="Bubble opening">
+</div>
+</div>
 <div class="paragraph">
 <p><strong>Link between timeline view and card in the deck</strong></p>
 </div>
@@ -1217,7 +1222,7 @@ User is able to search among all notifications available by using filters based 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../asciidoc/images/archive_screen_empty.png" alt="Archive screen empty">
+<img src="../../asciidoc/images/archive_screen_full.png" alt="Archive screen">
 </div>
 </div>
 </div>
@@ -1264,15 +1269,8 @@ User is able to search among all notifications available by using filters based 
 </div>
 <div class="paragraph">
 <p>Ex : For informative notification, user is able to acknowledge the notification to keep track of its reading.
-After a performed acknowledgement, “Acknowledge and close” button will be replaced by “Cancel acknowledgement” button :</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../../asciidoc/images/cancel_ack.png" alt="Cancel acknowledgement">
-</div>
-</div>
-<div class="paragraph">
-<p>By clicking on this button, user can cancel the acknowledgement of this notification.</p>
+After a performed acknowledgement,  notification will disappear from the deck.
+The only way to see it again is to consult the Archiving screen.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1380,6 +1378,18 @@ It can also download report in xlsx to export only the values.</p>
 <img src="../../asciidoc/images/RSC_KPI_export.png" alt="RSC KPI export">
 </div>
 </div>
+<div class="paragraph">
+<p>RSC KPI report - pdf sample :</p>
+</div>
+<div class="paragraph">
+<p><a href="attached_doc/SERVICE_A_allKpis_allRscs_20200101_20201231.pdf">RSC KPI report - pdf sample</a></p>
+</div>
+<div class="paragraph">
+<p>RSC KPI report - xlsx sample :</p>
+</div>
+<div class="paragraph">
+<p><a href="attached_doc/SERVICE_A_allKpis_allRscs_20200101_20201231.xlsx">RSC KPI report - xlsx sample</a></p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="truesoon-reception-notifications-configuration"><a class="anchor" href="#truesoon-reception-notifications-configuration"></a>5.3. (SOON) Reception notifications configuration</h3>
@@ -1482,12 +1492,17 @@ These settings will be applied for the next connection (after log out and log in
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/archive_screen_full.png" alt="Archive screen">
+</div>
+</div>
 <div class="paragraph">
 <p><strong>Found list of notification</strong></p>
 </div>
 <div class="paragraph">
-<p>List of notification found in the database will appears on the notification list (left part)
-In case of multiple pages, user can change from one page to another one with dedicated buttons  .</p>
+<p>List of notification found in the database will appears on the notification list (left part).
+In case of multiple pages, user can change from one page to another one with dedicated buttons.</p>
 </div>
 <div class="paragraph">
 <p><strong>Detailed view of notification</strong></p>
@@ -1512,9 +1527,27 @@ In case of multiple pages, user can change from one page to another one with ded
 <li>
 <p><strong>Process success</strong> : This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/process_successful_opened_short.png" alt="Process successful">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Process failed</strong> : This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/process_failed_opened_short.png" alt="Process failed">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Validation of input file</strong> : This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possibles results :</p>
 <div class="ulist">
@@ -1522,16 +1555,39 @@ In case of multiple pages, user can change from one page to another one with ded
 <li>
 <p><strong>Positive validation</strong> : in case the input file is correct. Color = GREEN</p>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/positive_validation_opened_short.png" alt="Positive validation">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Positive validation with warnings</strong> : in case the input file is correct but has some warnings. Color = ORANGE</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/positive_validation_with_warning_opened_short.png" alt="Positive validation with warnings">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Negative validation</strong> : in case the input file failed the validation as detected errors. Color = RED</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/negative_validation_opened_short.png" alt="Negative validation">
+</div>
 </div>
 </div>
 </div>
