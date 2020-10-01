@@ -266,6 +266,8 @@ The number in bubble is displayed in 2 digits. In case they are more than 99 not
 User can click on a bubble to see the details of events inside the bubble. A window will appear and present all summary of notifications considered in this bubble.
 If user select one of the item presented, then the dedicated notification will be opened in detailed view.
 
+image::bubble_selection.png[Bubble opening]
+
 **Link between timeline view and card in the deck**
 
 The timeline view affects the notifications in the deck by kind of filter:
