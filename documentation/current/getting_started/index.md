@@ -39,17 +39,17 @@ Clone the *operatorfabric-getting-started* git project:
 git clone https://github.com/opfab/operatorfabric-getting-started.git
 ```
 
-Override the content of the file *web-ui.json* in the server directory by the content of *web-ui.json* from the Let's Coordinate project: *letscoordinate/test/prepare-opfab-env/web-ui.json*
+Copy files "*web-ui.json*", "*docker-compose.yml*" and "*favicon.ico*" from "*letscoordinate/test/prepare-opfab-env/opfab-config*" directory and past them into "*operatorfabric-getting-started/server*". Override the existing files when asked!
 
 Launch the *startserver.sh* in the server directory. You need to wait for all the services to start (it usually takes one minute to start), it is done when no more logs are written on the output (It could continue to log but slowly).
 
 #### 2.3. Run Let's Coordinate backend
 {: .orange-title-2}
 
-Position yourself in the root directory of the Let’s Coordinate project and run the following command:
+Position yourself in the *bin* directory of the Let’s Coordinate project and run the following command:
 
 ```
-./bin/run_letscoos.sh
+./run_letscoos.sh
 ```
 
 This will start running the docker containers Kafka (*port 9092*), Zookeeper (*port 2181*), MariaDB (*port 3306*), the Let's Co data provider app. (*letsco-data-provider*) and the Let's Co main application (*letsco-api*).
@@ -121,7 +121,7 @@ Feel free to test the other json samples from the directory *message_models/json
 ## 4. Stop the application
 {: .orange-title}
 
-Position yourself in the root directory of Let's Coordinate project and run the following command:
+Position yourself in the *bin* directory of Let's Coordinate project and run the following command:
 
 ```
 ./bin/run_letscoos.sh stop

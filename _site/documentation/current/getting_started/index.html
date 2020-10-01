@@ -101,15 +101,15 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/operatorfabric-getting-started.git
 </code></pre></div></div>
 
-<p>Override the content of the file <em>web-ui.json</em> in the server directory by the content of <em>web-ui.json</em> from the Let’s Coordinate project: <em>letscoordinate/test/prepare-opfab-env/web-ui.json</em></p>
+<p>Copy files “<em>web-ui.json</em>”, “<em>docker-compose.yml</em>” and “<em>favicon.ico</em>” from “<em>letscoordinate/test/prepare-opfab-env/opfab-config</em>” directory and past them into “<em>operatorfabric-getting-started/server</em>”. Override the existing files when asked!</p>
 
 <p>Launch the <em>startserver.sh</em> in the server directory. You need to wait for all the services to start (it usually takes one minute to start), it is done when no more logs are written on the output (It could continue to log but slowly).</p>
 
 <h4 class="orange-title-2" id="23-run-lets-coordinate-backend">2.3. Run Let’s Coordinate backend</h4>
 
-<p>Position yourself in the root directory of the Let’s Coordinate project and run the following command:</p>
+<p>Position yourself in the <em>bin</em> directory of the Let’s Coordinate project and run the following command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/run_letscoos.sh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run_letscoos.sh
 </code></pre></div></div>
 
 <p>This will start running the docker containers Kafka (<em>port 9092</em>), Zookeeper (<em>port 2181</em>), MariaDB (<em>port 3306</em>), the Let’s Co data provider app. (<em>letsco-data-provider</em>) and the Let’s Co main application (<em>letsco-api</em>).</p>
@@ -179,7 +179,7 @@ ng serve
 
 <h2 class="orange-title" id="4-stop-the-application">4. Stop the application</h2>
 
-<p>Position yourself in the root directory of Let’s Coordinate project and run the following command:</p>
+<p>Position yourself in the <em>bin</em> directory of Let’s Coordinate project and run the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/run_letscoos.sh stop
 </code></pre></div></div>
