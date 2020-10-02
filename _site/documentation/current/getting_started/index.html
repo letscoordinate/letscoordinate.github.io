@@ -101,22 +101,26 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/operatorfabric-getting-started.git
 </code></pre></div></div>
 
-<p>Copy files “<em>web-ui.json</em>”, “<em>docker-compose.yml</em>” and “<em>favicon.ico</em>” from “<em>letscoordinate/test/prepare-opfab-env/opfab-config</em>” directory and past them into “<em>operatorfabric-getting-started/server</em>”. Override the existing files when asked!</p>
+<p>Copy files “<em>web-ui.json</em>”, “<em>docker-compose.yml</em>” and “<em>favicon.ico</em>” from “<em>letscoordinate/test/prepare-opfab-env/opfab-config</em>” directory and past them into “<em>operatorfabric-getting-started/server</em>”. Overwrite the existing files when asked!</p>
 
-<p>Launch the <em>startserver.sh</em> in the server directory. You need to wait for all the services to start (it usually takes one minute to start), it is done when no more logs are written on the output (It could continue to log but slowly).</p>
+<p>In the directory “<em>operatorfabric-getting-started/server</em>” launch the following command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./startServer.sh 
+</code></pre></div></div>
+
+<p>You need to wait for all the services to start (it usually takes one minute to start), it is done when no more logs are written on the output (It could continue to log but slowly).</p>
 
 <h4 class="orange-title-2" id="23-run-lets-coordinate-backend">2.3. Run Let’s Coordinate backend</h4>
 
-<p>Position yourself in the <em>bin</em> directory of the Let’s Coordinate project and run the following command:</p>
+<p>In a new terminal, position yourself in the “<em>letscoordinate/bin</em>” directory and run the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run_letscoos.sh
 </code></pre></div></div>
 
-<p>This will start running the docker containers Kafka (<em>port 9092</em>), Zookeeper (<em>port 2181</em>), MariaDB (<em>port 3306</em>), the Let’s Co data provider app. (<em>letsco-data-provider</em>) and the Let’s Co main application (<em>letsco-api</em>).</p>
+<p>This will start running the docker containers Kafka (<em>port 9092</em>), Zookeeper (<em>port 2181</em>), MariaDB (<em>port 3306</em>), the <em>letsco-data-provider</em> application (<em>port 8082</em>) and <em>letsco-api</em> application (<em>port 8088</em>).</p>
 
 <h4 class="orange-title-2" id="24-run-lets-coordinate-frontend">2.4. Run Let’s Coordinate frontend</h4>
 
-<p>Change directory to the <em>letsco-front</em> module and execute the following commands:</p>
+<p>In a new terminal, change directory to the “<em>letscoordinate/letsco-front</em>” module and execute the following commands:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
 ng serve
@@ -126,12 +130,16 @@ ng serve
 
 <h5 id="a-update-the-opfab-database">a. Update the OpFab database</h5>
 
-<p>Position yourself in the root directory of the Let’s Coordinate project and run the following command:</p>
+<p>Download the latest <em>karate.jar</em> from <a href="https://github.com/intuit/karate/releases/">Karate github release page</a></p>
+
+<p>Put it in the “<em>letscoordinate/test/prepare-opfab-env</em>” directory, rename it to “<em>karate.jar</em>” to use it easily.</p>
+
+<p>Position yourself in the “<em>letscoordinate</em>” root directory and run the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./test/prepare-opfab-env/prepare-opfab-env.sh
 </code></pre></div></div>
 
-<p>This will create a new group, a new entity, and a new user associated to this group and this entity in the operator-fabric database, and send the bundles to display the cards in OperatorFabric.</p>
+<p>This will create a new group, a new entity, and a new user associated to this group and this entity in the <em>operator-fabric</em> database, and will send the bundles to display the cards in OperatorFabric.</p>
 
 <h5 id="b-add-the-user-to-keycloak">b. Add the user to keycloak</h5>
 
@@ -144,6 +152,7 @@ ng serve
   <li>Fill the <strong>Username</strong> field with “<em>user.test</em>”, <strong>First Name</strong> field with “<em>User</em>”, <strong>Last Name</strong> field with “<em>Test</em>” and then click on <em>Save</em></li>
   <li>Go to <em>Credentials</em></li>
   <li>Fill the password with whatever you want, put <em>Temporary</em> to <em>OFF</em> and click on <em>Reset Password</em></li>
+  <li>In the opened popup, click on <em>Change password</em></li>
 </ul>
 
 <h2 class="orange-title" id="3-use-lets-coordinate">3. Use Let’s Coordinate</h2>
@@ -155,13 +164,13 @@ ng serve
   <li>Click on <em>kafka-producer-controller</em></li>
   <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
   <li>Click on <em>Try it out</em></li>
-  <li>In the data body value, put the content of one of the files from the directory <em>message_models/json/card_feed/</em> (e.g: <em>ProcessSuccess.json</em>, <em>MessageValidated_NEGATIVE_ACK.json</em>, …)</li>
+  <li>In the data body value, put the content of one of the files from the directory “<em>letscoordinate/message_models/json/card_feed/</em>” (e.g: <em>ProcessSuccess.json</em>, <em>MessageValidated_NEGATIVE_ACK.json</em>, …)</li>
   <li>Click on <em>Execute</em></li>
 </ul>
 
 <p>If you connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak, you should see the new card in the Feed.</p>
 
-<p>Feel free to test the other json samples from the directory <em>message_models/json/card_feed/</em></p>
+<p>Feel free to test the other json samples from the directory “<em>letscoordinate/message_models/json/card_feed/</em>”</p>
 
 <h4 class="orange-title-2" id="32-generate-a-rsc-kpi-report">3.2. Generate a RSC KPI report</h4>
 
@@ -170,7 +179,7 @@ ng serve
   <li>Click on <em>kafka-producer-controller</em></li>
   <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
   <li>Click on <em>Try it out</em></li>
-  <li>In the data body value, put the content of the file <em>message_models/json/rsc_kpi_report/kpi_use_cases.json</em></li>
+  <li>In the data body value, put the content of the file “<em>letscoordinate/message_models/json/rsc_kpi_report/kpi_use_cases.json</em>”</li>
   <li>Click on <em>Execute</em></li>
   <li>Connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak.</li>
   <li>Select the <em>“RSC KPI Report”</em> menu.</li>
@@ -179,9 +188,20 @@ ng serve
 
 <h2 class="orange-title" id="4-stop-the-application">4. Stop the application</h2>
 
-<p>Position yourself in the <em>bin</em> directory of Let’s Coordinate project and run the following command:</p>
+<p>To stop the application, we should start by stopping OperatorFabric and then Let’s Coordinate.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/run_letscoos.sh stop
+<h4 class="orange-title-2" id="41-stop-operatorfabric">4.1. Stop OperatorFabric</h4>
+
+<p>To stop OperatorFabric server, change directory to “<em>operatorfabric-getting-started/server</em>” and execute the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose stop &amp;
+</code></pre></div></div>
+
+<h4 class="orange-title-2" id="42-stop-lets-coordinate">4.2. Stop Let’s Coordinate</h4>
+
+<p>Position yourself in the “<em>letscoordinate/bin</em>” directory and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run_letscoos.sh stop
 </code></pre></div></div>
 
 <p>This will stop the <em>letsco-api</em> &amp; <em>letsco-data-provider</em> processes, and stop the docker services (<em>Kafka</em>, <em>Zookeeper</em>, <em>MariaDB</em>).</p>
