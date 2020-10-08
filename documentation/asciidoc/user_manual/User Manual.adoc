@@ -94,6 +94,8 @@ Then validate with “Log In” button.
  
 
 After login, user will be redirected to the “Feed screen” of Let’s Coordinate which is the Home screen of the tool.
+
+image::home_screen.png[Card Feed Screen]
  
 The name (last and first names) and the entity (name of TSO or RCC) will be displayed on the right part of the header.
 
