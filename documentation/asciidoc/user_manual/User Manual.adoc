@@ -256,7 +256,7 @@ image::color_filtering.png[Filtering by color]
 
 image::ack_not_ack.png[Ack or not ack notifications]
 
-By default, only “Not acknowledged” notifications are displayed: As soon as an user will acknowledge a notification, it will disappears based on this filter. 
+By default, only “Not acknowledged” notifications are displayed: As soon as an user will acknowledge a notification, it will disappear based on this filter. 
 
 
 ==== Timeline consideration
