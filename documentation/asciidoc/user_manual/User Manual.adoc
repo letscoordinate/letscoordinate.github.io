@@ -225,7 +225,7 @@ image::sounds.png[Sounds activation]
 
 On the left part of feed screen, a deck presents received all notifications based on their business period.
 Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is in-cluded in the period presented in timeline view.
-Some buttons are displayed on top of the deck to perform some ordering or filtering
+Some buttons are displayed on top of the deck to perform some ordering or filtering:
 
 image::deck_buttons.png[Deck buttons]
 
@@ -245,16 +245,16 @@ Some filters are proposed to filter the deck of card:
 image::arrival_dates_filtering.png[Filtering by arrival dates]
 
 * Based on the color of the notifications
-** User can ticked or un-ticked notification color he wants to see 
+** User can ticked or un-ticked notification color he wants to see : 
 
 image::color_filtering.png[Filtering by color]
 
-* Status of the notifications: Acknowledged/Not acknowledged with this button  : User can select to see:
+* Status of the notifications: Acknowledged/Not acknowledged with this button : User can select to see:
 ** only not acknowledged notifications  
 ** only acknowledged notifications
 ** all notifications (acknowledged and not acknowledged) 
 
-image::image::ack_not_ack.png[Ack or not ack notifications]
+image::ack_not_ack.png[Ack or not ack notifications]
 
 By default, only “Not acknowledged” notifications are displayed: As soon as an user will acknowledge a notification, it will disappears based on this filter. 
 
