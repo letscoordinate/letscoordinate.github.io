@@ -204,7 +204,7 @@ image::ticked_ack.png[Acknowledged notification]
        
 image::negative_validation_opened_short_short.png[Detailed view]
 
-* (SOON) In case of SMART notification, you will be able to answer to some questions and then your answers to the coordination system.
+*** (SOON) In case of SMART notification, you will be able to answer to some questions and then your answers to the coordination system.
 
 **Read/Unread notifications**
 
