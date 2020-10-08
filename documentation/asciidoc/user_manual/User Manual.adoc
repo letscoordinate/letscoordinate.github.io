@@ -334,10 +334,10 @@ The timeline view affects the notifications in the deck by kind of filter:
 * If the business period of notification isn’t anymore included in the timeline period/view, then the notification will be moved to archiving system.
 
 **Day/night mode**
+
 This functionality is used to change the color of the background of the tool by using a dedicated button close to the logged user:
 * **little sun** to switch background to day mode with light colors
 * **little moon** to switch background to night mode with dark colors
-
 
 **Logged Username, current time and user settings**
 
