@@ -223,7 +223,11 @@ image::sounds.png[Sounds activation]
 
 **Deck display**
 
-Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is included in the period presented in timeline view.
+On the left part of feed screen, a deck presents received all notifications based on their business period.
+Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is in-cluded in the period presented in timeline view.
+Some buttons are displayed on top of the deck to perform some ordering or filtering:
+
+image::deck_buttons.png[Deck buttons]
 
 **Deck ordering**
 
