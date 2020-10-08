@@ -249,6 +249,16 @@ image::arrival_dates_filtering.png[Filtering by arrival dates]
 
 image::color_filtering.png[Filtering by color]
 
+* Status of the notifications: Acknowledged/Not acknowledged with this button  : User can select to see:
+** only not acknowledged notifications  
+** only acknowledged notifications
+** all notifications (acknowledged and not acknowledged):  
+
+image::image::ack_not_ack.png[Ack or not ack notifications]
+
+By default, only “Not acknowledged” notifications are displayed: As soon as an user will acknowledge a notification, it will disappears based on this filter. 
+
+
 ==== Timeline consideration
 
 **Global concept**
