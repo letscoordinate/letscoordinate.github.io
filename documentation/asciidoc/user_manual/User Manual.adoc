@@ -190,6 +190,7 @@ Each notification has an arrival date and a business period:
 **Notification View**
 
 There are 2 views for a notification:
+
 * **Reduced view** in the deck of notification
 ** Summary of the notification with limited information
 ** Depending if the card has been acknowledged or not, a ticked appears on the right part of the notification
