@@ -187,6 +187,39 @@ Each notification has an arrival date and a business period:
 ** Ex: If a process result notification arrives the 19/09 at 13h23 and concerns the Month ahead process (so for October), 
 ** Example of business period : 01/10 0h30 -> 01/11 0h30
 
+**Notification View**
+
+There are 2 views for a notification:
+* **Reduced view** in the deck of notification
+** Summary of the notification with limited information
+** Depending if the card has been acknowledged or not, a ticked appears on the right part of the notification
+
+image::ticked_ack.png[Acknowledged notification]
+
+* **Detailed view** in the right part of the screen
+** Presentation of the content of notification with detailed information
+** In the detailed view, you can have different buttons to act on this notification.
+*** In case of informative notification, you will be able to acknowledge/cancel acknowledgement of a notification:
+       
+image::negative_validation_opened_short_short.png[Detailed view]
+
+* (SOON) In case of SMART notification, you will be able to answer to some questions and then your answers to the coordination system.
+
+**Read/Unread notifications**
+
+A new notification when arriving in the deck is always an unread notification. User can recognize it by a specific symbol (eye crossed out) on the right part of the reduced view: 
+
+image::notification_not_read.png[Read notification]
+ .
+If an user clicks on the notification for the first time, then the notification will be changed to “read” status and the symbol will disappear.
+
+**Notifications arrival with sound**
+
+User have the possibility to activate (or not) a dedicated sound bells when a new notification arrives. 
+Each color/severity of notification has a different sound and an user can decide to active the sound for its arrival by ticking the dedicated box:
+ 
+image::sounds.png[Sounds activation]
+
 **Deck display**
 
 Displayed notifications in the deck are the ones who are valid referring to the dedicated timeline view meaning if at least one hour from business period (from valid from to valid to) of the notification is included in the period presented in timeline view.
