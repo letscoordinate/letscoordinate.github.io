@@ -211,8 +211,8 @@ image::negative_validation_opened_short_short.png[Detailed view]
 A new notification when arriving in the deck is always an unread notification. User can recognize it by a specific symbol (eye crossed out) on the right part of the reduced view: 
 
 image::notification_not_read.png[Read notification]
- .
-If an user clicks on the notification for the first time, then the notification will be changed to “read” status and the symbol will disappear.
+
+If an user clicks on the notification for the first time, then the notification will be changed to **read** status and the symbol will disappear.
 
 **Notifications arrival with sound**
 
