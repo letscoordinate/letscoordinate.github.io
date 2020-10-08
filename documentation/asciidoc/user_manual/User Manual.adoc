@@ -118,14 +118,14 @@ image::validation_notification_positive_with_warnings.png[Home Screen]
 
 * On the top of the page, you have a header with
 ** Menu to access to the different screens of the tool.
-*** Card Feed screen: to receive and display the different cards or notifications. User will have the possibilities to manage the cards in this screen.
-*** Archiving screen : to access to old notifications which are archived
-*** RSC KPI report screen: to configure and present the relevant Key Performances Indicators (KPIs) of the STA and OPC service (graphs and report)
-*** (SOON) Notification reception configuration screen: to configure which notification user want to see or not. 
+*** **Card Feed screen** : to receive and display the different cards or notifications. User will have the possibilities to manage the cards in this screen.
+*** **Archiving screen** : to access to old notifications which are archived
+*** **RSC KPI report screen** : to configure and present the relevant Key Performances Indicators (KPIs) of the STA and OPC service (graphs and report)
+*** (SOON) **Notification reception configuration screen** : to configure which notification user want to see or not. 
 
 ** Login information
-*** In the top right of the page, you have the name & company of logged user
-*** Below to the name of the logged user, current time for selected time zone of the day is displayed.
+*** In the top right of the page, you have the **name & company** of logged user
+*** Below to the name of the logged user, **current time** for selected time zone of the day is displayed.
 
 * Below the header, you have the content of the screen
 
@@ -250,8 +250,8 @@ image::arrival_dates_filtering.png[Filtering by arrival dates]
 image::color_filtering.png[Filtering by color]
 
 * Status of the notifications: Acknowledged/Not acknowledged with this button : User can select to see:
-** only not acknowledged notifications  
 ** only acknowledged notifications
+** only not acknowledged notifications  
 ** all notifications (acknowledged and not acknowledged) 
 
 image::ack_not_ack.png[Ack or not ack notifications]
@@ -283,12 +283,13 @@ To ease the view and to match with relevant timeframe processes,
 A specific button on the top right is dedicated to hide (or not) the timeline:
 
 image::hide_timeline.png[Hide timeline]
- 
-**Timelines view and zooms**
 
-For all first-time period view selection, the selected period will be preceded by the remaining days and hours between real time (current time) and begin of selected period (operational view). 
-User can click on   button to see the next period or click on   button to see the previous period.
-In case user was in the first-time period view selection, if user clicks on   or  , then the timeline will be configured in study mode view: beginning and end of the period displayed in the timeline are referring to selected period (without representing real time if not inside the period).
+When timeline is hidden, the considered business period (before it was hidden) is displayed on the left of its buttons.
+
+For all first-time period view selection, the **selected period** will be preceded by the remaining days and hours between real time (current time) and begin of selected period (operational view). 
+
+User can click on **>>** button to see the next period or click on **<<** button to see the previous period.
+In case user was in the first-time period view selection, if user clicks on **<<**  or **>>**, then the timeline will be configured in study mode view: beginning and end of the period displayed in the timeline are referring to selected period (without representing real time if not inside the period).
 
 **Time tick consideration**
 
@@ -322,6 +323,7 @@ If user select one of the item presented, then the dedicated notification will b
 
 image::bubble_selection.png[Bubble opening]
 
+
 **Link between timeline view and card in the deck**
 
 The timeline view affects the notifications in the deck by kind of filter:
@@ -330,6 +332,12 @@ The timeline view affects the notifications in the deck by kind of filter:
 * If the business period of notification is included in the timeline period (timeline from – timeline to), then the notification will appear in the deck. 
 ** It can happen that a notification is not represented in the timeline as its arrival date/hour is not included in timeline view but as its business period is still included in the timeline period/view, the notification stays in the deck of notifications.
 * If the business period of notification isn’t anymore included in the timeline period/view, then the notification will be moved to archiving system.
+
+**Day/night mode**
+This functionality is used to change the color of the background of the tool by using a dedicated button close to the logged user:
+* **little sun** to switch background to day mode with light colors
+* **little moon** to switch background to night mode with dark colors
+
 
 **Logged Username, current time and user settings**
 
