@@ -279,6 +279,10 @@ To ease the view and to match with relevant timeframe processes,
 * **Y-1** view from 1st January 0h selected time until 1st January of next year 0h select time.
 * **>>** : to move to the next period 
 * **<<** : to move to the previous period 
+
+A specific button on the top right is dedicated to hide (or not) the timeline:
+
+image::hide_timeline.png[Hide timeline]
  
 **Timelines view and zooms**
 
