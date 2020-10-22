@@ -336,8 +336,19 @@ The timeline view affects the notifications in the deck by kind of filter:
 **Day/night mode**
 
 This functionality is used to change the color of the background of the tool by using a dedicated button close to the logged user:
+
 * **little sun** to switch background to day mode with light colors
+
+image::sun.png[Day mode]
+
 * **little moon** to switch background to night mode with dark colors
+
+image::moon.png[Night mode]
+
+Example for the feed screen :
+
+image::day_mode.png[Day mode]
+image::night_mode.png[Night mode]
 
 **Logged Username, current time and user settings**
 
