@@ -2712,3 +2712,5 @@ img.avatar { height: 60px; }
 .orange-title { color: #ba3925; }
 
 .orange-title-2 { color: #ba3900; }
+
+blockquote { border-left: 0.25em solid #dee1e3; color: #6b727c; padding: 0 1em; }

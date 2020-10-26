@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Let's Coordinate</title>
+<link rel="shortcut icon" href=/assets/img/favicon.ico>
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+<body>
+<div>
+    <!-- Adapted from https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de -->
+
+    <!-- TODO Handle active page -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img alt="logo img" class="avatar" src="/assets/img/letsco-logo.png" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/getting_started/">Getting Started</a></li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=Documentation role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby=Documentation>
+                        
+                        <a class="dropdown-item" href="/documentation/current/user_manual/">User manual</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/implementation_guide/">Implementation guide</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/releases/">Releases</a></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container-lg px-3 my-5 markdown-body">
+    <!-- Copyright (c) 2020 RTE (https://www.rte-france.com)                                                  -->
+<!-- Copyright (c) 2020 RTE international (https://www.rte-international.com)                             -->
+<!-- See AUTHORS.txt                                                                                      -->
+<!-- This document is subject to the terms of the Creative Commons Attribution 4.0 International license. -->
+<!-- If a copy of the license was not distributed with this                                               -->
+<!-- file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.                            -->
+<!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
+
+<h1 id="version-100release">Version 1.0.0.RELEASE</h1>
+<hr />
+<p><br /></p>
+
+<h2 class="orange-title" id="1-features">1. Features</h2>
+
+<ul>
+  <li>Prepare generic JSON format</li>
+  <li>Prepare generic Excel format</li>
+  <li>Setup liquibase for database versioning</li>
+  <li>Add letsco-data-provider module to read files from FTP server and send data to the backend</li>
+  <li>Add API to transform valid Excel files to JSON and save generated data into database</li>
+  <li>Initializing RSC KPI report module</li>
+  <li>Add export RSC KPI Excel report functionality</li>
+  <li>Add export RSC KPI PDF report functionality</li>
+  <li>Setup Kafka to send cards to OpFab</li>
+  <li>create process to send process successful card to OpFab</li>
+  <li>create process to send process failed card to OpFab</li>
+  <li>create process to send message validated card to OpFab</li>
+  <li>Configure OpFab screens: card feed &amp; archives</li>
+  <li>Add online documentation: https://letscoordinate.github.io/
+<br /></li>
+</ul>
+
+<h2 class="orange-title" id="2-tasks">2. Tasks</h2>
+
+<ul>
+  <li>[LC-169] Allow a user to customize the title and summary in the feed for the card sent to opfab</li>
+  <li>[LC-163] Make some screenshot for Let’s Co OS + Sample of pdf/xlsx RSC KPI report</li>
+  <li>[LC-162] Allow a user to customize a title and summary for the reduced view in opfab</li>
+  <li>[LC-158] Add a README.md &amp; tools that allows a new developer to run the project</li>
+  <li>[LC-157] Implement the Excel download (RSC KPI report)</li>
+  <li>[LC-156] Implement the PDF download (RSC KPI report)</li>
+  <li>[LC-153] If specific message, send it to third app via POST call</li>
+  <li>[LC-152] Add TSOs and RSCs config files</li>
+  <li>[LC-149] Make a docker-compose or k8s quick deployment of letsco</li>
+  <li>[LC-148] Create process to send message validated card to opfab</li>
+  <li>[LC-147] Create process to send process failed card to opfab</li>
+  <li>[LC-146] Create process to send process success card to opfab</li>
+  <li>[LC-141] Create 2 excels files based on the 2 JSONs generic input files (ProcessFailed and ProcessSuccess)</li>
+  <li>[LC-127] Send the JSONs
+<br /></li>
+</ul>
+
+<h2 class="orange-title" id="3-bugs">3. Bugs</h2>
+
+<ul>
+  <li>[LC-172] For all ACK negative notification, change the color of the notification in RED instead of orange
+<br /></li>
+</ul>
+
+<h2 class="orange-title" id="4-stories">4. Stories</h2>
+
+<ul>
+  <li>[LC-17] Put all TSOs and RSCs list in a parameter list
+<br /></li>
+</ul>
+
+
+</div>
+
+
+<footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2020 Authors of <a href="https://github.com/letscoordinate/letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
+</p>
+</footer>
+
+
+
+<!-- Needed by bootstrap javascript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="/assets/js/bootstrap/bootstrap.js"></script>
+
+</body>
+</html>
