@@ -10,3 +10,6 @@
       url: /documentation/current/user_manual/
     - title: Implementation guide
       url: /documentation/current/implementation_guide/
+
+- title: Releases
+  url: /documentation/current/releases/
