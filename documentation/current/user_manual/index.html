@@ -463,15 +463,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truecard-feed-screen">4.2. Card Feed screen</a></li>
 <li><a href="#truersc-kpi-report-screen">4.3. RSC KPI report screen</a></li>
 <li><a href="#truearchiving-screen">4.4. Archiving screen</a></li>
-<li><a href="#truesoon-notification-configuration-screen">4.5. (SOON) Notification configuration screen</a></li>
+<li><a href="#truenotification-reception-configuration-screen">4.5. Notification reception configuration screen</a></li>
 </ul>
 </li>
 <li><a href="#truetool-functionalities">5. Tool functionalities</a>
 <ul class="sectlevel2">
 <li><a href="#truenotification-management">5.1. Notification management</a></li>
 <li><a href="#truersc-kpi-graphs-and-report">5.2. RSC KPI graphs and report</a></li>
-<li><a href="#truesoon-reception-notifications-configuration">5.3. (SOON) Reception notifications configuration</a></li>
+<li><a href="#truereception-notifications-configuration">5.3. Reception notifications configuration</a></li>
 <li><a href="#truearchiving-system">5.4. Archiving system</a></li>
+<li><a href="#truecard-creation">5.5. Card creation</a></li>
 </ul>
 </li>
 <li><a href="#trueexisting-generic-notifications">6. Existing generic notifications</a></li>
@@ -620,7 +621,7 @@ Other OS can be used but the compatibility with the 3 dedicated web browsers wil
 <div class="sect2">
 <h3 id="truesystem-login"><a class="anchor" href="#truesystem-login"></a>3.1. System login</h3>
 <div class="paragraph">
-<p>To connect/log in to the Let’s Coordinate tool, user will have to use the Let’s Coordinate direct url to open directly the Let’s Coordinate tool: <a href="http://localhost:2002/ui/" class="bare">http://localhost:2002/ui/</a>.</p>
+<p>To connect/log in to the Let’s Coordinate tool, user will have to use the Let’s Coordinate direct url to open directly the Let’s Coordinate tool: <a href="http://localhost/ui/" class="bare">http://localhost/ui/</a>.</p>
 </div>
 <div class="paragraph">
 <p>After connecting to url address, user should enter its credentials:</p>
@@ -700,7 +701,10 @@ With the little triangle button on the right of user name, user can click on it 
 <p><strong>RSC KPI report screen</strong> : to configure and present the relevant Key Performances Indicators (KPIs) of the STA and OPC service (graphs and report)</p>
 </li>
 <li>
-<p>(SOON) <strong>Notification reception configuration screen</strong> : to configure which notification user want to see or not.</p>
+<p><strong>Notification reception configuration screen</strong> : to configure which notification user want to see or not.</p>
+</li>
+<li>
+<p><strong>Card creation screen</strong> : to create and send cards to different users or/and group of users</p>
 </li>
 </ul>
 </div>
@@ -945,7 +949,7 @@ With the little triangle button on the right of user name, user can click on it 
 <p><strong>Read/Unread notifications</strong></p>
 </div>
 <div class="paragraph">
-<p>A new notification when arriving in the deck is always an unread notification. User can recognize it by a specific symbol (eye crossed out) on the right part of the reduced view:</p>
+<p>A new notification when arriving in the deck is always an unread notification. User can recognize it by the bold weight of the reduced view content:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -984,8 +988,8 @@ Some buttons are displayed on top of the deck to perform some ordering or filter
 <p><strong>Deck ordering</strong></p>
 </div>
 <div class="paragraph">
-<p>Notifications in the deck are sorted by default by severity/color.
-User can decide to order the notifications in the feed by arrival date or by gravity/color:</p>
+<p>Notifications in the deck are sorted by default by "Unread then date" order.
+User can decide to order the notifications in the feed by arrival date or by criticity/color:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1013,7 +1017,7 @@ User can decide to order the notifications in the feed by arrival date or by gra
 <div class="ulist">
 <ul>
 <li>
-<p>Based on the color of the notifications</p>
+<p>Based on the type/color of the notifications</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1032,17 +1036,17 @@ User can decide to order the notifications in the feed by arrival date or by gra
 <div class="ulist">
 <ul>
 <li>
-<p>Status of the notifications: Acknowledged/Not acknowledged with this button : User can select to see:</p>
+<p>Status of the notifications: Acknowledged/Not acknowledged with the following menu. User can select to see:</p>
 <div class="ulist">
 <ul>
+<li>
+<p>all notifications (acknowledged and not acknowledged)</p>
+</li>
 <li>
 <p>only acknowledged notifications</p>
 </li>
 <li>
 <p>only not acknowledged notifications</p>
-</li>
-<li>
-<p>all notifications (acknowledged and not acknowledged)</p>
 </li>
 </ul>
 </div>
@@ -1055,7 +1059,7 @@ User can decide to order the notifications in the feed by arrival date or by gra
 </div>
 </div>
 <div class="paragraph">
-<p>By default, only “Not acknowledged” notifications are displayed: As soon as an user will acknowledge a notification, it will disappear based on this filter.</p>
+<p>By default, only “Not acknowledged” notifications are displayed: As soon as a user will acknowledge a notification, it will disappear based on this filter.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1065,7 +1069,7 @@ User can decide to order the notifications in the feed by arrival date or by gra
 </div>
 <div class="paragraph">
 <p>Below the header, a timeline is proposed.
-This timeline represents a spatial view of information inside the notification depending on the category/color of it and the event arrival or occurrence.</p>
+This timeline represents a spatial view of information inside the notification depending on its category/color and the event arrival or occurrence.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1082,16 +1086,16 @@ This timeline represents a spatial view of information inside the notification d
 <div class="ulist">
 <ul>
 <li>
-<p><strong>D-7</strong> view from D-1 0h selected time until D-7 selected time – Default view</p>
+<p><strong>7 Day</strong> view from D-1 0h selected time until D-7 selected time – Default view</p>
 </li>
 <li>
-<p><strong>W-1</strong> view from Saturday 0h selected time until next Saturday 0h selected time</p>
+<p><strong>Week</strong> view from Saturday 0h selected time until next Saturday 0h selected time</p>
 </li>
 <li>
-<p><strong>M-1</strong> view from 1st of the month 0h selected time until 1st of next month 0h selected time.</p>
+<p><strong>Month</strong> view from 1st of the month 0h selected time until 1st of next month 0h selected time.</p>
 </li>
 <li>
-<p><strong>Y-1</strong> view from 1st January 0h selected time until 1st January of next year 0h select time.</p>
+<p><strong>Year</strong> view from 1st January 0h selected time until 1st January of next year 0h select time.</p>
 </li>
 <li>
 <p><strong>&gt;&gt;</strong> : to move to the next period</p>
@@ -1102,7 +1106,7 @@ This timeline represents a spatial view of information inside the notification d
 </ul>
 </div>
 <div class="paragraph">
-<p>A specific button on the top right is dedicated to hide (or not) the timeline:</p>
+<p>A specific button on the bottom right is dedicated to hide (or not) the timeline:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1138,7 +1142,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>Bubble tips are used in the timeline to present the number of notifications detected for the dedicated time tick per categories of notification (blue, red, green or orange).</p>
 </div>
 <div class="paragraph">
-<p>Ex: Here 3 red notifications have been detected, 5 orange ones… for the period between the 1st of July and the 15th of July.</p>
+<p>Ex: Here 5 red notifications have been detected, 2 orange ones… for the period between the 1st of january and the 31th of december 2021.</p>
 </div>
 <div class="paragraph">
 <p>The way to spatialize a notification in the timeline depends on kind of notifications.</p>
@@ -1159,14 +1163,14 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </li>
 <li>
-<p>In case of notifications with information for specific timestamps inside the business peri-od, each information for dedicated timestamp will appear in the timeline.</p>
+<p>In case of notifications with information for specific timestamps inside the business period, each information for dedicated timestamp will appear in the timeline.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Each event (error, warning…) inside the notification will be presented with a dedicated bubble in the timeline</p>
 </li>
 <li>
-<p>Ex : if inside a negative ACK notification, error A is detected the 25//06 12h and error B is detected the 26/06 18h, then 2 bubbles are represented within daily view : one for the error A and one for the error B with dedicated date/time.</p>
+<p>Ex : if inside a negative ACK notification, error A is detected the 25/06 12h and error B is detected the 26/06 18h, then 2 bubbles are represented within daily view : one for the error A and one for the error B with dedicated date/time.</p>
 </li>
 </ul>
 </div>
@@ -1218,30 +1222,30 @@ If user select one of the item presented, then the dedicated notification will b
 <p><strong>Day/night mode</strong></p>
 </div>
 <div class="paragraph">
-<p>This functionality is used to change the color of the background of the tool by using a dedicated button close to the logged user:</p>
+<p>This functionality is used to change the color of the background of the tool by using a dedicated menu item:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>little sun</strong> to switch background to day mode with light colors</p>
+<p><strong>Day mode</strong> menu item to switch background to day mode with light colors</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../asciidoc/images/sun.png" alt="Day mode">
+<img src="../../asciidoc/images/day_mode_menu.png" alt="Day mode">
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>little moon</strong> to switch background to night mode with dark colors</p>
+<p><strong>Night mode</strong> menu item to switch background to night mode with dark colors</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../asciidoc/images/moon.png" alt="Night mode">
+<img src="../../asciidoc/images/night_mode_menu.png" alt="Night mode">
 </div>
 </div>
 <div class="paragraph">
@@ -1249,12 +1253,12 @@ If user select one of the item presented, then the dedicated notification will b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../asciidoc/images/day_mode.png" alt="Day mode">
+<img src="../../asciidoc/images/night_mode.png" alt="Night mode">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../asciidoc/images/night_mode.png" alt="Night mode">
+<img src="../../asciidoc/images/day_mode.png" alt="Day mode">
 </div>
 </div>
 <div class="paragraph">
@@ -1262,22 +1266,12 @@ If user select one of the item presented, then the dedicated notification will b
 </div>
 <div class="paragraph">
 <p>In the right part of the header the following is presented: the name (first and last name) of logged user, its company and the current timing for selected timezone:
-With the little triangle button, user can click on it to display the content and open the user settings panel or log out.</p>
+With the little triangle button, user can click on it in order to open the "settings" panel, open the "notification reception configuration" panel, display information about the application version, change the day/night mode or simply logout.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/menu_user_only.png" alt="User menu">
 </div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Log information</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>When selecting “Settings”, personal settings of user are displayed:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1410,9 +1404,14 @@ User is able to search among all notifications available by using filters based 
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesoon-notification-configuration-screen"><a class="anchor" href="#truesoon-notification-configuration-screen"></a>4.5. (SOON) Notification configuration screen</h3>
+<h3 id="truenotification-reception-configuration-screen"><a class="anchor" href="#truenotification-reception-configuration-screen"></a>4.5. Notification reception configuration screen</h3>
 <div class="paragraph">
 <p>This screen displays a panel to select which notification user want to see and receive.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/notification_reception_configuration.png" alt="Notification reception configuration">
+</div>
 </div>
 </div>
 </div>
@@ -1441,7 +1440,7 @@ User is able to search among all notifications available by using filters based 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../asciidoc/images/validation_notification_positive.png" alt="Notification open">
+<img src="../../asciidoc/images/notification_opened.png" alt="Notification open">
 </div>
 </div>
 <div class="paragraph">
@@ -1458,15 +1457,17 @@ The only way to see it again is to consult the Archiving screen.</p>
 </div>
 <div class="sect2">
 <h3 id="truersc-kpi-graphs-and-report"><a class="anchor" href="#truersc-kpi-graphs-and-report"></a>5.2. RSC KPI graphs and report</h3>
+<div class="sect3">
+<h4 id="truedaily-view"><a class="anchor" href="#truedaily-view"></a>5.2.1. Daily view</h4>
 <div class="paragraph">
 <p><strong>Set RSC KPI graphs</strong></p>
 </div>
 <div class="paragraph">
-<p>The user chooses the period (starting and ending dates), which RSCs, business process, Process KPIs or/and Business KPIs:</p>
+<p>The user chooses the RSC service, the period (starting and ending dates), the RSC or Region, and the KPI data type (Global performance and/or Business process):</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../asciidoc/images/RSC_KPI_config_details.png" alt="Set RSC KPIs">
+<img src="../../asciidoc/images/RSC_KPI_config_details_daily.png" alt="Set RSC KPIs">
 </div>
 </div>
 <div class="paragraph">
@@ -1479,7 +1480,7 @@ The only way to see it again is to consult the Archiving screen.</p>
 <p><strong>Selection of concerned RSC</strong></p>
 </div>
 <div class="paragraph">
-<p>This selection allows report to be specific for one RSC or general in case of all RSC.</p>
+<p>This selection allows report to be specific for one RSC or one Region, or general in case of Pan-EU (Pan-European).</p>
 </div>
 <div class="paragraph">
 <p>Figures depends on selected type of KPIs:</p>
@@ -1565,19 +1566,143 @@ It can also download report in xlsx to export only the values.</p>
 <p>RSC KPI report - pdf sample :</p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/SERVICE_A_allKpis_allRscs_20200101_20201231.pdf">RSC KPI report - pdf sample</a></p>
+<p><a href="attached_doc/serviceA_allKpis_panEu_20200101_20201231.pdf">RSC KPI report - pdf sample</a></p>
 </div>
 <div class="paragraph">
 <p>RSC KPI report - xlsx sample :</p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/SERVICE_A_allKpis_allRscs_20200101_20201231.xlsx">RSC KPI report - xlsx sample</a></p>
+<p><a href="attached_doc/serviceA_allKpis_panEu_20200101_20201231.xlsx">RSC KPI report - xlsx sample</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truemulti-year-view"><a class="anchor" href="#truemulti-year-view"></a>5.2.2. Multi-year view</h4>
+<div class="paragraph">
+<p><strong>Set RSC KPI graphs</strong></p>
+</div>
+<div class="paragraph">
+<p>The user chooses the RSC service, the period (starting and ending years), the RSCs or Regions/CCRs, and the data type (Global performance KPIs and/or Business process KPIs):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/RSC_KPI_config_details_multiyear.png" alt="Set RSC KPIs">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Period selection</strong></p>
+</div>
+<div class="paragraph">
+<p>User selects the period from 1 to 5 years</p>
+</div>
+<div class="paragraph">
+<p><strong>Selection of concerned RSC</strong></p>
+</div>
+<div class="paragraph">
+<p>This selection allows report to be specific for one or many RSCs, or one or many Regions.</p>
+</div>
+<div class="paragraph">
+<p>Figures depends on selected type of KPIs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If global performances KPIs : no difference if user selects a RSC or all RSC, only global KPIs here,</p>
+</li>
+<li>
+<p>If business KPIs : these KPIs are different for each RSC as data are correlated to TSOs under responsibility of each RSC.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Selection of RSC service</strong></p>
+</div>
+<div class="paragraph">
+<p>This selection allows to choose which RSC services KPIs should be displayed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CGM,</p>
+</li>
+<li>
+<p>CSA,</p>
+</li>
+<li>
+<p>CCC,</p>
+</li>
+<li>
+<p>OPC,</p>
+</li>
+<li>
+<p>STA,</p>
+</li>
+<li>
+<p>etc&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Selection of Data type</strong></p>
+</div>
+<div class="paragraph">
+<p>This selection allows to select kind of KPIs to display:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Global performances KPIs: RSC KPI related to the process itselft</p>
+</li>
+<li>
+<p>Business KPIs: RSC KPI related to the business results of the process – Different from one RSC to another one as TSOs under responsibility of each RSC differ.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>RSC KPI graphs in GUI</strong></p>
+</div>
+<div class="paragraph">
+<p>User can see dedicated RSC KPIs graphs in GUI. He can add some comments below each graph.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/RSC_KPI_graphs_multiyear.png" alt="RSC KPI graphs">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Export KPI report</strong></p>
+</div>
+<div class="paragraph">
+<p>The user can export KPI in pdf format by clicking on the dedicated button.
+It can also download report in xlsx to export only the values.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/RSC_KPI_export_multiyear.png" alt="RSC KPI export">
+</div>
+</div>
+<div class="paragraph">
+<p>RSC KPI report - pdf sample :</p>
+</div>
+<div class="paragraph">
+<p><a href="attached_doc/serviceA_allKpis_11Regions_2020_2024.pdf">RSC KPI report - pdf sample</a></p>
+</div>
+<div class="paragraph">
+<p>RSC KPI report - xlsx sample :</p>
+</div>
+<div class="paragraph">
+<p><a href="attached_doc/serviceA_allKpis_11Regions_2020_2024.xlsx">RSC KPI report - xlsx sample</a></p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesoon-reception-notifications-configuration"><a class="anchor" href="#truesoon-reception-notifications-configuration"></a>5.3. (SOON) Reception notifications configuration</h3>
+<h3 id="truereception-notifications-configuration"><a class="anchor" href="#truereception-notifications-configuration"></a>5.3. Reception notifications configuration</h3>
 <div class="paragraph">
 <p>Reception of the notifications is configurable for each RSC service.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/notification_reception_configuration.png" alt="Notification reception configuration">
+</div>
 </div>
 <div class="paragraph">
 <p>For each RSC process, a specific menu allows each user to determine which notification he wants to receive:</p>
@@ -1692,6 +1817,102 @@ In case of multiple pages, user can change from one page to another one with ded
 </div>
 <div class="paragraph">
 <p>User can open a notification in detailed view to consult them more in details by clicking on it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecard-creation"><a class="anchor" href="#truecard-creation"></a>5.5. Card creation</h3>
+<div class="paragraph">
+<p>The goal of this screen is to create a card from Let’s Coordinate GUI and to send this notification to other users.</p>
+</div>
+<div class="paragraph">
+<p>A specific button on the top right is dedicated to open the card creation screen</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../asciidoc/images/card_creation_menu.png" alt="Card creation menu"></span></p>
+</div>
+<div class="sect3">
+<h4 id="truedefault-view"><a class="anchor" href="#truedefault-view"></a>5.5.1. Default view</h4>
+<div class="paragraph">
+<p>When clicking the card creation button, the following screan is opened:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../asciidoc/images/card_creation_empty.png" alt="Card creation empty screen"></span></p>
+</div>
+<div class="paragraph">
+<p>In this screen, the user is invited to select/fill the required fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Process:</strong> the list of user services (Service A, Service B, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><strong>State:</strong> Should be concidered as a sub-process</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The state is presenting the message type. For the generic case, only one message called "Free message 1" is provided. In the next versions, the "SMART Notification" type will be added to the list of states.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Severity:</strong> Allow the changing of the card&#8217;s color according to the severity of the card (Alarm, Action, compliant, information).</p>
+</li>
+<li>
+<p><strong>Start date:</strong> The notification&#8217;s business start date</p>
+</li>
+<li>
+<p><strong>End date:</strong> The notification&#8217;s business end date. By default the end date value is the start date plus 24H.</p>
+</li>
+<li>
+<p><strong>Recipients:</strong> The list of users or/and group of users for whom the notification will be sent.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefree-message-1"><a class="anchor" href="#truefree-message-1"></a>5.5.2. Free message 1</h4>
+<div class="paragraph">
+<p>When the state "Free message 1" is selected, the following fields will be displayed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Message:</strong> The message of the notification</p>
+</li>
+<li>
+<p><strong>Conference subject:</strong> The subject of the conference. When this field is filled, the "Link of conference" field will be required.</p>
+</li>
+<li>
+<p><strong>Link of conference:</strong> The link of the conference. When this field is filled, the "Conference subject" field will be required.</p>
+</li>
+<li>
+<p><strong>Report name:</strong> The name of the report. When this field is filled, the "Link of report" field will be required.</p>
+</li>
+<li>
+<p><strong>Link of report:</strong> The link of the report. When this field is filled, the "Report name" field will be required.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../asciidoc/images/card_creation_filled.png" alt="Card creation filled screen"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truesoon-smart-notification"><a class="anchor" href="#truesoon-smart-notification"></a>5.5.3. (SOON) SMART Notification</h4>
+<div class="paragraph">
+<p>In the next versions of Let&#8217;s Coordinate, the "SMART notification" state will be available.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truepreview-function"><a class="anchor" href="#truepreview-function"></a>5.5.4. Preview function</h4>
+<div class="paragraph">
+<p>After filling the required fields, the user should click on the "see before sending" button in order to verify the card&#8217;s content before sending. Once the verification is done, the "send" button allow the sending of the card.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../asciidoc/images/card_creation_preview.png" alt="Card creation preview screen"></span></p>
+</div>
 </div>
 </div>
 </div>
