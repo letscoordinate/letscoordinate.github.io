@@ -816,7 +816,7 @@ The timestamp shall conform to ISO 8601. It shall include either the letter “Z
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>source</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">M</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">ProcessName</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Name of the service or process : This element shall be used to identify the origin of the informational content.
 The values assigned to this element are non-normative and have meaning only within the local organisation.</p></td>
 </tr>
@@ -848,6 +848,13 @@ The values assigned to these elements are non-normative and have meaning only wi
 <td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Map</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>businessApplication</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">PanEuropeanServiceATool, ServiceB.tool, &#8230;&#8203;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Name of the business application</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>messageType</strong></p></td>
@@ -953,11 +960,12 @@ The values assigned to these elements are non-normative and have meaning only wi
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationA",
           "businessDayFrom": "2020-01-10T23:00:00Z",
@@ -1005,11 +1013,12 @@ The values assigned to these elements are non-normative and have meaning only wi
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationA",
           "businessDayFrom": "2020-01-10T23:00:00Z",
@@ -1018,7 +1027,7 @@ The values assigned to these elements are non-normative and have meaning only wi
           "processStep": "INITIAL_RUN",
           "timeframe": "W",
           "timeframeNumber": 24,
-	        "fileName": "20200317_1230_SERVICEA_CH.xlsx",
+          "fileName": "20200317_1230_SERVICEA_CH.xlsx",
           "tso": "10XCH-SWISSGRIDC",
           "biddingZone": "10YCH-SWISSGRIDZ"
           "recipients": [
@@ -1335,16 +1344,24 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>message</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">M	(JSON)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">“Issue located in business period”</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">“Issue located in business period”</p>
+<p class="tableblock">“Application check: Error identified while checking process &lt;processMrid&gt;. The coordinated TSO: &lt;missingTsoList&gt; not provided”</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Details about this validation information</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>timestamp</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>params</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O (JSON)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">{“processMrid”: “6fc941b6-e7ab-4962-a2a8-c965f5bf78e9”, “missingTsoList”: [“10X1001A1001A094”, “10XES-REE------E”]}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Map&lt;String, Object&gt;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Provides &lt;key,value&gt; parameters for the validation message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>businessTimestamp</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">M	(JSON)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2020-03-18T23:00:00Z</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Date and time of this validation information</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Business date and time of this validation information</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>sourceDataRef</strong></p></td>
@@ -1550,7 +1567,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
             "severity": "ERROR",
             "title": "Rule_A_Violated",
             "message": "Application check: Error 01 detected in input file",
-            "timestamp": "2020-02-26T14:24:38.825Z",
+            "businessTimestamp": "2020-02-26T14:24:38Z",
             "sourceDataRef": {
               "relatedPeriodStartId": 3247,
               "relatedElement": "timeseries",
@@ -1563,7 +1580,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
             "severity": "ERROR",
             "title": "Rule_B_Violated",
             "message": "Application check: Error 02 detected in input file",
-            "timestamp": "2020-02-26T14:24:46.885Z",
+            "businessTimestamp": "2020-02-26T14:24:46Z",
             "sourceDataRef": {
               "relatedElement": "header"
             }
@@ -1573,7 +1590,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
             "severity": "WARNING",
             "title": "Rule_C_Violated",
             "message": "Application check: Warning 01 detected in input file",
-            "timestamp": "2020-02-26T14:24:47.792Z",
+            "businessTimestamp": "2020-02-26T14:24:47Z",
             "sourceDataRef": {
               "relatedElement": "header"
             }
@@ -1583,7 +1600,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
             "severity": "WARNING",
             "title": "Rule_D_Violated",
             "message": "Application check: Warning 02 detected in input file",
-            "timestamp": "2020-02-26T14:25:23.591Z",
+            "businessTimestamp": "2020-02-26T14:25:23Z",
             "sourceDataRef": {
               "relatedPeriodStartId": 897,
               "relatedElement": "timeseries",
@@ -1804,6 +1821,13 @@ The values assigned to these elements are non-normative and have meaning only wi
 <td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>businessApplication</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">PanEuropeanServiceATool, ServiceB.tool, &#8230;&#8203;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Name of the business application</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>messageType</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">102</p></td>
@@ -1872,9 +1896,9 @@ The values assigned to these elements are non-normative and have meaning only wi
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>coordinationStatus</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>CON</p>
-<p class="tableblock">or REJ</p>
-<p class="tableblock">or MIX</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>CON</strong></p>
+<p class="tableblock"><strong>or REJ</strong></p>
+<p class="tableblock"><strong>or MIX</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>String</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Global status of coordination : CON(firmed), REJ(ected) or MIX(ed).</p>
 <p class="tableblock">This status is global for the all notification</strong></p></td>
@@ -1893,11 +1917,12 @@ The values assigned to these elements are non-normative and have meaning only wi
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationB",
           "businessDayFrom": "2020-01-10T23:00:00Z",
