@@ -512,11 +512,11 @@ image::RSC_KPI_export.png[RSC KPI export]
 
 RSC KPI report - pdf sample :
 
-link:attached_doc/serviceA_allKpis_panEu_20200101_20201231.pdf[RSC KPI report - pdf sample]
+link:attached_doc/serviceA_allKpis_7RSCs_2021_2025.pdf[RSC KPI report - pdf sample]
 
 RSC KPI report - xlsx sample :
 
-link:attached_doc/serviceA_allKpis_panEu_20200101_20201231.xlsx[RSC KPI report - xlsx sample]
+link:attached_doc/serviceA_allKpis_7RSCs_2021_2025.xlsx[RSC KPI report - xlsx sample]
 
 === Reception notifications configuration screen
 
