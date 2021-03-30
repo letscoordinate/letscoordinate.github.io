@@ -21,7 +21,7 @@
           "timeframeNumber": 24,
 		  "fileName": "20200317_1230_SERVICEA_CH.xlsx",
           "tso": "10XCH-SWISSGRIDC",
-          "biddingZone": "10YCH-SWISSGRIDZ",
+          "biddingZone": "10XCH-SWISSGRIDC",
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"

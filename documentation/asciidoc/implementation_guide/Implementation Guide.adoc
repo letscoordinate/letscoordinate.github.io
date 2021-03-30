@@ -240,8 +240,8 @@ The values assigned to these elements are non-normative and have meaning only wi
 |-
 
 |**businessApplication**
-|M
-|PanEuropeanServiceATool, ServiceB.tool, ...
+|O
+|PanEuropeanServiceATool, ServiceBTool, ...
 |String
 |Name of the business application
 
@@ -494,7 +494,7 @@ OR rscKpi
 |String
 |Url address of the file or the webpage
 |**eicCode**
-|M
+|O
 |["eicCode1",     "eicCode2", ...]
 |list<String>
 |EIC code of concerned TSO
@@ -504,6 +504,7 @@ OR rscKpi
 |-
 |List<Map>
 |Structure to provide KPIs
+
 |**name**
 |M
 |GP1, GP2…. BP1, BP2….
@@ -511,6 +512,13 @@ OR rscKpi
 |KPI name: there are 2 categories : Global Performance (GP) or Business process (BP) : GP or BP followed by the number of KPIs
 
 **Note:** The labels of GPx and BPx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the <kpi_name – kpi_label> format. (e.g: GPx – Global Performance x)
+
+|**joinGraph**
+|O
+|true (default) or false
+|Boolean
+|If “true”, allows to join rsc kpi data into one graph, else if “false”, the rsc kpi data will be displayed into separate graphs.
+
 |**data**
 |M (JSON)
 |-
@@ -521,6 +529,19 @@ OR rscKpi
 |2020-03-18T23:00:00Z
 |DateTime
 |Date of related KPI
+
+.2+^.^|**granularity**
+.2+^.^|M
+
+|D
+|Enumeration
+|Used to display the RSC KPI report in a daily view
+
+
+|Y
+|Enumeration
+|Used to display the RSC KPI report in a yearly view
+
 |**label**
 |M
 |CalculationFailed, ProcessDelayed…
@@ -720,6 +741,7 @@ Ex: Input file payload JSON (without input data validation)
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
+              "granularity": "Y",
               "label": "ProcessSuccess",
               "detail": [
                 {
@@ -734,6 +756,7 @@ Ex: Input file payload JSON (without input data validation)
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
+              "granularity": "D",
               "label": "BusinessKpiAServiceA",
               "detail": [
                 {
@@ -1005,7 +1028,7 @@ The values assigned to these elements are non-normative and have meaning only wi
 |-
 
 |**businessApplication**
-|M
+|O
 |PanEuropeanServiceATool, ServiceB.tool, ...
 |String
 |Name of the business application

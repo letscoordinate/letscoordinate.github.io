@@ -851,8 +851,8 @@ The values assigned to these elements are non-normative and have meaning only wi
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>businessApplication</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">PanEuropeanServiceATool, ServiceB.tool, &#8230;&#8203;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">PanEuropeanServiceATool, ServiceBTool, &#8230;&#8203;</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Name of the business application</p></td>
 </tr>
@@ -1148,7 +1148,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>eicCode</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">["eicCode1",     "eicCode2", &#8230;&#8203;]</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">list&lt;String&gt;</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">EIC code of concerned TSO</p></td>
@@ -1172,6 +1172,13 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <p class="tableblock"><strong>Note:</strong> The labels of GPx and BPx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the &lt;kpi_name – kpi_label&gt; format. (e.g: GPx – Global Performance x)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>joinGraph</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true (default) or false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">If “true”, allows to join rsc kpi data into one graph, else if “false”, the rsc kpi data will be displayed into separate graphs.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>data</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">M (JSON)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
@@ -1184,6 +1191,18 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <td class="tableblock halign-center valign-top"><p class="tableblock">2020-03-18T23:00:00Z</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">DateTime</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Date of related KPI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>granularity</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">M</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Enumeration</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Used to display the RSC KPI report in a daily view</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Enumeration</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Used to display the RSC KPI report in a yearly view</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>label</strong></p></td>
@@ -1447,6 +1466,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
+              "granularity": "Y",
               "label": "ProcessSuccess",
               "detail": [
                 {
@@ -1461,6 +1481,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
+              "granularity": "D",
               "label": "BusinessKpiAServiceA",
               "detail": [
                 {
@@ -1822,7 +1843,7 @@ The values assigned to these elements are non-normative and have meaning only wi
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>businessApplication</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">PanEuropeanServiceATool, ServiceB.tool, &#8230;&#8203;</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Name of the business application</p></td>

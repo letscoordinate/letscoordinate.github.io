@@ -5,11 +5,12 @@
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationA",
           "businessDayFrom": "2020-01-10T23:00:00Z",
@@ -108,6 +109,7 @@
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "D",
               "label": "ProcessSuccess",
               "detail": [
                 {
@@ -122,6 +124,7 @@
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "D",
               "label": "CalculationFailed",
               "detail": [
                 {
@@ -131,6 +134,7 @@
             },
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "D",
               "label": "ReportFailed",
               "detail": [
                 {
@@ -145,6 +149,7 @@
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "D",
               "label": "ProcessDelayed",
               "detail": [
                 {
@@ -154,6 +159,7 @@
             },
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "Y",
               "label": "DelayTime",
               "detail": [
                 {
@@ -168,6 +174,7 @@
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "D",
               "label": "BusinessKpiAServiceA",
               "detail": [
                 {
@@ -199,6 +206,7 @@
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "D",
               "label": "BusinessKpiBServiceA",
               "detail": [
                 {
@@ -227,9 +235,11 @@
         },
         {
           "name": "BP3",
+          "joinGraph": false,
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
+              "granularity": "D",
               "label": "BusinessKpiCServiceA",
               "detail": [
                 {
@@ -256,6 +266,7 @@
             },
             {
               "timestamp": "2020-03-19T01:00:00Z",
+              "granularity": "Y",
               "label": "BusinessKpiCServiceA",
               "detail": [
                 {
@@ -282,6 +293,7 @@
             },
             {
               "timestamp": "2020-03-20T01:00:00Z",
+              "granularity": "D",
               "label": "BusinessKpiCServiceA",
               "detail": [
                 {
@@ -308,6 +320,7 @@
             },
             {
               "timestamp": "2020-03-21T01:00:00Z",
+              "granularity": "D",
               "label": "BusinessKpiCServiceA",
               "detail": [
                 {
@@ -334,6 +347,7 @@
             },
             {
               "timestamp": "2020-03-22T01:00:00Z",
+              "granularity": "D",
               "label": "BusinessKpiCServiceA",
               "detail": [
                 {
@@ -360,6 +374,7 @@
             },
             {
               "timestamp": "2020-03-23T01:00:00Z",
+              "granularity": "D",
               "label": "BusinessKpiCServiceA",
               "detail": [
                 {
@@ -596,7 +611,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -629,7 +645,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -662,7 +679,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -695,7 +713,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -712,7 +731,7 @@
                 },
                 {
                   "label": "bdz",
-                  "value": "DE "
+                  "value": "DE"
                 },
                 {
                   "label": "measurement",
@@ -728,7 +747,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -761,7 +781,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -794,7 +815,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -827,7 +849,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -860,7 +883,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -961,7 +985,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -977,7 +1002,8 @@
                   "value": "OK"
                 },
                 {
-                  "label": "bdz"
+                  "label": "bdz",
+                  "value": "BE, FR, NL"
                 },
                 {
                   "label": "measurement",
@@ -1278,7 +1304,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2341"
                 },
@@ -1292,7 +1318,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2402"
                 }
@@ -1311,7 +1337,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3373"
                 },
@@ -1325,7 +1351,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2162"
                 }
@@ -1344,7 +1370,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2451"
                 },
@@ -1358,7 +1384,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2053"
                 }
@@ -1377,7 +1403,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "1365"
                 },
@@ -1391,7 +1417,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "1150"
                 }
@@ -1410,7 +1436,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2308"
                 },
@@ -1424,7 +1450,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2904"
                 }
@@ -1443,7 +1469,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5993"
                 },
@@ -1457,7 +1483,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5428"
                 }
@@ -1476,7 +1502,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4608"
                 },
@@ -1490,7 +1516,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2777"
                 }
@@ -1509,7 +1535,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4708"
                 },
@@ -1523,7 +1549,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4578"
                 }
@@ -1542,7 +1568,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4832"
                 },
@@ -1556,7 +1582,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2306"
                 }
@@ -1575,7 +1601,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3700"
                 },
@@ -1589,7 +1615,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2862"
                 }
@@ -1608,7 +1634,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4232"
                 },
@@ -1622,7 +1648,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "1296"
                 }
@@ -1641,7 +1667,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "1902"
                 },
@@ -1655,7 +1681,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5842"
                 }
@@ -1674,7 +1700,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3614"
                 },
@@ -1688,7 +1714,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "1052"
                 }
@@ -1707,7 +1733,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5147"
                 },
@@ -1721,7 +1747,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3370"
                 }
@@ -1740,7 +1766,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4690"
                 },
@@ -1754,7 +1780,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5566"
                 }
@@ -1773,7 +1799,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5029"
                 },
@@ -1787,7 +1813,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3343"
                 }
@@ -1806,7 +1832,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4792"
                 },
@@ -1820,7 +1846,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3390"
                 }
@@ -1839,7 +1865,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2235"
                 },
@@ -1853,7 +1879,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4788"
                 }
@@ -1872,7 +1898,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5597"
                 },
@@ -1886,7 +1912,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4573"
                 }
@@ -1905,7 +1931,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5853"
                 },
@@ -1919,7 +1945,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2318"
                 }
@@ -1938,7 +1964,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2040"
                 },
@@ -1952,7 +1978,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5295"
                 }
@@ -1971,7 +1997,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3839"
                 },
@@ -1985,7 +2011,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "2054"
                 }
@@ -2004,7 +2030,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5133"
                 },
@@ -2018,7 +2044,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "3930"
                 }
@@ -2037,7 +2063,7 @@
                 {
                   "label": "BA-RS",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "4914"
                 },
@@ -2051,7 +2077,7 @@
                 {
                   "label": "RS-BA",
                   "eicCode": [
-                    "10YBA-JPCC-----D"
+                    "10XGR-HTSO-----B"
                   ],
                   "value": "5531"
                 }
