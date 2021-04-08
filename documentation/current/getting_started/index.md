@@ -1,5 +1,5 @@
-<!-- Copyright (c) 2020 RTE (https://www.rte-france.com)                                                  -->
-<!-- Copyright (c) 2020 RTE international (https://www.rte-international.com)                             -->
+<!-- Copyright (c) 2020-2021 RTE (https://www.rte-france.com)                                                  -->
+<!-- Copyright (c) 2020-2021 RTE international (https://www.rte-international.com)                             -->
 <!-- See AUTHORS.txt                                                                                      -->
 <!-- This document is subject to the terms of the Creative Commons Attribution 4.0 International license. -->
 <!-- If a copy of the license was not distributed with this                                               -->
@@ -23,7 +23,9 @@ To use Let's Coordinate, you need a linux OS with the following:
 * Node JS (v10.16.3)
 * Angular CLI (v11.1.4)
 
-**Please note**: It is highly recommended to use [sdkman](https://sdkman.io/) (v5.11.0 or grater) and [nvm](https://github.com/nvm-sh/nvm) (v14.11.0 or grater) to manage *Maven*, *Java*, *NPM* and *Node JS* tools versions (with sdkman and nvm, the previously mentioned tools will be automatically installed later).
+**Please note**: 
+* It is highly recommended to use [sdkman](https://sdkman.io/) (v5.11.0 or grater) and [nvm](https://github.com/nvm-sh/nvm) (v14.11.0 or grater) to manage *Maven*, *Java*, *NPM* and *Node JS* tools versions (with sdkman and nvm, the previously mentioned tools will be automatically installed later).
+* The minimal required OperatorFabric version is 1.8.0.RELEASE, but it's highly recommended to use the version **2.3.0.RELEASE** configured by default to be used with the current version **1.2.0.RELEASE** of Let's Coordinate.
 
 ## 2. Setup and run Let's Coordinate
 {: .orange-title}

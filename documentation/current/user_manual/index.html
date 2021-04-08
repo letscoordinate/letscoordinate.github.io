@@ -525,7 +525,7 @@ Each TSO authorized user is able to login to the tool, acknowledge notifications
 <div class="sect3">
 <h4 id="truersc-user"><a class="anchor" href="#truersc-user"></a>2.1.2. RSC user</h4>
 <div class="paragraph">
-<p>Each RSC is able to define a list of users among its entity to access to the tool within keycloak tool.
+<p>Each RSC is able to define a list of users among its entity to access to the tool within <a href="http://www.keycloak.org">Keycloak</a> tool.
 Each RSC has the possibility to interact with notifications for its entity as RSC and all received notifications related to one of the TSOs under its responsibility (without impacting the TSO notification itself).
 Each RSC authorized user is able to login to the tool, acknowledge notifications for its RSC for authorized RSC services, to follow coordination requests from their TSOs and to monitor them, to consult KPIs for RSC processes and generate RSC KPI report.</p>
 </div>
@@ -602,7 +602,7 @@ The ADMIN role doesn&#8217;t grant any special privileges when it comes to card 
 <div class="sect2">
 <h3 id="truesupported-os"><a class="anchor" href="#truesupported-os"></a>2.3. Supported OS</h3>
 <div class="paragraph">
-<p>The tool is supporting only Windows as OS.
+<p>The tool is supporting only Linux as OS.
 Other OS can be used but the compatibility with the 3 dedicated web browsers will not be guaranteed.</p>
 </div>
 </div>
@@ -628,7 +628,7 @@ Other OS can be used but the compatibility with the 3 dedicated web browsers wil
 <div class="ulist">
 <ul>
 <li>
-<p>Login : username or email</p>
+<p>Login: username or email</p>
 </li>
 <li>
 <p>Password</p>
@@ -691,25 +691,22 @@ With the little triangle button on the right of username, user can click on it t
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Card Feed screen</strong> : to receive and display the different notifications. User will have the possibilities to manage the notifications in this screen.</p>
+<p><strong>Card Feed screen</strong>: to receive and display the different notifications. User will have the possibilities to manage the notifications in this screen.</p>
 </li>
 <li>
-<p><strong>Card creation screen</strong> : to create from the GUI some notifications and to send them to different users (TSO and/or RSC) or/and group of users</p>
+<p><strong>Archiving screen</strong>: to access to all existing notifications which are stored in the database</p>
 </li>
 <li>
-<p><strong>Archiving screen</strong> : to access to all existing notifications which are stored in the database</p>
+<p><strong>RSC KPI report screen</strong>: to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)</p>
 </li>
 <li>
-<p><strong>RSC KPI report screen</strong> : to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)</p>
-</li>
-<li>
-<p><strong>Notification reception configuration screen</strong> : to configure which notification user want to see or not.</p>
+<p><strong>Card creation link</strong> <span class="image"><img src="../../asciidoc/images/card_creation_menu_day.png" alt="Card creation menu"></span> : to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Login information</p>
+<p>Login information menu:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -726,25 +723,28 @@ With the little triangle button on the right of username, user can click on it t
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Settings screen</strong> : to present the different settings for the user to be set (time zone, notification arrival with sounds…)</p>
+<p><strong>Settings screen</strong>: to present the different settings for the user to be set (time zone, notification arrival with sounds…)</p>
 </li>
 <li>
-<p><strong>Notification reception configuration screen</strong> : to select which notifications to receive or not in the feed screen</p>
+<p><strong>Notification reception configuration screen</strong>: to select which notifications to receive or not in the feed screen</p>
 </li>
 <li>
-<p><strong>About</strong> : to present the deployed version of the application</p>
+<p><strong>About</strong>: to present the deployed version of the application</p>
 </li>
 <li>
-<p><strong>Day mode</strong> : to change from day to night modes or night to day modes</p>
+<p><strong>Day mode</strong>: to change from day to night modes or night to day modes</p>
 </li>
 <li>
-<p><strong>Log out</strong> : to log out from the application</p>
+<p><strong>Log out</strong>: to log out from the application</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>A banner at the top right of the top menu indicates on which environment Let&#8217;s Coordinate is installed or to give a specific name to this version of Let’s Coordinate (optional)</p>
 </li>
 <li>
 <p>Below the header, you have the content of the screen</p>
@@ -806,7 +806,7 @@ With the little triangle button on the right of username, user can click on it t
 <p><strong>INFO</strong>: for an information notification, user can just acknowledge it.</p>
 </li>
 <li>
-<p><strong>ACTION</strong>: for an action/SMART notification when user should act (accept, reject, explanation about rejection and comment).</p>
+<p><strong>ACTION</strong>: for an action/Smart notification when user should act (accept, reject, explanation about rejection and comment).</p>
 </li>
 </ul>
 </div>
@@ -816,13 +816,13 @@ With the little triangle button on the right of username, user can click on it t
 <div class="ulist">
 <ul>
 <li>
-<p><strong>INFO</strong> – blue : Information is received (like results of calculation are available)</p>
+<p><strong>INFO</strong> – blue: Information is received (like results of calculation are available)</p>
 </li>
 <li>
-<p><strong>COMPLIANT</strong> – green : Validation has been performed successfully (like ACK is positive)</p>
+<p><strong>COMPLIANT</strong> – green: Validation has been performed successfully (like ACK is positive)</p>
 </li>
 <li>
-<p><strong>ACTION</strong> required - orange – Warning : Please consider this notification and act to manage the raised situation/issue</p>
+<p><strong>ACTION</strong> required - orange – Warning: Please consider this notification and act to manage the raised situation/issue</p>
 </li>
 <li>
 <p><strong>ALARM</strong> – red – Critical issues (like Process failed, validation failed)</p>
@@ -835,24 +835,24 @@ With the little triangle button on the right of username, user can click on it t
 <div class="ulist">
 <ul>
 <li>
-<p><strong>General information</strong> : notification with a general information along the business period</p>
+<p><strong>General information</strong>: notification with a general information along the business period</p>
 <div class="ulist">
 <ul>
 <li>
 <p>In such notification, a global information is applied for all business period without any specific timestamp identified</p>
 </li>
 <li>
-<p>Ex : Process success, process failed, input file positive validation…</p>
+<p>Ex: Process success, process failed, input file positive validation…</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Specific timestamped information</strong> : notification with information for specific timestamps inside the business period</p>
+<p><strong>Specific timestamped information</strong>: notification with information for specific timestamps inside the business period</p>
 <div class="ulist">
 <ul>
 <li>
-<p>In such notification, different information for dedicated timestamps are identified. Ex :</p>
+<p>In such notification, different information for dedicated timestamps are identified. Ex:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -882,7 +882,7 @@ With the little triangle button on the right of username, user can click on it t
 <div class="ulist">
 <ul>
 <li>
-<p>Example of arrival date : 19/09 13h23</p>
+<p>Example of arrival date: 19/09 13h23</p>
 </li>
 </ul>
 </div>
@@ -895,7 +895,7 @@ With the little triangle button on the right of username, user can click on it t
 <p>Ex: If a process result notification arrives the 19/09 at 13h23 and concerns the Month ahead process (so for October),</p>
 </li>
 <li>
-<p>Example of business period : 01/10 0h30 &#8594; 31/10 23h30 included</p>
+<p>Example of business period: 01/10 0h30 &#8594; 31/10 23h30 included</p>
 </li>
 </ul>
 </div>
@@ -965,7 +965,7 @@ With the little triangle button on the right of username, user can click on it t
 <div class="ulist">
 <ul>
 <li>
-<p>(SOON) In case of SMART notification, you will be able to answer to some questions and then your answers to the coordination system.</p>
+<p>(SOON) In case of Smart notification, you will be able to answer to some questions and then your answers to the coordination system.</p>
 </li>
 </ul>
 </div>
@@ -1045,7 +1045,7 @@ User can decide to order the notifications in the feed by arrival date or by sev
 <div class="ulist">
 <ul>
 <li>
-<p>User can ticked or un-ticked notification color he wants to see :</p>
+<p>User can ticked or un-ticked notification color he wants to see:</p>
 </li>
 </ul>
 </div>
@@ -1110,7 +1110,7 @@ This timeline represents a spatial view of information inside the notification d
 <div class="ulist">
 <ul>
 <li>
-<p><strong>7 Day</strong> view from D-1 0h selected time until D-7 selected time – Default view</p>
+<p><strong>7 Days</strong> view from D-1 0h selected time until D-7 selected time – Default view</p>
 </li>
 <li>
 <p><strong>Week</strong> view from Saturday 0h selected time until next Saturday 0h selected time</p>
@@ -1154,7 +1154,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>Each time tick represents a specific date and hour. The information displayed in this tick is the information from this time tick and before the next one.</p>
 </div>
 <div class="paragraph">
-<p>For example if the time tick is for the 11/10 0h with 7D view (a time tick every 4h in that zoom), user will see aggregated values from 00h to 3h59. And for the time tick of 11/10 4h, information from 4h to 7h59 etc…</p>
+<p>For example, if the time tick is for the 11/10 0h with 7D view (a time tick every 4h in that zoom), user will see aggregated values from 00h to 3h59. And for the time tick of 11/10 4h, information from 4h to 7h59 etc…</p>
 </div>
 <div class="paragraph">
 <p>“Real-time” time tick displays current hour and day. It’s marked as a bold blue time tick in the timeline if it is included in the timeline view/zoom. Before real-time time tick, some days or hours are displayed in order to present some events which just passed now in the past.</p>
@@ -1204,7 +1204,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>Each event (error, warning…) inside the notification will be presented with a dedicated bubble in the timeline</p>
 </li>
 <li>
-<p>Ex : if inside a negative input file validation notification, error A is detected the 25/06 12h and error B is detected the 26/06 18h, then 2 bubbles are represented  : one for the error A and one for the error B at dedicated date/time.</p>
+<p>Ex: if inside a negative input file validation notification, error A is detected the 25/06 12h and error B is detected the 26/06 18h, then 2 bubbles are represented: one for the error A and one for the error B at dedicated date/time.</p>
 </li>
 </ul>
 </div>
@@ -1252,7 +1252,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p><strong>Logged username, current time and user settings</strong></p>
 </div>
 <div class="paragraph">
-<p>In the right part of the header the following information is presented : the name (first and last name) of logged user, its company and the current time for selected time zone: With the little triangle button, user can click on it in order to open the "User settings" panel. In this menu, different screens are proposed to display the settings of this user  the "notification reception configuration" panel, information about the application version, to change the day/night mode or to logout.</p>
+<p>In the right part of the header the following information is presented: the name (first and last name) of logged user, its company and the current time for selected time zone: With the little triangle button, user can click on it in order to open the "User settings" panel. In this menu, different screens are proposed to display the settings of this user  the "notification reception configuration" panel, information about the application version, to change the day/night mode or to logout.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1339,7 +1339,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="paragraph">
-<p>Example for the feed screen :</p>
+<p>Example for the feed screen:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1361,16 +1361,16 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p>Service : name of RSC service (CGM, CSA, CCC, OPC, STA…)</p>
+<p>Service: name of RSC service (CGM, CSA, CCC, OPC, STA…)</p>
 </li>
 <li>
-<p>Process : list of sub item under the selected service</p>
+<p>Process: list of sub item under the selected service</p>
 </li>
 <li>
-<p>State : status of the notification for selected service and process</p>
+<p>State: status of the notification for selected service and process</p>
 </li>
 <li>
-<p>Tags : types of notificationto search notification by keywords</p>
+<p>Tags: types of notificationto search notification by keywords</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1383,10 +1383,10 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </li>
 <li>
-<p>Published date &amp; hour of the notification : publish from and publish to</p>
+<p>Published date &amp; hour of the notification: publish from and publish to</p>
 </li>
 <li>
-<p>Business period date &amp; hour insideof the notification content : active from and active to</p>
+<p>Business period date &amp; hour inside of the notification content: active from and active to</p>
 </li>
 </ul>
 </div>
@@ -1402,11 +1402,11 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Configuration RSC KPI report screen</strong> : This screen proposes settings to configure the report user want to see. When the settings are set, then click on “Submit” button to display the report. User can choose:</p>
+<p><strong>Configuration RSC KPI report screen</strong>: This screen proposes settings to configure the report user want to see. When the settings are set, then click on “Submit” button to display the report. User can choose:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Which RSC service ?</p>
+<p>Which RSC service?</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1416,21 +1416,21 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </li>
 <li>
-<p>Granularity / Period :</p>
+<p>Granularity / Period:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Granularity of the information : Daily or Yearly</p>
+<p>Granularity of the information: Daily or Yearly</p>
 </li>
 <li>
-<p>Period : select the business period</p>
+<p>Period: select the business period</p>
 <div class="ulist">
 <ul>
 <li>
-<p>When granularity is Daily : from start day to end day</p>
+<p>When granularity is Daily: from start day to end day</p>
 </li>
 <li>
-<p>When granularity is Yearly : from start year to end year</p>
+<p>When granularity is Yearly: from start year to end year</p>
 </li>
 </ul>
 </div>
@@ -1446,7 +1446,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>User should decide to see the information per RSC or per Region/CCR but not together.</p>
 </li>
 <li>
-<p>If granularity is Daily : user should select or “Pan-Eu”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category:</p>
+<p>If granularity is Daily: user should select or “Pan-Eu”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1466,7 +1466,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p>Global performance (Pan European KPI which are not linked for any RSC or Region/CCR) and/or Business (KPI relevant for the concerned area : RSC or regions)?</p>
+<p>Global performance (Pan European KPI which are not linked for any RSC or Region/CCR) and/or Business (KPI relevant for the concerned area: RSC or regions)?</p>
 </li>
 </ul>
 </div>
@@ -1484,7 +1484,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>RSC KPI display screen</strong> : In this screen all graphs about KPI based on user configuration will be displayed. For every graph, user can add a comment below the graph itself. User has the possibility to export the graphs with comments as a pdf report by clicking on the pdf icon or export data (data only without graphs) as an Excel report by clicking on the Excel icon at the bottom. In case of pdf export, comments will be displayed.</p>
+<p><strong>RSC KPI display screen</strong>: In this screen all graphs about KPI based on user configuration will be displayed. For every graph, user can add a comment below the graph itself. User has the possibility to export the graphs with comments as a pdf report by clicking on the pdf icon or export data (data only without graphs) as an Excel report by clicking on the Excel icon at the bottom. In case of pdf export, comments will be displayed.</p>
 </li>
 </ul>
 </div>
@@ -1530,7 +1530,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>With action buttons present in detailed view, user can act on the card (acknowledge it if card type is information or accept/refuse it if card type is action).</p>
 </div>
 <div class="paragraph">
-<p>Ex : For informative notification, user is able to acknowledge the notification to keep track of its reading. After a performed acknowledgement, notification will disappear from the deck. The only way to see it again is to consult the Archiving screen or to update the default filter which only shows the “not acknowledged” notifications.</p>
+<p>Ex: For informative notification, user is able to acknowledge the notification to keep track of its reading. After a performed acknowledgement, notification will disappear from the deck. The only way to see it again is to consult the Archiving screen or to update the default filter which only shows the “not acknowledged” notifications.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1593,15 +1593,15 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>When data granularity is daily, we recommend to not use more than 1 year period.</p>
 </div>
 <div class="paragraph">
-<p><strong>election of area : RSC or Region</strong></p>
+<p><strong>election of area: RSC or Region</strong></p>
 </div>
 <div class="paragraph">
-<p>This selection will filter data for the concerned area : for one RSC or one Region/CCR, or general in case of Pan-EU (Pan-European).</p>
+<p>This selection will filter data for the concerned area: for one RSC or one Region/CCR, or general in case of Pan-EU (Pan-European).</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If granularity is Daily : user should select</p>
+<p>If granularity is Daily: user should select</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1617,14 +1617,14 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </li>
 <li>
-<p>If granularity is Yearly : user can select one or multiple choices in the same category:</p>
+<p>If granularity is Yearly: user can select one or multiple choices in the same category:</p>
 <div class="ulist">
 <ul>
 <li>
 <p>RSC category ; “Pan Eu”, 1 or multiple RSCs together</p>
 </li>
 <li>
-<p>or Region category : “Pan-Eu”, 1 or multiple Regions/CCRs together</p>
+<p>or Region category: “Pan-Eu”, 1 or multiple Regions/CCRs together</p>
 </li>
 </ul>
 </div>
@@ -1640,10 +1640,10 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p>If global performances KPIs : no difference if user selects a RSC or all RSC, only global KPIs here,</p>
+<p>If global performances KPIs: no difference if user selects a RSC or all RSC, only global KPIs here,</p>
 </li>
 <li>
-<p>If business KPIs : these KPIs are different for each RSC or each Region/CCR as data are correlated to TSOs under responsibility of each RSC or TSOs linked to each Region/CCR.</p>
+<p>If business KPIs: these KPIs are different for each RSC or each Region/CCR as data are correlated to TSOs under responsibility of each RSC or TSOs linked to each Region/CCR.</p>
 </li>
 </ul>
 </div>
@@ -1670,13 +1670,13 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="paragraph">
-<p>RSC KPI report - pdf sample :</p>
+<p>RSC KPI report - pdf sample:</p>
 </div>
 <div class="paragraph">
 <p><a href="attached_doc/serviceA_allKpis_7RSCs_2021_2025.pdf">RSC KPI report - pdf sample</a></p>
 </div>
 <div class="paragraph">
-<p>RSC KPI report - xlsx sample :</p>
+<p>RSC KPI report - xlsx sample:</p>
 </div>
 <div class="paragraph">
 <p><a href="attached_doc/serviceA_allKpis_7RSCs_2021_2025.xlsx">RSC KPI report - xlsx sample</a></p>
@@ -1759,7 +1759,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>Tags = user can enter a keyword</p>
 </li>
 <li>
-<p>Published date &amp; hour :</p>
+<p>Published date &amp; hour:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1772,7 +1772,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </li>
 <li>
-<p>Business period date &amp; hour : active from and active to</p>
+<p>Business period date &amp; hour: active from and active to</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1843,7 +1843,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>For each combination of Service/Process/State, the displayed fields will be different and are customizable.</p>
 </div>
 <div class="paragraph">
-<p>But some fields are mandatory :</p>
+<p>But some fields are mandatory:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1889,6 +1889,15 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p><span class="image"><img src="../../asciidoc/images/card_creation_preview.png" alt="Card creation preview screen"></span></p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="truecreated-notification-display"><a class="anchor" href="#truecreated-notification-display"></a>5.5.3. Created notification display</h4>
+<div class="paragraph">
+<p>A sample of a created notification from Let’s Coordinate GUI is displayed:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../asciidoc/images/card_creation_opened_short.png" alt="Card creation preview screen"></span></p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1904,7 +1913,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Process success</strong> : This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.</p>
+<p><strong>Process success</strong>: This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.</p>
 </li>
 </ul>
 </div>
@@ -1916,7 +1925,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Process failed</strong> : This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.</p>
+<p><strong>Process failed</strong>: This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.</p>
 </li>
 </ul>
 </div>
@@ -1928,11 +1937,11 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Validation of input file</strong> : This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possibles results :</p>
+<p><strong>Validation of input file</strong>: This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possible results:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Positive validation</strong> : in case the input file is correct. Color = GREEN</p>
+<p><strong>Positive validation</strong>: in case the input file is correct. Color = GREEN</p>
 </li>
 </ul>
 </div>
@@ -1947,7 +1956,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Positive validation with warnings</strong> : in case the input file is correct but has some warnings. Color = ORANGE</p>
+<p><strong>Positive validation with warnings</strong>: in case the input file is correct but has some warnings. Color = ORANGE</p>
 </li>
 </ul>
 </div>
@@ -1959,7 +1968,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Negative validation</strong> : in case the input file failed the validation as detected errors. Color = RED</p>
+<p><strong>Negative validation</strong>: in case the input file failed the validation as detected errors. Color = RED</p>
 </li>
 </ul>
 </div>
@@ -1967,6 +1976,16 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="content">
 <img src="../../asciidoc/images/negative_validation_opened_short.png" alt="Negative validation">
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>User created notification</strong>: in case a user create a notification from the GUI</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../asciidoc/images/card_creation_opened_short.png" alt="Card creation preview screen"></span></p>
 </div>
 </div>
 </div>

@@ -10,8 +10,9 @@
 
 <br/>
 
-| 1.1.0.RELEASE ![](https://img.shields.io/badge/-current-blue)  | [release-note](/documentation/current/release_note/) | [Getting started](/documentation/current/getting_started/) |
-| 1.0.0.RELEASE                                                  | [release-note](/documentation/archive/1.0.0.RELEASE/release_note/) | [Getting started](/documentation/archive/1.0.0.RELEASE/getting_started/) |
+| 1.2.0.RELEASE ![](https://img.shields.io/badge/-current-blue)  | [release-note](/documentation/current/release_note/) | [Getting started](/documentation/current/getting_started/) | 09/04/2021
+| 1.1.0.RELEASE                                                  | [release-note](/documentation/archive/1.1.0.RELEASE/release_note/) | [Getting started](/documentation/archive/1.1.0.RELEASE/getting_started/) | 30/10/2020
+| 1.0.0.RELEASE                                                  | [release-note](/documentation/archive/1.0.0.RELEASE/release_note/) | [Getting started](/documentation/archive/1.0.0.RELEASE/getting_started/) | 02/10/2020
 {: .table }
 
 <br/>
