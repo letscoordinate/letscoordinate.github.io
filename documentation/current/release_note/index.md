@@ -39,7 +39,7 @@
 
 * [LC-208] Display many bubbles in timeline for notifications that have errors and warnings
 * [LC-242] Add yearly view and region concept to RSC KPI report
-* [LC-407] Upgrade the version of OperatorFabric to 2.3.0.RELEASE
+* [LC-408] Upgrade the version of OperatorFabric to 2.3.0.RELEASE
 * [LC-258] Integrate the "Card creation" screen
 * [LC-262] Integrate the "Notification Reception Configuration" screen
 * [LC-189] Improve the getting started process and documentation
