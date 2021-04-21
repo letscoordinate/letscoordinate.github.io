@@ -100,7 +100,7 @@
 <p><strong>Please note</strong>:</p>
 <ul>
   <li>It is highly recommended to use <a href="https://sdkman.io/">sdkman</a> (v5.11.0 or grater) and <a href="https://github.com/nvm-sh/nvm">nvm</a> (v14.11.0 or grater) to manage <em>Maven</em>, <em>Java</em>, <em>NPM</em> and <em>Node JS</em> tools versions (with sdkman and nvm, the previously mentioned tools will be automatically installed later).</li>
-  <li>The minimal required OperatorFabric version is 1.8.0.RELEASE, but it’s highly recommended to use the version <strong>2.3.0.RELEASE</strong> configured by default to be used with the current version <strong>1.2.0.RELEASE</strong> of Let’s Coordinate.</li>
+  <li>The required OperatorFabric version is <strong>2.3.0.RELEASE</strong> (configured by default to be used with the current version of Let’s Coordinate 1.2.0.RELEASE)</li>
 </ul>
 
 <h2 class="orange-title" id="2-setup-and-run-lets-coordinate">2. Setup and run Let’s Coordinate</h2>
@@ -133,14 +133,19 @@ To do this, you first need to make sure that you have the latest tag list from y
 
 <p>Download the latest karate jar file from <a href="https://github.com/intuit/karate/releases/">Karate github release page</a> , put it in the “<em>opfab/prepare-opfab-env</em>” directory, rename it to “<em>karate.jar</em>” to use it easily.</p>
 
-<p>Then, you should load the environment variables. To do that, position your self in the root directory of the <em>Let’s Coordinate</em> project (by default letscoordinate) and execute the following command:</p>
+<p>Then, position your self in the “<em>bin</em>” directory and check that you have the right “<em>SERVER_IP</em>” value in the “<em>load_environment.sh</em>” file (this action is mandatory only if you are running <em>Let’s Coordinate</em> in a remote server! If it is the case, please edit the file and replace “<em>localhost</em>” by your server IP address, else if you are testing locally, please skip this step):</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source bin/load_environment.sh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed -n '13,+6p' load_environment.sh
+</code></pre></div></div>
+
+<p>Finally, in the same “<em>bin</em>” directory, you should load the environment variables by executing the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source ./load_environment.sh
 </code></pre></div></div>
 
 <h5 id="b-start-the-server">b. Start the server</h5>
 
-<p>To start Let’s Coordinate, position your self in the <em>bin</em> directory and execute the following commands:</p>
+<p>To start Let’s Coordinate, position your self in the “<em>bin</em>” directory and execute the following commands:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh --first-init start 
 </code></pre></div></div>
@@ -225,7 +230,7 @@ It allows to:</p>
 
 
 <footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
-    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2021 Authors of <a href="https://github.com/letscoordinate/letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2021 Authors of <a href="https://letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
 </p>
 </footer>
 

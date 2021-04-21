@@ -69,3 +69,5 @@
 * [LC-373] Fix the publisher name displayed on the bottom of the free message card details
 * [LC-315] Fix tags in the archive screen
 * [LC-209] Identify fields that may have long values and increase their size in database
+* [LC-450] Fix "invalid date" displayed in validation notifications
+* [LC-407] Fix bugs and vulnerabilities reported by Sonar

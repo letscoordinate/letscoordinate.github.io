@@ -70,7 +70,7 @@ Presentation of the projet [Video](https://www.youtube.com/watch?v=NRMrG9IJx2c).
 Let's Coordinate is mostly written in Java and based on the Spring framework. 
 This makes writing and integrating software for a simplified and better coordination very easy.
 
-[![Using Java](https://img.shields.io/badge/Using-Java-%237473C0.svg?style=for-the-badge)]() 
+[![Using Java](https://img.shields.io/badge/Using-Java-%237473C0.svg?style=for-the-badge)](https://www.oracle.com/fr/java/) 
 [![Using Spring](https://img.shields.io/badge/Using-Spring-%236db33f.svg?style=for-the-badge)](https://spring.io/) 
 [![Using Angular](https://img.shields.io/badge/Using-Angular-%237473C0.svg?style=for-the-badge)](https://angular.io/)
 [![Using Swagger](https://img.shields.io/badge/Using-Swagger-%237473C0.svg?style=for-the-badge)](https://swagger.io/)
@@ -79,5 +79,5 @@ This makes writing and integrating software for a simplified and better coordina
 Let's Coordinate is built and integrated using battle-tested tools and (open) platforms. 
 
 [![Built with Maven](https://img.shields.io/badge/Built%20with-Maven-%23410099.svg?style=for-the-badge)](https://maven.apache.org/)
-[![Using Github](https://img.shields.io/badge/Using-Github-%236db33f.svg?style=for-the-badge)](https://spring.io/) 
+[![Using Github](https://img.shields.io/badge/Using-Github%20Actions-%236db33f.svg?style=for-the-badge)](https://github.com/actions/) 
 [![Using SonarCloud](https://img.shields.io/badge/Using-SonarCloud-%23FF647D.svg?style=for-the-badge)](https://sonarcloud.io/dashboard?id=org.lfenergy.operatorfabric%3Aletscoordinate)
