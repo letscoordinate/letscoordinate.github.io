@@ -80,9 +80,10 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
 
 <h1 id="lets-coordinate---getting-started">Let’s Coordinate - Getting started</h1>
+<hr />
+<p><br /></p>
 
 <h2 class="orange-title" id="1-prerequisites">1. Prerequisites</h2>
-
 <p>To use Let’s Coordinate, you need a linux OS with the following:</p>
 
 <ul>
@@ -104,11 +105,15 @@
 
 <h4 class="orange-title-2" id="22-run-operator-fabric">2.2. Run Operator Fabric</h4>
 
+<blockquote>
+  <p>/!\ The minimal required version of OperatorFabric is: <strong>1.7.0.RELEASE</strong></p>
+</blockquote>
+
 <p>Clone the <em>operatorfabric-getting-started</em> git project:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/operatorfabric-getting-started.git
 </code></pre></div></div>
 
-<p>Copy files “<em>web-ui.json</em>”, “<em>docker-compose.yml</em>” and “<em>favicon.ico</em>” from “<em>letscoordinate/test/prepare-opfab-env/opfab-config</em>” directory and past them into “<em>operatorfabric-getting-started/server</em>”. Overwrite the existing files when asked!</p>
+<p>Copy files “<em>docker-compose.yml</em>”, “<em>favicon.ico</em>”, “<em>ngnix.conf</em>” and “<em>web-ui.json</em>” from “<em>letscoordinate/test/prepare-opfab-env/opfab-config</em>” directory and past them into “<em>operatorfabric-getting-started/server</em>”. Overwrite the existing files when asked!</p>
 
 <p>In the directory “<em>operatorfabric-getting-started/server</em>” launch the following command:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./startServer.sh 

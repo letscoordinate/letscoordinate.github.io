@@ -39,7 +39,7 @@ Each TSO authorized user is able to login to the tool, acknowledge notifications
 
 ==== RSC user
 
-Each RSC is able to define a list of users among its entity to access to the tool within keycloak tool.
+Each RSC is able to define a list of users among its entity to access to the tool within http://www.keycloak.org[Keycloak] tool.
 Each RSC has the possibility to interact with notifications for its entity as RSC and all received notifications related to one of the TSOs under its responsibility (without impacting the TSO notification itself).
 Each RSC authorized user is able to login to the tool, acknowledge notifications for its RSC for authorized RSC services, to follow coordination requests from their TSOs and to monitor them, to consult KPIs for RSC processes and generate RSC KPI report.
 
@@ -72,7 +72,7 @@ The tool is supporting the 3 most recent versions of these 3 following web brows
 
 === Supported OS
 
-The tool is supporting only Windows as OS.
+The tool is supporting only Linux as OS.
 Other OS can be used but the compatibility with the 3 dedicated web browsers will not be guaranteed.
 
 === Default resolution
@@ -87,7 +87,7 @@ When Let’s Coordinate has been installed on a specific server, to connect/log 
 
 After connecting to url address, user should enter its credentials: 
 
-* Login : username or email
+* Login: username or email
 * Password
 
 Then validate with “Log In” button.
@@ -118,22 +118,23 @@ image::validation_notification_positive_with_warnings.png[Home Screen]
 
 * On the top of the page, you have a header with
 ** Menu to access to the different screens of the tool.
-*** **Card Feed screen** : to receive and display the different notifications. User will have the possibilities to manage the notifications in this screen.
-*** **Card creation screen** : to create from the GUI some notifications and to send them to different users (TSO and/or RSC) or/and group of users
-*** **Archiving screen** : to access to all existing notifications which are stored in the database
-*** **RSC KPI report screen** : to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)
-*** **Notification reception configuration screen** : to configure which notification user want to see or not. 
+*** **Card Feed screen**: to receive and display the different notifications. User will have the possibilities to manage the notifications in this screen.
+*** **Archiving screen**: to access to all existing notifications which are stored in the database
+*** **RSC KPI report screen**: to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)
+*** **Card creation link** image:card_creation_menu_day.png[Card creation menu] : to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users
 
-** Login information
+** Login information menu:
 *** In the top right of the page, you have the **name & company** of logged user
 *** Below to the name of the logged user, **current time** for selected time zone of the day is displayed.
 
 ** User settings menu
-*** *Settings screen* : to present the different settings for the user to be set (time zone, notification arrival with sounds…)
-*** *Notification reception configuration screen* : to select which notifications to receive or not in the feed screen
-*** *About* : to present the deployed version of the application
-*** *Day mode* : to change from day to night modes or night to day modes
-*** *Log out* : to log out from the application 
+*** *Settings screen*: to present the different settings for the user to be set (time zone, notification arrival with sounds…)
+*** *Notification reception configuration screen*: to select which notifications to receive or not in the feed screen
+*** *About*: to present the deployed version of the application
+*** *Day mode*: to change from day to night modes or night to day modes
+*** *Log out*: to log out from the application 
+
+* A banner at the top right of the top menu indicates on which environment Let's Coordinate is installed or to give a specific name to this version of Let’s Coordinate (optional)
 
 * Below the header, you have the content of the screen
 
@@ -164,24 +165,24 @@ Notification is an object which can support different operational information re
 There are 2 kinds of notifications which depends on the event to raise:
 
 * **INFO**: for an information notification, user can just acknowledge it.
-* **ACTION**: for an action/SMART notification when user should act (accept, reject, explanation about rejection and comment).
+* **ACTION**: for an action/Smart notification when user should act (accept, reject, explanation about rejection and comment).
 
 The color of the notification depends on the status of the card:
 
-* **INFO** – blue : Information is received (like results of calculation are available)
-* **COMPLIANT** – green : Validation has been performed successfully (like ACK is positive)
-* **ACTION** required - orange – Warning : Please consider this notification and act to manage the raised situation/issue
+* **INFO** – blue: Information is received (like results of calculation are available)
+* **COMPLIANT** – green: Validation has been performed successfully (like ACK is positive)
+* **ACTION** required - orange – Warning: Please consider this notification and act to manage the raised situation/issue
 * **ALARM** – red – Critical issues (like Process failed, validation failed)
 
 
 They are 2 kinds of information inside an informative notification:
 
-* **General information** : notification with a general information along the business period
+* **General information**: notification with a general information along the business period
 ** In such notification, a global information is applied for all business period without any specific timestamp identified
-** Ex : Process success, process failed, input file positive validation…
+** Ex: Process success, process failed, input file positive validation…
 
-* **Specific timestamped information** : notification with information for specific timestamps inside the business period
-** In such notification, different information for dedicated timestamps are identified. Ex : 
+* **Specific timestamped information**: notification with information for specific timestamps inside the business period
+** In such notification, different information for dedicated timestamps are identified. Ex: 
 *** Input file Negative validation => all severe errors, errors and/or warnings are detailed per timestamp
 *** Input file Positive validation with warnings => All warnings are detailed per timestamp
 
@@ -190,10 +191,10 @@ They are 2 kinds of information inside an informative notification:
 Each notification has an arrival date and a business period:
 
 * **Arrival date** to know when this notification arrived in the system
-** Example of arrival date : 19/09 13h23
+** Example of arrival date: 19/09 13h23
 * **Business period or validity period**: from when to when this information is relevant from business point of view. 
 ** Ex: If a process result notification arrives the 19/09 at 13h23 and concerns the Month ahead process (so for October), 
-** Example of business period : 01/10 0h30 -> 31/10 23h30 included
+** Example of business period: 01/10 0h30 -> 31/10 23h30 included
 
 **Notification View**
 
@@ -213,7 +214,7 @@ image::ticked_ack.png[Acknowledged notification]
        
 image::negative_validation_opened_short_short.png[Detailed view]
 
-*** (SOON) In case of SMART notification, you will be able to answer to some questions and then your answers to the coordination system.
+*** (SOON) In case of Smart notification, you will be able to answer to some questions and then your answers to the coordination system.
 
 **Read/Unread notifications**
 
@@ -254,7 +255,7 @@ Some filters are proposed to filter the deck of card:
 image::arrival_dates_filtering.png[Filtering by arrival dates]
 
 * Based on the type/color of the notifications
-** User can ticked or un-ticked notification color he wants to see : 
+** User can ticked or un-ticked notification color he wants to see: 
 
 image::color_filtering.png[Filtering by color]
 
@@ -282,12 +283,12 @@ image::timeline.png[Timeline]
 To ease the view and to match with relevant timeframe processes, 
 4 different zooms are proposed:
 
-* **7 Day** view from D-1 0h selected time until D-7 selected time – Default view
+* **7 Days** view from D-1 0h selected time until D-7 selected time – Default view
 * **Week** view from Saturday 0h selected time until next Saturday 0h selected time
 * **Month** view from 1st of the month 0h selected time until 1st of next month 0h selected time.
 * **Year** view from 1st January 0h selected time until 1st January of next year 0h select time.
 * **>>** : to move to the next period 
-* **<<** : to move to the previous period 
+* **<<** : to move to the previous period
 
 A specific button on the bottom right is dedicated to hide (or not) the timeline:
 
@@ -304,7 +305,7 @@ In case user was in the first-time period view selection, if user clicks on **<<
 
 Each time tick represents a specific date and hour. The information displayed in this tick is the information from this time tick and before the next one.
 
-For example if the time tick is for the 11/10 0h with 7D view (a time tick every 4h in that zoom), user will see aggregated values from 00h to 3h59. And for the time tick of 11/10 4h, information from 4h to 7h59 etc…
+For example, if the time tick is for the 11/10 0h with 7D view (a time tick every 4h in that zoom), user will see aggregated values from 00h to 3h59. And for the time tick of 11/10 4h, information from 4h to 7h59 etc…
 
 “Real-time” time tick displays current hour and day. It’s marked as a bold blue time tick in the timeline if it is included in the timeline view/zoom. Before real-time time tick, some days or hours are displayed in order to present some events which just passed now in the past.
 
@@ -325,7 +326,7 @@ The way to spatialize a notification in the timeline depends on kind of notifica
 ** Ex: if a process success notification arrived at 9h53 24/06, then the bubble will be at this time/date.
 * In case of timestamped information notification (notification with information for specific timestamps inside the business period), each information for dedicated timestamp will appear with a dedicated bubble in the timeline.
 ** Each event (error, warning…) inside the notification will be presented with a dedicated bubble in the timeline
-** Ex : if inside a negative input file validation notification, error A is detected the 25/06 12h and error B is detected the 26/06 18h, then 2 bubbles are represented  : one for the error A and one for the error B at dedicated date/time.
+** Ex: if inside a negative input file validation notification, error A is detected the 25/06 12h and error B is detected the 26/06 18h, then 2 bubbles are represented: one for the error A and one for the error B at dedicated date/time.
 
 **Visualization of content of bubble**
 
@@ -345,7 +346,7 @@ The timeline view affects the notifications in the deck as a kind of filter of t
 
 **Logged username, current time and user settings**
 
-In the right part of the header the following information is presented : the name (first and last name) of logged user, its company and the current time for selected time zone: With the little triangle button, user can click on it in order to open the "User settings" panel. In this menu, different screens are proposed to display the settings of this user  the "notification reception configuration" panel, information about the application version, to change the day/night mode or to logout.
+In the right part of the header the following information is presented: the name (first and last name) of logged user, its company and the current time for selected time zone: With the little triangle button, user can click on it in order to open the "User settings" panel. In this menu, different screens are proposed to display the settings of this user  the "notification reception configuration" panel, information about the application version, to change the day/night mode or to logout.
 
 image::menu_user_only.png[User menu]
  
@@ -379,7 +380,7 @@ image::day_mode_menu.png[Day mode]
 
 image::night_mode_menu.png[Night mode]
 
-Example for the feed screen :
+Example for the feed screen:
 
 image::night_mode.png[Night mode]
 image::day_mode.png[Day mode]
@@ -388,14 +389,14 @@ image::day_mode.png[Day mode]
 
 This screen displays all past and currentreceived notifications. User is able to search among all notifications available by using filters based on:
 
-* Service : name of RSC service (CGM, CSA, CCC, OPC, STA…)
-* Process : list of sub item under the selected service
-* State : status of the notification for selected service and process
-* Tags : types of notificationto search notification by keywords
+* Service: name of RSC service (CGM, CSA, CCC, OPC, STA…)
+* Process: list of sub item under the selected service
+* State: status of the notification for selected service and process
+* Tags: types of notificationto search notification by keywords
 ** RSC Process (CGM, CSA, CCC, OPC, STA…​)
 ** Kind of notification per process (CSA process success, CSA process failed…)
-* Published date & hour of the notification : publish from and publish to
-* Business period date & hour insideof the notification content : active from and active to
+* Published date & hour of the notification: publish from and publish to
+* Business period date & hour inside of the notification content: active from and active to
 
 === RSC KPI report screen 
 
@@ -403,25 +404,25 @@ This screen displays the relevant Key Performance Indicators (KPIs) for business
 
 It’s composed of two parts:
 
-* **Configuration RSC KPI report screen** : This screen proposes settings to configure the report user want to see. When the settings are set, then click on “Submit” button to display the report. User can choose:
-** Which RSC service ?
+* **Configuration RSC KPI report screen**: This screen proposes settings to configure the report user want to see. When the settings are set, then click on “Submit” button to display the report. User can choose:
+** Which RSC service?
 *** List of RSC service registered is proposed
-** Granularity / Period : 
-*** Granularity of the information : Daily or Yearly
-*** Period : select the business period 
-**** When granularity is Daily : from start day to end day 
-**** When granularity is Yearly : from start year to end year 
+** Granularity / Period: 
+*** Granularity of the information: Daily or Yearly
+*** Period: select the business period 
+**** When granularity is Daily: from start day to end day 
+**** When granularity is Yearly: from start year to end year 
 ** Which area (RSC or Region/CCR) is concerned?
 *** User should decide to see the information per RSC or per Region/CCR but not together.
-*** If granularity is Daily : user should select or “Pan-Eu”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category: 
+*** If granularity is Daily: user should select or “Pan-Eu”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category: 
 **** Pan Eu from RSC part + 1 or multiple RSC 
 **** or Pan-Eu from Regions/CCRs + 1 or multiple regions/CCRs
 ** Which kind of KPIs?
-*** Global performance (Pan European KPI which are not linked for any RSC or Region/CCR) and/or Business (KPI relevant for the concerned area : RSC or regions)?
+*** Global performance (Pan European KPI which are not linked for any RSC or Region/CCR) and/or Business (KPI relevant for the concerned area: RSC or regions)?
 
 image::RSC_KPI_config.png[RSC KPI config]
 
-* **RSC KPI display screen** : In this screen all graphs about KPI based on user configuration will be displayed. For every graph, user can add a comment below the graph itself. User has the possibility to export the graphs with comments as a pdf report by clicking on the pdf icon or export data (data only without graphs) as an Excel report by clicking on the Excel icon at the bottom. In case of pdf export, comments will be displayed.
+* **RSC KPI display screen**: In this screen all graphs about KPI based on user configuration will be displayed. For every graph, user can add a comment below the graph itself. User has the possibility to export the graphs with comments as a pdf report by clicking on the pdf icon or export data (data only without graphs) as an Excel report by clicking on the Excel icon at the bottom. In case of pdf export, comments will be displayed.
 
 image::RSC_KPI_graphs.png[RSC KPI graphs]
 
@@ -445,7 +446,7 @@ image::notification_opened.png[Notification open]
 
 With action buttons present in detailed view, user can act on the card (acknowledge it if card type is information or accept/refuse it if card type is action).
 
-Ex : For informative notification, user is able to acknowledge the notification to keep track of its reading. After a performed acknowledgement, notification will disappear from the deck. The only way to see it again is to consult the Archiving screen or to update the default filter which only shows the “not acknowledged” notifications.
+Ex: For informative notification, user is able to acknowledge the notification to keep track of its reading. After a performed acknowledgement, notification will disappear from the deck. The only way to see it again is to consult the Archiving screen or to update the default filter which only shows the “not acknowledged” notifications.
  
 === RSC KPI graphs and report
 
@@ -478,25 +479,25 @@ User selects the period from 1 day to 5 years.
 
 When data granularity is daily, we recommend to not use more than 1 year period.
 
-**election of area : RSC or Region**
+**election of area: RSC or Region**
 
-This selection will filter data for the concerned area : for one RSC or one Region/CCR, or general in case of Pan-EU (Pan-European).
+This selection will filter data for the concerned area: for one RSC or one Region/CCR, or general in case of Pan-EU (Pan-European).
 
-* If granularity is Daily : user should select 
+* If granularity is Daily: user should select
 ** or “Pan-Eu”ropean to see the global value of this KPI 
 ** or one of the RSC (not possible to select multiple RSC together)
 ** or one of the Regions/CCRs. (not possible to select multiple Regions/CCRs together)
 
-* If granularity is Yearly : user can select one or multiple choices in the same category: 
+* If granularity is Yearly: user can select one or multiple choices in the same category:
 ** RSC category ; “Pan Eu”, 1 or multiple RSCs together
-** or Region category : “Pan-Eu”, 1 or multiple Regions/CCRs together
+** or Region category: “Pan-Eu”, 1 or multiple Regions/CCRs together
 
 **Data type selection**
 
 Figures depends on selected type of KPIs:
 
-* If global performances KPIs : no difference if user selects a RSC or all RSC, only global KPIs here,
-* If business KPIs : these KPIs are different for each RSC or each Region/CCR as data are correlated to TSOs under responsibility of each RSC or TSOs linked to each Region/CCR.
+* If global performances KPIs: no difference if user selects a RSC or all RSC, only global KPIs here,
+* If business KPIs: these KPIs are different for each RSC or each Region/CCR as data are correlated to TSOs under responsibility of each RSC or TSOs linked to each Region/CCR.
 
 **RSC KPI graphs in GUI**
 
@@ -510,11 +511,11 @@ The user can export KPI in pdf format by clicking on the dedicated button (pdf r
 
 image::RSC_KPI_export.png[RSC KPI export]
 
-RSC KPI report - pdf sample :
+RSC KPI report - pdf sample:
 
 link:attached_doc/serviceA_allKpis_7RSCs_2021_2025.pdf[RSC KPI report - pdf sample]
 
-RSC KPI report - xlsx sample :
+RSC KPI report - xlsx sample:
 
 link:attached_doc/serviceA_allKpis_7RSCs_2021_2025.xlsx[RSC KPI report - xlsx sample]
 
@@ -553,10 +554,10 @@ Different available filters are:
 * Process = user can select process related to selected RSC service
 * State = user can select state for the selected process
 * Tags = user can enter a keyword
-* Published date & hour : 
+* Published date & hour: 
 ** publish from = all notifications published from this date/hour
 ** publish to = all notifications published before this date/hour
-* Business period date & hour : active from and active to
+* Business period date & hour: active from and active to
 ** active from = all notifications where business period is active at least in one hour from this date/hour
 ** active to = all notifications where business period is active at least in one hour from this date/hour 
 
@@ -592,7 +593,7 @@ In this screen, the user is invited to select/fill the required fields:
 
 For each combination of Service/Process/State, the displayed fields will be different and are customizable.
 
-But some fields are mandatory :
+But some fields are mandatory:
 
 * *Severity:* Allow the changing of the card's color according to the severity of the card (Alarm, Action, compliant, information).
 * *Start date:* The notification's business start date
@@ -612,29 +613,39 @@ After filling the required fields, the user should click on the "see before send
 
 image:card_creation_preview.png[Card creation preview screen]
 
+==== Created notification display
+
+A sample of a created notification from Let’s Coordinate GUI is displayed:
+
+image:card_creation_opened_short.png[Card creation preview screen]
+
 == Existing generic notifications
 
 Depending on the business process, notifications will be different and adapted to each business process.
 
 5 generic notifications are identified:
 
-* **Process success** : This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.
+* **Process success**: This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.
 
 image::process_successful_opened_short.png[Process successful]
 
-* **Process failed** : This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.
+* **Process failed**: This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.
 
 image::process_failed_opened_short.png[Process failed]
 
-* **Validation of input file** : This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possibles results :
-** **Positive validation** : in case the input file is correct. Color = GREEN
+* **Validation of input file**: This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possible results:
+** **Positive validation**: in case the input file is correct. Color = GREEN
 
 image::positive_validation_opened_short.png[Positive validation]
 
-** **Positive validation with warnings** : in case the input file is correct but has some warnings. Color = ORANGE
+** **Positive validation with warnings**: in case the input file is correct but has some warnings. Color = ORANGE
 
 image::positive_validation_with_warning_opened_short.png[Positive validation with warnings]
 
-** **Negative validation** : in case the input file failed the validation as detected errors. Color = RED
+** **Negative validation**: in case the input file failed the validation as detected errors. Color = RED
 
 image::negative_validation_opened_short.png[Negative validation]
+
+** **User created notification**: in case a user create a notification from the GUI
+
+image:card_creation_opened_short.png[Card creation preview screen]
