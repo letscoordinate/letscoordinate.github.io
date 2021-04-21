@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Let's Coordinate</title>
+<link rel="shortcut icon" href=/assets/img/favicon.ico>
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+<body>
+<div>
+    <!-- Adapted from https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de -->
+
+    <!-- TODO Handle active page -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img alt="logo img" class="avatar" src="/assets/img/letsco-logo.png" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/getting_started/">Getting Started</a></li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=Documentation role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby=Documentation>
+                        
+                        <a class="dropdown-item" href="/documentation/current/user_manual/">User manual</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/implementation_guide/">Implementation guide</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/releases/">Releases</a></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container-lg px-3 my-5 markdown-body">
+    <!-- Copyright (c) 2020 RTE (https://www.rte-france.com)                                                  -->
+<!-- Copyright (c) 2020 RTE international (https://www.rte-international.com)                             -->
+<!-- See AUTHORS.txt                                                                                      -->
+<!-- This document is subject to the terms of the Creative Commons Attribution 4.0 International license. -->
+<!-- If a copy of the license was not distributed with this                                               -->
+<!-- file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.                            -->
+<!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
+
+<h1 id="lets-coordinate---getting-started">Let’s Coordinate - Getting started</h1>
+<hr />
+<p><br /></p>
+
+<h2 class="orange-title" id="1-prerequisites">1. Prerequisites</h2>
+<p>To use Let’s Coordinate, you need a linux OS with the following:</p>
+
+<ul>
+  <li>Maven</li>
+  <li>Java (8 or grater)</li>
+  <li>Docker</li>
+  <li>Docker-compose</li>
+  <li>NPM (6 or grater)</li>
+  <li>Angular CLI (8 or grater)</li>
+</ul>
+
+<h2 class="orange-title" id="2-setup-and-run-lets-coordinate">2. Setup and run Let’s Coordinate</h2>
+
+<h4 class="orange-title-2" id="21-clone-lets-coordinate-project">2.1. Clone Let’s Coordinate project</h4>
+
+<p>To start Let’s Coordinate, you first need to clone the <em>letscoordinate</em> git project:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/letscoordinate.git
+</code></pre></div></div>
+
+<h4 class="orange-title-2" id="22-run-operator-fabric">2.2. Run Operator Fabric</h4>
+
+<blockquote>
+  <p>/!\ The minimal required version of OperatorFabric is: <strong>1.7.0.RELEASE</strong></p>
+</blockquote>
+
+<p>Clone the <em>operatorfabric-getting-started</em> git project:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/operatorfabric-getting-started.git
+</code></pre></div></div>
+
+<p>Copy files “<em>docker-compose.yml</em>”, “<em>favicon.ico</em>”, “<em>ngnix.conf</em>” and “<em>web-ui.json</em>” from “<em>letscoordinate/test/prepare-opfab-env/opfab-config</em>” directory and past them into “<em>operatorfabric-getting-started/server</em>”. Overwrite the existing files when asked!</p>
+
+<p>In the directory “<em>operatorfabric-getting-started/server</em>” launch the following command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./startServer.sh 
+</code></pre></div></div>
+
+<p>You need to wait for all the services to start (it usually takes one minute to start), it is done when no more logs are written on the output (It could continue to log but slowly).</p>
+
+<h4 class="orange-title-2" id="23-run-lets-coordinate-backend">2.3. Run Let’s Coordinate backend</h4>
+
+<p>In a new terminal, position yourself in the “<em>letscoordinate/bin</em>” directory and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run_letscoos.sh
+</code></pre></div></div>
+
+<p>This will start running the docker containers Kafka (<em>port 9092</em>), Zookeeper (<em>port 2181</em>), MariaDB (<em>port 3306</em>), the <em>letsco-data-provider</em> application (<em>port 8082</em>) and <em>letsco-api</em> application (<em>port 8088</em>).</p>
+
+<h4 class="orange-title-2" id="24-run-lets-coordinate-frontend">2.4. Run Let’s Coordinate frontend</h4>
+
+<p>In a new terminal, change directory to the “<em>letscoordinate/letsco-front</em>” module and execute the following commands:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+ng serve
+</code></pre></div></div>
+
+<h4 class="orange-title-2" id="25-prepare-the-environment">2.5. Prepare the environment</h4>
+
+<h5 id="a-update-the-opfab-database">a. Update the OpFab database</h5>
+
+<p>Download the latest <em>karate.jar</em> from <a href="https://github.com/intuit/karate/releases/">Karate github release page</a></p>
+
+<p>Put it in the “<em>letscoordinate/test/prepare-opfab-env</em>” directory, rename it to “<em>karate.jar</em>” to use it easily.</p>
+
+<p>Position yourself in the “<em>letscoordinate</em>” root directory and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./test/prepare-opfab-env/prepare-opfab-env.sh
+</code></pre></div></div>
+
+<p>This will create a new group, a new entity, and a new user associated to this group and this entity in the <em>operator-fabric</em> database, and will send the bundles to display the cards in OperatorFabric.</p>
+
+<h5 id="b-add-the-user-to-keycloak">b. Add the user to keycloak</h5>
+
+<ul>
+  <li>On your browser, go to the keycloak admin url: <a href="http://localhost:89/auth/">http://localhost:89/auth/</a></li>
+  <li>Click on <em>Administration console</em></li>
+  <li>Connect using the following credentials: <strong>user</strong> <em>admin</em>, <strong>password</strong> <em>admin</em></li>
+  <li>In the left menu, go to <em>Users</em></li>
+  <li>Click on <em>Add user</em></li>
+  <li>Fill the <strong>Username</strong> field with “<em>user.test</em>”, <strong>First Name</strong> field with “<em>User</em>”, <strong>Last Name</strong> field with “<em>Test</em>” and then click on <em>Save</em></li>
+  <li>Go to <em>Credentials</em></li>
+  <li>Fill the password with whatever you want, put <em>Temporary</em> to <em>OFF</em> and click on <em>Reset Password</em></li>
+  <li>In the opened popup, click on <em>Change password</em></li>
+</ul>
+
+<h2 class="orange-title" id="3-use-lets-coordinate">3. Use Let’s Coordinate</h2>
+
+<h4 class="orange-title-2" id="31-send-a-new-notification">3.1. Send a new notification</h4>
+
+<ul>
+  <li>Go to the following url: <a href="http://localhost:8082/swagger-ui.html">http://localhost:8082/swagger-ui.html</a></li>
+  <li>Click on <em>kafka-producer-controller</em></li>
+  <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
+  <li>Click on <em>Try it out</em></li>
+  <li>In the data body value, put the content of one of the files from the directory “<em>letscoordinate/message_models/json/card_feed/</em>” (e.g: <em>ProcessSuccess.json</em>, <em>MessageValidated_NEGATIVE_ACK.json</em>, …)</li>
+  <li>Click on <em>Execute</em></li>
+</ul>
+
+<p>If you connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak, you should see the new card in the Feed.</p>
+
+<p>Feel free to test the other json samples from the directory “<em>letscoordinate/message_models/json/card_feed/</em>”</p>
+
+<h4 class="orange-title-2" id="32-generate-a-rsc-kpi-report">3.2. Generate a RSC KPI report</h4>
+
+<ul>
+  <li>Go to the following url: <a href="http://localhost:8082/swagger-ui.html">http://localhost:8082/swagger-ui.html</a></li>
+  <li>Click on <em>kafka-producer-controller</em></li>
+  <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
+  <li>Click on <em>Try it out</em></li>
+  <li>In the data body value, put the content of the file “<em>letscoordinate/message_models/json/rsc_kpi_report/kpi_use_cases.json</em>”</li>
+  <li>Click on <em>Execute</em></li>
+  <li>Connect to OpFab (<a href="http://localhost:2002/ui/">http://localhost:2002/ui/</a>) with the user previously created in Keycloak.</li>
+  <li>Select the <em>“RSC KPI Report”</em> menu.</li>
+  <li>Select the <em>period</em>, <em>RSC</em>, <em>RSC Service</em> and <em>Data type</em> and then click the <em>submit</em> button, you should see the generated RSC KPI Report.</li>
+</ul>
+
+<h2 class="orange-title" id="4-stop-the-application">4. Stop the application</h2>
+
+<p>To stop the application, we should start by stopping OperatorFabric and then Let’s Coordinate.</p>
+
+<h4 class="orange-title-2" id="41-stop-operatorfabric">4.1. Stop OperatorFabric</h4>
+
+<p>To stop OperatorFabric server, change directory to “<em>operatorfabric-getting-started/server</em>” and execute the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose stop &amp;
+</code></pre></div></div>
+
+<h4 class="orange-title-2" id="42-stop-lets-coordinate">4.2. Stop Let’s Coordinate</h4>
+
+<p>Position yourself in the “<em>letscoordinate/bin</em>” directory and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run_letscoos.sh stop
+</code></pre></div></div>
+
+<p>This will stop the <em>letsco-api</em> &amp; <em>letsco-data-provider</em> processes, and stop the docker services (<em>Kafka</em>, <em>Zookeeper</em>, <em>MariaDB</em>).</p>
+
+</div>
+
+
+<footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2021 Authors of <a href="https://letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
+</p>
+</footer>
+
+
+
+<!-- Needed by bootstrap javascript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="/assets/js/bootstrap/bootstrap.js"></script>
+
+</body>
+</html>

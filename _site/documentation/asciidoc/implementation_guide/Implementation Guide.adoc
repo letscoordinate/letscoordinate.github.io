@@ -145,102 +145,130 @@ NOTE:
 |**Values**
 |**Type**
 |**Description**
+
 |**eventMessage	**
 |M (JSON)
 |-
 |Map
 |Message description
+
 |**xmlns**
 |M (JSON)
 |https://www.iec.ch/tc57/supportdocuments
 |String
 |Name space
+
 |**header**
 |M (JSON)
 |-
 |Map
 |Header part of the file
+
 .7+^.^|**verb**
 .7+^.^|M
 |-
 |-
 |The <verb> shall specify the semantics of the message and the interpretation of the data supplied in the <payload> element.
+
 |created
 |Enumeration
 |Used to publish a notification of the instantiation of one or more objects.
+
 |canceled
 |Enumeration
 |Used to publish a notification that one or more actions have been aborted.
+
 |changed
 |Enumeration
 |Used to publish a notification that one or more objects have been replaced.
+
 |deleted
 |Enumeration
 |Used to publish a notification that an object has been deleted.
+
 |executed
 |Enumeration
 |Used to publish a notification that the execution of a complex transaction that uses the <payload> element has taken place.
+
 |updated
 |Enumeration
 |Used to publish a notification that one or more objects have been modified.
+
 |**noun	**
 |M
 |NotificationCategory
 |String
 |Category of notification. The <noun> shall specify the semantics of the message and the interpretation of the data supplied in the <payload> element.
+
 |**timestamp**
 |M
 |2020-03-18T09:34:08Z
 |DateTime
 |Creation date and hour of the input file : This element shall indicate when the message was produced. (It is not the time the message was transmitted because the actual send may occur later due to transactions or other client side queueing of messages).
 The timestamp shall conform to ISO 8601. It shall include either the letter “Z” to denote UTC or an explicit timezone offset.
+
 |**source**
 |M
 |ProcessName
-|string
+|String
 |Name of the service or process : This element shall be used to identify the origin of the informational content.
 The values assigned to this element are non-normative and have meaning only within the local organisation.
+
 |**messageId**
 |M
 |d18d3733d7884d798cadc2ecf30bef0b
 |UUID
 |Unique ID of the message : This element shall be a 128-bit universally unique identifier (UUID) generated according to RFC 4122. It has no normative meaning other than to provide a unique identifier for the message. This element together with the <timestamp> element is useful for tracing or logging messages as they are processed by the requesting, responding or other systems.
+
 |**properties**
 |M (JSON)
 |-
 |Map
 |Message properties : This element consists of a set of name/value pairs that may be used to customize the system behaviour in ways going beyond those defined by this International Standard. This may be used to provide some implementation-specific functionality.
 The values assigned to these elements are non-normative and have meaning only within the local implementation.
+
 |**format**
 |M (JSON)
 |JSON
 |String
 |Format of the message
+
 |**businessDataIdentifier**
 |M (JSON)
 |-
 |Map
 |-
+
+|**businessApplication**
+|O
+|PanEuropeanServiceATool, ServiceBTool, ...
+|String
+|Name of the business application
+
 |**messageType**
 |O
 |102
 |String
 |ID of the message
+
 |**messageTypeName**
 |M
 |ProcessNotificationTypeA
 |String
 |Name of the message
+
 |**businessDayFrom**
 |M
 |2020-03-18T09:34:08Z
 |DateTime
 |Business period start date and time
+
 |**businessDayTo**
 |O
 |2020-03-19T09:34:08Z
 |DateTime
 |Business period end date and time / If this value is not provided, it will take the <businessDayFrom> value plus 24 hours.
+
 |**sendingUser**
 |O
 |10X-CHSWISSGRIDC
@@ -251,11 +279,13 @@ The values assigned to these elements are non-normative and have meaning only wi
 |1st Run
 |String
 |Name of the process step to distinguish different steps of the same process
+
 |**timeframe**
 |O
 |D-2, D-1, ID, W, M, Y
 |Alphanumeric
 |Timeframe of the message
+
 |**timeframeNumber**
 |O
 |3
@@ -267,22 +297,26 @@ If Timeframe is M, number of the month.
 If Timeframe is Y, number of the year.
 
 Empty for other ones.
+
 |**recipients**
 |O
 |10YCZ-CEPS-----N;10X-CHSWISSGRIDC
 |List<String>
 |EIC codes of specific recipient(s) for this notification. This field is optional if this information can be deducted from provided timeseries.
 5+|_Following lines are only used for Input data validation by ENTSO-E Acknowledgement_
+
 |**fileName**
 |M
 |Input_file_TSO.xml
 |String
 |Name of the file provided by TSO (or its RSC)
+
 |**tso**
 |M
 |10X-CHSWISSGRIDC
 |Alphanumeric
 |EIC code of owner of validated input file
+
 |**biddingZone**
 |O
 |10YCZ-CEPS-----N
@@ -300,11 +334,12 @@ Ex: Input file Header JSON (without input data validation)
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationA",
           "businessDayFrom": "2020-01-10T23:00:00Z",
@@ -347,11 +382,12 @@ Ex: Input file Header JSON (with input data validation)
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationA",
           "businessDayFrom": "2020-01-10T23:00:00Z",
@@ -360,7 +396,7 @@ Ex: Input file Header JSON (with input data validation)
           "processStep": "INITIAL_RUN",
           "timeframe": "W",
           "timeframeNumber": 24,
-	        "fileName": "20200317_1230_SERVICEA_CH.xlsx",
+          "fileName": "20200317_1230_SERVICEA_CH.xlsx",
           "tso": "10XCH-SWISSGRIDC",
           "biddingZone": "10YCH-SWISSGRIDZ"
           "recipients": [
@@ -458,7 +494,7 @@ OR rscKpi
 |String
 |Url address of the file or the webpage
 |**eicCode**
-|M
+|O
 |["eicCode1",     "eicCode2", ...]
 |list<String>
 |EIC code of concerned TSO
@@ -468,6 +504,7 @@ OR rscKpi
 |-
 |List<Map>
 |Structure to provide KPIs
+
 |**name**
 |M
 |GP1, GP2…. BP1, BP2….
@@ -475,6 +512,13 @@ OR rscKpi
 |KPI name: there are 2 categories : Global Performance (GP) or Business process (BP) : GP or BP followed by the number of KPIs
 
 **Note:** The labels of GPx and BPx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the <kpi_name – kpi_label> format. (e.g: GPx – Global Performance x)
+
+|**joinGraph**
+|O
+|true (default) or false
+|Boolean
+|If “true”, allows to join rsc kpi data into one graph, else if “false”, the rsc kpi data will be displayed into separate graphs.
+
 |**data**
 |M (JSON)
 |-
@@ -485,6 +529,19 @@ OR rscKpi
 |2020-03-18T23:00:00Z
 |DateTime
 |Date of related KPI
+
+.2+^.^|**granularity**
+.2+^.^|M
+
+|D
+|Enumeration
+|Used to display the RSC KPI report in a daily view
+
+
+|Y
+|Enumeration
+|Used to display the RSC KPI report in a yearly view
+
 |**label**
 |M
 |CalculationFailed, ProcessDelayed…
@@ -601,13 +658,20 @@ If some errors with/out warnings => error
 |**message**
 |M	(JSON)
 |“Issue located in business period”
+
+“Application check: Error identified while checking process <processMrid>. The coordinated TSO: <missingTsoList> not provided”
 |String
 |Details about this validation information
-|**timestamp**
+|**params**
+|O (JSON)
+|{“processMrid”: “6fc941b6-e7ab-4962-a2a8-c965f5bf78e9”, “missingTsoList”: [“10X1001A1001A094”, “10XES-REE------E”]}
+|Map<String, Object>
+|Provides <key,value> parameters for the validation message 
+|**businessTimestamp**
 |M	(JSON)
 |2020-03-18T23:00:00Z
 |DateTime
-|Date and time of this validation information
+|Business date and time of this validation information
 |**sourceDataRef**
 |M (JSON)
 |-
@@ -677,6 +741,7 @@ Ex: Input file payload JSON (without input data validation)
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
+              "granularity": "Y",
               "label": "ProcessSuccess",
               "detail": [
                 {
@@ -691,6 +756,7 @@ Ex: Input file payload JSON (without input data validation)
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
+              "granularity": "D",
               "label": "BusinessKpiAServiceA",
               "detail": [
                 {
@@ -793,7 +859,7 @@ Ex: Input file payload JSON (with input data validation)
             "severity": "ERROR",
             "title": "Rule_A_Violated",
             "message": "Application check: Error 01 detected in input file",
-            "timestamp": "2020-02-26T14:24:38.825Z",
+            "businessTimestamp": "2020-02-26T14:24:38Z",
             "sourceDataRef": {
               "relatedPeriodStartId": 3247,
               "relatedElement": "timeseries",
@@ -806,7 +872,7 @@ Ex: Input file payload JSON (with input data validation)
             "severity": "ERROR",
             "title": "Rule_B_Violated",
             "message": "Application check: Error 02 detected in input file",
-            "timestamp": "2020-02-26T14:24:46.885Z",
+            "businessTimestamp": "2020-02-26T14:24:46Z",
             "sourceDataRef": {
               "relatedElement": "header"
             }
@@ -816,7 +882,7 @@ Ex: Input file payload JSON (with input data validation)
             "severity": "WARNING",
             "title": "Rule_C_Violated",
             "message": "Application check: Warning 01 detected in input file",
-            "timestamp": "2020-02-26T14:24:47.792Z",
+            "businessTimestamp": "2020-02-26T14:24:47Z",
             "sourceDataRef": {
               "relatedElement": "header"
             }
@@ -826,7 +892,7 @@ Ex: Input file payload JSON (with input data validation)
             "severity": "WARNING",
             "title": "Rule_D_Violated",
             "message": "Application check: Warning 02 detected in input file",
-            "timestamp": "2020-02-26T14:25:23.591Z",
+            "businessTimestamp": "2020-02-26T14:25:23Z",
             "sourceDataRef": {
               "relatedPeriodStartId": 897,
               "relatedElement": "timeseries",
@@ -960,6 +1026,13 @@ The values assigned to these elements are non-normative and have meaning only wi
 |-
 |Map
 |-
+
+|**businessApplication**
+|O
+|PanEuropeanServiceATool, ServiceB.tool, ...
+|String
+|Name of the business application
+
 |**messageType**
 |O
 |102
@@ -1013,11 +1086,11 @@ Empty for other ones.
 |EIC codes of specific recipient(s) for this output file. This field is optional if this information can be deducted from provided timeseries.
 |**coordinationStatus**
 |**M**
-|**CON
+|*CON*
 
-or REJ
+*or REJ*
 
-or MIX**
+*or MIX*
 |**String**
 |**Global status of coordination : CON(firmed), REJ(ected) or MIX(ed).
 
@@ -1035,11 +1108,12 @@ Ex: Output file header JSON sample
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationB",
           "businessDayFrom": "2020-01-10T23:00:00Z",

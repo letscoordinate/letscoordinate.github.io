@@ -17,14 +17,14 @@ This application is based on the [OperatorFabric](https://opfab.github.io/) fram
 
 # What does it do?
 
-To perform their duties, a TSO/RSC operator has to interact with multiple TSO/RSC processes (perform actions, watch for alerts, coordinate decisions etc.) 
+To perform their duties, a TSO/RSC operator must interact with multiple TSO/RSC processes (perform actions, watch for alerts, coordinate decisions etc.) 
 at the same time which can prove difficult if there are too many of them.
 
 The idea is to send relevant notifications to operators when their attention is needed and this to help them to focus on the most critical points to make the best decisions.
-Additionnaly, aggregate all the notifications from these different processes into a single screen 
+Additionally, aggregate all the notifications from these different processes into a single screen 
 and to allow operators to act on them if needed.
 
-![Feed screen layout](./assets/img/of_screenshots/feed_screenshot.png){:class="img-fluid"}
+![Feed screen layout](./assets/img/home_page.png){:class="img-fluid"}
 
 These workflows are materialized by *notifications* sorted in a *feed* according to their period of relevance (business period) and their severity (color).
 When a notification is selected in the feed, the right-hand pane displays the *details* of the card: information about the process 
@@ -52,7 +52,7 @@ Another aim of Let's Coordinate will be to make coordination process easier with
 This will replace phone calls or emails, making coordination more efficient and traceable.
 Dedicated screens to monitor on going coordination and reflect monitoring of answers from operators will be added.
 
-For some ex-post analysis, operators might be interested in knowing why a given decision was made in the past or if the information was received on time : the previous notifications (informative and SMART) will be accessible through the Archives screen.
+For some ex-post analysis, operators might be interested in knowing why a given decision was made in the past or if the information was received on time : the previous notifications (informative and Smart) will be accessible through the Archives screen.
 
 # Open source
 
@@ -70,7 +70,7 @@ Presentation of the projet [Video](https://www.youtube.com/watch?v=NRMrG9IJx2c).
 Let's Coordinate is mostly written in Java and based on the Spring framework. 
 This makes writing and integrating software for a simplified and better coordination very easy.
 
-[![Using Java](https://img.shields.io/badge/Using-Java-%237473C0.svg?style=for-the-badge)]() 
+[![Using Java](https://img.shields.io/badge/Using-Java-%237473C0.svg?style=for-the-badge)](https://www.oracle.com/fr/java/) 
 [![Using Spring](https://img.shields.io/badge/Using-Spring-%236db33f.svg?style=for-the-badge)](https://spring.io/) 
 [![Using Angular](https://img.shields.io/badge/Using-Angular-%237473C0.svg?style=for-the-badge)](https://angular.io/)
 [![Using Swagger](https://img.shields.io/badge/Using-Swagger-%237473C0.svg?style=for-the-badge)](https://swagger.io/)
@@ -79,4 +79,5 @@ This makes writing and integrating software for a simplified and better coordina
 Let's Coordinate is built and integrated using battle-tested tools and (open) platforms. 
 
 [![Built with Maven](https://img.shields.io/badge/Built%20with-Maven-%23410099.svg?style=for-the-badge)](https://maven.apache.org/)
-[![Using Travis CI](https://img.shields.io/badge/Using-Travis%20CI-%23FF647D.svg?style=for-the-badge)](https://travis-ci.org/)
+[![Using Github](https://img.shields.io/badge/Using-Github%20Actions-%236db33f.svg?style=for-the-badge)](https://github.com/actions/) 
+[![Using SonarCloud](https://img.shields.io/badge/Using-SonarCloud-%23FF647D.svg?style=for-the-badge)](https://sonarcloud.io/dashboard?id=org.lfenergy.operatorfabric%3Aletscoordinate)

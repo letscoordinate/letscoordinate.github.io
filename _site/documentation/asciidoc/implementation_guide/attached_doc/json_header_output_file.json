@@ -5,11 +5,12 @@
       "verb": "created",
       "noun": "ServiceA_CalculationResults",
       "timestamp": "2020-03-17T12:32:19Z",
-      "source": "SERVICE_A",
+      "source": "ServiceA",
       "messageId": "b071aa50097f49f1bd69e82a070084b6",
       "properties": {
         "format": "JSON",
         "businessDataIdentifier": {
+          "businessApplication": "PanEuropeanServiceATool",
           "messageType": "101",
           "messageTypeName": "ServiceA_NotificationB",
           "businessDayFrom": "2020-01-10T23:00:00Z",

@@ -71,15 +71,15 @@
 </div>
 
 <div class="container-lg px-3 my-5 markdown-body">
-    <!-- Copyright (c) 2020 RTE (https://www.rte-france.com)                                                  -->
-<!-- Copyright (c) 2020 RTE international (https://www.rte-international.com)                             -->
+    <!-- Copyright (c) 2020-2021 RTE (https://www.rte-france.com)                                                  -->
+<!-- Copyright (c) 2020-2021 RTE international (https://www.rte-international.com)                             -->
 <!-- See AUTHORS.txt                                                                                      -->
 <!-- This document is subject to the terms of the Creative Commons Attribution 4.0 International license. -->
 <!-- If a copy of the license was not distributed with this                                               -->
 <!-- file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.                            -->
 <!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
 
-<h1 id="version-110release">Version 1.1.0.RELEASE</h1>
+<h1 id="version-120release">Version 1.2.0.RELEASE</h1>
 <hr />
 <p><br /></p>
 
@@ -88,16 +88,38 @@
 <ul>
   <li>Add new functionalities:
     <ul>
-      <li>day/night mode,</li>
-      <li>sounds,</li>
-      <li>acknowledgement filter</li>
+      <li>Add “Card creation” screen</li>
+      <li>Add “Notification reception configuration” screen</li>
     </ul>
   </li>
-  <li>Make letscoordinate compatible with the version 1.7.0.RELEASE of OperatorFabric</li>
-  <li>Make sending the notifications to RSCs configurable</li>
-  <li>Generate the placeholder value of the notification title in the screen feed</li>
-  <li>Display “sendingUser” data in the validation notifications</li>
-  <li>Update online documentation for release 1.1.0.RELEASE
+  <li>Update existing functionalities:
+    <ul>
+      <li>“Card feed” screen:
+        <ul>
+          <li>Display multiple bubbles in timeline for notifications with errors and/or warnings</li>
+        </ul>
+      </li>
+      <li>“Archives” screen:
+        <ul>
+          <li>Update filtering tags</li>
+          <li>Add export functionality</li>
+        </ul>
+      </li>
+      <li>“RSC KPI report” screen:
+        <ul>
+          <li>Add yearly granularity</li>
+          <li>Add regional selection</li>
+          <li>Add new graph types</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Update the JSON generic format</li>
+  <li>Make Let’s Coordinate compatible with the version 2.3.0.RELEASE of OperatorFabric</li>
+  <li>Improve the getting started process and documentation</li>
+  <li>Improve the security of the Let’s Coordinate application</li>
+  <li>Improve the code quality by integrating the Sonar tool</li>
+  <li>Update online documentation for release 1.2.0.RELEASE
 <br /></li>
 </ul>
 
@@ -105,28 +127,47 @@
 
 <ul>
   <li>[LC-208] Display many bubbles in timeline for notifications that have errors and warnings</li>
-  <li>[LC-206] Update online documentation for release 1.1.0.RELEASE</li>
-  <li>[LC-204] Make letscoordinate compatible with the version 1.7.0.RELEASE of OperatorFabric</li>
-  <li>[LC-203] Add functionalities: day/night mode, sounds and acknowledgement filter</li>
-  <li>[LC-202] Generation of docker images for letsco front</li>
-  <li>[LC-201] Make the sending of the notification to the RSC configurable</li>
-  <li>[LC-200] Generate the placeholder value of the notification title in the screen feed</li>
-  <li>[LC-199] In addition to sending a notification to the TSO, it must be sent to its RSC</li>
-  <li>[LC-197] Display “sendingUser” data in the validation notifications
+  <li>[LC-242] Add yearly view and region concept to RSC KPI report</li>
+  <li>[LC-408] Upgrade the version of OperatorFabric to 2.3.0.RELEASE</li>
+  <li>[LC-258] Integrate the “Card creation” screen</li>
+  <li>[LC-262] Integrate the “Notification Reception Configuration” screen</li>
+  <li>[LC-189] Improve the getting started process and documentation</li>
+  <li>[LC-191] Improve the security of the backend and frontend modules</li>
+  <li>[LC-254] Change rules for displaying cards in feed</li>
+  <li>[LC-255] Split validation tags in the archive screen</li>
+  <li>[LC-256] Change National Grid’s EIC Code</li>
+  <li>[LC-260] Improve the validator of JSON and Excel files</li>
+  <li>[LC-264] Split granularity and period selection in RSC KPI config screen</li>
+  <li>[LC-267] Add new fields to the JSON generic format and update the implementation guide</li>
+  <li>[LC-284] Specify the list of messageTypeNames recognized by the letsco API</li>
+  <li>[LC-285] Upgrade Letsco OS frameworks</li>
+  <li>[LC-287] Update TSOs, RSCs and regions mapping</li>
+  <li>[LC-316] Use joinGraph attribute for joining RSC KPI graphs</li>
+  <li>[LC-333] Improve the authentication for the RSC KPi report screen</li>
+  <li>[LC-371] Change RSC KPI bar graphs to stacked bar graphs when joinGraph flag equals true</li>
+  <li>[LC-378] Update CCRs/Regions EicCodes</li>
+  <li>[LC-150] Integrate sonar to check the test coverage</li>
+  <li>[LC-363] Scan code with Fossology</li>
+  <li>[LC-403] Add unit tests 
 <br /></li>
 </ul>
 
 <h2 class="orange-title" id="3-bugs">3. Bugs</h2>
 
 <ul>
-  <li>[LC-207] Fix displaying more than one bubble in timeline for the notifications without warnings and errors</li>
+  <li>[LC-350] Fix VPN/Proxy access problems</li>
+  <li>[LC-373] Fix the publisher name displayed on the bottom of the free message card details</li>
+  <li>[LC-315] Fix tags in the archive screen</li>
+  <li>[LC-209] Identify fields that may have long values and increase their size in database</li>
+  <li>[LC-450] Fix “invalid date” displayed in validation notifications</li>
+  <li>[LC-407] Fix bugs and vulnerabilities reported by Sonar</li>
 </ul>
 
 </div>
 
 
 <footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
-    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2020 Authors of <a href="https://github.com/letscoordinate/letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2021 Authors of <a href="https://letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
 </p>
 </footer>
 
