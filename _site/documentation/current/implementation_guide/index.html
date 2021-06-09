@@ -923,6 +923,13 @@ The values assigned to these elements are non-normative and have meaning only wi
 <td class="tableblock halign-center valign-top"><p class="tableblock">EIC codes of specific recipient(s) for this notification. This field is optional if this information can be deducted from provided timeseries.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>caseId</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Coordination_001</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Business dentifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-center valign-top" colspan="5"><p class="tableblock"><em>Following lines are only used for Input data validation by ENTSO-E Acknowledgement</em></p></td>
 </tr>
 <tr>
