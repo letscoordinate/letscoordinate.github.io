@@ -23,7 +23,18 @@
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
           ],
-          "coordinationStatus": "CON"
+          "caseId": "ProcessNotifTypeA_20210609_001",
+          "coordinationStatus": "CON",
+          "coordinationComments": [
+            {
+              "eicCode": "10XFR-RTE------Q",
+              "generalComment": "OK for us!"
+            },
+            {
+              "eicCode": "22XCORESO------S",
+              "generalComment": "Super!"
+            }
+          ]
         }
       }
     },

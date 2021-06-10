@@ -925,9 +925,9 @@ The values assigned to these elements are non-normative and have meaning only wi
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>caseId</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Coordination_001</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ProcessNotifTypeA_20210609_001</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Business dentifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Business identifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" colspan="5"><p class="tableblock"><em>Following lines are only used for Input data validation by ENTSO-E Acknowledgement</em></p></td>
@@ -984,7 +984,8 @@ The values assigned to these elements are non-normative and have meaning only wi
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
@@ -1040,7 +1041,8 @@ The values assigned to these elements are non-normative and have meaning only wi
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
@@ -1229,7 +1231,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>eicCode</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">38X-BALTIC-RSC-H</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">alphanumeric</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Alpha-numeric</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">EIC code of concerned TSO if exists</p></td>
 </tr>
 <tr>
@@ -1715,8 +1717,14 @@ In case the input file is used for informative notification, no output file will
 <li>
 <p><strong>MIX(ed):</strong> the status of this notification is mixed (based on the different answers done for each timeserie to be validated inside this notification)</p>
 </li>
+<li>
+<p><strong>CAN(celed):</strong> the status of this notification is canceled</p>
+</li>
 </ul>
 </div>
+</li>
+<li>
+<p><strong>List of general comments</strong> of the overall notification to be validated. This change is in the header of the output file.</p>
 </li>
 </ul>
 </div>
@@ -1922,14 +1930,43 @@ The values assigned to these elements are non-normative and have meaning only wi
 <td class="tableblock halign-center valign-top"><p class="tableblock">EIC codes of specific recipient(s) for this output file. This field is optional if this information can be deducted from provided timeseries.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>caseId</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ProcessNotifTypeA_20210609_001</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Business identifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>coordinationStatus</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>CON</strong></p>
 <p class="tableblock"><strong>or REJ</strong></p>
-<p class="tableblock"><strong>or MIX</strong></p></td>
+<p class="tableblock"><strong>or MIX</strong></p>
+<p class="tableblock"><strong>or CAN</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Enumeration</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Global status of coordination : CON(firmed), REJ(ected), MIX(ed) or CAN(celed).</strong></p>
+<p class="tableblock"><strong>This status is global for the all notification</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>coordinationComments</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>O</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>-</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>List&lt;Map&gt;</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>List of general comments</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>eicCode</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>22XCORESO------S</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Alpha-numeric</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>EIC code of the user providing a general comment</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>generalComment</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>OK for us!</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>String</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Global status of coordination : CON(firmed), REJ(ected) or MIX(ed).</p>
-<p class="tableblock">This status is global for the all notification</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>General comment for the coordination</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -1963,7 +2000,18 @@ The values assigned to these elements are non-normative and have meaning only wi
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
           ],
-          "coordinationStatus": "CON"
+          "caseId": "ProcessNotifTypeA_20210609_001",
+          "coordinationStatus": "CON",
+          "coordinationComments": [
+            {
+              "eicCode": "10XFR-RTE------Q",
+              "generalComment": "OK for us!"
+            },
+            {
+              "eicCode": "22XCORESO------S",
+              "generalComment": "Super!"
+            }
+          ]
         }
       }
     },
@@ -2128,31 +2176,39 @@ The values assigned to these elements are non-normative and have meaning only wi
 <td class="tableblock halign-center valign-top"><p class="tableblock">Value of related timeserie</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>accept</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>1 or 0</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Boolean</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>1 : the proposal has been accepted by the concerned EIC code</p>
-<p class="tableblock">0 : the proposal has been rejected by the concerned EIC code</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>results</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>O (JSON)</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>-</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>List&lt;Map&gt;</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Structure to provide output results</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>reject</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>eicCode</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>1 or 0</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Boolean</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>1 : the proposal has been rejected by the concerned EIC code</p>
-<p class="tableblock">0 : the proposal has been accepted by the concerned EIC code</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>10XFR-RTE------Q</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Alpha-numeric</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>*EIC code of the entity providing the answer</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>answer</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>CON</strong></p>
+<p class="tableblock"><strong>or REJ</strong></p>
+<p class="tableblock"><strong>or MIX</strong></p>
+<p class="tableblock"><strong>or NOT</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Enumeration</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Status of the remedial actions: CON(firmed), REJ(ected), MIX(ed) or NOT (Not answered).</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>explanation</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>O</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>“Not available”</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>String</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>List of choice in a predefined list of values as text.</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>comment</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>O</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>“3 nodes should work”</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>String</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Comment about the proposal by the concerned EIC code</strong></p></td>

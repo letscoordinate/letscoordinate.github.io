@@ -306,9 +306,9 @@ Empty for other ones.
 
 |**caseId**
 |O
-|Coordination_001
+|ProcessNotifTypeA_20210609_001
 |String
-|Business dentifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.
+|Business identifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.
 
 5+|_Following lines are only used for Input data validation by ENTSO-E Acknowledgement_
 
@@ -358,7 +358,8 @@ Ex: Input file Header JSON (without input data validation)
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
@@ -409,7 +410,8 @@ Ex: Input file Header JSON (with input data validation)
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
@@ -562,7 +564,7 @@ OR rscKpi
 |**eicCode**
 |O
 |38X-BALTIC-RSC-H
-|alphanumeric
+|Alpha-numeric
 |EIC code of concerned TSO if exists
 |**value**
 |M
@@ -947,6 +949,9 @@ Header is the really similar as the one described for the input file with additi
 ** **CON(firmed):** the status of this notification is confirmed (based on the different answers done for each timeserie to be validated inside this notification)
 ** **REJ(ected):** the status of this notification is rejected (based on the different answers done for each timeserie to be validated inside this notification)
 ** **MIX(ed):** the status of this notification is mixed (based on the different answers done for each timeserie to be validated inside this notification)
+** **CAN(celed):** the status of this notification is canceled
+
+* **List of general comments** of the overall notification to be validated. This change is in the header of the output file.
 
 
 [cols=5]
@@ -1091,6 +1096,15 @@ Empty for other ones.
 |10YCZ-CEPS-----N;10X-CHSWISSGRIDC
 |List<String>
 |EIC codes of specific recipient(s) for this output file. This field is optional if this information can be deducted from provided timeseries.
+
+
+
+|**caseId**
+|O
+|ProcessNotifTypeA_20210609_001
+|String
+|Business identifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.
+
 |**coordinationStatus**
 |**M**
 |*CON*
@@ -1098,10 +1112,30 @@ Empty for other ones.
 *or REJ*
 
 *or MIX*
-|**String**
-|**Global status of coordination : CON(firmed), REJ(ected) or MIX(ed).
 
-This status is global for the all notification**
+*or CAN*
+|**Enumeration**
+|**Global status of coordination : CON(firmed), REJ(ected), MIX(ed) or CAN(celed).**
+
+**This status is global for the all notification**
+
+|**coordinationComments**
+|**O**
+|*-*
+|*List<Map>*
+|*List of general comments*
+
+|**eicCode**
+|**M**
+|*22XCORESO------S*
+|*Alpha-numeric*
+|*EIC code of the user providing a general comment*
+
+|**generalComment**
+|**M**
+|*OK for us!*
+|*String*
+|*General comment for the coordination*
 |===
 
 
@@ -1133,7 +1167,18 @@ Ex: Output file header JSON sample
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
           ],
-          "coordinationStatus": "CON"
+          "caseId": "ProcessNotifTypeA_20210609_001",
+          "coordinationStatus": "CON",
+          "coordinationComments": [
+            {
+              "eicCode": "10XFR-RTE------Q", 
+              "generalComment": "OK for us!"
+            },
+            {
+              "eicCode": "22XCORESO------S", 
+              "generalComment": "Super!"
+            }
+          ]
         }
       }
     },
@@ -1249,27 +1294,39 @@ OR rscKpi
 |"89", "5585", "Open Line Z", …
 |String
 |Value of related timeserie
-|**accept**
-|**M**
-|**1 or 0**
-|**Boolean**
-|**1 : the proposal has been accepted by the concerned EIC code
 
-0 : the proposal has been rejected by the concerned EIC code**
-|**reject**
-|**M**
-|**1 or 0**
-|**Boolean**
-|**1 : the proposal has been rejected by the concerned EIC code
+|**results**
+|*O (JSON)*
+|*-*
+|*List<Map>*
+|*Structure to provide output results*
 
-0 : the proposal has been accepted by the concerned EIC code**
+|**eicCode**
+|**M**
+|**10XFR-RTE------Q**
+|**Alpha-numeric**
+|**EIC code of the entity providing the answer*
+
+|**answer**
+|**M**
+|*CON* 
+
+*or REJ* 
+
+*or MIX* 
+
+*or NOT*
+|*Enumeration*
+|**Status of the remedial actions: CON(firmed), REJ(ected), MIX(ed) or NOT (Not answered).**
+
 |**explanation**
-|**M**
+|**O**
 |**“Not available”**
 |**String**
 |**List of choice in a predefined list of values as text.**
+
 |**comment**
-|**M**
+|**O**
 |**“3 nodes should work”**
 |**String**
 |**Comment about the proposal by the concerned EIC code**
