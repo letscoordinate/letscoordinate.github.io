@@ -25,7 +25,8 @@
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
