@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Let's Coordinate</title>
+<link rel="shortcut icon" href=/assets/img/favicon.ico>
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+<body>
+<div>
+    <!-- Adapted from https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de -->
+
+    <!-- TODO Handle active page -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img alt="logo img" class="avatar" src="/assets/img/letsco-logo.png" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/getting_started/">Getting Started</a></li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=Documentation role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby=Documentation>
+                        
+                        <a class="dropdown-item" href="/documentation/current/user_manual/">User manual</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/implementation_guide/">Implementation guide</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/releases/">Releases</a></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container-lg px-3 my-5 markdown-body">
+    <!-- Copyright (c) 2020-2021 RTE (https://www.rte-france.com)                                                  -->
+<!-- Copyright (c) 2020-2021 RTE international (https://www.rte-international.com)                             -->
+<!-- See AUTHORS.txt                                                                                      -->
+<!-- This document is subject to the terms of the Creative Commons Attribution 4.0 International license. -->
+<!-- If a copy of the license was not distributed with this                                               -->
+<!-- file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.                            -->
+<!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
+
+<h1 id="version-120release">Version 1.2.0.RELEASE</h1>
+<hr />
+<p><br /></p>
+
+<h2 class="orange-title" id="1-features">1. Features</h2>
+
+<ul>
+  <li>Add new functionalities:
+    <ul>
+      <li>Add “Card creation” screen</li>
+      <li>Add “Notification reception configuration” screen</li>
+    </ul>
+  </li>
+  <li>Update existing functionalities:
+    <ul>
+      <li>“Card feed” screen:
+        <ul>
+          <li>Display multiple bubbles in timeline for notifications with errors and/or warnings</li>
+        </ul>
+      </li>
+      <li>“Archives” screen:
+        <ul>
+          <li>Update filtering tags</li>
+          <li>Add export functionality</li>
+        </ul>
+      </li>
+      <li>“RSC KPI report” screen:
+        <ul>
+          <li>Add yearly granularity</li>
+          <li>Add regional selection</li>
+          <li>Add new graph types</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Update the JSON generic format</li>
+  <li>Make Let’s Coordinate compatible with the version 2.3.0.RELEASE of OperatorFabric</li>
+  <li>Improve the getting started process and documentation</li>
+  <li>Improve the security of the Let’s Coordinate application</li>
+  <li>Improve the code quality by integrating the Sonar tool</li>
+  <li>Update online documentation for release 1.2.0.RELEASE
+<br /></li>
+</ul>
+
+<h2 class="orange-title" id="2-tasks">2. Tasks</h2>
+
+<ul>
+  <li>[LC-208] Display many bubbles in timeline for notifications that have errors and warnings</li>
+  <li>[LC-242] Add yearly view and region concept to RSC KPI report</li>
+  <li>[LC-408] Upgrade the version of OperatorFabric to 2.3.0.RELEASE</li>
+  <li>[LC-258] Integrate the “Card creation” screen</li>
+  <li>[LC-262] Integrate the “Notification Reception Configuration” screen</li>
+  <li>[LC-189] Improve the getting started process and documentation</li>
+  <li>[LC-191] Improve the security of the backend and frontend modules</li>
+  <li>[LC-254] Change rules for displaying cards in feed</li>
+  <li>[LC-255] Split validation tags in the archive screen</li>
+  <li>[LC-256] Change National Grid’s EIC Code</li>
+  <li>[LC-260] Improve the validator of JSON and Excel files</li>
+  <li>[LC-264] Split granularity and period selection in RSC KPI config screen</li>
+  <li>[LC-267] Add new fields to the JSON generic format and update the implementation guide</li>
+  <li>[LC-284] Specify the list of messageTypeNames recognized by the letsco API</li>
+  <li>[LC-285] Upgrade Letsco OS frameworks</li>
+  <li>[LC-287] Update TSOs, RSCs and regions mapping</li>
+  <li>[LC-316] Use joinGraph attribute for joining RSC KPI graphs</li>
+  <li>[LC-333] Improve the authentication for the RSC KPi report screen</li>
+  <li>[LC-371] Change RSC KPI bar graphs to stacked bar graphs when joinGraph flag equals true</li>
+  <li>[LC-378] Update CCRs/Regions EicCodes</li>
+  <li>[LC-150] Integrate sonar to check the test coverage</li>
+  <li>[LC-363] Scan code with Fossology</li>
+  <li>[LC-403] Add unit tests 
+<br /></li>
+</ul>
+
+<h2 class="orange-title" id="3-bugs">3. Bugs</h2>
+
+<ul>
+  <li>[LC-350] Fix VPN/Proxy access problems</li>
+  <li>[LC-373] Fix the publisher name displayed on the bottom of the free message card details</li>
+  <li>[LC-315] Fix tags in the archive screen</li>
+  <li>[LC-209] Identify fields that may have long values and increase their size in database</li>
+  <li>[LC-450] Fix “invalid date” displayed in validation notifications</li>
+  <li>[LC-407] Fix bugs and vulnerabilities reported by Sonar</li>
+</ul>
+
+</div>
+
+
+<footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2021 Authors of <a href="https://letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
+</p>
+</footer>
+
+
+
+<!-- Needed by bootstrap javascript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="/assets/js/bootstrap/bootstrap.js"></script>
+
+</body>
+</html>

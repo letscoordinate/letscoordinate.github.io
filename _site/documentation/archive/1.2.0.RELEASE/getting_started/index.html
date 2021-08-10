@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Let's Coordinate</title>
+<link rel="shortcut icon" href=/assets/img/favicon.ico>
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+<body>
+<div>
+    <!-- Adapted from https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de -->
+
+    <!-- TODO Handle active page -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img alt="logo img" class="avatar" src="/assets/img/letsco-logo.png" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/getting_started/">Getting Started</a></li>
+                
+                
+                
+
+                
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id=Documentation role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu" aria-labelledby=Documentation>
+                        
+                        <a class="dropdown-item" href="/documentation/current/user_manual/">User manual</a>
+                        
+                        <a class="dropdown-item" href="/documentation/current/implementation_guide/">Implementation guide</a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+
+                
+
+                <li class="nav-item"><a class="nav-link" href="/documentation/current/releases/">Releases</a></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container-lg px-3 my-5 markdown-body">
+    <!-- Copyright (c) 2020-2021 RTE (https://www.rte-france.com)                                                  -->
+<!-- Copyright (c) 2020-2021 RTE international (https://www.rte-international.com)                             -->
+<!-- See AUTHORS.txt                                                                                      -->
+<!-- This document is subject to the terms of the Creative Commons Attribution 4.0 International license. -->
+<!-- If a copy of the license was not distributed with this                                               -->
+<!-- file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.                            -->
+<!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
+
+<h1 id="lets-coordinate---getting-started">Let’s Coordinate - Getting started</h1>
+<hr />
+<p><br /></p>
+
+<h2 class="orange-title" id="1-prerequisites">1. Prerequisites</h2>
+
+<p>To use Let’s Coordinate, you need a linux OS with the following:</p>
+
+<ul>
+  <li>Maven (v3.5.3)</li>
+  <li>Java (v11.0.10)</li>
+  <li>Docker (v18.09.9)</li>
+  <li>Docker-compose (v1.22)</li>
+  <li>NPM (v7.5.2)</li>
+  <li>Node JS (v10.16.3)</li>
+  <li>Angular CLI (v11.1.4)</li>
+</ul>
+
+<p><strong>Please note</strong>:</p>
+<ul>
+  <li>It is highly recommended to use <a href="https://sdkman.io/">sdkman</a> (v5.11.0 or grater) and <a href="https://github.com/nvm-sh/nvm">nvm</a> (v14.11.0 or grater) to manage <em>Maven</em>, <em>Java</em>, <em>NPM</em> and <em>Node JS</em> tools versions (with sdkman and nvm, the previously mentioned tools will be automatically installed later).</li>
+  <li>The required OperatorFabric version is <strong>2.3.0.RELEASE</strong> (configured by default to be used with the current version of Let’s Coordinate 1.2.0.RELEASE)</li>
+</ul>
+
+<h2 class="orange-title" id="2-setup-and-run-lets-coordinate">2. Setup and run Let’s Coordinate</h2>
+
+<h4 class="orange-title-2" id="21-clone-lets-coordinate-project">2.1. Clone Let’s Coordinate project</h4>
+
+<p>To start Let’s Coordinate, you first need to clone the <em>letscoordinate</em> git project:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/opfab/letscoordinate.git
+</code></pre></div></div>
+
+<h4 class="orange-title-2" id="22-create-test-branch">2.2. Create test branch</h4>
+
+<p>Before starting Let’s Coordinate, it’s recommended to create a test branch from the latest stable release (1.2.0.RELEASE in our case).
+To do this, you first need to make sure that you have the latest tag list from your remote repository:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch --all --tags
+</code></pre></div></div>
+
+<p>Then, you can create the test branch:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/1.2.0.RELEASE -b test-letsco-1.2.0.RELEASE
+</code></pre></div></div>
+
+<h4 class="orange-title-2" id="23-run-lets-coordinate">2.3. Run Let’s Coordinate</h4>
+
+<h5 id="a-prepare-the-environment">a. Prepare the environment</h5>
+
+<p>Before starting the <em>Let’s Coordinate</em> getting started project, it is important to mention that we use the “<em>karate.jar</em>” dependency to initialize our database with required test data.</p>
+
+<p>Download the latest karate jar file from <a href="https://github.com/intuit/karate/releases/">Karate github release page</a> , put it in the “<em>opfab/prepare-opfab-env</em>” directory, rename it to “<em>karate.jar</em>” to use it easily.</p>
+
+<p>Then, position your self in the “<em>bin</em>” directory and check that you have the right “<em>SERVER_IP</em>” value in the “<em>load_environment.sh</em>” file (this action is mandatory only if you are running <em>Let’s Coordinate</em> in a remote server! If it is the case, please edit the file and replace “<em>localhost</em>” by your server IP address, else if you are testing locally, please skip this step):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed -n '13,+6p' load_environment.sh
+</code></pre></div></div>
+
+<p>Finally, in the same “<em>bin</em>” directory, you should load the environment variables by executing the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source ./load_environment.sh
+</code></pre></div></div>
+
+<h5 id="b-start-the-server">b. Start the server</h5>
+
+<p>To start Let’s Coordinate, position your self in the “<em>bin</em>” directory and execute the following commands:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh --first-init start 
+</code></pre></div></div>
+
+<p>The <em>–first-init</em> (or -f) option (which is equivalent to the options <em>–build</em> and <em>–init</em> together) is required while testing the project for the first time.
+It allows to:</p>
+<ul>
+  <li>install the OperatorFabric required dependencies,</li>
+  <li>build and deploy the Let’s Coordinate docker images locally,</li>
+  <li>send bundles and configurations to the OperatorFabric server,</li>
+  <li>initialize the OperatorFabric database with required data (users, groups, perimeters, entities, …)</li>
+</ul>
+
+<p><strong>Please note</strong>: With Ubuntu operation system, it is highly recommended to run the 2 scripts separately (the script <code class="language-plaintext highlighter-rouge">./server.sh --build start</code> and then <code class="language-plaintext highlighter-rouge">./server.sh --init start</code>).</p>
+
+<p>For next usage of the <em>server.sh</em> script, the <em>–first-init</em> option is not necessary.</p>
+
+<p>To be sure that all the services are correctly started, you can try the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh status 
+</code></pre></div></div>
+
+<p>To see more about the server.sh commands and options, please try:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh --help
+</code></pre></div></div>
+
+<h2 class="orange-title" id="3-use-lets-coordinate">3. Use Let’s Coordinate</h2>
+
+<h4 class="orange-title-2" id="31-send-a-new-card">3.1. Send a new card</h4>
+
+<ul>
+  <li>Go to the following url (letsco-data-provider swagger-ui): <a href="http://localhost:8082/swagger-ui.html">http://localhost:8082/swagger-ui.html</a></li>
+  <li>Click on <em>kafka-producer-controller</em></li>
+  <li>Click on <em>POST /letsco/data-provider/v1/kafka/json/raw-msg</em></li>
+  <li>Click on <em>Try it out</em></li>
+  <li>In the data body value, put the content of one of the files from the directory “<em>message_models/json/card_feed/</em>” (e.g: <em>ProcessSuccessful.json</em>, <em>MessageValidated_NEGATIVE_ACK.json</em>, …)</li>
+  <li>Click on <em>Execute</em></li>
+</ul>
+
+<p>If you open a browser and connect to application (<a href="http://localhost/ui/">http://localhost/ui/</a>) with the username <strong>user.test</strong> and password <strong>test</strong>, you should see the new card in the Feed (if it is not the case, please change the timeline view or/and period to include the card’s dates: timestamp or/and business period).</p>
+
+<p>Feel free to test the other json samples from the directory “<em>message_models/json/card_feed/</em>”</p>
+
+<h4 class="orange-title-2" id="32-generate-a-rsc-kpi-report">3.2. Generate a RSC KPI report</h4>
+
+<ul>
+  <li>Go to the following url (letsco-api swagger-ui): <a href="http://localhost:8088/swagger-ui.html">http://localhost:8088/swagger-ui.html</a></li>
+  <li>Click on <em>authentication-controller</em></li>
+  <li>Click on <em>GET /letsco/api/v1/auth/token</em></li>
+  <li>Click on <em>Try it out</em></li>
+  <li>Set <strong>user.test</strong> as username and <strong>test</strong> as password</li>
+  <li>Click on <em>Execute</em></li>
+  <li>Copy the generated token (with the Bearer word)</li>
+  <li>Click on <em>event-message-controller</em></li>
+  <li>Click on <em>POST /letsco/api/v1/upload/save</em></li>
+  <li>Click on <em>Try it out</em></li>
+  <li>Past the previous copied token in the <em>Authorization</em> field</li>
+  <li>Click the “<em>Browse…</em>” button and choose the “<em>message_models/json/rsc_kpi_report/kpi_use_cases.json</em>” file.</li>
+  <li>Click on <em>Execute</em></li>
+  <li>Connect to OpFab (<a href="http://localhost/ui/">http://localhost/ui/</a>) with the username <strong>user.test</strong> and password <strong>test</strong>.</li>
+  <li>Select the <em>“RSC KPI Report”</em> menu.</li>
+  <li>Select the <em>RSC Service</em>, <em>Period</em>, <em>RSC</em> or <em>Region</em> and <em>Data type</em> and then click the <em>submit</em> button, you should see the generated RSC KPI Report.</li>
+</ul>
+
+<h2 class="orange-title" id="4-stop-the-application">4. Stop the application</h2>
+
+<p>To stop the application, position yourself in the <em>bin</em> directory and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh stop
+</code></pre></div></div>
+
+<p>To be sure that all the services are correctly stopped, you can try the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh status 
+</code></pre></div></div>
+
+<p>If you want to stop the application and definitely remove all docker containers, you can use the following command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh down
+</code></pre></div></div>
+
+</div>
+
+
+<footer class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://getbootstrap.com/">Bootstrap</a> </br>Copyright 2018-2021 Authors of <a href="https://letscoordinate.github.io">Let’s Coordinate documentation</a>. Unless otherwise indicated, content is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. <br/>The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds. <a href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a> and <a href="https://www.linuxfoundation.org/terms/">Terms of Use</a>.
+</p>
+</footer>
+
+
+
+<!-- Needed by bootstrap javascript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="/assets/js/bootstrap/bootstrap.js"></script>
+
+</body>
+</html>

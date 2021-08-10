@@ -462,7 +462,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truegeneral-screen-overview">4.1. General screen overview</a></li>
 <li><a href="#truecard-feed-screen">4.2. Card Feed screen</a></li>
 <li><a href="#truearchiving-screen">4.3. Archiving screen</a></li>
-<li><a href="#truersc-kpi-report-screen">4.4. RSC KPI report screen</a></li>
+<li><a href="#truemonitoring-screan">4.4. Monitoring screan</a></li>
+<li><a href="#truelogging-screen">4.5. Logging screen</a></li>
+<li><a href="#truersc-kpi-report-screen">4.6. RSC KPI report screen</a></li>
 </ul>
 </li>
 <li><a href="#truetool-functionalities">5. Tool functionalities</a>
@@ -474,7 +476,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truenotification-creation">5.5. Notification creation</a></li>
 </ul>
 </li>
-<li><a href="#trueexisting-generic-notifications">6. Existing generic notifications</a></li>
+<li><a href="#trueexisting-generic-notifications">6. Existing generic notifications</a>
+<ul class="sectlevel2">
+<li><a href="#trueinformative-notifications">6.1. Informative notifications</a></li>
+<li><a href="#truesmart-notifications">6.2. Smart notifications</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -695,6 +702,12 @@ With the little triangle button on the right of username, user can click on it t
 </li>
 <li>
 <p><strong>Archiving screen</strong>: to access to all existing notifications which are stored in the database</p>
+</li>
+<li>
+<p><strong>Monitoring screen</strong>: to monitor the status of the coordination</p>
+</li>
+<li>
+<p><strong>Logging screen</strong>: to displays logs of the relevant information about the coordination process</p>
 </li>
 <li>
 <p><strong>RSC KPI report screen</strong>: to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)</p>
@@ -944,30 +957,27 @@ With the little triangle button on the right of username, user can click on it t
 </li>
 <li>
 <p>In the detailed view, you can have different buttons to act on this notification.</p>
-<div class="ulist">
-<ul>
-<li>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>In case of informative notification, you will be able to acknowledge/cancel acknowledgment of a notification:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/negative_validation_opened_short_short.png" alt="Detailed view">
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>(SOON) In case of Smart notification, you will be able to answer to some questions and then your answers to the coordination system.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>In case of Smart notification, you will be able to answer to some questions and then your answers to the coordination system.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/smart_notification_details.png" alt="Smart notification">
+</div>
 </div>
 <div class="paragraph">
 <p><strong>Read/Unread notifications</strong></p>
@@ -1356,7 +1366,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="sect2">
 <h3 id="truearchiving-screen"><a class="anchor" href="#truearchiving-screen"></a>4.3. Archiving screen</h3>
 <div class="paragraph">
-<p>This screen displays all past and currentreceived notifications. User is able to search among all notifications available by using filters based on:</p>
+<p>This screen displays all past and current received notifications. User is able to search among all notifications available by using filters based on:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1392,7 +1402,77 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truersc-kpi-report-screen"><a class="anchor" href="#truersc-kpi-report-screen"></a>4.4. RSC KPI report screen</h3>
+<h3 id="truemonitoring-screan"><a class="anchor" href="#truemonitoring-screan"></a>4.4. Monitoring screan</h3>
+<div class="paragraph">
+<p>This screen allows each user (TSO and RSC) to monitor the status of coordination.</p>
+</div>
+<div class="paragraph">
+<p>2 views are proposed for this screen</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>General view</strong> : main information about the coordination&#8217;s status in live</p>
+<div class="ulist">
+<ul>
+<li>
+<p>by selecting the right coordination from the table, the user can open the detailed view</p>
+</li>
+<li>
+<p>It is possible to export the coordinations' informations as xlsx file</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/monitoring_screen_general_view_full.png" alt="Monitoring screen general view">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Detailed view</strong> : details about the different answers of each TSO in live</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/monitoring_screen_detailed_view.png" alt="Monitoring screen detaild view">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truelogging-screen"><a class="anchor" href="#truelogging-screen"></a>4.5. Logging screen</h3>
+<div class="paragraph">
+<p>This screen displays logs of the relevant informations about the coordination process:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>New cases to coordinate/validate</p>
+</li>
+<li>
+<p>Reception of answers from TSOs</p>
+</li>
+<li>
+<p>Final result notification</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is possible to export the logs as xlsx file</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/logging_screen_full.png" alt="Logging screen">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truersc-kpi-report-screen"><a class="anchor" href="#truersc-kpi-report-screen"></a>4.6. RSC KPI report screen</h3>
 <div class="paragraph">
 <p>This screen displays the relevant Key Performance Indicators (KPIs) for business processes.</p>
 </div>
@@ -1857,7 +1937,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p><strong>End date:</strong> The notification’s business end date. By default the end date value is the start date +24h.</p>
 </li>
 <li>
-<p><strong>Recipients:</strong> The list of users (TSOs and/or RSCs) or/and group of users (all users, per TSO, per RSC, per CCR/region, per RSC, all TSOs, all RSCs) for whom the notification will be sent.</p>
+<p><strong>Recipients:</strong> The list of users (TSOs and/or RSCs) or/and group of users (all users, per TSO, per RSC, per CCR/region, per RSC, all TSOs, all RSCs) for whom the notification will be sent. If no recipient chosen, the notification will be sent only to the user who created it.</p>
 </li>
 <li>
 <p><strong>Message:</strong> The text message of thise notification to send to other users (TSOs or/and RSCs)</p>
@@ -1904,40 +1984,36 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="sect1">
 <h2 id="trueexisting-generic-notifications"><a class="anchor" href="#trueexisting-generic-notifications"></a>6. Existing generic notifications</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="trueinformative-notifications"><a class="anchor" href="#trueinformative-notifications"></a>6.1. Informative notifications</h3>
 <div class="paragraph">
 <p>Depending on the business process, notifications will be different and adapted to each business process.</p>
 </div>
 <div class="paragraph">
-<p>5 generic notifications are identified:</p>
+<p>6 generic notifications are identified:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><strong>Process success</strong>: This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.</p>
-</li>
-</ul>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/process_successful_opened_short.png" alt="Process successful">
 </div>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p><strong>Process failed</strong>: This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.</p>
-</li>
-</ul>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/process_failed_opened_short.png" alt="Process failed">
 </div>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p><strong>Validation of input file</strong>: This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possible results:</p>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1945,14 +2021,15 @@ In case user was in the first-time period view selection, if user clicks on <str
 </li>
 </ul>
 </div>
-</li>
-</ul>
+</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/positive_validation_opened_short.png" alt="Positive validation">
 </div>
 </div>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1960,11 +2037,15 @@ In case user was in the first-time period view selection, if user clicks on <str
 </li>
 </ul>
 </div>
+</div>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/positive_validation_with_warning_opened_short.png" alt="Positive validation with warnings">
 </div>
 </div>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1972,20 +2053,106 @@ In case user was in the first-time period view selection, if user clicks on <str
 </li>
 </ul>
 </div>
+</div>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/negative_validation_opened_short.png" alt="Negative validation">
 </div>
 </div>
+</li>
+<li>
+<p><strong>User created notification</strong>: in case a user create a notification from the GUI</p>
+<div class="paragraph">
+<p><span class="image"><img src="../../asciidoc/images/card_creation_opened_short.png" alt="Card creation preview screen"></span></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truesmart-notifications"><a class="anchor" href="#truesmart-notifications"></a>6.2. Smart notifications</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>User created notification</strong>: in case a user create a notification from the GUI</p>
+<p><strong>Coordination Notification</strong>:</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../../asciidoc/images/card_creation_opened_short.png" alt="Card creation preview screen"></span></p>
+<p>For some processes, different TSOs will have to give their advice about a common question asked to different TSOs. This behavior is considered as a Coordination function.</p>
+</div>
+<div class="paragraph">
+<p>In different steps :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>QUESTION: Smart notification is issued to ask TSOs to answer to one or multiple questions. Color = ORANGE</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/smart_notification.png" alt="Smart notification">
+</div>
+</div>
+</li>
+<li>
+<p>Each time a TSO answers then the orange notification is updated with his response.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/coordination_with_tso_answers.png" alt="Smart notification TSO answers">
+</div>
+</div>
+</li>
+<li>
+<p>End of coordination QUESTION: 2 cases:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>End because of LTTD (Last Time To Decide) reached (SOON): a coordination can stop when the deadline (LTTD) is reached.</p>
+</li>
+<li>
+<p>End because all TSOs participating in this coordination provided their answers to the question.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>RESULTS of COORDINATION : When coordination QUESTION is ended, an INFORMATIVE notification is issued to present the results of the coordination : 2 cases:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>All answers provided are “Validated”, then the notification is green</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/coordination_result_validated.png" alt="Smart notification result validated">
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>At least 2 answers are different, then the notification is red.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/coordination_result_not_validated.png" alt="Smart notification result not validated">
+</div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

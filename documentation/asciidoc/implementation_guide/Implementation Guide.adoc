@@ -1195,7 +1195,7 @@ link:attached_doc/json_header_output_file.json[JSON header for output file]
 
 **Output file header XLSX sample:**
 
-For more details, see the excel sample file: line 1 and 2 in
+For more details, see the excel sample file: line 4 and 5 in
 link:attached_doc/excel_header_output_file.xlsx[XLSX header for output file sample]
 
 === Payload part
@@ -1305,7 +1305,7 @@ OR rscKpi
 |**M**
 |**10XFR-RTE------Q**
 |**Alpha-numeric**
-|**EIC code of the entity providing the answer*
+|**EIC code of the entity providing the answer**
 
 |**answer**
 |**M**
@@ -1338,7 +1338,7 @@ link:attached_doc/json_payload_output_file.json[JSON payload for output file sam
 
 **XLSX sample**
 
-See the excel file: from line 4 to end of the document, columns H, I, J and K in
+See the excel file: from line 7 to end of the document, columns G, H, I, and J in
 link:attached_doc/excel_payload_output_file.xlsx[XLSX payload for output file sample]
 
 
