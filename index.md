@@ -9,6 +9,7 @@ Let’s Coordinate is a modular, extensible, industrial-strength and field-teste
 It offers these features :
 * Receiving and handling of operational notifications,
 * Archiving of previous notifications,
+* Monitoring ongoing coordination cases or correlated logs,
 * Selecting which notifications users want to receive,
 * Displaying RSC KPI figures and report.
 
@@ -36,7 +37,7 @@ This view will be complimentary to the notification feed in that it will allow t
 Part of the value of Let's Coordinate is that it makes the integration of new TSO/RSC services or processes very simple.
 It offers a comprehensive and consistent view on all the different but linked processes.
 
-To start publishing notifications to users in an Let's Coordinate instance, all they have to do is:
+To start publishing notifications to users in a Let's Coordinate instance, all they have to do is:
 
 * Register as a publisher through the "Thirds" service,
 * Provide a "bundle" containing handlebars templates defining how cards should be rendered/displayed,
@@ -56,13 +57,13 @@ For some ex-post analysis, operators might be interested in knowing why a given 
 
 # Open source
 
-Let’s Coordinate is part of the [LF Energy](https://www.lfenergy.org/) coalition, as an use case of OperatorFabric framework. 
+Let’s Coordinate is part of the [LF Energy](https://www.lfenergy.org/) coalition, as a use case of OperatorFabric framework. 
 LF energy is a project of The Linux Foundation that supports open source innovation projects within the energy and electricity sectors.
 
 Let's Coordinate is an open source platform licensed under [Mozilla Public License V2](https://www.mozilla.org/en-US/MPL/2.0/). 
 The source code is hosted on GitHub in this repository: [letscoordinate](https://github.com/opfab/letscoordinate).
 
-Presentation of the projet [Video](https://www.youtube.com/watch?v=NRMrG9IJx2c).
+Presentation of the project [Video](https://www.youtube.com/watch?v=NRMrG9IJx2c).
 
 # Technology stack
 

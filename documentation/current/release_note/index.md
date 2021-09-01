@@ -6,7 +6,7 @@
 <!-- file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.                            -->
 <!-- SPDX-License-Identifier: CC-BY-4.0                                                                   -->
 
-# Version 1.2.0.RELEASE
+# Version 1.3.0.RELEASE
 ---
 <br/>
 
@@ -14,60 +14,40 @@
 {: .orange-title}
 
 * Add new functionalities: 
-    * Add "Card creation" screen
-    * Add "Notification reception configuration" screen
-* Update existing functionalities:
-    * "Card feed" screen:
-        * Display multiple bubbles in timeline for notifications with errors and/or warnings
-    * "Archives" screen:
-        * Update filtering tags
-        * Add export functionality
-    * "RSC KPI report" screen:
-        * Add yearly granularity
-        * Add regional selection
-        * Add new graph types
-* Update the JSON generic format
-* Make Let's Coordinate compatible with the version 2.3.0.RELEASE of OperatorFabric
+    * Add "Smart notification" concept: Coordination use case 
+    * Add "Monitoring" screen
+    * Add "Logging" screen
+* Update the JSON generic input/output format
+* Upgrade the OperatorFabric dependencies to version 2.8.0.RELEASE
 * Improve the getting started process and documentation
-* Improve the security of the Let's Coordinate application
-* Improve the code quality by integrating the Sonar tool
-* Update online documentation for release 1.2.0.RELEASE
+* Update the online documentation of Let's Coordinate 1.3.0.RELEASE
 <br/>
 
-## 2. Tasks
+## 2. Epics
 {: .orange-title}
 
-* [LC-208] Display many bubbles in timeline for notifications that have errors and warnings
-* [LC-242] Add yearly view and region concept to RSC KPI report
-* [LC-408] Upgrade the version of OperatorFabric to 2.3.0.RELEASE
-* [LC-258] Integrate the "Card creation" screen
-* [LC-262] Integrate the "Notification Reception Configuration" screen
-* [LC-189] Improve the getting started process and documentation
-* [LC-191] Improve the security of the backend and frontend modules 
-* [LC-254] Change rules for displaying cards in feed 
-* [LC-255] Split validation tags in the archive screen 
-* [LC-256] Change National Grid's EIC Code
-* [LC-260] Improve the validator of JSON and Excel files
-* [LC-264] Split granularity and period selection in RSC KPI config screen
-* [LC-267] Add new fields to the JSON generic format and update the implementation guide
-* [LC-284] Specify the list of messageTypeNames recognized by the letsco API
-* [LC-285] Upgrade Letsco OS frameworks
-* [LC-287] Update TSOs, RSCs and regions mapping
-* [LC-316] Use joinGraph attribute for joining RSC KPI graphs
-* [LC-333] Improve the authentication for the RSC KPi report screen
-* [LC-371] Change RSC KPI bar graphs to stacked bar graphs when joinGraph flag equals true
-* [LC-378] Update CCRs/Regions EicCodes
-* [LC-150] Integrate sonar to check the test coverage
-* [LC-363] Scan code with Fossology
-* [LC-403] Add unit tests 
+* [LC-647]	LetsCo OS Coordination 1.3.0
+
+## 3. Tasks
+{: .orange-title}
+
+* [LC-235] Create a SMART notification to validate a generic proposal
+* [LC-236] NOT1 - SMART Notification asking a choice for the concerned TSO (1 validation required)
+* [LC-237] NOT1 - SMART Notification asking a choice for the concerned TSO (2 or more validations required)
+* [LC-486] Allow the value field in the timeseries details data to be null
+* [LC-529] Display Logging and Monitoring screens
+* [LC-567] Save original input file and generate unique file identifier
+* [LC-568] Generate output file for generic messages
+* [LC-569] Create APIs to manage specific messages output files by third applications
+* [LC-677] Display the coordination's input and output files in the logging screen
+* [LC-705] Upgrade the version of OperatorFabric to 2.8.0.RELEASE
+* [LC-707] Make configurable the auto generation of the unique case id
+* [LC-715] Update documentation for Letsco OS 1.3.0
+* [LC-729] Scan code with Fossology
 <br/>
 
-## 3. Bugs
+## 4. Bugs
 {: .orange-title}
 
-* [LC-350] Fix VPN/Proxy access problems
-* [LC-373] Fix the publisher name displayed on the bottom of the free message card details
-* [LC-315] Fix tags in the archive screen
-* [LC-209] Identify fields that may have long values and increase their size in database
-* [LC-450] Fix "invalid date" displayed in validation notifications
-* [LC-407] Fix bugs and vulnerabilities reported by Sonar
+* [LC-564] Fix the TSOs names in the Smart notification
+* [LC-708] Coordination result card is no longer displayed since OpFab v2.8.0

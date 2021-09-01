@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8.dev">
+<meta name="generator" content="Asciidoctor 2.0.15">
 <title>Let&#8217;s Coordinate - Implementation guide for Input and Output data</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -47,7 +47,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -62,10 +62,8 @@ img{-ms-interpolation-mode:bicubic}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
-.center{margin-left:auto;margin-right:auto}
-.stretch{width:100%}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
 a{color:#2156a5;text-decoration:underline;line-height:inherit}
 a:hover,a:focus{color:#1d4b8f}
 a img{border:0}
@@ -96,28 +94,28 @@ dl dd{margin-bottom:1.25em}
 abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
 abbr{text-transform:none}
 blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
-blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
-blockquote cite::before{content:"\2014 \0020"}
-blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
 blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 @media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
 h4{font-size:1.4375em}}
-table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
 table thead,table tfoot{background:#f7f8f7}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt{background:#f8f8f7}
-table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
 .clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
 .clearfix::after,.float-group::after{clear:both}
-:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
-:not(pre)>code.nobreak{word-wrap:normal}
-:not(pre)>code.nowrap{white-space:nowrap}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
 pre>code{display:block}
@@ -182,7 +180,7 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
-#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 #content{margin-bottom:.625em}
 .sect1{padding-bottom:.625em}
@@ -205,7 +203,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .admonitionblock>table td.icon{text-align:center;width:80px}
 .admonitionblock>table td.icon img{max-width:none}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
-.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
 .exampleblock>.content>:first-child{margin-top:0}
@@ -215,7 +213,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
 .exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
-.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
@@ -240,7 +238,7 @@ table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;pad
 pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
 pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
-.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
 .quoteblock blockquote{margin:0;padding:0;border:0}
 .quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
@@ -257,24 +255,24 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
 .quoteblock.abstract{margin:0 1em 1.25em;display:block}
 .quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
-.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
-table.tableblock{max-width:100%;border-collapse:separate}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
 p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
 td.tableblock>.content>:last-child{margin-bottom:-1.25em}
-td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
-table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
-table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
-table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
-table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
-table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
-table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
 table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
 table.frame-sides{border-width:0 1px}
-table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
 table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
@@ -283,7 +281,7 @@ th.valign-top,td.valign-top{vertical-align:top}
 th.valign-bottom,td.valign-bottom{vertical-align:bottom}
 th.valign-middle,td.valign-middle{vertical-align:middle}
 table thead th,table tfoot th{font-weight:bold}
-tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th{background:#f7f8f7}
 tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
 p.tableblock>code:only-child{background:none;padding:0}
 p.tableblock{font-size:1em}
@@ -312,6 +310,7 @@ ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
 .colist td:not([class]):first-child img{max-width:none}
@@ -384,7 +383,7 @@ a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
-.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
 .conum[data-value] *{color:#fff!important}
 .conum[data-value]+b{display:none}
 .conum[data-value]::after{content:attr(data-value)}
@@ -411,6 +410,7 @@ thead{display:table-header-group}
 svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
 #toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
 body.book #header{text-align:center}
@@ -434,7 +434,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -442,28 +441,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#trueintroduction">1. Introduction</a>
+<li><a href="#_introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#truepurpose-of-the-document">1.1. Purpose of the document</a></li>
-<li><a href="#truenormative-reference-documentation">1.2. Normative reference documentation</a></li>
+<li><a href="#_purpose_of_the_document">1.1. Purpose of the document</a></li>
+<li><a href="#_normative_reference_documentation">1.2. Normative reference documentation</a></li>
 </ul>
 </li>
-<li><a href="#truelets-coordinate-business-process">2. Let&#8217;s Coordinate business process</a>
+<li><a href="#_lets_coordinate_business_process">2. Let&#8217;s Coordinate business process</a>
 <ul class="sectlevel2">
-<li><a href="#trueprocess-overview">2.1. Process overview</a></li>
-<li><a href="#trueuse-cases">2.2. Use cases</a></li>
+<li><a href="#_process_overview">2.1. Process overview</a></li>
+<li><a href="#_use_cases">2.2. Use cases</a></li>
 </ul>
 </li>
-<li><a href="#trueinput-data-format">3. Input data format</a>
+<li><a href="#_input_data_format">3. Input data format</a>
 <ul class="sectlevel2">
-<li><a href="#truedocument-header-part">3.1. Document header part</a></li>
-<li><a href="#truepayload-part">3.2. Payload part</a></li>
+<li><a href="#_document_header_part">3.1. Document header part</a></li>
+<li><a href="#_payload_part">3.2. Payload part</a></li>
 </ul>
 </li>
-<li><a href="#trueoutput-data-format">4. Output data format</a>
+<li><a href="#_output_data_format">4. Output data format</a>
 <ul class="sectlevel2">
-<li><a href="#truedocument-header-part-2">4.1. Document header part</a></li>
-<li><a href="#truepayload-part-2">4.2. Payload part</a></li>
+<li><a href="#_document_header_part_2">4.1. Document header part</a></li>
+<li><a href="#_payload_part_2">4.2. Payload part</a></li>
 </ul>
 </li>
 </ul>
@@ -471,16 +470,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="trueintroduction"><a class="anchor" href="#trueintroduction"></a>1. Introduction</h2>
+<h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truepurpose-of-the-document"><a class="anchor" href="#truepurpose-of-the-document"></a>1.1. Purpose of the document</h3>
+<h3 id="_purpose_of_the_document">1.1. Purpose of the document</h3>
 <div class="paragraph">
 <p>The objective of this Implementation Guide (IG) is to describe the format of input and output files to be used when dealing with Let’s Coordinate application. This can help developers to prepare input and output files adapted to a business tool that Let’s Coordinate will support for any RSC services. The implementation guide is one of the building blocks for using UML (Unified Modelling Language) based techniques in defining processes and messages for exchange between actors in the electrical industry in Europe. The implementation guide is developed for the harmonization of the underlying data exchange</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truenormative-reference-documentation"><a class="anchor" href="#truenormative-reference-documentation"></a>1.2. Normative reference documentation</h3>
+<h3 id="_normative_reference_documentation">1.2. Normative reference documentation</h3>
 <div class="paragraph">
 <p>The following documents, in whole or in part, are normatively referenced in this document and are indispensable for its application. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies:</p>
 </div>
@@ -501,10 +500,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="truelets-coordinate-business-process"><a class="anchor" href="#truelets-coordinate-business-process"></a>2. Let&#8217;s Coordinate business process</h2>
+<h2 id="_lets_coordinate_business_process">2. Let&#8217;s Coordinate business process</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueprocess-overview"><a class="anchor" href="#trueprocess-overview"></a>2.1. Process overview</h3>
+<h3 id="_process_overview">2.1. Process overview</h3>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/Process_Overview.png" alt="Process Overview">
@@ -514,7 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <strong>DCC</strong> = <strong>D</strong>istributed <strong>C</strong>ommunication <strong>C</strong>omponent as Kakfa, FTP server etc…
@@ -524,7 +523,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueuse-cases"><a class="anchor" href="#trueuse-cases"></a>2.2. Use cases</h3>
+<h3 id="_use_cases">2.2. Use cases</h3>
 <div class="imageblock">
 <div class="content">
 <img src="../../asciidoc/images/Uses_Cases.png" alt="Uses Cases">
@@ -681,7 +680,7 @@ Component (DCC)</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueinput-data-format"><a class="anchor" href="#trueinput-data-format"></a>3. Input data format</h2>
+<h2 id="_input_data_format">3. Input data format</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Input data format is the same format for Informative and SMART notifications.
@@ -720,7 +719,7 @@ The only difference are linked to the data user wants to provide (text, RSC KPI,
 </ul>
 </div>
 <div class="sect2">
-<h3 id="truedocument-header-part"><a class="anchor" href="#truedocument-header-part"></a>3.1. Document header part</h3>
+<h3 id="_document_header_part">3.1. Document header part</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1000,14 +999,14 @@ The values assigned to these elements are non-normative and have meaning only wi
 <p><strong>Input file header JSON sample file (without input data validation):</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/json_header_input_file.json">JSON header for input file sample</a></p>
+<p><a href="../../asciidoc/implementation_guide/attached_doc/json_header_input_file.json">JSON header for input file sample</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Input file header XLSX sample file (without input data validation):</strong></p>
 </div>
 <div class="paragraph">
 <p>For more details, see the excel sample file: line 1 and 2 in
-<a href="attached_doc/excel_header_input_file.xlsx">XLSX header for input file sample</a></p>
+<a href="../../asciidoc/implementation_guide/attached_doc/excel_header_input_file.xlsx">XLSX header for input file sample</a></p>
 </div>
 <div class="paragraph">
 <p>Ex: Input file Header JSON (with input data validation)</p>
@@ -1057,11 +1056,11 @@ The values assigned to these elements are non-normative and have meaning only wi
 <p><strong>Input file header JSON sample file (with input data validation):</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/json_header_validation_input_file.json">JSON header input file sample with input data validation</a></p>
+<p><a href="../../asciidoc/implementation_guide/attached_doc/json_header_validation_input_file.json">JSON header input file sample with input data validation</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truepayload-part"><a class="anchor" href="#truepayload-part"></a>3.2. Payload part</h3>
+<h3 id="_payload_part">3.2. Payload part</h3>
 <div class="paragraph">
 <p>Payload can be customized by each message producer to fit with their need.
 In case user wants to provide one type of information (text, links, data…), this table presents the needed fields to support this with information if this field is mandatory or optional depending of the format of input file.</p>
@@ -1098,13 +1097,13 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <td class="tableblock halign-center valign-top"><p class="tableblock">M(XLSX)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">text</p>
 <p class="tableblock">OR links</p>
-<p class="tableblock">OR timeseries</p>
+<p class="tableblock">OR timeserie</p>
 <p class="tableblock">OR rscKpi</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Indicate the type of data that will be provided</p>
 <p class="tableblock">-	text : to provide text information</p>
 <p class="tableblock">-	links : to provide url link to download some files</p>
-<p class="tableblock">-	timeseries : to provide data as timeseries</p>
+<p class="tableblock">-	timeserie : to provide data as timeseries</p>
 <p class="tableblock">-	rscKpi : to provide RSC KPIs</p></td>
 </tr>
 <tr>
@@ -1175,10 +1174,11 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>name</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">M</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">GP1, GP2…. BP1, BP2….</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">GP01, GP02…. BP01, BP02….</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">KPI name: there are 2 categories : Global Performance (GP) or Business process (BP) : GP or BP followed by the number of KPIs</p>
-<p class="tableblock"><strong>Note:</strong> The labels of GPx and BPx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the &lt;kpi_name – kpi_label&gt; format. (e.g: GPx – Global Performance x)</p></td>
+<p class="tableblock"><strong>Note:</strong> The labels of GPxx and BPxx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the &lt;kpi_name – kpi_label&gt; format. (e.g: GPxx – Global Performance x)</p>
+<p class="tableblock">When a business KPI has multiple values, the conventional naming is GPxx_1 to GPxx_9 or BPxx_1 to BPxx_9 where xx are digits 0 to 9. The associated label is GPxx.1 to GPxx.9 and BPxx.1 and BPxx.9.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>joinGraph</strong></p></td>
@@ -1471,7 +1471,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
       ],
       "rscKpi": [                                          // rscKpi details sample
         {
-          "name": "GP1",
+          "name": "GP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
@@ -1486,7 +1486,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
           ]
         },
         {
-          "name": "BP1",
+          "name": "BP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
@@ -1566,14 +1566,14 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <p><strong>Input file payload JSON sample file (without input data validation):</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/json_payload_input_file.json">JSON payload for input file sample</a></p>
+<p><a href="../../asciidoc/implementation_guide/attached_doc/json_payload_input_file.json">JSON payload for input file sample</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Input file payload XLSX sample file (without input data validation):</strong></p>
 </div>
 <div class="paragraph">
 <p>For more details, see the excel file: from line 4 to end of the document
-<a href="attached_doc/excel_payload_input_file.xlsx">XLSX payload for input file sample</a></p>
+<a href="../../asciidoc/implementation_guide/attached_doc/excel_payload_input_file.xlsx">XLSX payload for input file sample</a></p>
 </div>
 <div class="paragraph">
 <p>Ex: Input file payload JSON (with input data validation)</p>
@@ -1649,13 +1649,13 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 <p><strong>Input file payload JSON sample file (with input data validation):</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/json_payload_validation_input_file.json">JSON payload input file sample with input data validation</a></p>
+<p><a href="../../asciidoc/implementation_guide/attached_doc/json_payload_validation_input_file.json">JSON payload input file sample with input data validation</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueoutput-data-format"><a class="anchor" href="#trueoutput-data-format"></a>4. Output data format</h2>
+<h2 id="_output_data_format">4. Output data format</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Output data format is only used for SMART notifications as a result of a validation or coordination of some proposals received in the input file.
@@ -1698,7 +1698,7 @@ In case the input file is used for informative notification, no output file will
 </ul>
 </div>
 <div class="sect2">
-<h3 id="truedocument-header-part-2"><a class="anchor" href="#truedocument-header-part-2"></a>4.1. Document header part</h3>
+<h3 id="_document_header_part_2">4.1. Document header part</h3>
 <div class="paragraph">
 <p>Header is the really similar as the one described for the input file with addition of:</p>
 </div>
@@ -2026,38 +2026,38 @@ The values assigned to these elements are non-normative and have meaning only wi
 <p><strong>Output file header JSON sample:</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/json_header_output_file.json">JSON header for output file</a></p>
+<p><a href="../../asciidoc/implementation_guide/attached_doc/json_header_output_file.json">JSON header for output file</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Output file header XLSX sample:</strong></p>
 </div>
 <div class="paragraph">
-<p>For more details, see the excel sample file: line 1 and 2 in
-<a href="attached_doc/excel_header_output_file.xlsx">XLSX header for output file sample</a></p>
+<p>For more details, see the excel sample file: line 4 and 5 in
+<a href="../../asciidoc/implementation_guide/attached_doc/excel_header_output_file.xlsx">XLSX header for output file sample</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truepayload-part-2"><a class="anchor" href="#truepayload-part-2"></a>4.2. Payload part</h3>
+<h3 id="_payload_part_2">4.2. Payload part</h3>
 <div class="paragraph">
-<p>Payload is the really similar as the one described for the input file with addition of:</p>
+<p>The Payload Output file is like the one described for the input file with addition of:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>4 new fields</strong> to validate differently each proposal/timeseries inside the notification:</p>
+<p>new field <strong>results</strong> in each proposal/timeseries inside the notification:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>accept:</strong> if proposal is accepted</p>
+<p><strong>eicCode</strong>: EIC code of the entity providing the answer</p>
 </li>
 <li>
-<p><strong>reject:</strong> if proposal is rejected</p>
+<p><strong>answer</strong>: CON or REJ or MIX or NOT, the different value meanings are CON(firmed), REJ(ected), MIX(ed) or NOT (Not answered).</p>
 </li>
 <li>
-<p><strong>explanation:</strong> in case of rejection/refusal of the proposition to justify this choice from a list of values</p>
+<p><strong>explanation</strong>: in case of rejection/refusal of the proposition to justify this choice from a list of values</p>
 </li>
 <li>
-<p><strong>comment:</strong> about the validation or coordination of the proposal</p>
+<p><strong>comment</strong>: about the validation or coordination of the proposal</p>
 </li>
 </ul>
 </div>
@@ -2099,13 +2099,13 @@ The values assigned to these elements are non-normative and have meaning only wi
 <td class="tableblock halign-center valign-top"><p class="tableblock">M(XLSX)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">text</p>
 <p class="tableblock">OR links</p>
-<p class="tableblock">OR timeseries</p>
+<p class="tableblock">OR timeserie</p>
 <p class="tableblock">OR rscKpi</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Indicate the type of data that will be provided:</p>
 <p class="tableblock">-	text : to provide text information</p>
 <p class="tableblock">-	links : to provide url link to download some files</p>
-<p class="tableblock">-	timeseries : to provide data as timeseries</p>
+<p class="tableblock">-	timeserie : to provide data as timeseries</p>
 <p class="tableblock">-	rscKpi : to provide RSC KPIs</p>
 <p class="tableblock"><strong>Only changes affecting timeseries validation/coordination will be described.</strong></p></td>
 </tr>
@@ -2187,7 +2187,7 @@ The values assigned to these elements are non-normative and have meaning only wi
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>M</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>10XFR-RTE------Q</strong></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Alpha-numeric</strong></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>*EIC code of the entity providing the answer</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>EIC code of the entity providing the answer</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>answer</strong></p></td>
@@ -2219,14 +2219,14 @@ The values assigned to these elements are non-normative and have meaning only wi
 <p><strong>JSON sample:</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/json_payload_output_file.json">JSON payload for output file sample</a></p>
+<p><a href="../../asciidoc/implementation_guide/attached_doc/json_payload_output_file.json">JSON payload for output file sample</a></p>
 </div>
 <div class="paragraph">
 <p><strong>XLSX sample</strong></p>
 </div>
 <div class="paragraph">
-<p>See the excel file: from line 4 to end of the document, columns H, I, J and K in
-<a href="attached_doc/excel_payload_output_file.xlsx">XLSX payload for output file sample</a></p>
+<p>See the excel file: from line 7 to end of the document, columns G, H, I, and J in
+<a href="../../asciidoc/implementation_guide/attached_doc/excel_payload_output_file.xlsx">XLSX payload for output file sample</a></p>
 </div>
 </div>
 </div>
@@ -2236,8 +2236,5 @@ The values assigned to these elements are non-normative and have meaning only wi
 <div id="footer-text">
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
 </body>
 </html>
