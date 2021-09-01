@@ -72,7 +72,7 @@ The tool is supporting the 3 most recent versions of these 3 following web brows
 
 === Supported OS
 
-The tool is supporting only Linux as OS.
+The tool is supporting only Windows as OS.
 Other OS can be used but the compatibility with the 3 dedicated web browsers will not be guaranteed.
 
 === Default resolution
@@ -114,14 +114,16 @@ After log out, user will come back to login page.
 
 The proposed GUI for the application is common for all screens in the application. 
 
-image::validation_notification_positive_with_warnings.png[Home Screen]
+image::validation_notification_negative.png[Home Screen]
 
 * On the top of the page, you have a header with
 ** Menu to access to the different screens of the tool.
 *** **Card Feed screen**: to receive and display the different notifications. User will have the possibilities to manage the notifications in this screen.
 *** **Archiving screen**: to access to all existing notifications which are stored in the database
+*** **Monitoring screen**: to monitor the status of the coordination
+*** **Logging screen**: to displays logs of the relevant information about the coordination process 
 *** **RSC KPI report screen**: to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)
-*** **Card creation link** image:card_creation_menu_day.png[Card creation menu] : to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users
+*** **Card creation link** image:card_creation_menu_day.png[Card creation menu]: to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users
 
 ** Login information menu:
 *** In the top right of the page, you have the **name & company** of logged user
@@ -164,8 +166,8 @@ Notification is an object which can support different operational information re
 
 There are 2 kinds of notifications which depends on the event to raise:
 
-* **INFO**: for an information notification, user can just acknowledge it.
-* **ACTION**: for an action/Smart notification when user should act (accept, reject, explanation about rejection and comment).
+* **INFO**: for an informative notification, user can just acknowledge it.
+* **ACTION**: for an action/smart notification when user should act (accept, reject, explanation about rejection and comment).
 
 The color of the notification depends on the status of the card:
 
@@ -207,14 +209,17 @@ There are 2 views for a notification:
 
 image::ticked_ack.png[Acknowledged notification]
 
-* **Detailed view** in the right part of the screen
+* *Detailed view* in the right part of the screen
 ** Presentation of the content of notification with detailed information
 ** In the detailed view, you can have different buttons to act on this notification.
-*** In case of informative notification, you will be able to acknowledge/cancel acknowledgment of a notification:
-       
+
+In case of informative notification, you will be able to acknowledge/cancel acknowledgment of a notification:
+
 image::negative_validation_opened_short_short.png[Detailed view]
 
-*** (SOON) In case of Smart notification, you will be able to answer to some questions and then your answers to the coordination system.
+In case of Smart notification, you will be able to answer to some questions and then send your answers to the coordination system.
+
+image::smart_notification_details.png[Smart notification]
 
 **Read/Unread notifications**
 
@@ -387,16 +392,46 @@ image::day_mode.png[Day mode]
 
 === Archiving screen
 
-This screen displays all past and currentreceived notifications. User is able to search among all notifications available by using filters based on:
+This screen displays all past and current received notifications. User is able to search among all notifications available by using filters based on:
 
 * Service: name of RSC service (CGM, CSA, CCC, OPC, STA…)
 * Process: list of sub item under the selected service
 * State: status of the notification for selected service and process
 * Tags: types of notificationto search notification by keywords
-** RSC Process (CGM, CSA, CCC, OPC, STA…​)
+** RSC Process (CGM, CSA, CCC, OPC, STA…)
 ** Kind of notification per process (CSA process success, CSA process failed…)
 * Published date & hour of the notification: publish from and publish to
 * Business period date & hour inside of the notification content: active from and active to
+
+=== Monitoring screen
+
+This screen allows each user (TSO and RSC) to monitor the status of coordination.
+
+2 views are proposed for this screen
+
+* *General view* : main information about the coordination's status in live
+** by selecting the right coordination from the table, the user can open the detailed view
+** It is possible to export the coordinations' information as xlsx file
+
+image::monitoring_screen_general_view_full.png[Monitoring screen general view]
+
+* *Detailed view* : details from the selected coordination cases with display of the different answers of each TSO (updated in live if coordination process is still running)
+
+image::monitoring_screen_detailed_view.png[Monitoring screen detaild view]
+
+=== Logging screen
+
+This screen displays logs of the relevant information about the coordination process:
+
+* *New* request for coordination/validation
+* *Reception of answers from TSOs* to this coordination/validation
+* *Final result notification*
+* Reception of input file to describe the expected coordination/validation
+* Sending of output file with results of this coordination/validation
+
+It is possible to export the logs as xlsx file
+
+image::logging_screen_full.png[Logging screen]
 
 === RSC KPI report screen 
 
@@ -414,7 +449,7 @@ It’s composed of two parts:
 **** When granularity is Yearly: from start year to end year 
 ** Which area (RSC or Region/CCR) is concerned?
 *** User should decide to see the information per RSC or per Region/CCR but not together.
-*** If granularity is Daily: user should select or “Pan-Eu”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category: 
+*** If granularity is Daily: user should select or “Pan-EU”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category:
 **** Pan Eu from RSC part + 1 or multiple RSC 
 **** or Pan-Eu from Regions/CCRs + 1 or multiple regions/CCRs
 ** Which kind of KPIs?
@@ -442,12 +477,16 @@ User can click on a notification in the deck to open the detailed content
 
 image::notification_opened.png[Notification open]
 
+It’s also possible to see the dedicated notification in a larger/full screen with this button: image:notification_opened_resizing_button.png[Notification opened resizing button]
+
 **Acknowledge a notification**
 
 With action buttons present in detailed view, user can act on the card (acknowledge it if card type is information or accept/refuse it if card type is action).
 
 Ex: For informative notification, user is able to acknowledge the notification to keep track of its reading. After a performed acknowledgement, notification will disappear from the deck. The only way to see it again is to consult the Archiving screen or to update the default filter which only shows the “not acknowledged” notifications.
- 
+
+image::acknowledge_notification_opened.png[Acknowledge notification opened]
+
 === RSC KPI graphs and report
 
 **Set RSC KPI graphs**
@@ -587,7 +626,7 @@ image:card_creation_empty.png[Card creation empty screen]
 
 In this screen, the user is invited to select/fill the required fields:
 
-* *Service:* the list of RSC services (CSA,  CCC, …​)
+* *Service:* the list of RSC services (CSA,  CCC, …)
 * *Process:* the list of process related to selected service 
 * *State:* the list of state related to selected process 
 
@@ -598,7 +637,7 @@ But some fields are mandatory:
 * *Severity:* Allow the changing of the card's color according to the severity of the card (Alarm, Action, compliant, information).
 * *Start date:* The notification's business start date
 * *End date:* The notification’s business end date. By default the end date value is the start date +24h.
-* *Recipients:* The list of users (TSOs and/or RSCs) or/and group of users (all users, per TSO, per RSC, per CCR/region, per RSC, all TSOs, all RSCs) for whom the notification will be sent.
+* *Recipients:* The list of users (TSOs and/or RSCs) or/and group of users (all users, per TSO, per RSC, per CCR/region, per RSC, all TSOs, all RSCs) for whom the notification will be sent. If no recipient chosen, the notification will be sent only to the user who created it.
 * *Message:* The text message of thise notification to send to other users (TSOs or/and RSCs)
 * *Conference subject:* The subject of the conference. When this field is filled, the "Link of conference" field will be required.
 * *Link of conference:* The url address/link of the conference. When this field is filled, the "Conference subject" field will be required.
@@ -621,31 +660,77 @@ image:card_creation_opened_short.png[Card creation preview screen]
 
 == Existing generic notifications
 
+=== Informative notifications
+
 Depending on the business process, notifications will be different and adapted to each business process.
 
-5 generic notifications are identified:
+6 generic notifications are identified:
 
 * **Process success**: This notification is emitted as soon as a process finished a step of the RSC process which was successful. This notification can present some files as process results to be downloaded. Color = BLUE.
-
++
 image::process_successful_opened_short.png[Process successful]
 
 * **Process failed**: This notification is emitted as soon as a process finished a step of the process wich was not successful or failed to finish the process step. This notification can present some files as process failure information to be downloaded. Color = RED.
-
++
 image::process_failed_opened_short.png[Process failed]
 
-* **Validation of input file**: This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possible results:
-** **Positive validation**: in case the input file is correct. Color = GREEN
+* *Validation of input file*: This notification is emitted as soon as a validation of an input file has been performed by a business RSC/TSO tool and a dedicated ACK has been generated. There are 3 possible results:
 
++
+--
+** *Positive validation*: in case the input file is correct. Color = GREEN
+--
 image::positive_validation_opened_short.png[Positive validation]
 
-** **Positive validation with warnings**: in case the input file is correct but has some warnings. Color = ORANGE
-
++
+--
+** *Positive validation with warnings*: in case the input file is correct but has some warnings. Color = ORANGE
+--
 image::positive_validation_with_warning_opened_short.png[Positive validation with warnings]
 
++
+--
 ** **Negative validation**: in case the input file failed the validation as detected errors. Color = RED
-
+--
 image::negative_validation_opened_short.png[Negative validation]
 
-** **User created notification**: in case a user create a notification from the GUI
-
+* **User created notification**: in case a user create a notification from the GUI
++
 image:card_creation_opened_short.png[Card creation preview screen]
+
+=== Smart notifications
+
+* **Coordination Notifications**:
+
+For some processes, different TSOs will have to give their advice about a common question asked to different TSOs. This behavior is considered as a Coordination function. 
+
+In different steps :
+
+. QUESTION: Smart notification is issued to ask TSOs to answer to one or multiple questions. Color = ORANGE
++
+image::smart_notification.png[Smart notification]
+
+. Each time a TSO answers then the orange notification is updated with his response.
++
+image::coordination_with_tso_answers.png[Smart notification TSO answers]
+
+. End of coordination QUESTION: 2 cases:
+
+* End because all TSOs participating in this coordination provided their answers to the question.
+
+* End because of LTTD (Last Time To Decide) reached (SOON): a coordination can stop when the deadline (LTTD) is reached.
+
+. RESULTS of COORDINATION : When coordination QUESTION is ended, an INFORMATIVE notification is issued automatically to present the results of the coordination : 2 cases:
++
+--
+* All answers provided are “Validated”, then the notification is green
+--
+
++
+image::coordination_result_validated.png[Smart notification result validated]
+
++
+--
+* At least 2 answers are different, then the notification is red.
+--
+image::coordination_result_not_validated.png[Smart notification result not validated]

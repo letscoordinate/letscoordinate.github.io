@@ -23,7 +23,18 @@
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
           ],
-          "coordinationStatus": "CON"
+          "caseId": "ProcessNotifTypeA_20210609_001",
+          "coordinationStatus": "MIX",
+          "coordinationComments": [
+            {
+              "eicCode": "10XFR-RTE------Q",
+              "generalComment": "OK for us!"
+            },
+            {
+              "eicCode": "22XCORESO------S",
+              "generalComment": "Super!"
+            }
+          ]
         }
       }
     },
@@ -63,9 +74,13 @@
                     "10X1001A1001A094"
                   ],
                   "value": "Open Tie line Vigy-Ensdorf 380kV",
-                  "accept": 1,
-                  "reject": 0,
-                  "comment": "ok for us"
+                  "results": [
+                    {
+                      "eicCode": "10X1001A1001A094",
+                      "answer": "CON",
+                      "comment": "ok for us"
+                    }
+                  ]
                 },
                 {
                   "id": "1",
@@ -74,8 +89,12 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "Open Tie line Vigy-Ensdorf 380kV",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "1",
@@ -84,9 +103,13 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "Disconnection HPP Zwen",
-                  "accept": 0,
-                  "reject": 1,
-                  "explanation": "Not available "
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "REJ",
+                      "explanation": "Not available "
+                    }
+                  ]
                 },
                 {
                   "id": "1",
@@ -131,8 +154,12 @@
                     "10X1001A1001A094"
                   ],
                   "value": "Open Tie line Vigy-Ensdorf 380kV",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10X1001A1001A094",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "1",
@@ -141,8 +168,12 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "Open Tie line Vigy-Ensdorf 380kV",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "1",
@@ -151,9 +182,13 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "Disconnection HPP Zwen",
-                  "accept": 0,
-                  "reject": 1,
-                  "explanation": "Not available "
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "REJ",
+                      "explanation": "Not available "
+                    }
+                  ]
                 },
                 {
                   "id": "1",
@@ -213,8 +248,12 @@
                     "10X1001A1001A094"
                   ],
                   "value": "Open Line C",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10X1001A1001A094",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "2",
@@ -223,8 +262,12 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "Disconnection HPP Zwen",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "2",
@@ -233,8 +276,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2 nodes in Nis 380kV",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "2",
@@ -243,8 +290,12 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "2 nodes in Ensdorf 380kV",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "2",
@@ -283,8 +334,12 @@
                     "10X1001A1001A094"
                   ],
                   "value": "Open Line Z",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10X1001A1001A094",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "3",
@@ -293,8 +348,12 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "Disconnection HPP Romsac",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "id": "3",
@@ -303,10 +362,14 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2 nodes in Nis 380kV",
-                  "accept": 0,
-                  "reject": 1,
-                  "explanation": "Impossible to implement",
-                  "comment": "Maybe 3 nodes ?"
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "REJ",
+                      "explanation": "Impossible to implement",
+                      "comment": "Maybe 3 nodes ?"
+                    }
+                  ]
                 }
               ]
             },
@@ -320,9 +383,13 @@
                     "10XDE-VE-TRANSMK"
                   ],
                   "value": "2 nodes in Ensdorf 380kV",
-                  "accept": 0,
-                  "reject": 1,
-                  "explanation": "Not available "
+                  "results": [
+                    {
+                      "eicCode": "10XDE-VE-TRANSMK",
+                      "answer": "REJ",
+                      "explanation": "Not available "
+                    }
+                  ]
                 },
                 {
                   "id": "3",
@@ -350,8 +417,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2500",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -359,8 +430,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2500",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -368,8 +443,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3138",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -377,8 +456,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3138",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -391,8 +474,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3356",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -400,8 +487,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3356",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -409,8 +500,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "1807",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -418,8 +513,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "1807",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -432,8 +531,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "1944",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -441,8 +544,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "1944",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -450,8 +557,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2691",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -459,8 +570,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2691",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -473,8 +588,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "4948",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -482,8 +601,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "4948",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -491,8 +614,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2612",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -500,8 +627,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2612",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -514,8 +645,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2141",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -523,8 +658,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2141",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -532,8 +671,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "1492",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -541,8 +684,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "1492",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -555,8 +702,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3809",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -564,8 +715,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3809",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -573,8 +728,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2134",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -582,8 +741,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2134",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -596,8 +759,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3392",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -605,8 +772,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3392",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -614,8 +785,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "4317",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -623,8 +798,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "4317",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -637,8 +816,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "4617",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -646,8 +829,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "4617",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -655,8 +842,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5639",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -664,8 +855,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5639",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -678,8 +873,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5942",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -687,8 +886,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5942",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -696,8 +899,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5584",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -705,8 +912,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5584",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -719,8 +930,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "1800",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -728,8 +943,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "1800",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -737,8 +956,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5822",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -746,8 +969,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5822",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -760,8 +987,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "4671",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -769,8 +1000,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "4671",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -778,8 +1013,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "1073",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -787,8 +1026,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "1073",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -801,8 +1044,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "1802",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -810,8 +1057,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "1802",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -819,8 +1070,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3514",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -828,8 +1083,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3514",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -842,8 +1101,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2568",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -851,10 +1114,14 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2568",
-                  "accept": 0,
-                  "reject": 1,
-                  "explanation": "500",
-                  "comment": "Too high value"
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "REJ",
+                      "explanation": "500",
+                      "comment": "Too high value"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -862,8 +1129,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5707",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -871,8 +1142,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5707",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -885,8 +1160,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3226",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -894,8 +1173,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3226",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -903,8 +1186,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3340",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -912,8 +1199,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3340",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -926,8 +1217,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "4189",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -935,8 +1230,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "4189",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -944,8 +1243,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3656",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -953,8 +1256,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3656",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -967,8 +1274,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "4097",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -976,8 +1287,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "4097",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -985,8 +1300,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3815",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -994,8 +1313,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3815",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -1008,8 +1331,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2809",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1017,8 +1344,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2809",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1026,8 +1357,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5100",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1035,10 +1370,14 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5100",
-                  "accept": 0,
-                  "reject": 1,
-                  "explanation": "1500",
-                  "comment": "Have to decrease border exchange"
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "REJ",
+                      "explanation": "1500",
+                      "comment": "Have to decrease border exchange"
+                    }
+                  ]
                 }
               ]
             },
@@ -1051,8 +1390,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3471",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1060,8 +1403,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3471",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1069,8 +1416,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5749",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1078,8 +1429,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5749",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -1092,8 +1447,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5668",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1101,10 +1460,14 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5668",
-                  "accept": 0,
-                  "reject": 1,
-                  "explanation": "2000",
-                  "comment": "NTC reduction required by BA"
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "REJ",
+                      "explanation": "2000",
+                      "comment": "NTC reduction required by BA"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1112,8 +1475,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5242",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1121,8 +1488,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5242",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -1135,8 +1506,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5745",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1144,8 +1519,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5745",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1153,8 +1532,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5210",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1162,8 +1545,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5210",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -1176,8 +1563,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "4843",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1185,8 +1576,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "4843",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1194,8 +1589,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2118",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1203,8 +1602,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2118",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -1217,8 +1620,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2181",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1226,8 +1633,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2181",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1235,8 +1646,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5961",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1244,8 +1659,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5961",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -1258,8 +1677,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5929",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1267,8 +1690,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5929",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1276,8 +1703,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "2757",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1285,8 +1716,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "2757",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             },
@@ -1299,8 +1734,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "5204",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "BA-RS",
@@ -1308,8 +1747,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "5204",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1317,8 +1760,12 @@
                     "10XCS-SERBIATSO8"
                   ],
                   "value": "3019",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XCS-SERBIATSO8",
+                      "answer": "CON"
+                    }
+                  ]
                 },
                 {
                   "label": "RS-BA",
@@ -1326,8 +1773,12 @@
                     "10XGR-HTSO-----B"
                   ],
                   "value": "3019",
-                  "accept": 1,
-                  "reject": 0
+                  "results": [
+                    {
+                      "eicCode": "10XGR-HTSO-----B",
+                      "answer": "CON"
+                    }
+                  ]
                 }
               ]
             }

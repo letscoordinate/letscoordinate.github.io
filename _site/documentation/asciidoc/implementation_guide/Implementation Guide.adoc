@@ -303,6 +303,13 @@ Empty for other ones.
 |10YCZ-CEPS-----N;10X-CHSWISSGRIDC
 |List<String>
 |EIC codes of specific recipient(s) for this notification. This field is optional if this information can be deducted from provided timeseries.
+
+|**caseId**
+|O
+|ProcessNotifTypeA_20210609_001
+|String
+|Business identifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.
+
 5+|_Following lines are only used for Input data validation by ENTSO-E Acknowledgement_
 
 |**fileName**
@@ -351,7 +358,8 @@ Ex: Input file Header JSON (without input data validation)
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
@@ -402,7 +410,8 @@ Ex: Input file Header JSON (with input data validation)
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
@@ -448,7 +457,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 
 OR links
 
-OR timeseries
+OR timeserie
 
 OR rscKpi
 |-
@@ -458,7 +467,7 @@ OR rscKpi
 
 -	links : to provide url link to download some files
 
--	timeseries : to provide data as timeseries
+-	timeserie : to provide data as timeseries
 
 -	rscKpi : to provide RSC KPIs
 5+|_Following lines described the needed fields for provision of text information_
@@ -507,11 +516,14 @@ OR rscKpi
 
 |**name**
 |M
-|GP1, GP2…. BP1, BP2….
+|GP01, GP02…. BP01, BP02….
 |String
 |KPI name: there are 2 categories : Global Performance (GP) or Business process (BP) : GP or BP followed by the number of KPIs
 
-**Note:** The labels of GPx and BPx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the <kpi_name – kpi_label> format. (e.g: GPx – Global Performance x)
+**Note:** The labels of GPxx and BPxx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the <kpi_name – kpi_label> format. (e.g: GPxx – Global Performance x)
+
+
+When a business KPI has multiple values, the conventional naming is GPxx_1 to GPxx_9 or BPxx_1 to BPxx_9 where xx are digits 0 to 9. The associated label is GPxx.1 to GPxx.9 and BPxx.1 and BPxx.9.
 
 |**joinGraph**
 |O
@@ -555,7 +567,7 @@ OR rscKpi
 |**eicCode**
 |O
 |38X-BALTIC-RSC-H
-|alphanumeric
+|Alpha-numeric
 |EIC code of concerned TSO if exists
 |**value**
 |M
@@ -737,7 +749,7 @@ Ex: Input file payload JSON (without input data validation)
       ],
       "rscKpi": [                                          // rscKpi details sample
         {
-          "name": "GP1",
+          "name": "GP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
@@ -752,7 +764,7 @@ Ex: Input file payload JSON (without input data validation)
           ]
         },
         {
-          "name": "BP1",
+          "name": "BP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
@@ -940,6 +952,9 @@ Header is the really similar as the one described for the input file with additi
 ** **CON(firmed):** the status of this notification is confirmed (based on the different answers done for each timeserie to be validated inside this notification)
 ** **REJ(ected):** the status of this notification is rejected (based on the different answers done for each timeserie to be validated inside this notification)
 ** **MIX(ed):** the status of this notification is mixed (based on the different answers done for each timeserie to be validated inside this notification)
+** **CAN(celed):** the status of this notification is canceled
+
+* **List of general comments** of the overall notification to be validated. This change is in the header of the output file.
 
 
 [cols=5]
@@ -1084,6 +1099,15 @@ Empty for other ones.
 |10YCZ-CEPS-----N;10X-CHSWISSGRIDC
 |List<String>
 |EIC codes of specific recipient(s) for this output file. This field is optional if this information can be deducted from provided timeseries.
+
+
+
+|**caseId**
+|O
+|ProcessNotifTypeA_20210609_001
+|String
+|Business identifier of the notification. The reuse of the same caseId means that the old notification will be overriden by the new one. If the caseId is not provided, it will be calculated using the following fields:  source, businessApplication, messageTypeName, businessDayFrom and businessDayTo.
+
 |**coordinationStatus**
 |**M**
 |*CON*
@@ -1091,10 +1115,30 @@ Empty for other ones.
 *or REJ*
 
 *or MIX*
-|**String**
-|**Global status of coordination : CON(firmed), REJ(ected) or MIX(ed).
 
-This status is global for the all notification**
+*or CAN*
+|**Enumeration**
+|**Global status of coordination : CON(firmed), REJ(ected), MIX(ed) or CAN(celed).**
+
+**This status is global for the all notification**
+
+|**coordinationComments**
+|**O**
+|*-*
+|*List<Map>*
+|*List of general comments*
+
+|**eicCode**
+|**M**
+|*22XCORESO------S*
+|*Alpha-numeric*
+|*EIC code of the user providing a general comment*
+
+|**generalComment**
+|**M**
+|*OK for us!*
+|*String*
+|*General comment for the coordination*
 |===
 
 
@@ -1126,7 +1170,18 @@ Ex: Output file header JSON sample
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
           ],
-          "coordinationStatus": "CON"
+          "caseId": "ProcessNotifTypeA_20210609_001",
+          "coordinationStatus": "CON",
+          "coordinationComments": [
+            {
+              "eicCode": "10XFR-RTE------Q", 
+              "generalComment": "OK for us!"
+            },
+            {
+              "eicCode": "22XCORESO------S", 
+              "generalComment": "Super!"
+            }
+          ]
         }
       }
     },
@@ -1143,18 +1198,18 @@ link:attached_doc/json_header_output_file.json[JSON header for output file]
 
 **Output file header XLSX sample:**
 
-For more details, see the excel sample file: line 1 and 2 in
+For more details, see the excel sample file: line 4 and 5 in
 link:attached_doc/excel_header_output_file.xlsx[XLSX header for output file sample]
 
 === Payload part
 
-Payload is the really similar as the one described for the input file with addition of:
+The Payload Output file is like the one described for the input file with addition of:
 
-* **4 new fields** to validate differently each proposal/timeseries inside the notification:
-** **accept:** if proposal is accepted
-** **reject:** if proposal is rejected
-** **explanation:** in case of rejection/refusal of the proposition to justify this choice from a list of values
-** **comment:** about the validation or coordination of the proposal
+* new field *results* in each proposal/timeseries inside the notification:
+** *eicCode*: EIC code of the entity providing the answer
+** *answer*: CON or REJ or MIX or NOT, the different value meanings are CON(firmed), REJ(ected), MIX(ed) or NOT (Not answered).
+** *explanation*: in case of rejection/refusal of the proposition to justify this choice from a list of values
+** *comment*: about the validation or coordination of the proposal
 
 Following table will describe **only** the part to be affected by these new fields for timeserie information (even if there are text information, RSC KPI information...).
 
@@ -1181,7 +1236,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 
 OR links
 
-OR timeseries
+OR timeserie
 
 OR rscKpi
 |String
@@ -1191,7 +1246,7 @@ OR rscKpi
 
 -	links : to provide url link to download some files
 
--	timeseries : to provide data as timeseries
+-	timeserie : to provide data as timeseries
 
 -	rscKpi : to provide RSC KPIs
 
@@ -1242,27 +1297,39 @@ OR rscKpi
 |"89", "5585", "Open Line Z", …
 |String
 |Value of related timeserie
-|**accept**
-|**M**
-|**1 or 0**
-|**Boolean**
-|**1 : the proposal has been accepted by the concerned EIC code
 
-0 : the proposal has been rejected by the concerned EIC code**
-|**reject**
-|**M**
-|**1 or 0**
-|**Boolean**
-|**1 : the proposal has been rejected by the concerned EIC code
+|**results**
+|*O (JSON)*
+|*-*
+|*List<Map>*
+|*Structure to provide output results*
 
-0 : the proposal has been accepted by the concerned EIC code**
+|**eicCode**
+|**M**
+|**10XFR-RTE------Q**
+|**Alpha-numeric**
+|**EIC code of the entity providing the answer**
+
+|**answer**
+|**M**
+|*CON* 
+
+*or REJ* 
+
+*or MIX* 
+
+*or NOT*
+|*Enumeration*
+|**Status of the remedial actions: CON(firmed), REJ(ected), MIX(ed) or NOT (Not answered).**
+
 |**explanation**
-|**M**
+|**O**
 |**“Not available”**
 |**String**
 |**List of choice in a predefined list of values as text.**
+
 |**comment**
-|**M**
+|**O**
 |**“3 nodes should work”**
 |**String**
 |**Comment about the proposal by the concerned EIC code**
@@ -1274,7 +1341,7 @@ link:attached_doc/json_payload_output_file.json[JSON payload for output file sam
 
 **XLSX sample**
 
-See the excel file: from line 4 to end of the document, columns H, I, J and K in
+See the excel file: from line 7 to end of the document, columns G, H, I, and J in
 link:attached_doc/excel_payload_output_file.xlsx[XLSX payload for output file sample]
 
 

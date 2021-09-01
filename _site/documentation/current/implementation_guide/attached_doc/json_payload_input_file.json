@@ -22,7 +22,8 @@
           "recipients": [
             "10XBA-JPCCZEKC-K",
             "10XAL-KESH-----J"
-          ]
+          ],
+          "caseId": "ProcessNotifTypeA_20210609_001"
         }
       }
     },
@@ -105,7 +106,7 @@
       ],
       "rscKpi": [
         {
-          "name": "GP1",
+          "name": "GP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
@@ -120,7 +121,7 @@
           ]
         },
         {
-          "name": "GP2",
+          "name": "GP02",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
@@ -145,7 +146,7 @@
           ]
         },
         {
-          "name": "GP3",
+          "name": "GP03",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
@@ -170,7 +171,7 @@
           ]
         },
         {
-          "name": "BP1",
+          "name": "BP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
@@ -202,7 +203,7 @@
           ]
         },
         {
-          "name": "BP2",
+          "name": "BP02",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00Z",
@@ -234,7 +235,7 @@
           ]
         },
         {
-          "name": "BP3",
+          "name": "BP03",
           "joinGraph": false,
           "data": [
             {
