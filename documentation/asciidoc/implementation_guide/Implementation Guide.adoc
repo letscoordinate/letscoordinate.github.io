@@ -457,7 +457,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 
 OR links
 
-OR timeseries
+OR timeserie
 
 OR rscKpi
 |-
@@ -467,7 +467,7 @@ OR rscKpi
 
 -	links : to provide url link to download some files
 
--	timeseries : to provide data as timeseries
+-	timeserie : to provide data as timeseries
 
 -	rscKpi : to provide RSC KPIs
 5+|_Following lines described the needed fields for provision of text information_
@@ -516,11 +516,14 @@ OR rscKpi
 
 |**name**
 |M
-|GP1, GP2…. BP1, BP2….
+|GP01, GP02…. BP01, BP02….
 |String
 |KPI name: there are 2 categories : Global Performance (GP) or Business process (BP) : GP or BP followed by the number of KPIs
 
-**Note:** The labels of GPx and BPx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the <kpi_name – kpi_label> format. (e.g: GPx – Global Performance x)
+**Note:** The labels of GPxx and BPxx will be parameterized in the configuration bundles of the application, so that the final displayed information to the screen will have the <kpi_name – kpi_label> format. (e.g: GPxx – Global Performance x)
+
+
+When a business KPI has multiple values, the conventional naming is GPxx_1 to GPxx_9 or BPxx_1 to BPxx_9 where xx are digits 0 to 9. The associated label is GPxx.1 to GPxx.9 and BPxx.1 and BPxx.9.
 
 |**joinGraph**
 |O
@@ -746,7 +749,7 @@ Ex: Input file payload JSON (without input data validation)
       ],
       "rscKpi": [                                          // rscKpi details sample
         {
-          "name": "GP1",
+          "name": "GP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
@@ -761,7 +764,7 @@ Ex: Input file payload JSON (without input data validation)
           ]
         },
         {
-          "name": "BP1",
+          "name": "BP01",
           "data": [
             {
               "timestamp": "2020-03-18T01:00:00",
@@ -1200,13 +1203,13 @@ link:attached_doc/excel_header_output_file.xlsx[XLSX header for output file samp
 
 === Payload part
 
-Payload is the really similar as the one described for the input file with addition of:
+The Payload Output file is like the one described for the input file with addition of:
 
-* **4 new fields** to validate differently each proposal/timeseries inside the notification:
-** **accept:** if proposal is accepted
-** **reject:** if proposal is rejected
-** **explanation:** in case of rejection/refusal of the proposition to justify this choice from a list of values
-** **comment:** about the validation or coordination of the proposal
+* new field *results* in each proposal/timeseries inside the notification:
+** *eicCode*: EIC code of the entity providing the answer
+** *answer*: CON or REJ or MIX or NOT, the different value meanings are CON(firmed), REJ(ected), MIX(ed) or NOT (Not answered).
+** *explanation*: in case of rejection/refusal of the proposition to justify this choice from a list of values
+** *comment*: about the validation or coordination of the proposal
 
 Following table will describe **only** the part to be affected by these new fields for timeserie information (even if there are text information, RSC KPI information...).
 
@@ -1233,7 +1236,7 @@ IEC 61968-100 makes no attempt to define these application-specific data. They a
 
 OR links
 
-OR timeseries
+OR timeserie
 
 OR rscKpi
 |String
@@ -1243,7 +1246,7 @@ OR rscKpi
 
 -	links : to provide url link to download some files
 
--	timeseries : to provide data as timeseries
+-	timeserie : to provide data as timeseries
 
 -	rscKpi : to provide RSC KPIs
 

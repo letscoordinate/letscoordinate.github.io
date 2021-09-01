@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8.dev">
+<meta name="generator" content="Asciidoctor 2.0.15">
 <title>User Manual</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -47,7 +47,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -62,10 +62,8 @@ img{-ms-interpolation-mode:bicubic}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
-.center{margin-left:auto;margin-right:auto}
-.stretch{width:100%}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
 a{color:#2156a5;text-decoration:underline;line-height:inherit}
 a:hover,a:focus{color:#1d4b8f}
 a img{border:0}
@@ -96,28 +94,28 @@ dl dd{margin-bottom:1.25em}
 abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
 abbr{text-transform:none}
 blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
-blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
-blockquote cite::before{content:"\2014 \0020"}
-blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
 blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 @media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
 h4{font-size:1.4375em}}
-table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
 table thead,table tfoot{background:#f7f8f7}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt{background:#f8f8f7}
-table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
 .clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
 .clearfix::after,.float-group::after{clear:both}
-:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
-:not(pre)>code.nobreak{word-wrap:normal}
-:not(pre)>code.nowrap{white-space:nowrap}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
 pre>code{display:block}
@@ -182,7 +180,7 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
-#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 #content{margin-bottom:.625em}
 .sect1{padding-bottom:.625em}
@@ -205,7 +203,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .admonitionblock>table td.icon{text-align:center;width:80px}
 .admonitionblock>table td.icon img{max-width:none}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
-.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
 .exampleblock>.content>:first-child{margin-top:0}
@@ -215,7 +213,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
 .exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
-.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
@@ -240,7 +238,7 @@ table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;pad
 pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
 pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
-.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
 .quoteblock blockquote{margin:0;padding:0;border:0}
 .quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
@@ -257,24 +255,24 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
 .quoteblock.abstract{margin:0 1em 1.25em;display:block}
 .quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
-.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
-table.tableblock{max-width:100%;border-collapse:separate}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
 p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
 td.tableblock>.content>:last-child{margin-bottom:-1.25em}
-td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
-table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
-table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
-table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
-table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
-table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
-table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
 table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
 table.frame-sides{border-width:0 1px}
-table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
 table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
@@ -283,7 +281,7 @@ th.valign-top,td.valign-top{vertical-align:top}
 th.valign-bottom,td.valign-bottom{vertical-align:bottom}
 th.valign-middle,td.valign-middle{vertical-align:middle}
 table thead th,table tfoot th{font-weight:bold}
-tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th{background:#f7f8f7}
 tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
 p.tableblock>code:only-child{background:none;padding:0}
 p.tableblock{font-size:1em}
@@ -312,6 +310,7 @@ ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
 .colist td:not([class]):first-child img{max-width:none}
@@ -384,7 +383,7 @@ a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
-.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
 .conum[data-value] *{color:#fff!important}
 .conum[data-value]+b{display:none}
 .conum[data-value]::after{content:attr(data-value)}
@@ -411,6 +410,7 @@ thead{display:table-header-group}
 svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
 #toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
 body.book #header{text-align:center}
@@ -434,7 +434,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -442,44 +441,44 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#trueexecutive-summary">1. Executive Summary</a></li>
-<li><a href="#trueintroduction">2. Introduction</a>
+<li><a href="#_executive_summary">1. Executive Summary</a></li>
+<li><a href="#_introduction">2. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#trueuser-types">2.1. User types</a></li>
-<li><a href="#truesupported-browsers">2.2. Supported browsers</a></li>
-<li><a href="#truesupported-os">2.3. Supported OS</a></li>
-<li><a href="#truedefault-resolution">2.4. Default resolution</a></li>
+<li><a href="#_user_types">2.1. User types</a></li>
+<li><a href="#_supported_browsers">2.2. Supported browsers</a></li>
+<li><a href="#_supported_os">2.3. Supported OS</a></li>
+<li><a href="#_default_resolution">2.4. Default resolution</a></li>
 </ul>
 </li>
-<li><a href="#truesystem-login-and-logout">3. System login and logout</a>
+<li><a href="#_system_login_and_logout">3. System login and logout</a>
 <ul class="sectlevel2">
-<li><a href="#truesystem-login">3.1. System login</a></li>
-<li><a href="#truesystem-logout">3.2. System logout</a></li>
+<li><a href="#_system_login">3.1. System login</a></li>
+<li><a href="#_system_logout">3.2. System logout</a></li>
 </ul>
 </li>
-<li><a href="#truescreens-presentation">4. Screens presentation</a>
+<li><a href="#_screens_presentation">4. Screens presentation</a>
 <ul class="sectlevel2">
-<li><a href="#truegeneral-screen-overview">4.1. General screen overview</a></li>
-<li><a href="#truecard-feed-screen">4.2. Card Feed screen</a></li>
-<li><a href="#truearchiving-screen">4.3. Archiving screen</a></li>
-<li><a href="#truemonitoring-screan">4.4. Monitoring screan</a></li>
-<li><a href="#truelogging-screen">4.5. Logging screen</a></li>
-<li><a href="#truersc-kpi-report-screen">4.6. RSC KPI report screen</a></li>
+<li><a href="#_general_screen_overview">4.1. General screen overview</a></li>
+<li><a href="#_card_feed_screen">4.2. Card Feed screen</a></li>
+<li><a href="#_archiving_screen">4.3. Archiving screen</a></li>
+<li><a href="#_monitoring_screen">4.4. Monitoring screen</a></li>
+<li><a href="#_logging_screen">4.5. Logging screen</a></li>
+<li><a href="#_rsc_kpi_report_screen">4.6. RSC KPI report screen</a></li>
 </ul>
 </li>
-<li><a href="#truetool-functionalities">5. Tool functionalities</a>
+<li><a href="#_tool_functionalities">5. Tool functionalities</a>
 <ul class="sectlevel2">
-<li><a href="#truenotification-management">5.1. Notification management</a></li>
-<li><a href="#truersc-kpi-graphs-and-report">5.2. RSC KPI graphs and report</a></li>
-<li><a href="#truereception-notifications-configuration-screen">5.3. Reception notifications configuration screen</a></li>
-<li><a href="#truearchiving-system">5.4. Archiving system</a></li>
-<li><a href="#truenotification-creation">5.5. Notification creation</a></li>
+<li><a href="#_notification_management">5.1. Notification management</a></li>
+<li><a href="#_rsc_kpi_graphs_and_report">5.2. RSC KPI graphs and report</a></li>
+<li><a href="#_reception_notifications_configuration_screen">5.3. Reception notifications configuration screen</a></li>
+<li><a href="#_archiving_system">5.4. Archiving system</a></li>
+<li><a href="#_notification_creation">5.5. Notification creation</a></li>
 </ul>
 </li>
-<li><a href="#trueexisting-generic-notifications">6. Existing generic notifications</a>
+<li><a href="#_existing_generic_notifications">6. Existing generic notifications</a>
 <ul class="sectlevel2">
-<li><a href="#trueinformative-notifications">6.1. Informative notifications</a></li>
-<li><a href="#truesmart-notifications">6.2. Smart notifications</a></li>
+<li><a href="#_informative_notifications">6.1. Informative notifications</a></li>
+<li><a href="#_smart_notifications">6.2. Smart notifications</a></li>
 </ul>
 </li>
 </ul>
@@ -487,7 +486,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="trueexecutive-summary"><a class="anchor" href="#trueexecutive-summary"></a>1. Executive Summary</h2>
+<h2 id="_executive_summary">1. Executive Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This document is the manual (user guide) of the Let’s Coordinate tool developed for RSC services that RSCs provide to TSOs, in order to present the main screens, functionalities of the tool and describe how to use the tool.</p>
@@ -498,10 +497,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueintroduction"><a class="anchor" href="#trueintroduction"></a>2. Introduction</h2>
+<h2 id="_introduction">2. Introduction</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueuser-types"><a class="anchor" href="#trueuser-types"></a>2.1. User types</h3>
+<h3 id="_user_types">2.1. User types</h3>
 <div class="paragraph">
 <p>For the Let’s Coordinate application, we have 3 user types:</p>
 </div>
@@ -522,7 +521,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Let see details about each of them:</p>
 </div>
 <div class="sect3">
-<h4 id="truetso-user"><a class="anchor" href="#truetso-user"></a>2.1.1. TSO user</h4>
+<h4 id="_tso_user">2.1.1. TSO user</h4>
 <div class="paragraph">
 <p>Each TSO is able to define a list of users among its entity to access to the tool within <a href="http://www.keycloak.org">Keycloak</a> authentication tool.
 Each TSO has the possibility to interact with dedicated notifications only for its entity as TSO.
@@ -530,7 +529,7 @@ Each TSO authorized user is able to login to the tool, acknowledge notifications
 </div>
 </div>
 <div class="sect3">
-<h4 id="truersc-user"><a class="anchor" href="#truersc-user"></a>2.1.2. RSC user</h4>
+<h4 id="_rsc_user">2.1.2. RSC user</h4>
 <div class="paragraph">
 <p>Each RSC is able to define a list of users among its entity to access to the tool within <a href="http://www.keycloak.org">Keycloak</a> tool.
 Each RSC has the possibility to interact with notifications for its entity as RSC and all received notifications related to one of the TSOs under its responsibility (without impacting the TSO notification itself).
@@ -538,7 +537,7 @@ Each RSC authorized user is able to login to the tool, acknowledge notifications
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueadministrator-user"><a class="anchor" href="#trueadministrator-user"></a>2.1.3. Administrator user</h4>
+<h4 id="_administrator_user">2.1.3. Administrator user</h4>
 <div class="paragraph">
 <p>In general, administrator (ADMIN) user has specific rights and can’t access to TSOs or RSCs data.
 Some operations are restricted to users with the ADMIN role, either because they are administration operations with a potential impact to <a href="http://opfab.github.io/">OperatorFabric</a> or Let’s Coordinate instances as a whole, or because they give access to information that should be private to a user.</p>
@@ -577,7 +576,7 @@ Some operations are restricted to users with the ADMIN role, either because they
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<div class="title">Important</div>
 </td>
 <td class="content">
 The ADMIN role doesn&#8217;t grant any special privileges when it comes to card consultation (be they current or archived), so an user with the ADMIN role will only see cards that have been addressed to them or to one of their groups), just like any other user.
@@ -588,7 +587,7 @@ The ADMIN role doesn&#8217;t grant any special privileges when it comes to card 
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesupported-browsers"><a class="anchor" href="#truesupported-browsers"></a>2.2. Supported browsers</h3>
+<h3 id="_supported_browsers">2.2. Supported browsers</h3>
 <div class="paragraph">
 <p>The tool is supporting the 3 most recent versions of these 3 following web browsers:</p>
 </div>
@@ -607,14 +606,14 @@ The ADMIN role doesn&#8217;t grant any special privileges when it comes to card 
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesupported-os"><a class="anchor" href="#truesupported-os"></a>2.3. Supported OS</h3>
+<h3 id="_supported_os">2.3. Supported OS</h3>
 <div class="paragraph">
-<p>The tool is supporting only Linux as OS.
+<p>The tool is supporting only Windows as OS.
 Other OS can be used but the compatibility with the 3 dedicated web browsers will not be guaranteed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truedefault-resolution"><a class="anchor" href="#truedefault-resolution"></a>2.4. Default resolution</h3>
+<h3 id="_default_resolution">2.4. Default resolution</h3>
 <div class="paragraph">
 <p>Default resolution of the GUI is HD 1920x1080.</p>
 </div>
@@ -622,10 +621,10 @@ Other OS can be used but the compatibility with the 3 dedicated web browsers wil
 </div>
 </div>
 <div class="sect1">
-<h2 id="truesystem-login-and-logout"><a class="anchor" href="#truesystem-login-and-logout"></a>3. System login and logout</h2>
+<h2 id="_system_login_and_logout">3. System login and logout</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truesystem-login"><a class="anchor" href="#truesystem-login"></a>3.1. System login</h3>
+<h3 id="_system_login">3.1. System login</h3>
 <div class="paragraph">
 <p>When Let’s Coordinate has been installed on a specific server, to connect/log in to the Let’s Coordinate tool, user will have to use the Let’s Coordinate direct url to open directly the Let’s Coordinate tool: <a href="http://localhost/ui/" class="bare">http://localhost/ui/</a>.</p>
 </div>
@@ -658,7 +657,7 @@ Other OS can be used but the compatibility with the 3 dedicated web browsers wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesystem-logout"><a class="anchor" href="#truesystem-logout"></a>3.2. System logout</h3>
+<h3 id="_system_logout">3.2. System logout</h3>
 <div class="paragraph">
 <p>To log out, user can disconnect with a specific button on the top right part of the header of the screen.
 With the little triangle button on the right of username, user can click on it to display the content and then select log out.</p>
@@ -675,10 +674,10 @@ With the little triangle button on the right of username, user can click on it t
 </div>
 </div>
 <div class="sect1">
-<h2 id="truescreens-presentation"><a class="anchor" href="#truescreens-presentation"></a>4. Screens presentation</h2>
+<h2 id="_screens_presentation">4. Screens presentation</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truegeneral-screen-overview"><a class="anchor" href="#truegeneral-screen-overview"></a>4.1. General screen overview</h3>
+<h3 id="_general_screen_overview">4.1. General screen overview</h3>
 <div class="paragraph">
 <p>The proposed GUI for the application is common for all screens in the application.</p>
 </div>
@@ -713,7 +712,7 @@ With the little triangle button on the right of username, user can click on it t
 <p><strong>RSC KPI report screen</strong>: to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)</p>
 </li>
 <li>
-<p><strong>Card creation link</strong> <span class="image"><img src="../../asciidoc/images/card_creation_menu_day.png" alt="Card creation menu"></span> : to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users</p>
+<p><strong>Card creation link</strong> <span class="image"><img src="../../asciidoc/images/card_creation_menu_day.png" alt="Card creation menu"></span>: to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users</p>
 </li>
 </ul>
 </div>
@@ -766,7 +765,7 @@ With the little triangle button on the right of username, user can click on it t
 </div>
 </div>
 <div class="sect2">
-<h3 id="truecard-feed-screen"><a class="anchor" href="#truecard-feed-screen"></a>4.2. Card Feed screen</h3>
+<h3 id="_card_feed_screen">4.2. Card Feed screen</h3>
 <div class="paragraph">
 <p>The card feed screen is the place to receive and manage cards/notifications.</p>
 </div>
@@ -792,7 +791,7 @@ With the little triangle button on the right of username, user can click on it t
 </ul>
 </div>
 <div class="sect3">
-<h4 id="truenotification-feeddeck-consideration"><a class="anchor" href="#truenotification-feeddeck-consideration"></a>4.2.1. Notification feed/deck consideration</h4>
+<h4 id="_notification_feeddeck_consideration">4.2.1. Notification feed/deck consideration</h4>
 <div class="paragraph">
 <p><strong>Global concept</strong></p>
 </div>
@@ -816,10 +815,10 @@ With the little triangle button on the right of username, user can click on it t
 <div class="ulist">
 <ul>
 <li>
-<p><strong>INFO</strong>: for an information notification, user can just acknowledge it.</p>
+<p><strong>INFO</strong>: for an informative notification, user can just acknowledge it.</p>
 </li>
 <li>
-<p><strong>ACTION</strong>: for an action/Smart notification when user should act (accept, reject, explanation about rejection and comment).</p>
+<p><strong>ACTION</strong>: for an action/smart notification when user should act (accept, reject, explanation about rejection and comment).</p>
 </li>
 </ul>
 </div>
@@ -972,7 +971,7 @@ With the little triangle button on the right of username, user can click on it t
 </div>
 </div>
 <div class="paragraph">
-<p>In case of Smart notification, you will be able to answer to some questions and then your answers to the coordination system.</p>
+<p>In case of Smart notification, you will be able to answer to some questions and then send your answers to the coordination system.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1097,7 +1096,7 @@ User can decide to order the notifications in the feed by arrival date or by sev
 </div>
 </div>
 <div class="sect3">
-<h4 id="truetimeline-consideration"><a class="anchor" href="#truetimeline-consideration"></a>4.2.2. Timeline consideration</h4>
+<h4 id="_timeline_consideration">4.2.2. Timeline consideration</h4>
 <div class="paragraph">
 <p><strong>Global concept</strong></p>
 </div>
@@ -1364,7 +1363,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truearchiving-screen"><a class="anchor" href="#truearchiving-screen"></a>4.3. Archiving screen</h3>
+<h3 id="_archiving_screen">4.3. Archiving screen</h3>
 <div class="paragraph">
 <p>This screen displays all past and current received notifications. User is able to search among all notifications available by using filters based on:</p>
 </div>
@@ -1384,7 +1383,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p>RSC Process (CGM, CSA, CCC, OPC, STA…​)</p>
+<p>RSC Process (CGM, CSA, CCC, OPC, STA…)</p>
 </li>
 <li>
 <p>Kind of notification per process (CSA process success, CSA process failed…)</p>
@@ -1402,7 +1401,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truemonitoring-screan"><a class="anchor" href="#truemonitoring-screan"></a>4.4. Monitoring screan</h3>
+<h3 id="_monitoring_screen">4.4. Monitoring screen</h3>
 <div class="paragraph">
 <p>This screen allows each user (TSO and RSC) to monitor the status of coordination.</p>
 </div>
@@ -1419,7 +1418,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>by selecting the right coordination from the table, the user can open the detailed view</p>
 </li>
 <li>
-<p>It is possible to export the coordinations' informations as xlsx file</p>
+<p>It is possible to export the coordinations' information as xlsx file</p>
 </li>
 </ul>
 </div>
@@ -1434,7 +1433,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Detailed view</strong> : details about the different answers of each TSO in live</p>
+<p><strong>Detailed view</strong> : details from the selected coordination cases with display of the different answers of each TSO (updated in live if coordination process is still running)</p>
 </li>
 </ul>
 </div>
@@ -1445,20 +1444,26 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truelogging-screen"><a class="anchor" href="#truelogging-screen"></a>4.5. Logging screen</h3>
+<h3 id="_logging_screen">4.5. Logging screen</h3>
 <div class="paragraph">
-<p>This screen displays logs of the relevant informations about the coordination process:</p>
+<p>This screen displays logs of the relevant information about the coordination process:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>New cases to coordinate/validate</p>
+<p><strong>New</strong> request for coordination/validation</p>
 </li>
 <li>
-<p>Reception of answers from TSOs</p>
+<p><strong>Reception of answers from TSOs</strong> to this coordination/validation</p>
 </li>
 <li>
-<p>Final result notification</p>
+<p><strong>Final result notification</strong></p>
+</li>
+<li>
+<p>Reception of input file to describe the expected coordination/validation</p>
+</li>
+<li>
+<p>Sending of output file with results of this coordination/validation</p>
 </li>
 </ul>
 </div>
@@ -1472,7 +1477,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truersc-kpi-report-screen"><a class="anchor" href="#truersc-kpi-report-screen"></a>4.6. RSC KPI report screen</h3>
+<h3 id="_rsc_kpi_report_screen">4.6. RSC KPI report screen</h3>
 <div class="paragraph">
 <p>This screen displays the relevant Key Performance Indicators (KPIs) for business processes.</p>
 </div>
@@ -1526,7 +1531,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>User should decide to see the information per RSC or per Region/CCR but not together.</p>
 </li>
 <li>
-<p>If granularity is Daily: user should select or “Pan-Eu”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category:</p>
+<p>If granularity is Daily: user should select or “Pan-EU”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1577,10 +1582,10 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect1">
-<h2 id="truetool-functionalities"><a class="anchor" href="#truetool-functionalities"></a>5. Tool functionalities</h2>
+<h2 id="_tool_functionalities">5. Tool functionalities</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truenotification-management"><a class="anchor" href="#truenotification-management"></a>5.1. Notification management</h3>
+<h3 id="_notification_management">5.1. Notification management</h3>
 <div class="paragraph">
 <p><strong>Notification reception</strong></p>
 </div>
@@ -1604,6 +1609,9 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="paragraph">
+<p>It’s also possible to see the dedicated notification in a larger/full screen with this button: <span class="image"><img src="../../asciidoc/images/notification_opened_resizing_button.png" alt="Notification opened resizing button"></span></p>
+</div>
+<div class="paragraph">
 <p><strong>Acknowledge a notification</strong></p>
 </div>
 <div class="paragraph">
@@ -1612,9 +1620,14 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="paragraph">
 <p>Ex: For informative notification, user is able to acknowledge the notification to keep track of its reading. After a performed acknowledgement, notification will disappear from the deck. The only way to see it again is to consult the Archiving screen or to update the default filter which only shows the “not acknowledged” notifications.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../../asciidoc/images/acknowledge_notification_opened.png" alt="Acknowledge notification opened">
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="truersc-kpi-graphs-and-report"><a class="anchor" href="#truersc-kpi-graphs-and-report"></a>5.2. RSC KPI graphs and report</h3>
+<h3 id="_rsc_kpi_graphs_and_report">5.2. RSC KPI graphs and report</h3>
 <div class="paragraph">
 <p><strong>Set RSC KPI graphs</strong></p>
 </div>
@@ -1753,17 +1766,17 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p>RSC KPI report - pdf sample:</p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/serviceA_allKpis_7RSCs_2021_2025.pdf">RSC KPI report - pdf sample</a></p>
+<p><a href="../../asciidoc/user_manual/attached_doc/serviceA_allKpis_7RSCs_2021_2025.pdf">RSC KPI report - pdf sample</a></p>
 </div>
 <div class="paragraph">
 <p>RSC KPI report - xlsx sample:</p>
 </div>
 <div class="paragraph">
-<p><a href="attached_doc/serviceA_allKpis_7RSCs_2021_2025.xlsx">RSC KPI report - xlsx sample</a></p>
+<p><a href="../../asciidoc/user_manual/attached_doc/serviceA_allKpis_7RSCs_2021_2025.xlsx">RSC KPI report - xlsx sample</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truereception-notifications-configuration-screen"><a class="anchor" href="#truereception-notifications-configuration-screen"></a>5.3. Reception notifications configuration screen</h3>
+<h3 id="_reception_notifications_configuration_screen">5.3. Reception notifications configuration screen</h3>
 <div class="paragraph">
 <p>Reception of the notifications is configurable for each RSC service.</p>
 </div>
@@ -1790,7 +1803,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truearchiving-system"><a class="anchor" href="#truearchiving-system"></a>5.4. Archiving system</h3>
+<h3 id="_archiving_system">5.4. Archiving system</h3>
 <div class="paragraph">
 <p>User has the possibility to consult all received notifications in Archiving screen:</p>
 </div>
@@ -1885,7 +1898,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truenotification-creation"><a class="anchor" href="#truenotification-creation"></a>5.5. Notification creation</h3>
+<h3 id="_notification_creation">5.5. Notification creation</h3>
 <div class="paragraph">
 <p>The goal of this screen is to create a notification from Let’s Coordinate GUI and to send this notification to other users.</p>
 </div>
@@ -1896,7 +1909,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <p><span class="image"><img src="../../asciidoc/images/card_creation_menu.png" alt="Card creation menu"></span></p>
 </div>
 <div class="sect3">
-<h4 id="truesettings-view"><a class="anchor" href="#truesettings-view"></a>5.5.1. Settings view</h4>
+<h4 id="_settings_view">5.5.1. Settings view</h4>
 <div class="paragraph">
 <p>When clicking the card creation button, the following screen is opened:</p>
 </div>
@@ -1909,7 +1922,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Service:</strong> the list of RSC services (CSA,  CCC, …​)</p>
+<p><strong>Service:</strong> the list of RSC services (CSA,  CCC, …)</p>
 </li>
 <li>
 <p><strong>Process:</strong> the list of process related to selected service</p>
@@ -1961,7 +1974,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect3">
-<h4 id="truepreview-function"><a class="anchor" href="#truepreview-function"></a>5.5.2. Preview function</h4>
+<h4 id="_preview_function">5.5.2. Preview function</h4>
 <div class="paragraph">
 <p>After filling the required fields, the user should click on the "see before sending" button in order to verify the card&#8217;s content before sending. Once the verification is done, the "send" button allow the sending of the card.</p>
 </div>
@@ -1970,7 +1983,7 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecreated-notification-display"><a class="anchor" href="#truecreated-notification-display"></a>5.5.3. Created notification display</h4>
+<h4 id="_created_notification_display">5.5.3. Created notification display</h4>
 <div class="paragraph">
 <p>A sample of a created notification from Let’s Coordinate GUI is displayed:</p>
 </div>
@@ -1982,10 +1995,10 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueexisting-generic-notifications"><a class="anchor" href="#trueexisting-generic-notifications"></a>6. Existing generic notifications</h2>
+<h2 id="_existing_generic_notifications">6. Existing generic notifications</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinformative-notifications"><a class="anchor" href="#trueinformative-notifications"></a>6.1. Informative notifications</h3>
+<h3 id="_informative_notifications">6.1. Informative notifications</h3>
 <div class="paragraph">
 <p>Depending on the business process, notifications will be different and adapted to each business process.</p>
 </div>
@@ -2071,11 +2084,11 @@ In case user was in the first-time period view selection, if user clicks on <str
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesmart-notifications"><a class="anchor" href="#truesmart-notifications"></a>6.2. Smart notifications</h3>
+<h3 id="_smart_notifications">6.2. Smart notifications</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Coordination Notification</strong>:</p>
+<p><strong>Coordination Notifications</strong>:</p>
 </li>
 </ul>
 </div>
@@ -2108,16 +2121,16 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div class="ulist">
 <ul>
 <li>
-<p>End because of LTTD (Last Time To Decide) reached (SOON): a coordination can stop when the deadline (LTTD) is reached.</p>
+<p>End because all TSOs participating in this coordination provided their answers to the question.</p>
 </li>
 <li>
-<p>End because all TSOs participating in this coordination provided their answers to the question.</p>
+<p>End because of LTTD (Last Time To Decide) reached (SOON): a coordination can stop when the deadline (LTTD) is reached.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>RESULTS of COORDINATION : When coordination QUESTION is ended, an INFORMATIVE notification is issued to present the results of the coordination : 2 cases:</p>
+<p>RESULTS of COORDINATION : When coordination QUESTION is ended, an INFORMATIVE notification is issued automatically to present the results of the coordination : 2 cases:</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -2161,8 +2174,5 @@ In case user was in the first-time period view selection, if user clicks on <str
 <div id="footer-text">
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
 </body>
 </html>

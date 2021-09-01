@@ -72,7 +72,7 @@ The tool is supporting the 3 most recent versions of these 3 following web brows
 
 === Supported OS
 
-The tool is supporting only Linux as OS.
+The tool is supporting only Windows as OS.
 Other OS can be used but the compatibility with the 3 dedicated web browsers will not be guaranteed.
 
 === Default resolution
@@ -123,7 +123,7 @@ image::validation_notification_negative.png[Home Screen]
 *** **Monitoring screen**: to monitor the status of the coordination
 *** **Logging screen**: to displays logs of the relevant information about the coordination process 
 *** **RSC KPI report screen**: to configure and present the relevant Key Performances Indicators (KPIs) of the RSC services (graphs and report)
-*** **Card creation link** image:card_creation_menu_day.png[Card creation menu] : to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users
+*** **Card creation link** image:card_creation_menu_day.png[Card creation menu]: to create from the GUI a notification and to send it to different users (TSO and/or RSC) or group of users
 
 ** Login information menu:
 *** In the top right of the page, you have the **name & company** of logged user
@@ -166,8 +166,8 @@ Notification is an object which can support different operational information re
 
 There are 2 kinds of notifications which depends on the event to raise:
 
-* **INFO**: for an information notification, user can just acknowledge it.
-* **ACTION**: for an action/Smart notification when user should act (accept, reject, explanation about rejection and comment).
+* **INFO**: for an informative notification, user can just acknowledge it.
+* **ACTION**: for an action/smart notification when user should act (accept, reject, explanation about rejection and comment).
 
 The color of the notification depends on the status of the card:
 
@@ -217,7 +217,7 @@ In case of informative notification, you will be able to acknowledge/cancel ackn
 
 image::negative_validation_opened_short_short.png[Detailed view]
 
-In case of Smart notification, you will be able to answer to some questions and then your answers to the coordination system.
+In case of Smart notification, you will be able to answer to some questions and then send your answers to the coordination system.
 
 image::smart_notification_details.png[Smart notification]
 
@@ -398,12 +398,12 @@ This screen displays all past and current received notifications. User is able t
 * Process: list of sub item under the selected service
 * State: status of the notification for selected service and process
 * Tags: types of notificationto search notification by keywords
-** RSC Process (CGM, CSA, CCC, OPC, STA…​)
+** RSC Process (CGM, CSA, CCC, OPC, STA…)
 ** Kind of notification per process (CSA process success, CSA process failed…)
 * Published date & hour of the notification: publish from and publish to
 * Business period date & hour inside of the notification content: active from and active to
 
-=== Monitoring screan
+=== Monitoring screen
 
 This screen allows each user (TSO and RSC) to monitor the status of coordination.
 
@@ -411,21 +411,23 @@ This screen allows each user (TSO and RSC) to monitor the status of coordination
 
 * *General view* : main information about the coordination's status in live
 ** by selecting the right coordination from the table, the user can open the detailed view
-** It is possible to export the coordinations' informations as xlsx file
+** It is possible to export the coordinations' information as xlsx file
 
 image::monitoring_screen_general_view_full.png[Monitoring screen general view]
 
-* *Detailed view* : details about the different answers of each TSO in live
+* *Detailed view* : details from the selected coordination cases with display of the different answers of each TSO (updated in live if coordination process is still running)
 
 image::monitoring_screen_detailed_view.png[Monitoring screen detaild view]
 
 === Logging screen
 
-This screen displays logs of the relevant informations about the coordination process:
+This screen displays logs of the relevant information about the coordination process:
 
-* New cases to coordinate/validate
-* Reception of answers from TSOs
-* Final result notification
+* *New* request for coordination/validation
+* *Reception of answers from TSOs* to this coordination/validation
+* *Final result notification*
+* Reception of input file to describe the expected coordination/validation
+* Sending of output file with results of this coordination/validation
 
 It is possible to export the logs as xlsx file
 
@@ -447,7 +449,7 @@ It’s composed of two parts:
 **** When granularity is Yearly: from start year to end year 
 ** Which area (RSC or Region/CCR) is concerned?
 *** User should decide to see the information per RSC or per Region/CCR but not together.
-*** If granularity is Daily: user should select or “Pan-Eu”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category: 
+*** If granularity is Daily: user should select or “Pan-EU”ropean to see the global value of this KPI or one of the RSC or one of the Regions/CCRs.If granularity is Yearly: user can select multiple choices in the same category:
 **** Pan Eu from RSC part + 1 or multiple RSC 
 **** or Pan-Eu from Regions/CCRs + 1 or multiple regions/CCRs
 ** Which kind of KPIs?
@@ -475,12 +477,16 @@ User can click on a notification in the deck to open the detailed content
 
 image::notification_opened.png[Notification open]
 
+It’s also possible to see the dedicated notification in a larger/full screen with this button: image:notification_opened_resizing_button.png[Notification opened resizing button]
+
 **Acknowledge a notification**
 
 With action buttons present in detailed view, user can act on the card (acknowledge it if card type is information or accept/refuse it if card type is action).
 
 Ex: For informative notification, user is able to acknowledge the notification to keep track of its reading. After a performed acknowledgement, notification will disappear from the deck. The only way to see it again is to consult the Archiving screen or to update the default filter which only shows the “not acknowledged” notifications.
- 
+
+image::acknowledge_notification_opened.png[Acknowledge notification opened]
+
 === RSC KPI graphs and report
 
 **Set RSC KPI graphs**
@@ -620,7 +626,7 @@ image:card_creation_empty.png[Card creation empty screen]
 
 In this screen, the user is invited to select/fill the required fields:
 
-* *Service:* the list of RSC services (CSA,  CCC, …​)
+* *Service:* the list of RSC services (CSA,  CCC, …)
 * *Process:* the list of process related to selected service 
 * *State:* the list of state related to selected process 
 
@@ -694,7 +700,7 @@ image:card_creation_opened_short.png[Card creation preview screen]
 
 === Smart notifications
 
-* **Coordination Notification**: 
+* **Coordination Notifications**:
 
 For some processes, different TSOs will have to give their advice about a common question asked to different TSOs. This behavior is considered as a Coordination function. 
 
@@ -710,11 +716,11 @@ image::coordination_with_tso_answers.png[Smart notification TSO answers]
 
 . End of coordination QUESTION: 2 cases:
 
-* End because of LTTD (Last Time To Decide) reached (SOON): a coordination can stop when the deadline (LTTD) is reached.
-
 * End because all TSOs participating in this coordination provided their answers to the question.
 
-. RESULTS of COORDINATION : When coordination QUESTION is ended, an INFORMATIVE notification is issued to present the results of the coordination : 2 cases:
+* End because of LTTD (Last Time To Decide) reached (SOON): a coordination can stop when the deadline (LTTD) is reached.
+
+. RESULTS of COORDINATION : When coordination QUESTION is ended, an INFORMATIVE notification is issued automatically to present the results of the coordination : 2 cases:
 +
 --
 * All answers provided are “Validated”, then the notification is green
