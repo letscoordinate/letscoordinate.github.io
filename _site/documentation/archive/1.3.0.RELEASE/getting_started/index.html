@@ -100,7 +100,7 @@
 <p><strong>Please note</strong>:</p>
 <ul>
   <li>It is highly recommended to use <a href="https://sdkman.io/">sdkman</a> (v5.11.0 or grater) and <a href="https://github.com/nvm-sh/nvm">nvm</a> (v14.11.0 or grater) to manage <em>Maven</em>, <em>Java</em>, <em>NPM</em> and <em>Node JS</em> tools versions (with sdkman and nvm, the previously mentioned tools will be automatically installed later).</li>
-  <li>The required OperatorFabric version is <strong>2.10.0.RELEASE</strong> (configured by default to be used with the current version of Let’s Coordinate 1.3.1.RELEASE)</li>
+  <li>The required OperatorFabric version is <strong>2.8.0.RELEASE</strong> (configured by default to be used with the current version of Let’s Coordinate 1.3.0.RELEASE)</li>
 </ul>
 
 <h2 class="orange-title" id="2-setup-and-run-lets-coordinate">2. Setup and run Let’s Coordinate</h2>
@@ -114,7 +114,7 @@
 
 <h4 class="orange-title-2" id="22-create-test-branch">2.2. Create test branch</h4>
 
-<p>Before starting Let’s Coordinate, it’s recommended to create a test branch from the latest stable release (1.3.1.RELEASE in our case).
+<p>Before starting Let’s Coordinate, it’s recommended to create a test branch from the latest stable release (1.3.0.RELEASE in our case).
 To do this, you first need to make sure that you have the latest tag list from your remote repository:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch --all --tags
@@ -122,7 +122,7 @@ To do this, you first need to make sure that you have the latest tag list from y
 
 <p>Then, you can create the test branch:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/1.3.1.RELEASE -b test-letsco-1.3.1.RELEASE
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/1.3.0.RELEASE -b test-letsco-1.3.0.RELEASE
 </code></pre></div></div>
 
 <h4 class="orange-title-2" id="23-run-lets-coordinate">2.3. Run Let’s Coordinate</h4>
@@ -147,34 +147,28 @@ To do this, you first need to make sure that you have the latest tag list from y
 
 <p>To start Let’s Coordinate, position your self in the “<em>bin</em>” directory and execute the following commands:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh --build start 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh -f start 
 </code></pre></div></div>
 
-<p>This command (with <code class="language-plaintext highlighter-rouge">--build</code> or <code class="language-plaintext highlighter-rouge">-b</code> option) allows to:</p>
+<p>The <code class="language-plaintext highlighter-rouge">-f</code> option (or <code class="language-plaintext highlighter-rouge">--first-init</code>, which is equivalent to the options <code class="language-plaintext highlighter-rouge">--build</code> and <code class="language-plaintext highlighter-rouge">--init</code> together) is required while testing the project for the first time.
+It allows to:</p>
 <ul>
-  <li>install the OperatorFabric required dependencies</li>
-  <li>build and deploy the Let’s Coordinate docker images locally</li>
-</ul>
-
-<p>When the first command is executed correctly, please run the following command:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh --init start 
-</code></pre></div></div>
-
-<p>This command (with <code class="language-plaintext highlighter-rouge">--init</code> or <code class="language-plaintext highlighter-rouge">-i</code> option) allows to:</p>
-<ul>
-  <li>send bundles and configuration files to the OperatorFabric server,</li>
+  <li>install the OperatorFabric required dependencies,</li>
+  <li>build and deploy the Let’s Coordinate docker images locally,</li>
+  <li>send bundles and configurations to the OperatorFabric server,</li>
   <li>initialize the OperatorFabric database with required data (users, groups, perimeters, entities, …)</li>
 </ul>
 
-<p>For next usage of the <code class="language-plaintext highlighter-rouge">server.sh</code> script, the <code class="language-plaintext highlighter-rouge">--build</code> and <code class="language-plaintext highlighter-rouge">--init</code> options are not necessary.</p>
+<p><strong>Please note</strong>: With Ubuntu operation system, it is highly recommended to run the 2 scripts separately (the script <code class="language-plaintext highlighter-rouge">./server.sh --build start</code> and then <code class="language-plaintext highlighter-rouge">./server.sh --init start</code>).</p>
+
+<p>For next usage of the <em>server.sh</em> script, the <em>–first-init</em> option is not necessary.</p>
 
 <p>To be sure that all the services are correctly started, you can try the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh status 
 </code></pre></div></div>
 
-<p>To see more about the <code class="language-plaintext highlighter-rouge">server.sh</code> commands and options, please try:</p>
+<p>To see more about the server.sh commands and options, please try:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server.sh --help
 </code></pre></div></div>
 
@@ -220,9 +214,7 @@ a new token should be generated)</p>
   <li>Click on <em>POST /letsco/api/v1/upload/save</em></li>
   <li>Click on <em>Try it out</em></li>
   <li>Copy the previous generated token (see section 3.1) and past it in the <em>Authorization</em> field (be sure that the copied text starts with the “Bearer” keyword!)</li>
-  <li>Click on the “<em>Browse…</em>” button and choose the file “<em>util/messages_models/json/rsc_kpi_report/kpi_use_cases_service_a.json</em>”.</li>
-  <li>Click on <em>Execute</em></li>
-  <li>Click again on the “<em>Browse…</em>” button and choose the file “<em>util/messages_models/json/rsc_kpi_report/kpi_use_cases_service_b.json</em>”.</li>
+  <li>Click the “<em>Browse…</em>” button and choose the file “<em>util/messages_models/json/rsc_kpi_report/kpi_use_cases.json</em>”.</li>
   <li>Click on <em>Execute</em></li>
   <li>Connect to OpFab (<a href="http://localhost/ui/">http://localhost/ui/</a>) with the username <strong>user.test</strong> and password <strong>test</strong>.</li>
   <li>Select the <em>“RSC KPI Report”</em> menu.</li>

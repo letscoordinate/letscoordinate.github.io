@@ -1,0 +1,306 @@
+// Copyright (c) 2020-2021 RTE (http://www.rte-france.com)
+// Copyright (c) 2020-2021 RTE international (http://www.rte-international.com)
+// See AUTHORS.txt
+// This document is subject to the terms of the Creative Commons Attribution 4.0 International license.
+// If a copy of the license was not distributed with this
+// file, You can obtain one at https://creativecommons.org/licenses/by/4.0/.
+// SPDX-License-Identifier: CC-BY-4.0
+
+:toc: left
+:sectnums:
+:imagesdir: ../../asciidoc/images
+:attached_docdir: ../../asciidoc/reference_documentation/attached_doc
+:!last-update-label:
+//:page-layout: landscape
+
+= Let's Coordinate - Reference documentation
+
+
+== Introduction
+=== Purpose of the document
+
+The objective of this documentation is to present Let's Coordinate from a developer perspective.
+
+== Configuration files
+
+[.landscape]
+<<<
+
+=== application.yml
+
+[cols="25,^10,^25,^15,25"]
+[options="header",width="100%",align="center"]
+|===
+|*Attributes*
+|*Mandatory / Optional*
+|*Values*
+|*Type*
+|*Description*
+
+|letsco.kafka.input-topic-pattern
+|M
+|letsco_eventmessage_input.*
+|String
+|The pattern of the kafka input topic name
+
+|letsco.kafka.default-input-topic
+|M
+|letsco_eventmessage_input
+|String
+|The default name of the kafka input topic
+
+|letsco.kafka.default-output-topic
+|M
+|letsco_eventmessage_output
+|String
+|The default name of the kafka output topic
+
+|letsco.timezone
+|M
+|Europe/London, Europe/Paris, Europe/Rome, UTC, UTC+1, UTC-04:00, GMT-5
+|String
+|This param represent the timezone used in allover letsco-api application. The default value is "Europe/Paris"
+
+|letsco.input-file.dir
+|M
+|D:\\_RTE_\tmp\input
+|String
+|This attribute is DEPRECATED => Should be removed!
+
+|letsco.input-file.validation.accept-properties-ignore-case
+|M
+|true or false
+|Boolean
+|When this param is set to true, it means that the fields names in the input files (JSON or Excel) will be accepted without checking its case (e.g: both field names "filename" and "fileName" will be accepted and treated the same way). However, when this attribute false is set to false, the field names are accepted only if they are written exactly like in the implementation guide.
+
+|letsco.input-file.validation.fail-on-unknown-properties
+|M
+|true or false
+|Boolean
+|When this param is set to true and an unknown field name is found in the input file, an exception is thrown by the program and the treatment of the input file will be stopped. However, when this param is set to false (the default value) and an unknown field is found, this last will be ignored and the input file processing will continue.
+
+|letsco.security.allowed-origins
+|O
+|http://localhost:4200
+|List<String>
+|The list of web request's origins allowed by the letsco-api module (e.g: used to resolve CORS access problem between the frontend and the backend)
+
+|letsco.security.clientId
+|M
+|opfab-client
+|String
+|The name of the keycloak client used by LetsCo
+
+|letsco.coordination.lttd.scheduler-fixed-delay
+|M
+|3000
+|Numeric
+|The time in milliseconds between 2 treatments of the scheduler checking if the LTTD (Last Time To Decide) is expired
+
+.2+^.|letsco.coordination.lttd.default-lttd
+.2+^.|M
+^.|AFTER_2_HOURS
+|Enumeration
+|The LTTD (Last Time To Decide) will be expired in 2 hours from the coordination creation time
+^.|AT_8_PM
+|Enumeration
+|The LTTD (Last Time To Decide) will be expired at 8PM. If the coordination is created after 8PM of the same day, the LTTD (Last Time To Decide) will be 8PM of the next day.
+
+|letsco.coordination.lttd.apply-default-lttd-if-no-specific-lttd-found
+|M
+|true or false
+|Boolean
+|When set to true, the default-lttd value will be applyed to any coordination notification without LTTD (Last Time To Decide)
+
+|letsco.coordination.lttd.specific-lttd
+|O
+|servicea_coordinationa: AT_8_PM
+|Map<String, Enumeration>
+|This parametre allows to define explicitly the list of notification that have a LTTD (it is useful when we the param apply-default-lttd-if-no-specific-lttd-found equals false).
+
+To do this, we should provide the data on a [key:value] format.
+
+e.g: servicea_coordinationa: AT_8_PM => this means that we define the LTTD at 8PM for the notification servicea_coordinationa
+
+.3+^.|letsco.coordination.coordination-status-calculation-strategy
+.3+^.|M
+^.|MAJORITY
+|Enumeration
+|This param allows to define the strategy to calculate the coordination status based on the responses provided by the users. In this case the coordination status will be based on the majority of responses.
+^.|BEST_CASE
+|Enumeration
+|This param allows to define the strategy to calculate the coordination status based on the responses provided by the users. In this case the coordination status will be based on responses best case.
+^.|WORST_CASE
+|Enumeration
+|This param allows to define the strategy to calculate the coordination status based on the responses provided by the users. In this case the coordination status will be based on responses worst case.
+
+|letsco.coordination.coordination-status-calculation-rules
+|M
+|
+|Map<Enumeration, Map>
+|This param allows to define the rules to generate the coordination status for each strategy
+
+|letsco.coordination.coordination-status-calculation-rules.WORST_CASE
+|M
+|con-con-con: CON
+
+rej-rej-rej: REJ
+
+not-not-not: REJ
+
+mix-mix-mix: MIX
+
+con-con-rej: REJ
+
+con-rej-rej: REJ
+
+con-con-mix: MIX
+
+con-rej-mix: REJ
+
+con-con-not: REJ
+
+|Map<String, Enumeration>
+|This param allows to define the rules to generate the coordination status for the WORST_CASE strategy
+
+|letsco.coordination.coordination-status-calculation-rules.BEST_CASE
+|M
+|con-con-con: CON
+
+rej-rej-rej: REJ
+
+not-not-not: CON
+
+mix-mix-mix: MIX
+
+con-con-rej: CON
+
+con-rej-rej: CON
+
+con-con-mix: CON
+
+con-rej-mix: CON
+
+con-con-not: CON
+
+|Map<String, Enumeration>
+|This param allows to define the rules to generate the coordination status for the BEST_CASE strategy
+
+|letsco.coordination.coordination-status-calculation-rules.MAJORITY
+|M
+|con-con-con: CON
+
+rej-rej-rej: REJ
+
+not-not-not: NOT
+
+mix-mix-mix: MIX
+
+con-con-rej: CON
+
+con-rej-rej: REJ
+
+con-con-mix: CON
+
+con-rej-mix: MIX
+
+con-con-not: CON
+
+|Map<String, Enumeration>
+|This param allows to define the rules to generate the coordination status for the MAJORITY strategy
+
+|letsco.coordination.not-answered-default-case
+|M
+|true or false
+|Boolean
+|If true, the coordination status `NOT` will be replaced by a status defined by the not-answered-default-case-rules configuration
+
+|letsco.coordination.not-answered-default-case-rules
+|M
+|WORST_CASE: REJ
+
+BEST_CASE: CON
+
+MAJORITY: MIX
+|Map<Enumeration, Enumeration>
+|This configuration defines the rules to apply in order to replace the `NOT` status by the appropriate one if needed
+
+|letsco.coordination.enable-case-id-auto-generation
+|M
+|true or false
+|Boolean
+|If this config is enabled, the case id will be generated when not provided in the input file. The generated case id is based on the following fields: source, businessApplication, messageTypeName, businessDayFrom and businessDayTo
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|===
+
+
+[.portrait]
+<<<
+
+=== coordination.properties

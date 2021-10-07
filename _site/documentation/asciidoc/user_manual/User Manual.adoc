@@ -718,7 +718,10 @@ image::coordination_with_tso_answers.png[Smart notification TSO answers]
 
 * End because all TSOs participating in this coordination provided their answers to the question.
 
-* End because of LTTD (Last Time To Decide) reached (SOON): a coordination can stop when the deadline (LTTD) is reached.
+* End because of LTTD (Last Time To Decide) reached: a coordination can stop when the deadline (LTTD) is reached.
+
++
+image::coordination_with_tso_answers_lttd.png[Smart notification TSO answers]
 
 . RESULTS of COORDINATION : When coordination QUESTION is ended, an INFORMATIVE notification is issued automatically to present the results of the coordination : 2 cases:
 +
